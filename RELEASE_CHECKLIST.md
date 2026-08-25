@@ -4,14 +4,22 @@ Updated: 26 August 2026
 
 Use this checklist before treating a portfolio change as production-ready.
 
-The automated `Portfolio audit` workflow is necessary but not sufficient. It protects syntax, references, contact/privacy rules and core metadata. Human review still controls attribution, evidence quality, interaction and device behaviour.
+A release is evaluated through four separate layers:
 
-## 1. Automated gate
+1. **Source audit** — syntax, references, metadata, privacy, attribution and architecture contracts
+2. **Rendered browser smoke** — actual Chromium behavior on desktop, synthetic mobile and no-JavaScript paths
+3. **Public proof health** — monitored public portfolio/evidence links
+4. **Real-device review** — iPhone, Android, Safari/Edge and assistive-technology checks where relevant
 
-Required before release:
+No single layer substitutes for the others.
+
+## 1. Automated release gates
+
+Required for live-surface changes:
 
 - `npm run audit` passes
 - GitHub Actions `Portfolio audit` passes
+- GitHub Actions `Browser smoke` passes when its path filters are triggered
 - GitHub Pages deployment completes successfully
 - no broken local asset references
 - JSON-LD parses
@@ -23,7 +31,43 @@ Required before release:
 - approved public phone/WhatsApp remains the only public phone number
 - protected precise scale phrases remain absent
 
-## 2. Content and claim audit
+The Browser smoke workflow exercises:
+
+- desktop Chromium rendering
+- synthetic 390×844 touch/mobile viewport
+- Recruiter View
+- supporting-case disclosure
+- case and node deep links
+- graph-origin case close → originating node-state restoration
+- keyboard search and exact-label search ranking
+- accessible dialog semantics
+- mobile horizontal-overflow checks
+- mobile modal-width/close-control checks
+- no-JavaScript fallback
+
+On browser-smoke failure, diagnostic screenshots/URLs are uploaded as a short-lived GitHub Actions artifact.
+
+## 2. Public evidence health
+
+`Public evidence link health` must remain healthy as an operational monitor.
+
+It runs:
+
+- weekly
+- manually through GitHub Actions
+- whenever its checker/workflow configuration changes
+
+It monitors:
+
+- `pragalbh.in`
+- public GitHub profile and selected evidence repositories
+- the public BDSPS system
+
+The checker uses bounded retries for transient network/server failures. Permanent broken links still fail the workflow.
+
+This monitor is not required to run on every normal content commit because unrelated external-network instability should not block routine portfolio deployment.
+
+## 3. Content and claim audit
 
 For every new or edited claim:
 
@@ -36,7 +80,7 @@ For every new or edited claim:
 - ensure the case states Pragalbh's actual role
 - remove duplicated skill claims where a project already proves the capability
 
-## 3. Attribution audit
+## 4. Attribution audit
 
 Do not attribute these disciplines to Pragalbh:
 
@@ -49,7 +93,7 @@ Do not attribute these disciplines to Pragalbh:
 
 For mixed-contribution projects, credit Pragalbh only for requirements, systems, implementation, engineering, automation, deployment, troubleshooting or operational work he actually performed.
 
-## 4. Privacy and security audit
+## 5. Privacy and security audit
 
 Do not publish unless explicitly approved and safe:
 
@@ -71,7 +115,7 @@ Prefer abstract scale language such as:
 - continuous-duty
 - cross-domain
 
-## 5. Evidence audit
+## 6. Evidence audit
 
 Every media item must answer: **what claim does this prove?**
 
@@ -85,8 +129,10 @@ Before publishing evidence:
 - confirm the image/diagram does not imply a more mature status than the text
 - use public repository/live links where available
 - keep source-backed derivatives separate from raw institutional documents
+- update `EVIDENCE_REGISTER.md`
+- update `CASE_REVIEW_REGISTER.md` when review state changes
 
-## 6. Recruiter-view audit
+## 7. Recruiter-view audit
 
 Within roughly 90 seconds, a visitor should be able to determine:
 
@@ -99,53 +145,61 @@ Within roughly 90 seconds, a visitor should be able to determine:
 
 Keep six flagship cases visible first. Leadership/supporting cases remain available without dominating the default view.
 
-## 7. Network-view audit
+## 8. Network-view audit
 
 Verify:
 
 - root opens five primary pillars only
 - node expansion remains progressive
-- search opens the correct branch
+- exact-label search results rank ahead of broader incidental matches
 - current-path breadcrumb follows selected node
 - node hash links resolve
 - case links open the correct modal
+- closing a graph-origin case restores the originating node URL/state
+- direct shared case links close to the canonical page URL
 - case-to-capability links return to the correct graph node
 - Reset Map returns to root cleanly
 - cross-links communicate relationships without excessive visual noise
 
-## 8. Accessibility audit
+## 9. Accessibility audit
 
-Automated/source-level:
+Automated/rendered coverage includes:
 
 - SVG nodes keyboard-focusable
-- Enter/Space activates nodes
+- Enter/Space activation
 - visible focus states
-- search accessible name
+- accessible search combobox/listbox semantics
 - mode buttons expose state
 - modal uses dialog semantics
 - Escape closes modal
-- Tab remains inside modal
-- focus restores after close
-- reduced-motion preference respected
+- Tab containment / focus restoration
+- reduced-motion source rule
+- no-JavaScript fallback
+- synthetic mobile overflow/modal checks
 
-Manual smoke test:
+Manual checks still required for major interaction changes:
 
-- keyboard-only navigation
+- keyboard-only real-browser pass
 - VoiceOver on iPhone/macOS where available
 - modal reading order
-- mobile bottom-sheet usability
+- native gesture behavior
+- real phone/WhatsApp handoff
 
-## 9. Device/browser audit
+Do not claim WCAG conformance from automated smoke tests alone.
 
-Required manual checks when layout or interaction changes:
+## 10. Device/browser audit
+
+Synthetic mobile Chromium is useful regression coverage, not a physical-device substitute.
+
+Required real-device/browser checks for major layout/interaction releases:
 
 - iPhone Safari portrait
 - iPhone Safari landscape
 - Android Chrome portrait
-- tablet viewport
 - desktop Chrome
 - desktop Safari
 - Edge
+- VoiceOver / screen-reader smoke test where available
 
 Check:
 
@@ -156,13 +210,16 @@ Check:
 - phone link
 - WhatsApp link
 - recruiter/supporting-case toggle
-- breadcrumb overflow
+- breadcrumb overflow/back behavior
 
-## 10. Performance audit
+Track this work in GitHub Issue #1.
+
+## 11. Performance audit
 
 Before adding media/dependencies:
 
 - ask whether it materially improves evidence or comprehension
+- respect the repository's static payload budget
 - prefer SVG for diagrams
 - convert photos to WebP/AVIF
 - use responsive image sizes
@@ -171,9 +228,9 @@ Before adding media/dependencies:
 - avoid heavy 3D libraries unless the information gain justifies them
 - do not reintroduce embedded external websites for proof
 
-Real Lighthouse/Core Web Vitals measurements should be recorded only from an actual browser run.
+Real Lighthouse/Core Web Vitals measurements should be recorded only from an actual browser measurement, never inferred from source size.
 
-## 11. Discoverability audit
+## 12. Discoverability audit
 
 Verify:
 
@@ -184,15 +241,17 @@ Verify:
 - JSON-LD does not contain stale title/contact data
 - new standalone routes, if introduced later, receive their own metadata and sitemap entries
 
-## 12. Release close-out
+## 13. Release close-out
 
 After merge/deploy:
 
 1. verify `Portfolio audit` success
-2. verify Pages deployment success
-3. open the live domain on at least one mobile and one desktop browser when available
-4. update `PORTFOLIO_STATUS.md`
-5. update the relevant evidence/outcome register when claims changed
-6. record meaningful architecture changes in the roadmap
+2. verify `Browser smoke` success when applicable
+3. verify Pages deployment success
+4. review Public evidence link health if evidence URLs changed
+5. open the live domain on a physical mobile/desktop browser for major interaction releases when available
+6. update `PORTFOLIO_STATUS.md` when architecture or release gates changed
+7. update evidence/outcome/review registers when claims changed
+8. record meaningful architecture changes in `CHANGELOG.md` / roadmap
 
 A release is not complete merely because GitHub accepted the commit. Git is a version-control system, not a quality oracle.
