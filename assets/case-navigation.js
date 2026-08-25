@@ -8,7 +8,8 @@
     solarcctv:['solar','networking','cctv','access'],
     'leadership-recruitment':['leadership','curriculum','communication','requirements'],
     'curriculum-assessment':['curriculum','leadership','communication','requirements'],
-    'compliance-documentation':['leadership','communication','requirements']
+    'compliance-documentation':['leadership','communication','requirements'],
+    'institutional-operations':['leadership','curriculum','communication','requirements']
   };
   const LABELS={apps:'Operational Software',requirements:'Requirements Engineering',github:'GitHub / CI-CD',proxmox:'Proxmox / Virtualisation',communication:'Institutional Communication',edtech:'Education Technology',leadership:'Education Leadership',curriculum:'Curriculum & Assessment',storage:'Storage / TrueNAS',networking:'Campus Networking',maas:'MAAS / Bare Metal',resilience:'Resilient Systems',kubernetes:'Kubernetes',cctv:'CCTV / NVR',identity:'Identity & Access',signage:'Digital Signage',solar:'Solar / Battery Systems',access:'Physical Access Control'};
 
