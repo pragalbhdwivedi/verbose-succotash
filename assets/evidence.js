@@ -48,5 +48,15 @@
     section.innerHTML=`<div class="evidence-head"><div><span class="eyebrow">Proof / evidence layer</span><h2>Architecture is useful. Evidence is better.</h2></div><p>Public systems are shown directly. Field and prototype work is represented with source-backed schematics until reusable project photography is available.</p></div><div class="evidence-rail">${cards.map(c=>`<article class="evidence-card">${media(c)}<div class="evidence-copy"><h3>${c.title}</h3><p>${c.body}</p><div class="evidence-meta">${c.meta.map(x=>`<span>${x}</span>`).join('')}</div>${c.repo?`<div class="evidence-note">Public repository available</div>`:''}</div></article>`).join('')}</div>`;
     caseGrid.insertAdjacentElement('afterend',section);
   }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',build); else build();
+
+  function loadProofLayer(){
+    if(document.querySelector('script[data-proof-layer]')) return;
+    const script=document.createElement('script');
+    script.src='./assets/proof.js';
+    script.dataset.proofLayer='true';
+    document.body.appendChild(script);
+  }
+
+  function init(){build();loadProofLayer();}
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
 })();
