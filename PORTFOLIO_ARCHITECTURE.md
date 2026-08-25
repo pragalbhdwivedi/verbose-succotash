@@ -8,13 +8,15 @@ Core statement:
 
 > I design and build the systems behind modern institutions.
 
-The portfolio is designed for multiple audiences: employers, consulting clients, educational institutions, EdTech/infrastructure companies, startups, and potential partners.
+The portfolio serves multiple audiences: employers, consulting clients, educational institutions, EdTech/infrastructure companies, startups, and potential partners.
 
-## Dual-mode UX
+## Interaction model
 
-### 1. Explore Network
+The site has two modes:
 
-Default experience. The visitor starts with Pragalbh at the centre and five primary capability nodes:
+### Explore Network
+
+A progressively expanding capability graph. The initial screen shows only the central profile and five operating pillars:
 
 1. Education & Operations
 2. Systems Architecture
@@ -22,90 +24,90 @@ Default experience. The visitor starts with Pragalbh at the centre and five prim
 4. Automation & Software
 5. Applied Technology & Energy
 
-Clicking a node expands only that branch. Deeper nodes reveal domains, skills, public repositories, field systems, and project evidence. Cross-links show where projects connect multiple capability families.
+Branches reveal themselves only when selected. Projects appear as evidence hubs that connect multiple skill families.
 
-The web is intentionally progressive-disclosure rather than a long résumé page.
+### Recruiter View
 
-### 2. Recruiter View
+A fast conventional view for visitors who do not want to explore the graph. It presents positioning, problems solved, non-sensitive scale signals, selected case studies, core competencies and contact actions.
 
-A compact conventional view for people who want the answer quickly. It includes:
+## Scale privacy rule
 
-- positioning and operating context
-- public scale signals
-- what problems Pragalbh solves
-- six selected evidence projects
-- compact capability stack
-- direct phone and WhatsApp CTA
+Do not publish precise operational inventory counts for institutions, classrooms or transport assets.
 
-## Interaction principles
+Prefer qualitative scale language such as:
 
-- Start simple; reveal depth on demand.
-- Projects are evidence hubs, not decorative cards.
-- Clicking a node expands/collapses its branch.
-- Search expands the path to a matching skill/project automatically.
-- Related visible systems use cross-links.
-- A side drawer explains role, level, evidence, scale, capabilities, and repository links.
-- Desktop supports pan and zoom.
-- Mobile uses the same graph plus a bottom-sheet detail drawer.
-- Recruiter View remains available at all times.
+- multi-institution
+- multi-classroom
+- fleet-wide
+- self-hosted
+- continuous-duty
+- cross-domain
+
+Technical figures may be shown when they describe an engineering architecture rather than exposing operational inventory, and only when they materially improve the case study.
+
+## Case-study model
+
+A project is not just a card or technology list. Each project should explain:
+
+1. **Problem** — what operational issue existed?
+2. **My role** — what Pragalbh owned, designed, integrated or troubleshot.
+3. **Constraints** — budget, existing equipment, reliability, people, legacy systems or deployment realities.
+4. **Decisions** — architectural choices and trade-offs.
+5. **Architecture** — a compact visual system diagram.
+6. **Evidence** — repositories, implementation records, screenshots, field photographs or diagrams.
+7. **Status** — production, active development, prototype architecture, applied system or field troubleshooting.
 
 ## Evidence levels
 
-The portfolio avoids presenting every item as equal expertise.
+Use explicit credibility levels rather than treating every item as equal:
 
-- **Core strength** — repeated operational evidence
-- **Strong / applied** — meaningful hands-on implementation
-- **Developing** — active implementation/learning
-- **Prototype architecture** — designed but not represented as production
-- **System design** — architecture/evaluation work
-- **Field engineering / troubleshooting** — physical implementation and diagnosis
-- **Experimental** — exploratory work
+- Core strength
+- Strong / applied
+- Applied
+- Developing
+- Prototype architecture
+- Field engineering / troubleshooting
 
-## Public scale signals currently used
+## Content attribution boundary
 
-- 4 institutions in the operating context
-- 7 existing classroom display endpoints mapped for smart-class work
-- 11–15 classroom target by year three
-- 10 transport vehicles: 4 buses + 6 vans
-- 48V institutional battery architecture
-- 24×7 remote CCTV edge-infrastructure design target
+Graphic Design, UI/UX Design, Art Direction, Brand Visual Design, Campaign Visual Design and Portfolio Visual Storytelling are not listed as Pragalbh's professional disciplines. Those belong to Kritica Dwivedi.
 
-Additional substantiated scale metrics can be added to individual project nodes as the evidence set grows.
+Pragalbh's portfolio may itself use sophisticated interaction design, but the portfolio's design is not presented as proof that he is a professional UI/UX or graphic designer.
 
-## Contact
+## Public contact
 
-Public contact is intentionally limited to:
+Only these direct contact channels should be surfaced:
 
 - Phone: +91 95558 77000
-- WhatsApp: +91 95558 77000
+- WhatsApp: same number
 
-No public email is shown.
+Do not add public email or unrelated personal contact data unless explicitly approved later.
 
-## Attribution boundary
+## Visual direction
 
-This portfolio is for **Pragalbh Dwivedi**.
+Hybrid technical-blueprint + organic network:
 
-Graphic Design, UI/UX Design, Art Direction, Brand Visual Design, Campaign Visual Design, and Portfolio Visual Storytelling remain attributed to **Kritica Dwivedi**, not Pragalbh.
+- dark graphite background
+- precise domain relationships
+- restrained accent colors by capability family
+- progressive node expansion
+- subtle movement rather than distracting 3D spectacle
+- architecture diagrams inside project case studies
+- responsive mobile bottom-sheet details
 
-## Reference ideas studied
+## Next evidence upgrade
 
-The redesign draws interaction and information-architecture lessons from open-source work including:
+The case-study engine now supports visual architecture diagrams. The next evidence layer should use real project media where available:
 
-- `vasturiano/react-force-graph` — expandable/collapsible graph interactions, focus, pan/zoom, dynamic data
-- `xyflow/xyflow` — node-based interface architecture
-- `bchiang7/v4` — restraint and project hierarchy
-- `saadpasta/developerFolio` — data-driven portfolio content structure
-- `adrianhajdin/3d-portfolio` — controlled motion and micro-interaction patterns
+- server / rack / Proxmox hardware
+- networking and Omada installations
+- CCTV poles and outdoor links
+- solar / battery / inverter infrastructure
+- smart-classroom hardware
+- access-control terminals
+- RFID / identity systems
+- application screenshots
+- GitHub repository screenshots
+- timetable / digital operations screens
 
-The implementation is original and tailored to Pragalbh's cross-domain institutional systems profile.
-
-## Future content upgrades
-
-The most valuable next additions are evidence assets, not more text:
-
-- project photography: servers, networks, CCTV, solar, access control, classrooms
-- architecture diagrams for Smart Classroom, AquaPulse, Solar CCTV, identity/access systems
-- before/after operational workflows
-- screenshots from GitHub repositories and live systems
-- quantified results where verified
-- concise case-study decision logs: problem → constraints → architecture → decisions → result → learning
+Media should be tied to a specific case study, not added as decorative gallery filler.
