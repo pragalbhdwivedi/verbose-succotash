@@ -13,6 +13,7 @@
     if(lastSelected!==selected){lastSelected=selected;updateHash(selected);requestAnimationFrame(()=>{el.scrollLeft=el.scrollWidth})}
   }
   function observe(){const svg=document.getElementById('network');if(!svg)return;render();new MutationObserver(render).observe(svg,{childList:true,subtree:true,attributes:true,attributeFilter:['class']})}
-  function init(){loadStyle();observe();window.addEventListener('hashchange',render)}
+  function loadCaseReview(){if(document.querySelector('script[data-case-review-layer]'))return;const s=document.createElement('script');s.src='./assets/case-review.js';s.dataset.caseReviewLayer='true';document.body.appendChild(s)}
+  function init(){loadStyle();observe();window.addEventListener('hashchange',render);loadCaseReview()}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
