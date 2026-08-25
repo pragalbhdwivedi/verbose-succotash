@@ -53,7 +53,7 @@
       const c=cards[Number(btn.dataset.evidenceIndex)];
       if(!c||!c.nodeId) return;
       if(typeof setMode==='function') setMode('explore');
-      if(typeof focusNode==='function') focusNode(c.nodeId);
+      if(typeof expandPath==='function') expandPath(c.nodeId);
       window.scrollTo({top:0,behavior:'smooth'});
     }));
   }
