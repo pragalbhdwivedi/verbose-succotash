@@ -34,23 +34,19 @@ The portfolio also documents current 2026 work that is not fully represented by 
 
 Each recent project is described according to its actual status, such as production delivery, system design, prototype architecture, integration or field troubleshooting.
 
-## Development
+## Deployment
+
+The live site uses the repository's existing **GitHub Pages branch deployment**. The root `index.html` is intentionally directly deployable, so publishing does not depend on a separate build action.
+
+Custom domain: **pragalbh.in**
+
+`CNAME` is retained at the repository root, with a matching `public/CNAME` for compatibility with the Vite source structure.
+
+## Development source
+
+React/Vite source files are retained under `src/` for future expansion into richer case-study interactions.
 
 ```bash
 npm install
 npm run dev
 ```
-
-Production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-Pushes to `main` trigger `.github/workflows/deploy.yml`, which builds the Vite application and deploys `dist/` to GitHub Pages.
-
-Custom domain: **pragalbh.in**
-
-The domain is retained in both the repository-root `CNAME` and `public/CNAME` so the production Vite build includes it.
