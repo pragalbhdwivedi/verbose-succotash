@@ -27,12 +27,16 @@ Core statement:
 
 **Status: FOUNDATION COMPLETE**
 
+Implemented:
+
 - evidence register
 - proof taxonomy
 - public repository/live-system proof
 - privacy-safe architecture diagrams
 - evidence rail
 - media publication rules
+- case evidence-review register
+- live evidence-review stamps that explicitly distinguish review date from deployment date
 
 Remaining real screenshots/field photography are enrichment backlog, not structural blockers.
 
@@ -63,6 +67,7 @@ Implemented across flagships:
 - proof links
 - shareable case hashes
 - related capability navigation
+- evidence-review freshness label
 
 ### Sprint 3 — Leadership & Institutional Systems Proof
 
@@ -112,8 +117,9 @@ Implemented:
 - compact supporting-case disclosure
 - current capability breadcrumb/path navigation
 - shareable node hashes
+- no-JavaScript professional fallback
 
-Still requires real-browser/device smoke tests.
+Real device/browser work is tracked in **GitHub Issue #1: Production QA: real devices, browsers and assistive technology**.
 
 ### Sprint 6 — Discoverability / Performance
 
@@ -131,25 +137,32 @@ Implemented:
 - `sitemap.xml`
 - external evidence iframe removed
 - dependency-light static delivery preserved
+- weekly public proof-link health workflow
 
 Deferred until evidence/branding warrants it:
 
 - dedicated 1200×630 social preview image
 - standalone SEO routes for individual case studies
+- claimed Lighthouse/Core Web Vitals scores without real-browser measurement
 
 ## Automated quality gate
 
-The repository includes `.github/workflows/portfolio-audit.yml` and `scripts/validate-portfolio.mjs`.
+The repository includes:
 
-`npm run audit` verifies:
+- `.github/workflows/portfolio-audit.yml`
+- `scripts/validate-portfolio.mjs`
+- `npm run audit`
+
+The audit verifies:
 
 - JavaScript syntax
-- required files
+- required architecture/governance files
 - CNAME/canonical consistency
 - robots/sitemap references
 - JSON-LD validity
 - local asset references
 - case navigation registry
+- case evidence-review registry
 - no live iframe
 - no public email / mailto
 - no private IPv4 addresses on live surface
@@ -158,6 +171,15 @@ The repository includes `.github/workflows/portfolio-audit.yml` and `scripts/val
 - attribution-boundary presence
 
 The validation gate is required to remain green.
+
+## Public proof-link monitoring
+
+The repository also includes:
+
+- `scripts/check-external-links.mjs`
+- `.github/workflows/link-health.yml`
+
+The workflow is scheduled weekly and can also be run manually from GitHub Actions. It monitors the public portfolio, live institutional system and selected public evidence repositories without making transient external-network failures block every normal portfolio deployment.
 
 ## Current privacy boundary
 
@@ -188,9 +210,11 @@ Do not claim as Pragalbh's professional disciplines:
 
 For collaborative projects, claim only Pragalbh's actual systems/requirements/engineering/deployment contribution.
 
-## Active enrichment backlog
+## Active evidence / measurement backlog
 
-These can be added when real, privacy-safe evidence exists:
+Tracked in **GitHub Issue #2: Evidence enrichment: real media and prospective outcome measurement**.
+
+Primary remaining evidence targets:
 
 ### AquaPulse
 
@@ -231,16 +255,28 @@ These can be added when real, privacy-safe evidence exists:
 - real autonomy data
 - wireless-link evidence
 
+## Current governance files
+
+- `MASTER_ROADMAP.md` — programme architecture and priorities
+- `PORTFOLIO_STATUS.md` — concise current state
+- `PORTFOLIO_MAINTENANCE.md` — ongoing update contract
+- `RELEASE_CHECKLIST.md` — production release procedure
+- `CHANGELOG.md` — meaningful architecture/history changes
+- `CASE_REVIEW_REGISTER.md` — evidence-review freshness and triggers
+- `EVIDENCE_REGISTER.md` — proof/media control
+- `OUTCOME_REGISTER.md` — public impact/claim control
+
 ## Next operational priorities
 
-1. real-device/browser QA
-2. add privacy-safe field/application media as it becomes available
+1. complete GitHub Issue #1 real-device/browser QA
+2. add privacy-safe evidence through GitHub Issue #2 as it becomes available
 3. measure outcomes prospectively rather than reconstructing metrics later
 4. keep the six-flagship hierarchy disciplined
-5. validate all external project/live links periodically
+5. monitor public proof links weekly
 6. keep skills connected to evidence rather than increasing skill volume
-7. use `RELEASE_CHECKLIST.md` for meaningful releases
-8. use `PORTFOLIO_MAINTENANCE.md` for ongoing governance
+7. keep `npm run audit` / Portfolio audit green
+8. use `RELEASE_CHECKLIST.md` for meaningful releases
+9. use `PORTFOLIO_MAINTENANCE.md` for monthly/quarterly governance
 
 ## Production rule
 
