@@ -1,188 +1,123 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<meta name="theme-color" content="#07090c" />
-<meta name="description" content="Pragalbh Dwivedi — Education leader, institutional systems architect, infrastructure and automation builder." />
-<meta property="og:title" content="Pragalbh Dwivedi | Institutional Systems Architect" />
-<meta property="og:description" content="Education leadership, systems architecture, infrastructure, automation and applied technology." />
-<meta property="og:type" content="website" />
-<title>Pragalbh Dwivedi | Institutional Systems Architect</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap');
-:root{
-  --bg:#07090c;--panel:#0d1117;--panel2:#111720;--line:#27313d;--text:#f2f5f7;--muted:#97a1ad;--dim:#66717d;
-  --green:#baff67;--blue:#6fb7ff;--amber:#ffbd66;--violet:#b592ff;--cyan:#68e0d0;--danger:#ff7d7d;
-}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif}body{overflow-x:hidden}
-a{color:inherit;text-decoration:none}button,input{font:inherit}button{color:inherit}
-.app{min-height:100vh;display:grid;grid-template-rows:auto 1fr;background:
-radial-gradient(circle at 50% 45%,rgba(186,255,103,.055),transparent 30%),
-linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:auto,34px 34px,34px 34px}
-.topbar{height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;border-bottom:1px solid var(--line);background:rgba(7,9,12,.88);backdrop-filter:blur(18px);position:relative;z-index:40}
-.identity{display:flex;align-items:center;gap:12px;min-width:0}.monogram{width:40px;height:40px;border:1px solid var(--line);display:grid;place-items:center;font:500 12px DM Mono;color:var(--green);flex:none}.identity-copy{min-width:0}.identity-copy strong{display:block;font-size:13px;white-space:nowrap}.identity-copy span{font:400 9px DM Mono;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;white-space:nowrap}
-.controls{display:flex;gap:8px;align-items:center}.mode-toggle{display:flex;border:1px solid var(--line);background:var(--panel);padding:3px}.mode-toggle button,.ghost,.iconbtn{border:0;background:transparent;cursor:pointer}.mode-toggle button{padding:8px 11px;font-size:11px;color:var(--muted)}.mode-toggle button.active{background:var(--text);color:#0a0d10;font-weight:700}.ghost{border:1px solid var(--line);padding:9px 11px;font-size:11px;color:var(--muted)}.ghost:hover{color:var(--text);border-color:#465361}
-.network-view{min-height:calc(100vh - 68px);display:grid;grid-template-columns:minmax(0,1fr) 360px;position:relative}.graph-shell{position:relative;min-height:calc(100vh - 68px);overflow:hidden}.graph-meta{position:absolute;left:22px;top:20px;z-index:10;pointer-events:none}.eyebrow{font:400 9px DM Mono;text-transform:uppercase;letter-spacing:.14em;color:var(--dim)}.graph-meta h1{font-size:clamp(28px,4vw,62px);letter-spacing:-.045em;line-height:.98;margin:8px 0 0;font-weight:500;max-width:780px}.graph-meta h1 em{font-style:normal;color:var(--green)}.hint{position:absolute;left:22px;bottom:18px;z-index:10;display:flex;gap:10px;flex-wrap:wrap}.hint span{font:400 9px DM Mono;color:var(--dim);border:1px solid var(--line);padding:7px 9px;background:rgba(7,9,12,.7)}
-.search{position:absolute;right:22px;top:20px;z-index:12;width:min(340px,42vw)}.search input{width:100%;border:1px solid var(--line);background:rgba(13,17,23,.93);color:var(--text);padding:11px 13px;outline:none;font-size:12px}.search input:focus{border-color:#566579}.search-results{display:none;margin-top:6px;border:1px solid var(--line);background:var(--panel);max-height:300px;overflow:auto}.search-results.show{display:block}.search-results button{width:100%;border:0;border-bottom:1px solid var(--line);background:none;text-align:left;padding:10px 12px;cursor:pointer}.search-results button:hover{background:var(--panel2)}.search-results strong{font-size:12px}.search-results span{display:block;font:400 8px DM Mono;color:var(--dim);text-transform:uppercase;margin-top:3px}
-#web{position:absolute;inset:0;width:100%;height:100%;touch-action:none;user-select:none}.edge{stroke:#34404d;stroke-width:1.15;opacity:.8}.edge.cross{stroke-dasharray:4 8;opacity:.3}.edge.active{stroke:var(--green);stroke-width:1.8;opacity:1;filter:drop-shadow(0 0 5px rgba(186,255,103,.5))}.node{cursor:pointer;transition:opacity .18s}.node circle{stroke-width:1.5;transition:r .16s,filter .16s,stroke .16s}.node text{pointer-events:none}.node .label{font-family:Manrope,sans-serif;font-size:12px;font-weight:600;fill:var(--text);text-anchor:middle}.node .type{font-family:DM Mono,monospace;font-size:7px;fill:var(--dim);text-anchor:middle;text-transform:uppercase;letter-spacing:.08em}.node:hover circle,.node.focus circle{filter:drop-shadow(0 0 10px rgba(186,255,103,.4))}.node.focus .label{fill:#fff}.node.dim{opacity:.18}.pulse{animation:pulse 3s ease-in-out infinite;transform-origin:center}@keyframes pulse{50%{opacity:.55}}
-.drawer{border-left:1px solid var(--line);background:rgba(9,12,16,.96);backdrop-filter:blur(14px);padding:24px;overflow:auto;max-height:calc(100vh - 68px);position:relative;z-index:20}.drawer.empty{display:flex;flex-direction:column;justify-content:flex-end}.drawer-kicker{display:flex;align-items:center;gap:8px;font:400 9px DM Mono;color:var(--dim);text-transform:uppercase;letter-spacing:.12em}.dot{width:7px;height:7px;border-radius:50%;background:var(--green)}.drawer h2{font-size:31px;letter-spacing:-.035em;line-height:1.05;margin:14px 0}.drawer .summary{font-size:13px;line-height:1.72;color:var(--muted)}.level{display:inline-block;border:1px solid var(--line);padding:7px 9px;margin:8px 0 16px;font:400 8px DM Mono;text-transform:uppercase;color:var(--green)}.drawer-section{border-top:1px solid var(--line);padding-top:18px;margin-top:18px}.drawer-section h3{font:500 9px DM Mono;text-transform:uppercase;letter-spacing:.12em;color:var(--dim);margin:0 0 11px}.drawer ul{margin:0;padding-left:17px}.drawer li{color:#c5ccd3;font-size:12px;line-height:1.55;margin:6px 0}.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{border:1px solid var(--line);padding:6px 8px;font:400 8px DM Mono;color:var(--muted);text-transform:uppercase}.drawer-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.cta{display:inline-flex;align-items:center;justify-content:center;padding:11px 12px;font-size:11px;border:1px solid var(--line)}.cta.primary{background:var(--green);border-color:var(--green);color:#0a0d08;font-weight:700}.cta:hover{border-color:#566579}.empty-copy{border-top:1px solid var(--line);padding-top:22px}.empty-copy h2{max-width:280px}.empty-copy p{color:var(--muted);font-size:13px;line-height:1.7}.empty-copy .mini{font:400 9px DM Mono;color:var(--dim);text-transform:uppercase;line-height:1.7}
-.recruiter-view{display:none;min-height:calc(100vh - 68px);overflow:auto}.recruiter-view.active{display:block}.network-view.hidden{display:none}.rwrap{max-width:1180px;margin:auto;padding:54px 28px 70px}.rhero{display:grid;grid-template-columns:1.3fr .7fr;gap:60px;align-items:end;padding-bottom:48px}.rhero h1{font-size:clamp(46px,7vw,86px);line-height:.96;letter-spacing:-.055em;margin:10px 0 25px;font-weight:500}.rhero h1 em{font-style:normal;color:var(--green)}.rhero p{font-size:16px;line-height:1.75;color:var(--muted);max-width:760px}.rside{border-left:1px solid var(--line);padding-left:24px}.rside strong{font-size:22px;display:block;margin:10px 0 6px}.rside span{color:var(--muted);font-size:12px;line-height:1.6}.impact{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin:0 0 54px}.stat{min-height:135px;padding:18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.stat strong{display:block;font-size:28px;color:var(--green);letter-spacing:-.04em}.stat span{display:block;font-size:10px;line-height:1.5;color:var(--muted);margin-top:26px}.solves{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:54px}.solve{border:1px solid var(--line);background:var(--panel);padding:22px;min-height:170px}.solve b{font:500 9px DM Mono;color:var(--green)}.solve h3{font-size:19px;margin:40px 0 8px}.solve p{font-size:12px;line-height:1.6;color:var(--muted)}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;border-top:1px solid var(--line);padding-top:28px;margin-bottom:22px}.section-head h2{font-size:34px;letter-spacing:-.04em;margin:5px 0}.section-head p{color:var(--muted);font-size:12px;max-width:460px;line-height:1.65}.case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:54px}.case{border:1px solid var(--line);padding:24px;min-height:260px;background:var(--panel);position:relative}.case .status{font:400 8px DM Mono;text-transform:uppercase;color:var(--green)}.case h3{font-size:24px;letter-spacing:-.025em;margin:42px 0 10px}.case p{font-size:12px;line-height:1.7;color:var(--muted)}.case .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:15px}.case a{position:absolute;right:20px;top:20px;font-size:17px;color:var(--dim)}.case a:hover{color:var(--green)}.competencies{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:50px}.competencies span{border:1px solid var(--line);padding:9px 11px;font:400 9px DM Mono;color:var(--muted);text-transform:uppercase}.contact-card{border:1px solid var(--line);background:linear-gradient(135deg,rgba(186,255,103,.11),rgba(104,224,208,.03));padding:34px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}.contact-card h2{font-size:38px;letter-spacing:-.045em;margin:7px 0}.contact-card p{font-size:13px;color:var(--muted);line-height:1.65}.contact-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-.mobile-back{display:none}.mobile-node-list{display:none}
-@media(max-width:980px){.network-view{grid-template-columns:1fr}.drawer{position:fixed;left:0;right:0;bottom:0;top:auto;max-height:57vh;border-left:0;border-top:1px solid var(--line);transform:translateY(calc(100% - 56px));transition:.25s;z-index:50}.drawer.open{transform:translateY(0)}.drawer.empty{display:none}.graph-shell{min-height:calc(100vh - 68px)}.graph-meta{top:14px}.graph-meta h1{font-size:36px;max-width:570px}.search{top:14px;width:290px}.mobile-back{display:block;position:absolute;right:16px;top:15px;border:1px solid var(--line);background:var(--panel);padding:7px 9px;font-size:10px;cursor:pointer}.rhero{grid-template-columns:1fr}.rside{border-left:0;border-top:1px solid var(--line);padding:22px 0 0}.impact{grid-template-columns:repeat(3,1fr)}.solves{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:680px){.topbar{padding:0 14px}.identity-copy span{display:none}.controls .ghost{display:none}.mode-toggle button{padding:8px 8px;font-size:10px}.network-view{display:block}.graph-meta{left:14px;right:14px}.graph-meta h1{font-size:30px;max-width:330px}.graph-meta .eyebrow{max-width:230px;line-height:1.5;display:block}.search{left:14px;right:14px;top:112px;width:auto}.hint{left:14px;bottom:12px}.hint span:nth-child(n+3){display:none}.drawer{padding:20px}.drawer h2{font-size:27px}.rwrap{padding:38px 18px 55px}.rhero h1{font-size:52px}.impact{grid-template-columns:repeat(2,1fr)}.solves,.case-grid{grid-template-columns:1fr}.contact-card{grid-template-columns:1fr}.contact-actions{justify-content:flex-start}.section-head{display:block}.section-head p{margin-top:8px}.monogram{width:36px;height:36px}.topbar{height:62px}.network-view,.recruiter-view{min-height:calc(100vh - 62px)}.graph-shell{min-height:calc(100vh - 62px)}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#07090c" />
+  <meta name="description" content="Pragalbh Dwivedi — Education leader, institutional systems architect, infrastructure and automation builder." />
+  <meta property="og:title" content="Pragalbh Dwivedi | Institutional Systems Architect" />
+  <meta property="og:description" content="Education leadership, systems architecture, infrastructure, automation and applied technology." />
+  <meta property="og:type" content="website" />
+  <title>Pragalbh Dwivedi | Institutional Systems Architect</title>
+  <link rel="stylesheet" href="./assets/portfolio.css" />
 </head>
 <body>
 <div class="app">
   <header class="topbar">
-    <div class="identity"><div class="monogram">PD</div><div class="identity-copy"><strong>Pragalbh Dwivedi</strong><span>Institutional Systems Architect</span></div></div>
-    <div class="controls">
+    <div class="brand">
+      <div class="monogram">PD</div>
+      <div class="brand-copy"><strong>Pragalbh Dwivedi</strong><span>Institutional Systems Architect</span></div>
+    </div>
+    <div class="top-actions">
       <button class="ghost" id="resetBtn">Reset map</button>
-      <div class="mode-toggle" aria-label="Portfolio view mode"><button id="exploreMode" class="active">Explore network</button><button id="recruiterMode">Recruiter view</button></div>
+      <div class="mode" aria-label="Portfolio view mode">
+        <button id="exploreMode" class="active">Explore network</button>
+        <button id="recruiterMode">Recruiter view</button>
+      </div>
     </div>
   </header>
 
   <section class="network-view" id="networkView">
-    <div class="graph-shell" id="graphShell">
-      <div class="graph-meta"><span class="eyebrow">Education · systems · infrastructure · automation · applied technology</span><h1>I design and build the systems behind <em>modern institutions.</em></h1></div>
-      <div class="search"><input id="searchInput" placeholder="Find Kubernetes, RFID, curriculum, solar…" autocomplete="off" /><div class="search-results" id="searchResults"></div></div>
-      <svg id="web" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid meet" aria-label="Interactive capability network"></svg>
-      <div class="hint"><span>Click a node to expand</span><span>Click again to collapse</span><span>Drag to pan</span><span>Wheel / pinch to zoom</span></div>
+    <div class="graph-shell">
+      <div class="graph-title">
+        <span class="eyebrow">Education · systems · infrastructure · automation · applied technology</span>
+        <h1>I design and build the systems behind <em>modern institutions.</em></h1>
+      </div>
+      <div class="search">
+        <input id="searchInput" placeholder="Find Kubernetes, RFID, curriculum, solar…" autocomplete="off" />
+        <div class="search-results" id="searchResults"></div>
+      </div>
+      <svg id="network" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid meet" aria-label="Interactive portfolio capability network"></svg>
+      <div class="legend"><span>Click to expand</span><span>Search jumps to a branch</span><span>Drag to pan</span><span>Wheel / pinch to zoom</span></div>
     </div>
-    <aside class="drawer empty" id="drawer"><button class="mobile-back" id="drawerClose">Close</button><div class="empty-copy"><span class="eyebrow">Start anywhere</span><h2>Explore how the work connects.</h2><p>The web shows relationships between education, software, infrastructure, physical systems and operations. Projects appear as evidence hubs rather than isolated cards.</p><div class="mini">Green = core / blue = education / violet = systems / cyan = automation / amber = physical & energy</div></div></aside>
+    <aside class="drawer empty" id="drawer">
+      <div class="drawer-empty">
+        <span class="eyebrow">Start anywhere</span>
+        <h2>Explore how the work connects.</h2>
+        <p>Open a branch, follow the relationships and inspect projects as evidence hubs. The map remains sparse until you ask for more.</p>
+        <div class="mini">Blue = education · violet = systems · grey = infrastructure · cyan = automation · amber = applied / energy</div>
+      </div>
+    </aside>
   </section>
 
   <section class="recruiter-view" id="recruiterView">
     <div class="rwrap">
-      <div class="rhero"><div><span class="eyebrow">Pragalbh Dwivedi / India / 2026</span><h1>Education leader. Systems architect. <em>Builder.</em></h1><p>I work where institutional operations, software, infrastructure, networks, physical systems and energy meet. My strongest work turns fragmented processes into connected systems that can actually be operated day after day.</p><div class="drawer-actions"><a class="cta primary" href="tel:+919555877000">Call +91 95558 77000</a><a class="cta" href="https://wa.me/919555877000" target="_blank" rel="noreferrer">WhatsApp ↗</a><a class="cta" href="https://github.com/pragalbhdwivedi" target="_blank" rel="noreferrer">GitHub ↗</a></div></div><aside class="rside"><span class="eyebrow">Current operating context</span><strong>Executive Director</strong><span>Badridhar Dwivedi Group of Institutions</span><div class="rule" style="height:1px;background:var(--line);margin:22px 0"></div><span class="eyebrow">Best fit</span><strong style="font-size:16px">Leadership · consulting · architecture</strong><span>Education, EdTech, institutional transformation, infrastructure, automation and technical operations.</span></aside></div>
-
-      <div class="impact">
-        <div class="stat"><strong>4</strong><span>institutions in the operating context</span></div>
-        <div class="stat"><strong>7</strong><span>existing classroom display endpoints mapped for smart-class work</span></div>
-        <div class="stat"><strong>11–15</strong><span>classroom target by year three</span></div>
-        <div class="stat"><strong>10</strong><span>school transport vehicles across 4 buses + 6 vans</span></div>
-        <div class="stat"><strong>48V</strong><span>institutional battery architecture</span></div>
-        <div class="stat"><strong>24×7</strong><span>design target for remote CCTV edge infrastructure</span></div>
+      <div class="rhero">
+        <div>
+          <span class="eyebrow">Pragalbh Dwivedi / India / 2026</span>
+          <h1>Education leader. Systems architect. <em>Builder.</em></h1>
+          <p>I work where institutional operations, software, infrastructure, networks, physical systems and energy meet. My strongest work turns fragmented processes into connected systems that can actually be operated day after day.</p>
+          <div class="actions">
+            <a class="cta primary" href="tel:+919555877000">Call +91 95558 77000</a>
+            <a class="cta" href="https://wa.me/919555877000" target="_blank" rel="noreferrer">WhatsApp ↗</a>
+          </div>
+        </div>
+        <aside class="rside">
+          <span class="eyebrow">Current operating context</span>
+          <strong>Executive Director</strong>
+          <span>Badridhar Dwivedi Group of Institutions</span>
+          <div style="height:1px;background:var(--line);margin:22px 0"></div>
+          <span class="eyebrow">Best fit</span>
+          <strong style="font-size:16px">Leadership · consulting · architecture</strong>
+          <span>Education, EdTech, institutional transformation, infrastructure, automation and technical operations.</span>
+        </aside>
       </div>
 
-      <div class="section-head"><div><span class="eyebrow">What I solve</span><h2>Problems worth hiring for.</h2></div><p>The portfolio is intentionally framed around outcomes rather than a giant list of technologies.</p></div>
+      <div class="impact" aria-label="Scale and operating context">
+        <div class="stat"><strong>Multi-institution</strong><span>education and operational leadership context</span></div>
+        <div class="stat"><strong>Multi-classroom</strong><span>smart-classroom architecture and rollout thinking</span></div>
+        <div class="stat"><strong>Fleet-wide</strong><span>transport identity and credential architecture</span></div>
+        <div class="stat"><strong>Self-hosted</strong><span>compute, storage and platform infrastructure</span></div>
+        <div class="stat"><strong>Continuous</strong><span>remote CCTV and edge-infrastructure design target</span></div>
+        <div class="stat"><strong>Cross-domain</strong><span>power + network + hardware + software integration</span></div>
+      </div>
+
+      <div class="section-head">
+        <div><span class="eyebrow">What I solve</span><h2>Problems worth hiring for.</h2></div>
+        <p>The value is not the number of technologies listed. It is being able to turn a messy institutional requirement into an operable system.</p>
+      </div>
       <div class="solves">
         <article class="solve"><b>01</b><h3>Modernise institutions</h3><p>Turn manual academic and administrative processes into structured, measurable workflows.</p></article>
         <article class="solve"><b>02</b><h3>Connect fragmented systems</h3><p>Design across power, networks, hardware, software, storage, identity and people instead of treating each layer in isolation.</p></article>
         <article class="solve"><b>03</b><h3>Build self-hosted capability</h3><p>Use private infrastructure, automation and open tooling where ownership, resilience and control matter.</p></article>
         <article class="solve"><b>04</b><h3>Engineer EdTech operations</h3><p>Connect timetables, classrooms, recording, attendance, signage, access systems and administrative oversight.</p></article>
-        <article class="solve"><b>05</b><h3>Diagnose hard failures</h3><p>Work from measurements and evidence across software permissions, networking, relays, solar power and infrastructure.</p></article>
+        <article class="solve"><b>05</b><h3>Diagnose hard failures</h3><p>Work from measurements and evidence across software permissions, networks, relays, solar power and infrastructure.</p></article>
         <article class="solve"><b>06</b><h3>Turn requirements into systems</h3><p>Define constraints, architecture, deployment, documentation, procurement and scaling paths.</p></article>
       </div>
 
-      <div class="section-head"><div><span class="eyebrow">Selected evidence</span><h2>Projects with connected depth.</h2></div><p>Public repositories are linked where they exist. Field projects are labelled by their actual status.</p></div>
-      <div class="case-grid">
-        <article class="case"><span class="status">Operational software platform</span><a href="https://github.com/pragalbhdwivedi/aquapulse" target="_blank">↗</a><h3>AquaPulse</h3><p>Self-hosted aquaculture operations platform spanning role-based workflows, auditability, PostgreSQL-backed operations, infrastructure planning and human-in-the-loop AI.</p><div class="tags"><span class="chip">Next.js</span><span class="chip">NestJS</span><span class="chip">PostgreSQL</span><span class="chip">RBAC</span></div></article>
-        <article class="case"><span class="status">Infrastructure automation</span><a href="https://github.com/pragalbhdwivedi/k8s-ha-installer" target="_blank">↗</a><h3>Kubernetes HA Installer</h3><p>Multi-node HA cluster automation with external etcd, HAProxy, Keepalived, Calico/WireGuard, SSH orchestration and security hardening.</p><div class="tags"><span class="chip">Kubernetes</span><span class="chip">HA</span><span class="chip">Linux</span><span class="chip">Automation</span></div></article>
-        <article class="case"><span class="status">Prototype architecture</span><h3>Smart Classroom System</h3><p>Timetable-driven classroom platform connecting projector endpoints, teacher/student video, lesson recording, RFID attendance, local resilience and central administration.</p><div class="tags"><span class="chip">FET XML</span><span class="chip">RTSP</span><span class="chip">Raspberry Pi</span><span class="chip">HikCentral</span></div></article>
-        <article class="case"><span class="status">Field engineering</span><h3>Solar CCTV Edge Nodes</h3><p>24×7 direct-DC remote-site concept combining solar generation, battery storage, PoE switching, outdoor wireless and surveillance without wasteful conversion chains.</p><div class="tags"><span class="chip">Solar</span><span class="chip">PoE</span><span class="chip">Omada</span><span class="chip">CCTV</span></div></article>
-        <article class="case"><span class="status">Institutional digital system</span><a href="https://github.com/pragalbhdwivedi/bds-web" target="_blank">↗</a><h3>BDSPS Digital Operations</h3><p>School-facing web and automation work covering public information, scheduled publishing, academic operations and GitHub-based workflows.</p><div class="tags"><span class="chip">Education</span><span class="chip">GitHub Actions</span><span class="chip">Publishing</span></div></article>
-        <article class="case"><span class="status">Operational troubleshooting</span><h3>Institutional Infrastructure Diagnostics</h3><p>Root-cause work across TrueNAS permissions, access-control relays, three-phase solar behavior, neutral loops, outdoor wireless and CCTV/network infrastructure.</p><div class="tags"><span class="chip">TrueNAS</span><span class="chip">Access control</span><span class="chip">3-phase</span><span class="chip">Networking</span></div></article>
+      <div class="section-head">
+        <div><span class="eyebrow">Selected case studies</span><h2>Evidence over adjectives.</h2></div>
+        <p>Each case opens into the problem, my role, constraints, architectural choices and current status. No heroic résumé fog machine required.</p>
+      </div>
+      <div class="case-grid" id="caseGrid"></div>
+
+      <div class="section-head">
+        <div><span class="eyebrow">Core capability stack</span><h2>A connected operating practice.</h2></div>
+        <p>These are the recurring domains behind the project work, not a claim that every adjacent tool is an expert-level skill.</p>
+      </div>
+      <div class="competencies">
+        <span>Education leadership</span><span>Academic operations</span><span>Requirements engineering</span><span>Solution architecture</span><span>Institutional systems</span><span>Proxmox</span><span>TrueNAS</span><span>Linux</span><span>Kubernetes</span><span>MAAS</span><span>Campus networking</span><span>Omada</span><span>PoE</span><span>CCTV / NVR</span><span>GitHub Actions</span><span>Automation</span><span>RFID / access control</span><span>Digital signage</span><span>Solar / battery systems</span><span>Root-cause analysis</span>
       </div>
 
-      <div class="section-head"><div><span class="eyebrow">Core capability stack</span><h2>Broad by design. Connected by practice.</h2></div></div>
-      <div class="competencies"><span>Education leadership</span><span>Academic administration</span><span>Curriculum & assessment</span><span>Institutional systems</span><span>Requirements engineering</span><span>Solution architecture</span><span>Proxmox</span><span>TrueNAS</span><span>Linux</span><span>Kubernetes</span><span>MAAS</span><span>GitHub Actions</span><span>Campus networking</span><span>Omada</span><span>PoE</span><span>CCTV / NVR</span><span>RFID & access control</span><span>Smart classrooms</span><span>Solar & battery systems</span><span>Technical documentation</span><span>Root-cause analysis</span><span>IT/OT integration</span></div>
-
-      <div class="contact-card"><div><span class="eyebrow">Available for roles · consulting · partnerships</span><h2>Build the system, not another workaround.</h2><p>For education, EdTech, infrastructure, institutional operations, systems architecture and automation work.</p></div><div class="contact-actions"><a class="cta primary" href="tel:+919555877000">Call</a><a class="cta" href="https://wa.me/919555877000" target="_blank" rel="noreferrer">WhatsApp ↗</a></div></div>
+      <div class="contact">
+        <div><span class="eyebrow">Work with me</span><h2>Build the system, not another workaround.</h2><p>Open to leadership roles, consulting/advisory work and partnerships across education, EdTech, institutional technology, infrastructure and operations.</p></div>
+        <div class="actions"><a class="cta primary" href="tel:+919555877000">Phone</a><a class="cta" href="https://wa.me/919555877000" target="_blank" rel="noreferrer">WhatsApp ↗</a></div>
+      </div>
     </div>
   </section>
 </div>
-<script>
-const COLORS={root:'#baff67',education:'#6fb7ff',systems:'#b592ff',infra:'#93a4b5',automation:'#68e0d0',physical:'#ffbd66',project:'#f2f5f7'};
-const N=(id,label,type,group,summary,opts={})=>({id,label,type,group,summary,...opts});
-const tree=N('root','PRAGALBH','PROFILE','root','Education leader · institutional systems architect · infrastructure & automation builder.',{level:'Core identity',children:[
-  N('edu','Education & Operations','PILLAR','education','Academic leadership, curriculum, admissions, compliance and institutional execution.',{level:'Core strength',children:[
-    N('edu-lead','Education Leadership','DOMAIN','education','School administration, academic operations, institutional planning, faculty workflows and multi-campus coordination.',{level:'Core strength',evidence:['Executive leadership across a group of institutions','Academic operations and institution development','Faculty, admissions and parent-facing systems'],skills:['School administration','Academic operations','Educational planning','Institution development','Faculty workflow','Multi-campus coordination']}),
-    N('curriculum','Curriculum & Assessment','DOMAIN','education','Curriculum planning, assessment systems, examination work and stage-wise academic design.',{level:'Core strength',skills:['Curriculum planning','Assessment design','Exam structuring','Teacher aptitude tests','NCERT / NEP / NCF alignment','Co-curricular planning']}),
-    N('admissions','Admissions & Communication','DOMAIN','education','Enrollment strategy, parent communication, institutional messaging and bilingual school communication.',{level:'Core strength',skills:['Admissions planning','Enrollment growth','Parent communication','Bilingual notices','Campaign planning','QR information systems']}),
-    N('compliance','Policy & Compliance','DOMAIN','education','SOPs, formal notices, evidence registers and regulatory documentation for institutional operations.',{level:'Applied',skills:['SOP drafting','Policy framing','Compliance documentation','Official notices','Terms & consent forms','Inspection-ready records']}),
-    N('edtech','Education Technology','DOMAIN','education','Digital school workflows connecting attendance, timetable, signage, identity and classroom systems.',{level:'Applied',children:[
-      N('smartclass','Smart Classroom','PROJECT','project','Timetable-driven classroom platform combining display endpoints, lesson capture, attendance and central administration.',{level:'Prototype architecture',status:'Prototype architecture',evidence:['7 existing classroom display endpoints mapped','11–15 classroom target by year 3','FET timetable XML as automation source'],skills:['Raspberry Pi / thin clients','RTSP','HikCentral attendance','Local buffering','Central storage','Offline-first behavior']}),
-      N('timetable','FET Timetable Publishing','PROJECT','project','Machine-readable academic scheduling and web publishing for teachers, rooms, classes and activities.',{level:'Applied',url:'https://github.com/pragalbhdwivedi/tt-bds',skills:['FET','XML','Scheduling','Web publishing','Timetable-driven automation']})
-    ]})
-  ]}),
-  N('systems','Systems Architecture','PILLAR','systems','Requirements, process architecture, integration, resilience and solution design.',{level:'Core emerging strength',children:[
-    N('requirements','Requirements Engineering','DOMAIN','systems','Define users, constraints, failure modes, automation boundaries, data flows, scaling and implementation paths.',{level:'Core emerging strength',skills:['Stakeholder requirements','Failure-mode thinking','Data & access mapping','Pilot-to-scale planning','Integration boundaries']}),
-    N('solution','Solution Architecture','DOMAIN','systems','Translate operational needs into deployable combinations of software, infrastructure, networks and physical systems.',{level:'Core emerging strength',skills:['System decomposition','Architecture tradeoffs','Make-vs-buy','Deployment architecture','Integration design']}),
-    N('itot','IT / OT Integration','DOMAIN','systems','Connect digital systems to cameras, access control, solar, displays, printers, storage and institutional equipment.',{level:'Applied',skills:['CCTV','Access control','Solar','RFID','Signage','Printers/scanners','Storage integration']}),
-    N('resilience','Resilience & Capacity','DOMAIN','systems','Design for outages, retention, autonomy, local buffering, redundancy and recoverability.',{level:'Applied',skills:['Offline-first operation','Backup planning','Storage retention','Battery autonomy','PoE budget','Network capacity','Fault tolerance']}),
-    N('diagnostics','Root-Cause Analysis','DOMAIN','systems','Evidence-led technical troubleshooting across software, networks, permissions, wiring and power systems.',{level:'Core emerging strength',evidence:['TrueNAS FTP 530 access issue','Access-control reverse relay behavior','Solar neutral-loop backfeed diagnosis','Outdoor wireless signal troubleshooting'],skills:['Measurement-led isolation','Log / permission analysis','Configuration conflict diagnosis','Wiring fault isolation']})
-  ]}),
-  N('infra','Infrastructure & Networking','PILLAR','infra','Private cloud, storage, Linux, campus networking, PoE, wireless and surveillance.',{level:'Strong',children:[
-    N('proxmox','Proxmox & Virtualisation','DOMAIN','infra','VM provisioning, cluster architecture, cloud-init and self-hosted institutional compute.',{level:'Strong',children:[N('pxscripts','Proxmox Cloud-init Scripts','PROJECT','project','Reusable VM bootstrap configuration for faster and more repeatable Proxmox provisioning.',{level:'Applied',url:'https://github.com/pragalbhdwivedi/proxmox-cloud-init-scripts',skills:['Cloud-init','VM provisioning','Proxmox']})],skills:['Proxmox VE','VM planning','Cluster design','Cloud-init','HA concepts','Ceph troubleshooting']}),
-    N('storage','TrueNAS & Storage','DOMAIN','infra','Network storage, file services, permissions and operational equipment integration.',{level:'Applied',children:[N('kmftp','Konica Minolta → TrueNAS','PROJECT','project','FTP scan workflow integration with user/group permission troubleshooting.',{level:'Integrated & troubleshot',status:'Integrated & troubleshot',skills:['TrueNAS','FTP','Unix groups','Permissions','Peripheral integration']})],skills:['SMB / NFS','FTP','Datasets','Users & groups','Network storage','Storage pools']}),
-    N('networking','Campus Networking','DOMAIN','infra','VLANs, managed switching, Omada SDN, PoE, outdoor links and campus topology.',{level:'Strong / applied',children:[
-      N('outdoor','Outdoor Wireless','DOMAIN','infra','Long-range and sector-style wireless backhaul for distributed campus and CCTV infrastructure.',{level:'Applied',skills:['Omada EAP Outdoor','PtP / PtMP concepts','RF troubleshooting','Antenna/cable awareness','CCTV backhaul']}),
-      N('cctv','CCTV & NVR','DOMAIN','infra','IP surveillance architecture, RTSP/ONVIF, storage, VLAN separation and distributed recording.',{level:'Applied',children:[N('nvrproj','Self-hosted NVR Architecture','PROJECT','project','Linux/Docker NVR planning for Hikvision cameras using ONVIF/RTSP and reused thin clients.',{level:'System design',status:'System design',skills:['Linux','Docker','ONVIF','RTSP','CCTV VLANs','Storage retention']})],skills:['Hikvision IP cameras','RTSP','ONVIF','PoE cameras','Camera VLANs','Retention planning']})
-    ],skills:['VLANs','Network segmentation','Omada SDN','PoE switching','IP schemes','SFP awareness','Outdoor wireless']}),
-    N('linux','Linux Systems','DOMAIN','infra','Debian/Linux administration, SSH, permissions, services, networking and headless operation.',{level:'Applied',skills:['Debian','SSH','Users & groups','Services','Logs','Filesystems','NTP','Networking']})
-  ]}),
-  N('automation','Automation & Software','PILLAR','automation','Kubernetes, bare-metal provisioning, CI/CD, full-stack systems and AI-assisted operations.',{level:'Strong / developing',children:[
-    N('k8s','Kubernetes Platform Engineering','DOMAIN','automation','HA control plane, external etcd, orchestration, service exposure and cluster hardening.',{level:'Strong / developing toward advanced',children:[N('k8srepo','Kubernetes HA Installer','PROJECT','project','Single-command high-availability Kubernetes bootstrap and multi-node orchestration on Debian.',{level:'Strong evidence',url:'https://github.com/pragalbhdwivedi/k8s-ha-installer',skills:['External etcd + TLS','HAProxy + Keepalived','Calico + WireGuard','Audit logging','SSH orchestration']})],skills:['HA control plane','External etcd','MetalLB awareness','Persistent storage','Calico','WireGuard']}),
-    N('maas','MAAS & Bare-Metal','DOMAIN','automation','Repeatable machine provisioning with cloud-init, Netplan, OVS and storage automation.',{level:'Applied',children:[N('maasrepo','MAAS Configurations','PROJECT','project','Version-controlled machine provisioning and network/storage configuration.',{level:'Applied evidence',url:'https://github.com/pragalbhdwivedi/maas-configurations',skills:['Cloud-init','Netplan','OVS','Bonding','Storage automation']})],skills:['Canonical MAAS','Bare-metal provisioning','Cloud-init','OVS','Automated OS deployment']}),
-    N('github','GitHub & CI/CD','DOMAIN','automation','Repositories, Pages, Actions, deployment validation and scheduled publishing workflows.',{level:'Applied',children:[N('bdsweb','BDSPS Digital Web Platform','PROJECT','project','Institutional web publishing and automation with GitHub-hosted workflows.',{level:'Production delivery',url:'https://github.com/pragalbhdwivedi/bds-web',skills:['GitHub Actions','Pages','Scheduled publishing','Institutional content']})],skills:['Git workflows','GitHub Actions','GitHub Pages','Custom domains','CI/CD awareness','Deployment debugging']}),
-    N('fullstack','Full-Stack Systems','DOMAIN','automation','Operational application architecture using web frameworks, APIs, databases, RBAC and self-hosting.',{level:'Applied / developing',children:[N('aquapulse','AquaPulse','PROJECT','project','Self-hosted operational platform for aquaculture management with auditable workflows and assistive AI.',{level:'Flagship project',url:'https://github.com/pragalbhdwivedi/aquapulse',skills:['Next.js','NestJS','PostgreSQL','RBAC','Audit trails','Self-hosting','AI governance']})],skills:['Next.js','NestJS','PostgreSQL','REST/HTTP','RBAC','Auditability']}),
-    N('ai','AI Integration & Governance','DOMAIN','automation','Human-in-the-loop AI features with permission boundaries, auditability and operational risk awareness.',{level:'Developing',skills:['Assistive AI design','Permission boundaries','Auditability','Prompt-driven development','Human override']})
-  ]}),
-  N('physical','Applied Technology & Energy','PILLAR','physical','Smart classrooms, RFID, access control, signage, solar, battery and edge systems.',{level:'Applied',children:[
-    N('rfid','RFID & Identity Systems','DOMAIN','physical','Student, staff and transport identity architecture spanning RFID, QR, SUID and service integration.',{level:'Applied',evidence:['4 buses + 6 vans in transport identity system'],skills:['RFID credential architecture','SUID','QR integration','Access levels','Identity data schemas','Card lifecycle']}),
-    N('access','Physical Access Control','DOMAIN','physical','Hikvision face terminals, EM locks, exit sensors and relay logic.',{level:'Applied',children:[N('accessproj','Hikvision Access Control Integration','PROJECT','project','Face terminal + no-touch exit + 12V electromagnetic lock integration and reverse-operation diagnosis.',{level:'Field troubleshooting',status:'Field troubleshooting',skills:['COM / NO / NC','Relay logic','Fail-safe locking','12V systems','Fault isolation']})],skills:['EM locks','NO/NC relay logic','Exit buttons','Face terminals','Door timing']}),
-    N('solar','Solar & Battery Systems','DOMAIN','physical','Hybrid PV, 48V battery architecture, inverter behavior, phase loading and field diagnostics.',{level:'Applied',children:[
-      N('solar-edge','Solar CCTV Edge Nodes','PROJECT','project','24×7 direct-DC remote surveillance infrastructure combining solar, battery, PoE and wireless backhaul.',{level:'Field engineering',status:'Field engineering',evidence:['24×7 design target'],skills:['Battery autonomy','Direct DC','PoE load planning','Outdoor wireless','Remote infrastructure']}),
-      N('solar3p','Three-Phase Solar Diagnostics','PROJECT','project','Operational fault isolation across stabilisers, hybrid inverters, phase loads, voltage rise and neutral loops.',{level:'Operational engineering',status:'Operational engineering',evidence:['48V battery architecture','Two hybrid inverter system'],skills:['L1/L2/L3 measurements','Neutral-loop diagnosis','Backfeed investigation','MCB trip analysis','Inverter configuration']})
-    ],skills:['PV strings','MPPT awareness','Hybrid inverters','48V battery banks','Busbars','Charge / float settings','3-phase diagnostics']}),
-    N('signage','Digital Signage','DOMAIN','physical','Scheduled institutional signage and unattended endpoint provisioning.',{level:'Applied',children:[N('signagerepo','Signage VM Auto-Install','PROJECT','project','Repeatable unattended VM installation groundwork for signage endpoints.',{level:'Applied evidence',url:'https://github.com/pragalbhdwivedi/signage-vm-autoinstall',skills:['Preseed','VM automation','Digital signage']})],skills:['Campus signage','Scheduled content','Raspberry Pi signage','Unattended provisioning']}),
-    N('ar','Applied Web / AR','DOMAIN','physical','Experimental institutional web experiences beyond conventional publishing.',{level:'Experimental',children:[N('arrepo','BDSPS AR Experience','PROJECT','project','Lightweight image-target web AR experiment for institutional engagement.',{level:'Experimental',url:'https://github.com/pragalbhdwivedi/bdsps-ar',skills:['Web AR','Image targets','Static deployment']})]})
-  ]})
-]});
 
-const crossLinks=[['smartclass','timetable'],['smartclass','rfid'],['smartclass','cctv'],['smartclass','storage'],['solar-edge','outdoor'],['solar-edge','cctv'],['solar-edge','networking'],['nvrproj','storage'],['nvrproj','linux'],['k8srepo','proxmox'],['maasrepo','linux'],['aquapulse','proxmox'],['diagnostics','kmftp'],['diagnostics','accessproj'],['diagnostics','solar3p'],['itot','smartclass'],['itot','access'],['itot','solar'],['requirements','smartclass'],['requirements','aquapulse']];
-const byId=new Map();const parentId=new Map();
-(function index(node,parent=null){byId.set(node.id,node);if(parent)parentId.set(node.id,parent.id);(node.children||[]).forEach(c=>index(c,node));})(tree);
-const expanded=new Set(['root']);let selectedId=null;let zoom=1,panX=0,panY=0;let dragging=false,last={x:0,y:0};
-const svg=document.getElementById('web'),drawer=document.getElementById('drawer'),shell=document.getElementById('graphShell');
-
-function isVisible(node){if(node.id==='root')return true;let p=parentId.get(node.id);while(p){if(!expanded.has(p))return false;p=parentId.get(p)}return true}
-function visibleNodes(){return [...byId.values()].filter(isVisible)}
-function descendants(id,out=[]){const n=byId.get(id);(n.children||[]).forEach(c=>{out.push(c.id);descendants(c.id,out)});return out}
-function depthOf(id){let d=0,p=parentId.get(id);while(p){d++;p=parentId.get(p)}return d}
-function primaryAncestor(id){let cur=id,p=parentId.get(cur);while(p&&p!=='root'){cur=p;p=parentId.get(cur)}return cur}
-function colorFor(node){return COLORS[node.group]||COLORS.infra}
-
-function layout(){const pos=new Map([['root',{x:700,y:470,angle:-90}]]);const roots=tree.children||[];const rootAngles=[-90,-18,54,126,198];roots.forEach((n,i)=>{const a=rootAngles[i]*Math.PI/180;pos.set(n.id,{x:700+Math.cos(a)*285,y:470+Math.sin(a)*245,angle:rootAngles[i]});layoutChildren(n,rootAngles[i],pos)});return pos}
-function layoutChildren(node,baseAngle,pos){const kids=(node.children||[]).filter(isVisible);if(!kids.length)return;const d=depthOf(node.id)+1;const spread=d===2?60:44;const start=baseAngle-spread/2;const step=kids.length===1?0:spread/(kids.length-1);kids.forEach((c,i)=>{const ang=kids.length===1?baseAngle:start+step*i;const r=d===2?215:175;const p=pos.get(node.id);const rad=ang*Math.PI/180;pos.set(c.id,{x:p.x+Math.cos(rad)*r,y:p.y+Math.sin(rad)*r,angle:ang});layoutChildren(c,ang,pos)})}
-
-function svgEl(tag,attrs={}){const e=document.createElementNS('http://www.w3.org/2000/svg',tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));return e}
-function render(){svg.innerHTML='';const g=svgEl('g',{transform:`translate(${panX} ${panY}) scale(${zoom})`});svg.appendChild(g);const pos=layout();const vis=visibleNodes();const visIds=new Set(vis.map(n=>n.id));
-  vis.forEach(n=>{if(n.id==='root')return;const p=parentId.get(n.id);if(!visIds.has(p))return;const a=pos.get(p),b=pos.get(n.id);const line=svgEl('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,class:`edge ${selectedId&&(n.id===selectedId||p===selectedId)?'active':''}`});g.appendChild(line)});
-  crossLinks.forEach(([aId,bId])=>{if(!visIds.has(aId)||!visIds.has(bId))return;const a=pos.get(aId),b=pos.get(bId);if(!a||!b)return;g.appendChild(svgEl('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,class:`edge cross ${selectedId&&(aId===selectedId||bId===selectedId)?'active':''}`}))});
-  const related=selectedId?new Set([selectedId,...neighbors(selectedId)]):null;
-  vis.forEach(n=>{const p=pos.get(n.id);if(!p)return;const group=svgEl('g',{class:`node ${selectedId===n.id?'focus':''} ${related&&!related.has(n.id)?'dim':''}`,transform:`translate(${p.x} ${p.y})`,'data-id':n.id});const radius=n.id==='root'?54:n.type==='PILLAR'?38:n.type==='PROJECT'?27:23;const c=svgEl('circle',{r:radius,fill:n.id==='root'?'#0c1208':'#0d1117',stroke:colorFor(n)});if(n.id==='root')c.setAttribute('class','pulse');group.appendChild(c);const label=svgEl('text',{y:n.id==='root'?4:-2,class:'label'});const words=n.label.split(' ');if(n.id==='root'){label.textContent='PD'}else if(words.length>2){const t1=svgEl('tspan',{x:0,dy:0});t1.textContent=words.slice(0,Math.ceil(words.length/2)).join(' ');const t2=svgEl('tspan',{x:0,dy:14});t2.textContent=words.slice(Math.ceil(words.length/2)).join(' ');label.append(t1,t2)}else label.textContent=n.label;group.appendChild(label);const type=svgEl('text',{y:radius+15,class:'type'});type.textContent=n.id==='root'?'PRAGALBH DWIVEDI':n.type;group.appendChild(type);group.addEventListener('click',e=>{e.stopPropagation();handleNode(n.id)});g.appendChild(group)});
-}
-function neighbors(id){const out=[];const p=parentId.get(id);if(p)out.push(p);const n=byId.get(id);(n.children||[]).forEach(c=>out.push(c.id));crossLinks.forEach(([a,b])=>{if(a===id)out.push(b);if(b===id)out.push(a)});return out}
-function handleNode(id){const n=byId.get(id);selectedId=id;if(n.children&&n.children.length){if(expanded.has(id)){expanded.delete(id);descendants(id).forEach(x=>expanded.delete(x))}else expanded.add(id)}showDrawer(n);render()}
-function showDrawer(n){drawer.classList.remove('empty');drawer.classList.add('open');const evidence=(n.evidence||[]).map(x=>`<li>${x}</li>`).join('');const skills=(n.skills||[]).map(x=>`<span class="chip">${x}</span>`).join('');const children=(n.children||[]).map(x=>`<span class="chip">${x.label}</span>`).join('');drawer.innerHTML=`<button class="mobile-back" id="drawerClose2">Close</button><div class="drawer-kicker"><span class="dot" style="background:${colorFor(n)}"></span>${n.type}</div><h2>${n.label}</h2><span class="level">${n.level||'Applied'}</span><p class="summary">${n.summary||''}</p>${n.status?`<div class="drawer-section"><h3>Current status</h3><div class="chips"><span class="chip">${n.status}</span></div></div>`:''}${evidence?`<div class="drawer-section"><h3>Evidence / scale</h3><ul>${evidence}</ul></div>`:''}${skills?`<div class="drawer-section"><h3>Capabilities</h3><div class="chips">${skills}</div></div>`:''}${children?`<div class="drawer-section"><h3>Expands to</h3><div class="chips">${children}</div></div>`:''}<div class="drawer-actions">${n.url?`<a class="cta primary" href="${n.url}" target="_blank" rel="noreferrer">View repository ↗</a>`:''}<a class="cta" href="https://wa.me/919555877000" target="_blank" rel="noreferrer">Discuss on WhatsApp</a></div>`;const close=document.getElementById('drawerClose2');if(close)close.onclick=()=>drawer.classList.remove('open')}
-function reset(){expanded.clear();expanded.add('root');selectedId=null;zoom=1;panX=0;panY=0;drawer.className='drawer empty';drawer.innerHTML=`<div class="empty-copy"><span class="eyebrow">Start anywhere</span><h2>Explore how the work connects.</h2><p>The web shows relationships between education, software, infrastructure, physical systems and operations. Projects appear as evidence hubs rather than isolated cards.</p><div class="mini">Green = core / blue = education / violet = systems / cyan = automation / amber = physical & energy</div></div>`;render()}
-function expandPath(id){let p=parentId.get(id);while(p){expanded.add(p);p=parentId.get(p)};selectedId=id;showDrawer(byId.get(id));render()}
-
-const searchInput=document.getElementById('searchInput'),results=document.getElementById('searchResults');
-searchInput.addEventListener('input',()=>{const q=searchInput.value.trim().toLowerCase();if(!q){results.classList.remove('show');results.innerHTML='';return}const matches=[...byId.values()].filter(n=>n.id!=='root'&&(n.label+' '+(n.skills||[]).join(' ')+' '+n.summary).toLowerCase().includes(q)).slice(0,8);results.innerHTML=matches.map(n=>`<button data-id="${n.id}"><strong>${n.label}</strong><span>${n.type} · ${n.group}</span></button>`).join('');results.classList.toggle('show',!!matches.length);results.querySelectorAll('button').forEach(b=>b.onclick=()=>{expandPath(b.dataset.id);searchInput.value='';results.classList.remove('show')})});
-document.addEventListener('click',e=>{if(!e.target.closest('.search'))results.classList.remove('show')});
-
-svg.addEventListener('wheel',e=>{e.preventDefault();const factor=e.deltaY>0?.92:1.08;zoom=Math.max(.55,Math.min(2.2,zoom*factor));render()},{passive:false});
-svg.addEventListener('pointerdown',e=>{dragging=true;last={x:e.clientX,y:e.clientY};svg.setPointerCapture(e.pointerId)});svg.addEventListener('pointermove',e=>{if(!dragging)return;panX+=(e.clientX-last.x)/Math.max(.7,window.innerWidth/1400);panY+=(e.clientY-last.y)/Math.max(.7,window.innerHeight/900);last={x:e.clientX,y:e.clientY};render()});svg.addEventListener('pointerup',()=>dragging=false);svg.addEventListener('click',()=>{selectedId=null;render()});
-
-document.getElementById('resetBtn').onclick=reset;document.getElementById('drawerClose').onclick=()=>drawer.classList.remove('open');
-const exploreBtn=document.getElementById('exploreMode'),recruitBtn=document.getElementById('recruiterMode'),networkView=document.getElementById('networkView'),recruiterView=document.getElementById('recruiterView');
-function setMode(mode){const recruiter=mode==='recruiter';networkView.classList.toggle('hidden',recruiter);recruiterView.classList.toggle('active',recruiter);exploreBtn.classList.toggle('active',!recruiter);recruitBtn.classList.toggle('active',recruiter);window.scrollTo({top:0,behavior:'smooth'})}
-exploreBtn.onclick=()=>setMode('explore');recruitBtn.onclick=()=>setMode('recruiter');
-render();
-</script>
+<div class="case-overlay" id="caseOverlay"><article class="case-modal" id="caseModal"></article></div>
+<script src="./assets/portfolio.js"></script>
 </body>
 </html>
