@@ -4,6 +4,11 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 4 * * 1'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/check-external-links.mjs'
+      - '.github/workflows/link-health.yml'
 
 permissions:
   contents: read
@@ -11,7 +16,7 @@ permissions:
 jobs:
   check-links:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - name: Checkout
         uses: actions/checkout@v4
