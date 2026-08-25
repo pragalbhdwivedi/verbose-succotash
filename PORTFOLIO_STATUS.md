@@ -6,7 +6,7 @@ This file is the concise source of truth for current execution status. The longe
 
 ## Overall state
 
-**Portfolio architecture: production baseline established**
+**Portfolio architecture: production baseline established and automatically verified**
 
 The current site is an interactive professional evidence system with two primary modes:
 
@@ -21,7 +21,7 @@ Core statement:
 
 > **I design and build the systems behind modern institutions.**
 
-## Completed programme stages
+## Programme status
 
 ### Sprint 1 — Real Evidence
 
@@ -29,16 +29,15 @@ Core statement:
 
 Implemented:
 
-- evidence register
-- proof taxonomy
+- evidence register and proof taxonomy
 - public repository/live-system proof
 - privacy-safe architecture diagrams
 - evidence rail
 - media publication rules
 - case evidence-review register
-- live evidence-review stamps that explicitly distinguish review date from deployment date
+- evidence-review stamps that distinguish review date from deployment date
 
-Remaining real screenshots/field photography are enrichment backlog, not structural blockers.
+Real screenshots/field photography remain continuous enrichment rather than structural blockers.
 
 ### Sprint 2 — Flagship Deep Case Studies
 
@@ -53,27 +52,13 @@ Six flagship cases:
 5. Smart Classroom Architecture
 6. Solar CCTV Edge Infrastructure
 
-Implemented across flagships:
-
-- problem/context
-- role
-- constraints
-- decisions/trade-offs
-- architecture
-- failure modes
-- verified/source-backed evidence
-- current state
-- next iteration
-- proof links
-- shareable case hashes
-- related capability navigation
-- evidence-review freshness label
+Flagships include problem/context, role, constraints, decisions/trade-offs, architecture, failure modes, verified evidence, current state, next iteration, proof links, shareable case hashes, related capability navigation and evidence-review state.
 
 ### Sprint 3 — Leadership & Institutional Systems Proof
 
 **Status: COMPLETE**
 
-Six leadership/institutional cases:
+Six source-backed leadership/institutional cases:
 
 1. Teacher Recruitment & Evaluation
 2. Curriculum & Assessment Framework
@@ -82,44 +67,48 @@ Six leadership/institutional cases:
 5. Academic Scheduling & School-Wide Execution
 6. Admissions & Institutional Communication Operations
 
-All are explicitly source-backed or hybrid public/source-backed and preserve privacy/attribution boundaries.
-
 ### Sprint 4 — Hiring Conversion
 
 **Status: STRUCTURAL WORK COMPLETE**
 
 Implemented:
 
-- full-time/leadership engagement route
-- consulting/advisory route
-- partnership/pilot route
+- leadership / full-time route
+- consulting / advisory route
+- partnership / pilot route
 - end-to-end ownership model
 - opportunity-specific evidence shortcuts
-- flagship-first recruiter case hierarchy
-- collapsed supporting/leadership case control
+- flagship-first case hierarchy
+- collapsed supporting/leadership cases
 - phone + WhatsApp conversion only
 
 ### Sprint 5 — Mobile / Accessibility / Quality
 
-**Status: SOURCE-LEVEL WORK COMPLETE; REAL-DEVICE QA REMAINS**
+**Status: SOURCE + AUTOMATED RENDERED QA COMPLETE; REAL-DEVICE QA REMAINS**
 
 Implemented:
 
 - keyboard-accessible graph nodes
 - Enter/Space activation
 - accessible mode state
+- accessible search combobox/listbox semantics
+- label-relevance search ranking
 - modal dialog semantics
 - Escape close
 - focus containment/restoration
 - visible focus states
-- reduced-motion support
+- reduced-motion source rule
 - mobile interaction-target improvements
-- compact supporting-case disclosure
+- supporting-case disclosure
 - current capability breadcrumb/path navigation
 - shareable node hashes
+- graph-origin case → node URL restoration
+- direct shared case → canonical URL close behavior
 - no-JavaScript professional fallback
 
-Real device/browser work is tracked in **GitHub Issue #1: Production QA: real devices, browsers and assistive technology**.
+Automated rendered tests now cover desktop Chromium, a synthetic 390×844 touch/mobile Chromium viewport and the no-JavaScript path.
+
+Real-device/cross-browser work remains tracked in **GitHub Issue #1**.
 
 ### Sprint 6 — Discoverability / Performance
 
@@ -136,52 +125,89 @@ Implemented:
 - `robots.txt`
 - `sitemap.xml`
 - external evidence iframe removed
-- dependency-light static delivery preserved
-- weekly public proof-link health workflow
+- dependency-light static delivery
+- faster font-loading path with head preconnects and no CSS Google Fonts `@import`
+- monitored public proof-link health
 
 Deferred until evidence/branding warrants it:
 
 - dedicated 1200×630 social preview image
 - standalone SEO routes for individual case studies
-- claimed Lighthouse/Core Web Vitals scores without real-browser measurement
+- any claimed Lighthouse/Core Web Vitals numbers without actual measurement
 
-## Automated quality gate
+## Production verification layers
 
-The repository includes:
+The repository now uses three automated quality systems plus GitHub Pages deployment.
+
+### 1. Source / governance audit
+
+Files:
 
 - `.github/workflows/portfolio-audit.yml`
 - `scripts/validate-portfolio.mjs`
 - `npm run audit`
 
-The audit verifies:
+Protects:
 
 - JavaScript syntax
 - required architecture/governance files
-- CNAME/canonical consistency
-- robots/sitemap references
-- JSON-LD validity
+- canonical/CNAME/robots/sitemap
+- JSON-LD
 - local asset references
-- case navigation registry
-- case evidence-review registry
-- no live iframe
-- no public email / mailto
-- no private IPv4 addresses on live surface
-- approved phone/WhatsApp boundary
-- protected precise-scale phrase regressions
-- attribution-boundary presence
+- case routing/review registries
+- deterministic progressive-enhancement ownership
+- browser-smoke/link-health workflow contracts
+- privacy/contact boundaries
+- protected precise-scale phrases
+- attribution boundaries
+- font/no-JavaScript resilience rules
 
-The validation gate is required to remain green.
+### 2. Rendered browser smoke
 
-## Public proof-link monitoring
+Files:
 
-The repository also includes:
+- `.github/workflows/browser-smoke.yml`
+- `tests/browser-smoke.mjs`
+- `npm run smoke:browser`
+
+Covers:
+
+- desktop Chromium
+- synthetic 390×844 touch/mobile Chromium
+- no-JavaScript fallback
+- Recruiter View
+- deep links and URL-state restoration
+- search keyboard behavior/ranking
+- dialog semantics
+- mobile overflow/modal checks
+
+Failures produce temporary diagnostic artifacts/screenshots.
+
+### 3. Public evidence link health
+
+Files:
 
 - `scripts/check-external-links.mjs`
 - `.github/workflows/link-health.yml`
 
-The workflow is scheduled weekly and can also be run manually from GitHub Actions. It monitors the public portfolio, live institutional system and selected public evidence repositories without making transient external-network failures block every normal portfolio deployment.
+The monitor checks the public portfolio, BDSPS system, GitHub profile and selected public evidence repositories. It runs weekly, manually and whenever its own configuration changes. Transient network/server errors receive bounded retries; persistent failures still fail the workflow.
 
-## Current privacy boundary
+### 4. Pages deployment
+
+The existing GitHub Pages branch deployment remains the production delivery mechanism. The static root `index.html` remains directly deployable and `CNAME` remains `pragalbh.in`.
+
+## Confirmed automated baseline — 26 August 2026
+
+The latest documented verification baseline is green:
+
+- Portfolio audit: **success**
+- Browser smoke with desktop + synthetic mobile + no-JS coverage: **success**
+- Public evidence link health: **success**
+- GitHub Pages deployment: **success**
+
+This does not mean physical iPhone/Android/Safari/Edge/VoiceOver testing is complete.
+
+## Privacy boundary
 
 Public contact:
 
@@ -197,7 +223,7 @@ Do not publish by default:
 - exact protected operational inventory counts
 - unredacted compliance/financial material
 
-## Current attribution boundary
+## Attribution boundary
 
 Do not claim as Pragalbh's professional disciplines:
 
@@ -214,67 +240,30 @@ For collaborative projects, claim only Pragalbh's actual systems/requirements/en
 
 Tracked in **GitHub Issue #2: Evidence enrichment: real media and prospective outcome measurement**.
 
-Primary remaining evidence targets:
-
-### AquaPulse
-
-- stable UI screenshots
-- role/RBAC workflow screenshot
-- audit/workflow evidence
-- self-hosted deployment evidence
-
-### BDSPS Digital Operations
-
-- privacy-safe live-site screenshots
-- Actions/deployment evidence
-- timetable publishing screenshot
-- before/after workflow example
-
-### Private Infrastructure
-
-- redacted Proxmox screenshot
-- redacted TrueNAS screenshot
-- rack/server photographs
-- recovery-test evidence
-
-### HA Kubernetes
-
-- documented failure/recovery test
-- bootstrap timing if safely measured
-
-### Smart Classroom
-
-- pilot hardware photography
-- timetable automation capture
-- endpoint/dashboard screenshots when built
-
-### Solar CCTV Edge
-
-- field installation photos
-- measured load
-- real autonomy data
-- wireless-link evidence
+Primary targets remain real AquaPulse UI evidence, BDSPS publishing evidence, redacted infrastructure evidence, HA failure/recovery evidence, Smart Classroom pilot evidence and Solar CCTV measured field evidence.
 
 ## Current governance files
 
 - `MASTER_ROADMAP.md` — programme architecture and priorities
 - `PORTFOLIO_STATUS.md` — concise current state
+- `PORTFOLIO_ARCHITECTURE.md` — interaction/proof/privacy model
 - `PORTFOLIO_MAINTENANCE.md` — ongoing update contract
 - `RELEASE_CHECKLIST.md` — production release procedure
 - `CHANGELOG.md` — meaningful architecture/history changes
 - `CASE_REVIEW_REGISTER.md` — evidence-review freshness and triggers
+- `ENHANCEMENT_CHAIN.md` — deterministic progressive-enhancement load contract
 - `EVIDENCE_REGISTER.md` — proof/media control
 - `OUTCOME_REGISTER.md` — public impact/claim control
 
 ## Next operational priorities
 
-1. complete GitHub Issue #1 real-device/browser QA
-2. add privacy-safe evidence through GitHub Issue #2 as it becomes available
-3. measure outcomes prospectively rather than reconstructing metrics later
-4. keep the six-flagship hierarchy disciplined
-5. monitor public proof links weekly
-6. keep skills connected to evidence rather than increasing skill volume
-7. keep `npm run audit` / Portfolio audit green
+1. complete GitHub Issue #1 physical-device/cross-browser/assistive-technology QA
+2. add privacy-safe evidence through GitHub Issue #2
+3. enforce a static payload/performance budget without inventing Lighthouse scores
+4. measure outcomes prospectively
+5. keep the six-flagship hierarchy disciplined
+6. keep public proof links monitored
+7. keep all automated quality/deployment gates green
 8. use `RELEASE_CHECKLIST.md` for meaningful releases
 9. use `PORTFOLIO_MAINTENANCE.md` for monthly/quarterly governance
 
