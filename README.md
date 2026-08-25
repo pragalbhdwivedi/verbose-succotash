@@ -8,56 +8,51 @@ Live domain: **https://pragalbh.in**
 
 ## Portfolio thesis
 
-I design and build the systems behind modern institutions.
+> **I design and build the systems behind modern institutions.**
 
-The portfolio is intentionally broader than a conventional developer portfolio. The recurring work crosses academic administration, institutional operations, software, private infrastructure, networks, physical systems, automation, surveillance, identity/access and energy systems.
+The portfolio covers the overlap between education leadership, institutional operations, systems architecture, software, private infrastructure, networks, automation, physical systems and applied energy/field engineering.
 
-The operating stack is organised into five pillars:
+It is intentionally built as a **professional evidence system**, not a long résumé page.
 
-1. **Education & Operations**
-2. **Systems Architecture**
-3. **Infrastructure & Networking**
-4. **Automation & Software Platforms**
-5. **Applied Technology & Energy Systems**
+## Experience model
 
-## Current execution status
+### Explore Network
 
-- **Sprint 1 — Real Evidence:** foundation complete; privacy-safe media enrichment continues as an ongoing backlog.
-- **Sprint 2 — Six Flagship Deep Case Studies:** framework/navigation complete; real screenshots and measured outcomes are added only when source evidence exists.
-- **Sprint 3 — Leadership & Institutional Systems Proof:** foundation complete; all six leadership tracks have public evidence/case modules.
-- **Sprint 4 — Hiring Conversion:** structural work complete; engagement modes, end-to-end ownership, opportunity-fit routing and flagship-first recruiter compaction are implemented.
-- **Sprint 5 — Mobile, Accessibility & Quality QA:** active; keyboard graph semantics, accessible modal behavior, focus management, reduced-motion support and mobile touch-target improvements are implemented at source level; device/browser validation remains.
+A progressively expanding capability web organised around five pillars:
 
-## Planning documents
+1. Education & Operations
+2. Systems Architecture
+3. Infrastructure & Networking
+4. Automation & Software
+5. Applied Technology & Energy
 
-- **[MASTER_ROADMAP.md](./MASTER_ROADMAP.md)** — complete portfolio strategy, execution phases, flagship backlog, hiring conversion, QA and definition of done.
-- **[SPRINT_2_CASE_STUDIES.md](./SPRINT_2_CASE_STUDIES.md)** — flagship decision narratives, verified evidence, visual proof, deep links and remaining enrichment backlog.
-- **[SPRINT_3_LEADERSHIP.md](./SPRINT_3_LEADERSHIP.md)** — completed leadership/institutional-systems evidence programme.
-- **[SPRINT_4_HIRING_CONVERSION.md](./SPRINT_4_HIRING_CONVERSION.md)** — completed hiring/conversion structure.
-- **[SPRINT_5_QUALITY_QA.md](./SPRINT_5_QUALITY_QA.md)** — active mobile/accessibility/quality verification stage.
-- **[EVIDENCE_REGISTER.md](./EVIDENCE_REGISTER.md)** — evidence control sheet mapping projects to proof type, publication readiness, privacy requirements and media backlog.
-- **[OUTCOME_REGISTER.md](./OUTCOME_REGISTER.md)** — controls what outcome language is safe, verified, source-backed or not yet measurable.
-- **[PORTFOLIO_ARCHITECTURE.md](./PORTFOLIO_ARCHITECTURE.md)** — interaction model, proof taxonomy, privacy rules, media rules and attribution boundaries.
-- **[SKILLS.md](./SKILLS.md)** — detailed capability inventory and evidence base.
+The network supports search, project evidence hubs, cross-links, current-path breadcrumbs and shareable `#node=` links.
 
-## Established capability base
+### Recruiter View
 
-The portfolio retains all thirteen established capability families and the 35 skills acquired or materially deepened during 2025–26. These are not presented as equal-expertise claims: the live portfolio distinguishes core strengths, applied experience, prototype architecture and developing knowledge.
+A compact hiring / consulting / partnership route with:
 
-See **[SKILLS.md](./SKILLS.md)** for the complete detailed inventory.
+- problems worth hiring for
+- engagement modes
+- end-to-end ownership model
+- opportunity-specific evidence shortcuts
+- six flagship cases first
+- collapsed supporting/leadership cases
+- proof/status boundaries
+- phone + WhatsApp contact
 
 ## Six flagship technical / systems cases
 
 - **AquaPulse** — active self-hosted operational-platform prototype
-- **BDSPS Digital Ecosystem** — live institutional publishing + public repositories
+- **BDSPS Digital Operations** — live institutional publishing + public repositories
 - **Private Infrastructure Stack** — applied self-hosted compute/storage/provisioning practice
 - **HA Kubernetes Architecture** — public repeatable HA bootstrap
 - **Smart Classroom Architecture** — source-backed prototype architecture
 - **Solar CCTV Edge Infrastructure** — field-system design connecting power, PoE and wireless backhaul
 
-All six include decision narratives, proof/status boundaries, visual architecture evidence and case-to-capability navigation.
+Each flagship includes problem/context, role, architecture, trade-offs, failure modes, evidence, current state, next iteration and related capability navigation.
 
-## Six leadership / institutional proof tracks
+## Six leadership / institutional proof cases
 
 - **Teacher Recruitment & Evaluation System**
 - **Curriculum & Assessment Framework**
@@ -66,58 +61,69 @@ All six include decision narratives, proof/status boundaries, visual architectur
 - **Academic Scheduling & School-Wide Execution**
 - **Admissions & Institutional Communication Operations**
 
-These cases are source-backed or hybrid public/source-backed. They demonstrate process architecture, academic operations and institutional leadership without publishing private student, candidate, employee, parent, financial or protected operational records.
+These are source-backed or hybrid public/source-backed and intentionally avoid publishing private student, candidate, employee, parent, financial or protected operational records.
 
-## Hiring conversion
+## Current programme status
 
-Recruiter View supports:
+- **Sprint 1 — Real Evidence:** foundation complete; media enrichment continuous.
+- **Sprint 2 — Flagship Deep Cases:** framework complete; screenshots/measurements added only when real evidence exists.
+- **Sprint 3 — Leadership & Institutional Systems:** complete baseline across all six tracks.
+- **Sprint 4 — Hiring Conversion:** complete structural baseline.
+- **Sprint 5 — Mobile / Accessibility / Quality:** source-level work complete; real-device/browser QA continues.
+- **Sprint 6 — Discoverability / Performance:** source-level work complete; real-browser performance measurement remains.
 
-- **Full-time / leadership**
-- **Consulting / advisory**
-- **Partnership / pilot**
+See **[PORTFOLIO_STATUS.md](./PORTFOLIO_STATUS.md)** for the concise authoritative state.
 
-End-to-end ownership is expressed as:
+## Automated quality gate
 
-`frame the problem → architect the system → coordinate/build → operate, diagnose and improve`
+The repository includes:
 
-Opportunity-specific shortcuts surface the most relevant evidence for Education/EdTech, systems architecture, infrastructure/platform, institutional transformation, technical operations and automation/product work.
+- `.github/workflows/portfolio-audit.yml`
+- `scripts/validate-portfolio.mjs`
 
-Recruiter case cards are flagship-first; supporting/leadership cases are collapsed by default rather than making the page unnecessarily long.
+Run:
 
-## Accessibility / quality layer
+```bash
+npm run audit
+```
 
-The progressive enhancement layer now adds:
+The validation gate checks:
 
-- keyboard-focusable SVG capability nodes
-- Enter/Space activation for graph nodes
-- search input accessible naming
-- ARIA state for Explore/Recruiter mode
-- case-study modal `dialog` semantics
-- focus-on-open and focus restoration on close
-- Escape-to-close
-- modal Tab focus containment
-- visible keyboard focus treatment
-- `prefers-reduced-motion` support
-- larger mobile interaction targets
+- JavaScript syntax
+- required architecture/governance files
+- local asset references
+- CNAME/canonical consistency
+- robots/sitemap configuration
+- JSON-LD validity
+- case-navigation registry
+- iframe regressions
+- public email / `mailto:` regressions
+- private IPv4 exposure on the live surface
+- approved public phone boundary
+- protected precise-scale phrase regressions
+- attribution-boundary presence
 
-Manual browser/device verification remains part of Sprint 5.
+## Evidence and outcome discipline
 
-## Selected public GitHub evidence
+The portfolio distinguishes evidence types such as:
 
-- **AquaPulse** — self-hosted operational software platform
-- **k8s-ha-installer** — HA Kubernetes deployment automation
-- **maas-configurations** — repeatable bare-metal provisioning
-- **bds-web** — institutional digital web platform and automation
-- **tt-bds** — FET timetable publishing
-- **signage-vm-autoinstall** — unattended signage deployment groundwork
-- **proxmox-cloud-init-scripts** — repeatable Proxmox VM provisioning
-- **bdsps-ar** — web-based AR experiment
+- LIVE SYSTEM
+- LIVE + PUBLIC REPOSITORY
+- PUBLIC REPOSITORY
+- SOURCE-BACKED ARCHITECTURE
+- SOURCE-BACKED INSTITUTIONAL SYSTEM
+- APPLIED INFRASTRUCTURE
+- APPLIED SYSTEM DESIGN
+- FIELD SYSTEM DESIGN
+- FIELD TROUBLESHOOTING
+
+`OUTCOME_REGISTER.md` prevents architecture/prototype intent from becoming invented ROI, adoption, uptime, savings or percentage claims.
 
 ## Attribution boundary
 
 This portfolio is for **Pragalbh Dwivedi**.
 
-The following disciplines belong to **Kritica Dwivedi** and are intentionally **not claimed** here:
+The following disciplines belong to **Kritica Dwivedi** and are intentionally **not claimed** as Pragalbh's professional skills:
 
 - Graphic Design
 - UI/UX Design
@@ -126,7 +132,7 @@ The following disciplines belong to **Kritica Dwivedi** and are intentionally **
 - Campaign Visual Design
 - Portfolio Visual Storytelling
 
-Where a project involved visual/design work by Kritica and engineering/deployment work by Pragalbh, this portfolio only claims Pragalbh's system, implementation, infrastructure or delivery contribution.
+Where a project combines Kritica's visual/design contribution with Pragalbh's engineering/deployment contribution, this portfolio claims only Pragalbh's actual systems, requirements, implementation, automation, integration, deployment or troubleshooting work.
 
 ## Contact boundary
 
@@ -135,46 +141,63 @@ Public portfolio contact is deliberately limited to:
 - Phone: **+91 95558 77000**
 - WhatsApp: **+91 95558 77000**
 
-No public email is used.
+**No public email** is used.
+
+## Privacy boundary
+
+Do not publish by default:
+
+- student / parent / candidate / employee personal data
+- credentials or secrets
+- internal IP addresses / private topology
+- exact protected operational inventory counts
+- unnecessary serial numbers
+- unredacted financial/compliance records
+- sensitive physical-security details
+
+Prefer broad scale language such as `multi-institution`, `multi-classroom`, `fleet-wide`, `self-hosted`, `continuous-duty` and `cross-domain`.
+
+## Public GitHub evidence
+
+Selected repositories include:
+
+- **AquaPulse** — operational software platform
+- **k8s-ha-installer** — HA Kubernetes deployment automation
+- **maas-configurations** — repeatable bare-metal provisioning
+- **bds-web** — institutional digital platform and automation
+- **tt-bds** — FET timetable publishing
+- **signage-vm-autoinstall** — unattended signage deployment groundwork
+- **proxmox-cloud-init-scripts** — repeatable Proxmox VM provisioning
+- **bdsps-ar** — web-based AR experiment
+
+## Repository governance
+
+- **[MASTER_ROADMAP.md](./MASTER_ROADMAP.md)** — complete current roadmap and programme architecture
+- **[PORTFOLIO_STATUS.md](./PORTFOLIO_STATUS.md)** — authoritative concise current status
+- **[PORTFOLIO_ARCHITECTURE.md](./PORTFOLIO_ARCHITECTURE.md)** — UX/proof/privacy architecture
+- **[PORTFOLIO_MAINTENANCE.md](./PORTFOLIO_MAINTENANCE.md)** — long-term update rules
+- **[RELEASE_CHECKLIST.md](./RELEASE_CHECKLIST.md)** — production release checks
+- **[EVIDENCE_REGISTER.md](./EVIDENCE_REGISTER.md)** — evidence control / media backlog
+- **[OUTCOME_REGISTER.md](./OUTCOME_REGISTER.md)** — safe impact/claim control
+- **[SKILLS.md](./SKILLS.md)** — detailed capability inventory
+- **[SPRINT_2_CASE_STUDIES.md](./SPRINT_2_CASE_STUDIES.md)** — flagship-case implementation history
+- **[SPRINT_3_LEADERSHIP.md](./SPRINT_3_LEADERSHIP.md)** — leadership proof programme
+- **[SPRINT_4_HIRING_CONVERSION.md](./SPRINT_4_HIRING_CONVERSION.md)** — hiring-conversion structure
+- **[SPRINT_5_QUALITY_QA.md](./SPRINT_5_QUALITY_QA.md)** — accessibility/mobile QA
+- **[SPRINT_6_DISCOVERABILITY_PERFORMANCE.md](./SPRINT_6_DISCOVERABILITY_PERFORMANCE.md)** — discoverability/performance baseline
 
 ## Deployment
 
-The repository uses GitHub Pages with the custom domain defined by `CNAME`:
+The live site uses the repository's existing GitHub Pages branch deployment with custom domain:
 
 ```text
 pragalbh.in
 ```
 
-The live portfolio is a dependency-light static `index.html` with progressively loaded interaction/evidence layers, intentionally compatible with direct branch-based GitHub Pages deployment. Earlier Vite/React source remains in the repository as implementation history/reference but is not required by the live page.
+The live surface is a dependency-light static `index.html` with progressive enhancement layers. Earlier React/Vite source remains as implementation history/reference but is not required by the current Pages surface.
 
-## Repository structure
-
-- `index.html` — live portfolio shell
-- `assets/portfolio.*` — capability graph, recruiter view and core case system
-- `assets/evidence.*` — proof rail
-- `assets/proof.js` — case proof/status and progressive enhancement loading chain
-- `assets/audience.*` — audience routing
-- `assets/case-depth.*` — flagship decision narratives
-- `assets/case-evidence.js` — verified public/source-backed evidence inside cases
-- `assets/case-navigation.*` — case deep links and capability relationships
-- `assets/leadership-case.js` — Teacher Recruitment & Evaluation case
-- `assets/leadership-systems.js` — Curriculum/Assessment, Compliance and Institutional Operations cases
-- `assets/academic-scheduling-case.js` — public/source-backed scheduling case
-- `assets/admissions-communication-case.js` — admissions/communication operations case
-- `assets/hiring-conversion.*` — recruiter engagement/ownership/opportunity-fit and flagship-first layer
-- `assets/accessibility.*` — keyboard/modal/reduced-motion/mobile quality enhancements
-- `assets/media/` — privacy-safe case-study evidence assets
-- `MASTER_ROADMAP.md` — complete execution roadmap
-- `SPRINT_2_CASE_STUDIES.md` — flagship case-study execution plan
-- `SPRINT_3_LEADERSHIP.md` — completed leadership proof programme
-- `SPRINT_4_HIRING_CONVERSION.md` — completed hiring conversion stage
-- `SPRINT_5_QUALITY_QA.md` — active quality QA stage
-- `EVIDENCE_REGISTER.md` — evidence register / media backlog
-- `OUTCOME_REGISTER.md` — outcome claim control
-- `PORTFOLIO_ARCHITECTURE.md` — architecture, evidence and privacy rules
-- `SKILLS.md` — comprehensive skills and capability inventory
-- `CNAME` — custom domain
+Future meaningful work should normally **deepen an existing node or case before adding another homepage section**.
 
 ---
 
-Last major portfolio update: **26 August 2026**
+Last major architecture update: **26 August 2026**
