@@ -3,7 +3,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 
 const root=process.cwd(),failures=[],notes=[];
-const mustExist=['index.html','CNAME','robots.txt','sitemap.xml','README.md','MASTER_ROADMAP.md','PORTFOLIO_STATUS.md','PORTFOLIO_ARCHITECTURE.md','PORTFOLIO_MAINTENANCE.md','RELEASE_CHECKLIST.md','CASE_REVIEW_REGISTER.md','CHANGELOG.md','ENHANCEMENT_CHAIN.md','SKILLS.md','EVIDENCE_REGISTER.md','OUTCOME_REGISTER.md','SPRINT_5_QUALITY_QA.md','SPRINT_6_DISCOVERABILITY_PERFORMANCE.md','assets/favicon.svg','assets/portfolio.js','assets/evidence.js','assets/proof.js','assets/case-navigation.js','assets/hiring-conversion.js','assets/accessibility.js','assets/network-navigation.js','assets/network-navigation.css','assets/case-review.js','assets/case-review.css'];
+const mustExist=['index.html','CNAME','robots.txt','sitemap.xml','package.json','README.md','MASTER_ROADMAP.md','PORTFOLIO_STATUS.md','PORTFOLIO_ARCHITECTURE.md','PORTFOLIO_MAINTENANCE.md','RELEASE_CHECKLIST.md','CASE_REVIEW_REGISTER.md','CHANGELOG.md','ENHANCEMENT_CHAIN.md','SKILLS.md','EVIDENCE_REGISTER.md','OUTCOME_REGISTER.md','SPRINT_5_QUALITY_QA.md','SPRINT_6_DISCOVERABILITY_PERFORMANCE.md','.github/workflows/portfolio-audit.yml','.github/workflows/browser-smoke.yml','.github/workflows/link-health.yml','tests/browser-smoke.mjs','scripts/check-external-links.mjs','assets/favicon.svg','assets/portfolio.js','assets/evidence.js','assets/proof.js','assets/case-navigation.js','assets/hiring-conversion.js','assets/accessibility.js','assets/network-navigation.js','assets/network-navigation.css','assets/case-review.js','assets/case-review.css'];
 const fail=m=>failures.push(m),note=m=>notes.push(m),read=rel=>fs.readFileSync(path.join(root,rel),'utf8'),exists=rel=>fs.existsSync(path.join(root,rel));
 for(const f of mustExist)if(!exists(f))fail(`Missing required file: ${f}`);
 if(exists('CNAME')&&read('CNAME').trim()!=='pragalbh.in')fail('CNAME must contain exactly pragalbh.in');
@@ -17,6 +17,12 @@ if(!sitemap.includes('<loc>https://pragalbh.in/</loc>'))fail('sitemap.xml does n
 
 const jsonLd=[...index.matchAll(/<script\s+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)];
 if(!jsonLd.length)fail('No JSON-LD block found in index.html');else for(const[i,m]of jsonLd.entries())try{JSON.parse(m[1])}catch(e){fail(`JSON-LD block ${i+1} is invalid JSON: ${e.message}`)}
+
+let pkg={};
+if(exists('package.json')){try{pkg=JSON.parse(read('package.json'))}catch(e){fail(`package.json is invalid JSON: ${e.message}`)}}
+if(pkg.scripts?.audit!=='node scripts/validate-portfolio.mjs')fail('package.json audit script must run the canonical validator');
+if(pkg.scripts?.['smoke:browser']!=='node tests/browser-smoke.mjs')fail('package.json must expose the canonical browser smoke command');
+if(!pkg.devDependencies?.playwright)fail('Playwright must remain declared for rendered browser smoke testing');
 
 function walk(dir){const out=[];for(const entry of fs.readdirSync(dir,{withFileTypes:true})){if(['.git','node_modules','dist'].includes(entry.name))continue;const full=path.join(dir,entry.name);entry.isDirectory()?out.push(...walk(full)):out.push(full)}return out}
 const all=walk(root),jsFiles=all.filter(f=>f.endsWith('.js')||f.endsWith('.mjs'));
@@ -44,6 +50,14 @@ if(!hiring.includes("s.src='./assets/accessibility.js'"))fail('Hiring Conversion
 if(!accessibility.includes("s.src='./assets/network-navigation.js'"))fail('Accessibility must load Network Navigation');
 if(!networkNav.includes("s.src='./assets/case-review.js'"))fail('Network Navigation must load Case Review');
 note('Validated deterministic post-case enhancement chain');
+
+const browserWorkflow=exists('.github/workflows/browser-smoke.yml')?read('.github/workflows/browser-smoke.yml'):'',browserTest=exists('tests/browser-smoke.mjs')?read('tests/browser-smoke.mjs'):'',linkWorkflow=exists('.github/workflows/link-health.yml')?read('.github/workflows/link-health.yml'):'',linkCheck=exists('scripts/check-external-links.mjs')?read('scripts/check-external-links.mjs'):'';
+if(!browserWorkflow.includes('npm run smoke:browser'))fail('Browser smoke workflow must execute npm run smoke:browser');
+if(!browserWorkflow.includes('playwright install --with-deps chromium'))fail('Browser smoke workflow must install Chromium explicitly');
+for(const contract of ['#case=aquapulse','#node=aquapulse','#node=kubernetes','javaScriptEnabled: false'])if(!browserTest.includes(contract))fail(`Browser smoke test missing contract: ${contract}`);
+if(!linkWorkflow.includes('scripts/check-external-links.mjs'))fail('Link-health workflow must run the canonical public-link checker');
+for(const url of ['https://pragalbh.in/','https://github.com/pragalbhdwivedi/aquapulse','https://github.com/pragalbhdwivedi/k8s-ha-installer','https://github.com/pragalbhdwivedi/bds-web','https://github.com/pragalbhdwivedi/tt-bds','https://bdsps.in/'])if(!linkCheck.includes(url))fail(`Public-link monitor missing required evidence URL: ${url}`);
+note('Validated rendered browser and public-proof health contracts');
 
 const readme=exists('README.md')?read('README.md'):'';for(const term of ['Graphic Design','UI/UX Design','Art Direction','Brand Visual Design','Campaign Visual Design','Portfolio Visual Storytelling'])if(!readme.includes(term))fail(`README attribution boundary missing discipline: ${term}`);if(!readme.includes('No public email'))fail('README contact boundary should explicitly retain no-public-email rule');
 
