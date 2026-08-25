@@ -39,7 +39,8 @@
 
   function openFromHash(){if(!location.hash.startsWith('#case='))return;const id=decodeURIComponent(location.hash.slice(6));if(!RELATED[id])return;if(typeof setMode==='function')setMode('recruiter');setTimeout(()=>{if(typeof window.openCase==='function')window.openCase(id)},20)}
   function openNodeFromHash(){if(!location.hash.startsWith('#node='))return;const node=decodeURIComponent(location.hash.slice(6));if(typeof setMode==='function')setMode('explore');if(typeof expandPath==='function')expandPath(node)}
-  function init(){loadStyles();wireK8sCard();wireK8sEvidence();openFromHash();openNodeFromHash()}
+  function loadHiringConversion(){if(document.querySelector('script[data-hiring-conversion-layer]'))return;const s=document.createElement('script');s.src='./assets/hiring-conversion.js';s.dataset.hiringConversionLayer='true';document.body.appendChild(s)}
+  function init(){loadStyles();wireK8sCard();wireK8sEvidence();openFromHash();openNodeFromHash();loadHiringConversion()}
   window.addEventListener('hashchange',()=>{openFromHash();openNodeFromHash()});
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
