@@ -2,24 +2,21 @@
 
 Updated: 26 August 2026
 
-**Status: ACTIVE**
+**Status: STRUCTURAL WORK COMPLETE — DEVICE QA MOVED TO SPRINT 5**
 
 Sprints 1–3 established evidence, deep case studies and leadership proof. Sprint 4 turns that evidence into a faster hiring / consulting / partnership decision path.
 
-## Conversion goal
+## Conversion result
 
-A visitor should answer these questions quickly:
+Recruiter View now answers five questions quickly:
 
 1. Who is Pragalbh?
 2. What kind of problems can he own?
 3. Which opportunity types fit him best?
 4. What proof should I inspect first?
-5. Is the work live, public, source-backed, applied or prototype?
-6. How do I contact him?
+5. How do I contact him?
 
-## Engagement modes
-
-The portfolio supports three explicit forms of engagement:
+## Engagement modes implemented
 
 ### Full-time / leadership
 
@@ -51,71 +48,44 @@ Strong fit for:
 - institution + technology collaborations
 - field-system pilots
 
-## End-to-end ownership model
-
-The recruiter view should make four recurring capabilities explicit:
+## End-to-end ownership model implemented
 
 `frame the problem → architect the system → coordinate/build the implementation → operate, diagnose and improve`
 
-This is more useful than presenting Pragalbh as a collection of unrelated tools.
+## Opportunity-fit proof routing implemented
 
-## Proof shortcuts
+Recruiter View now provides case-study shortcuts for:
 
-Different opportunity types should surface different evidence first.
+- Education / EdTech
+- systems architecture
+- infrastructure / platform
+- institutional transformation
+- technical operations
+- automation / product
 
-### Education / EdTech
+## Recruiter compaction implemented
 
-- Institutional Operations
-- Curriculum & Assessment
-- Academic Scheduling
-- Smart Classroom
-- Digital Operations
+The case-study grid is now **flagship-first**. Supporting and leadership cases are collapsed by default behind a single explicit control, while opportunity-fit shortcuts can still open any case directly.
 
-### Systems / Solutions Architecture
+This prevents Recruiter View from recreating the long-page problem solved by the default spider-web experience.
 
-- Smart Classroom
-- Solar CCTV Edge
-- AquaPulse
-- Private Infrastructure
-
-### Infrastructure / Platform
-
-- Private Infrastructure
-- HA Kubernetes
-- AquaPulse self-hosted direction
-- MAAS public evidence
-
-### Institutional Transformation / Consulting
-
-- Institutional Operations
-- Compliance & Documentation
-- Digital Operations
-- Admissions & Communication
-
-### Technical Operations / Field Systems
-
-- Solar CCTV Edge
-- Private Infrastructure
-- Identity & Access
-- root-cause / field troubleshooting evidence
-
-## Conversion rules
+## Conversion rules retained
 
 - Phone and WhatsApp only.
 - No public email.
-- Do not add generic claims like “visionary”, “10x”, “rockstar” or similar résumé debris.
 - Proof level remains visible.
-- Recruiter view must stay readable without interacting with the spider web.
-- Keep leadership and technical work balanced.
-- Do not present graphic design / UI/UX / art direction as Pragalbh's skills.
+- Recruiter View does not require use of the spider web.
+- Leadership and technical evidence remain balanced.
+- Graphic design / UI/UX / art direction are not presented as Pragalbh's skills.
+- No generic superlatives replace evidence.
 
-## Sprint 4 exit criterion
+## Sprint 4 exit criteria
 
-Sprint 4 is complete when:
+1. engagement modes visible near the top — **MET**
+2. end-to-end ownership clearly stated — **MET**
+3. opportunity-specific proof shortcuts implemented — **MET**
+4. evidence prioritised over skill volume — **MET**
+5. phone + WhatsApp only — **MET**
+6. source-level mobile compaction implemented — **MET**
 
-1. engagement modes are visible in the first recruiter viewport;
-2. end-to-end ownership is clearly stated;
-3. opportunity-specific proof shortcuts open the relevant case studies;
-4. recruiter view prioritises evidence instead of skill volume;
-5. contact CTA remains phone + WhatsApp only;
-6. mobile layout remains compact and readable.
+Final device/browser verification now belongs to **Sprint 5 — Mobile, Accessibility & Quality QA**.
