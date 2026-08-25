@@ -7,27 +7,12 @@
     digitalops:{type:'LIVE + PUBLIC REPOSITORY',note:'A live institutional web system and its GitHub-managed publishing workflow are publicly verifiable.',state:'Public institutional information is delivered through a live web platform backed by structured publishing and GitHub-managed workflows. Timetable and other operational publishing remain part of an ongoing digital-operations programme.',live:'https://bdsps.in/'},
     identity:{type:'APPLIED SYSTEM DESIGN',note:'Derived from active identity, RFID, transport credential and physical access-control work. The system architecture is presented separately from visual card design.',state:'Identity work is being standardised around durable IDs, RFID/QR interfaces, access levels and service relationships so future school services can attach to the same identity model instead of creating another isolated card database.'}
   };
-
-  function addCardBadges(){
-    const cards=[...document.querySelectorAll('#caseGrid .case')];
-    if(typeof caseOrder==='undefined')return;
-    cards.forEach((card,i)=>{const id=caseOrder[i],p=PROOF[id];if(!p||card.querySelector('.proof-type'))return;const status=card.querySelector('.status');const badge=document.createElement('div');badge.className='proof-type';badge.textContent=p.type;if(status)status.insertAdjacentElement('afterend',badge);else card.prepend(badge)});
-  }
-
+  function addCardBadges(){const cards=[...document.querySelectorAll('#caseGrid .case')];if(typeof caseOrder==='undefined')return;cards.forEach((card,i)=>{const id=caseOrder[i],p=PROOF[id];if(!p||card.querySelector('.proof-type'))return;const status=card.querySelector('.status');const badge=document.createElement('div');badge.className='proof-type';badge.textContent=p.type;if(status)status.insertAdjacentElement('afterend',badge);else card.prepend(badge)})}
   const baseOpenCase=window.openCase;
-  if(typeof baseOpenCase==='function'){
-    window.openCase=function(id){
-      baseOpenCase(id);
-      const p=PROOF[id],modal=document.getElementById('caseModal');if(!p||!modal)return;
-      const lead=modal.querySelector('.lead');let proofPanel=modal.querySelector('.proof-panel');
-      if(lead&&!proofPanel){proofPanel=document.createElement('div');proofPanel.className='proof-panel';proofPanel.innerHTML=`<span class="proof-type">${p.type}</span><p>${p.note}</p>`;lead.insertAdjacentElement('afterend',proofPanel)}
-      if(p.state&&!modal.querySelector('[data-current-state]')){const state=document.createElement('div');state.className='proof-panel';state.dataset.currentState='true';state.innerHTML=`<span class="proof-type">CURRENT STATE</span><p>${p.state}</p>`;(proofPanel||lead).insertAdjacentElement('afterend',state)}
-      if(p.live){const actions=modal.querySelector('.actions');if(actions&&!actions.querySelector('[data-live-proof]')){const a=document.createElement('a');a.className='cta';a.href=p.live;a.target='_blank';a.rel='noreferrer';a.dataset.liveProof='true';a.textContent='Open live system ↗';actions.prepend(a)}}
-    };
-  }
-
+  if(typeof baseOpenCase==='function'){window.openCase=function(id){baseOpenCase(id);const p=PROOF[id],modal=document.getElementById('caseModal');if(!p||!modal)return;const lead=modal.querySelector('.lead');let proofPanel=modal.querySelector('.proof-panel');if(lead&&!proofPanel){proofPanel=document.createElement('div');proofPanel.className='proof-panel';proofPanel.innerHTML=`<span class="proof-type">${p.type}</span><p>${p.note}</p>`;lead.insertAdjacentElement('afterend',proofPanel)}if(p.state&&!modal.querySelector('[data-current-state]')){const state=document.createElement('div');state.className='proof-panel';state.dataset.currentState='true';state.innerHTML=`<span class="proof-type">CURRENT STATE</span><p>${p.state}</p>`;(proofPanel||lead).insertAdjacentElement('afterend',state)}if(p.live){const actions=modal.querySelector('.actions');if(actions&&!actions.querySelector('[data-live-proof]')){const a=document.createElement('a');a.className='cta';a.href=p.live;a.target='_blank';a.rel='noreferrer';a.dataset.liveProof='true';a.textContent='Open live system ↗';actions.prepend(a)}}}}
   function loadAudienceLayer(){if(document.querySelector('script[data-audience-layer]'))return;const s=document.createElement('script');s.src='./assets/audience.js';s.dataset.audienceLayer='true';document.body.appendChild(s)}
-  function loadCaseDepthLayer(){if(document.querySelector('script[data-case-depth-layer]'))return;const s=document.createElement('script');s.src='./assets/case-depth.js';s.dataset.caseDepthLayer='true';document.body.appendChild(s)}
+  function loadCaseNavigationLayer(){if(document.querySelector('script[data-case-navigation-layer]'))return;const s=document.createElement('script');s.src='./assets/case-navigation.js';s.dataset.caseNavigationLayer='true';document.body.appendChild(s)}
+  function loadCaseDepthLayer(){if(document.querySelector('script[data-case-depth-layer]')){loadCaseNavigationLayer();return}const s=document.createElement('script');s.src='./assets/case-depth.js';s.dataset.caseDepthLayer='true';s.onload=loadCaseNavigationLayer;document.body.appendChild(s)}
   function init(){addCardBadges();loadAudienceLayer();loadCaseDepthLayer()}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
