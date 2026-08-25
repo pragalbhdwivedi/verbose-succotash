@@ -11,14 +11,12 @@
 
   function loadStyles(){if(document.querySelector('link[data-case-navigation-style]'))return;const l=document.createElement('link');l.rel='stylesheet';l.href='./assets/case-navigation.css';l.dataset.caseNavigationStyle='true';document.head.appendChild(l)}
   function caseHash(id){return `#case=${encodeURIComponent(id)}`}
-  function setCaseHash(id){if(!id)return;history.replaceState(null,'',`${location.pathname}${location.search}${caseHash(id)}`)}
+  function setCaseHash(id){if(id)history.replaceState(null,'',`${location.pathname}${location.search}${caseHash(id)}`)}
   function clearCaseHash(){if(location.hash.startsWith('#case='))history.replaceState(null,'',`${location.pathname}${location.search}`)}
-  function currentCaseId(){return document.querySelector('#caseModal [data-deep-case]')?.dataset.deepCase||null}
 
   function addNavigation(id){
     const modal=document.getElementById('caseModal'),deep=modal?.querySelector('[data-deep-case]');if(!modal||!deep||deep.querySelector('.case-relations'))return;
-    const related=RELATED[id]||[];
-    const box=document.createElement('div');box.className='case-relations';
+    const related=RELATED[id]||[],box=document.createElement('div');box.className='case-relations';
     box.innerHTML=`<div class="case-relations-head"><div><span>Connected capability web</span><h4>Follow the system outward.</h4></div><button type="button" class="copy-case-link">Copy case link</button></div><div class="case-relation-links">${related.map(node=>`<button type="button" data-related-node="${node}">${LABELS[node]||node} ↗</button>`).join('')}</div>`;
     deep.appendChild(box);
     box.querySelectorAll('[data-related-node]').forEach(btn=>btn.addEventListener('click',()=>{const node=btn.dataset.relatedNode;if(typeof window.closeCase==='function')window.closeCase();if(typeof setMode==='function')setMode('explore');if(typeof expandPath==='function')expandPath(node);history.replaceState(null,'',`${location.pathname}${location.search}#node=${encodeURIComponent(node)}`);window.scrollTo({top:0,behavior:'smooth'})}));
@@ -26,33 +24,20 @@
   }
 
   const baseOpen=window.openCase;
-  if(typeof baseOpen==='function'){
-    window.openCase=function(id){baseOpen(id);if(document.getElementById('caseOverlay')?.classList.contains('show')){setCaseHash(id);setTimeout(()=>addNavigation(id),0)}};
-  }
-
+  if(typeof baseOpen==='function')window.openCase=function(id){baseOpen(id);if(document.getElementById('caseOverlay')?.classList.contains('show')){setCaseHash(id);setTimeout(()=>addNavigation(id),0)}};
   const baseClose=window.closeCase;
-  if(typeof baseClose==='function'){
-    window.closeCase=function(){baseClose();clearCaseHash()};
-  }
+  if(typeof baseClose==='function')window.closeCase=function(){baseClose();clearCaseHash()};
 
   function wireK8sCard(){const btn=document.querySelector('[data-k8s-flagship] button');if(btn&&!btn.dataset.caseNavWired){btn.dataset.caseNavWired='true';btn.addEventListener('click',()=>{setCaseHash('kubernetes-ha');setTimeout(()=>addNavigation('kubernetes-ha'),0)})}}
 
-  function openFromHash(){
-    if(!location.hash.startsWith('#case='))return;
-    const id=decodeURIComponent(location.hash.slice(6));
-    if(!RELATED[id])return;
-    if(typeof setMode==='function')setMode('recruiter');
-    setTimeout(()=>{if(typeof window.openCase==='function')window.openCase(id)},20);
+  function wireK8sEvidence(){
+    const cards=[...document.querySelectorAll('#evidenceRail .evidence-card')],card=cards.find(c=>c.querySelector('h3')?.textContent==='HA Kubernetes Installer');if(!card||card.dataset.deepCaseWired)return;
+    card.dataset.deepCaseWired='true';const old=card.querySelector('.evidence-node-action');if(!old)return;const btn=old.cloneNode(true);btn.classList.remove('evidence-node-action');btn.textContent='Open flagship case →';old.replaceWith(btn);btn.addEventListener('click',()=>{if(typeof window.openCase==='function')window.openCase('kubernetes-ha')});
   }
 
-  function openNodeFromHash(){
-    if(!location.hash.startsWith('#node='))return;
-    const node=decodeURIComponent(location.hash.slice(6));
-    if(typeof setMode==='function')setMode('explore');
-    if(typeof expandPath==='function')expandPath(node);
-  }
-
-  function init(){loadStyles();wireK8sCard();openFromHash();openNodeFromHash()}
+  function openFromHash(){if(!location.hash.startsWith('#case='))return;const id=decodeURIComponent(location.hash.slice(6));if(!RELATED[id])return;if(typeof setMode==='function')setMode('recruiter');setTimeout(()=>{if(typeof window.openCase==='function')window.openCase(id)},20)}
+  function openNodeFromHash(){if(!location.hash.startsWith('#node='))return;const node=decodeURIComponent(location.hash.slice(6));if(typeof setMode==='function')setMode('explore');if(typeof expandPath==='function')expandPath(node)}
+  function init(){loadStyles();wireK8sCard();wireK8sEvidence();openFromHash();openNodeFromHash()}
   window.addEventListener('hashchange',()=>{openFromHash();openNodeFromHash()});
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
