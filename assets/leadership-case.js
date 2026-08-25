@@ -30,9 +30,14 @@
     const card=document.createElement('article');card.className='case support-card';card.dataset.leadershipCase='true';card.innerHTML=`<span class="status">Institutional leadership / source-backed</span><div class="proof-type">SOURCE-BACKED</div><h3>${DATA.title}</h3><p>${DATA.lead}</p><div class="case-tags"><span class="chip">Role definition</span><span class="chip">Evaluation</span><span class="chip">Demo + interview</span></div><button type="button">View leadership system →</button>`;card.querySelector('button').addEventListener('click',()=>window.openCase(ID));grid.appendChild(card);
   }
 
+  function wireEvidence(){
+    const cards=[...document.querySelectorAll('#evidenceRail .evidence-card')],card=cards.find(c=>c.querySelector('h3')?.textContent==='Teacher Recruitment & Evaluation');if(!card||card.dataset.leadershipCaseWired)return;
+    card.dataset.leadershipCaseWired='true';const old=card.querySelector('.evidence-node-action');if(!old)return;const btn=old.cloneNode(true);btn.classList.remove('evidence-node-action');btn.textContent='Open leadership case →';old.replaceWith(btn);btn.addEventListener('click',()=>window.openCase(ID));
+  }
+
   const baseOpen=window.openCase;
   window.openCase=function(id){if(id===ID){openLeadership();return}if(typeof baseOpen==='function')baseOpen(id)};
   window.openLeadershipCase=openLeadership;
-  function init(){addCard()}
+  function init(){addCard();wireEvidence()}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
