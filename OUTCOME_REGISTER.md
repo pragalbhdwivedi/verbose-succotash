@@ -13,7 +13,7 @@ The purpose is to prevent a common portfolio failure: turning architecture, inte
 - **APPLIED QUALITATIVE** — based on real operational work, but not yet expressed as a safe public metric.
 - **NOT YET MEASURABLE** — architecture or implementation is too early for an outcome claim.
 
-No percentage improvement, cost saving, uptime figure, adoption figure or fleet/classroom/institution count should be invented or published merely to make a case study look more impressive.
+No percentage improvement, cost saving, uptime figure, adoption figure or protected operational count should be invented or published merely to make a case study look more impressive.
 
 ---
 
@@ -27,6 +27,16 @@ No percentage improvement, cost saving, uptime figure, adoption figure or fleet/
 | **HA Kubernetes** | PUBLICLY VERIFIABLE | The public project demonstrates a repeatable HA bootstrap with inspectable architecture, orchestration, logging and resilience components instead of a one-time manually assembled cluster. | Public `k8s-ha-installer` repository | Production-cluster SLA, failover timing, scale figures unless tested and published |
 | **Smart Classroom** | SOURCE-BACKED / NOT YET MEASURABLE | The prototype architecture defines how timetable automation, classroom edge compute, presentation, video, local buffering, attendance context and central services should behave together, including degraded-network behavior. | Formal prototype proposal and implementation planning | Campus-wide deployment, teacher productivity improvement, recording reliability, adoption metrics until pilot evidence exists |
 | **Solar CCTV Edge** | APPLIED QUALITATIVE / FIELD DESIGN | Power autonomy, PoE load and wireless backhaul are now treated as one edge-system design, reducing architectural dependence on unnecessary DC→AC→DC conversion stages where direct DC is practical. | Field requirements, power/network planning and troubleshooting history | Measured energy savings, autonomy duration, uptime or maintenance reduction until measured in operation |
+
+---
+
+## Leadership / institutional outcomes
+
+| Case | Outcome class | Safe outcome language | Evidence basis | Do not claim yet |
+|---|---|---|---|---|
+| **Teacher Recruitment & Evaluation** | SOURCE-BACKED | Role definition, staged evaluation, demo/interview evidence and performance expectations are connected as one recruitment system rather than treated as unrelated HR steps. | Recruitment/JD pack + subject-teacher assessment evidence | Better retention, teacher quality percentages, reduced hiring time or student-result impact unless measured |
+| **Curriculum & Assessment Framework** | SOURCE-BACKED | Academic expectations are expressed as a plan → teach → assess → respond → document → review loop, with explicit roles for formative/diagnostic evidence, feedback, remedial work and enrichment. | Teacher role standards + recruitment assessments testing pedagogy, assessment and classroom application | School-wide implementation percentage, learning-gain figures, exam improvement or teacher compliance rates unless audited/measured |
+| **Compliance & Documentation Workflow** | SOURCE-BACKED | Compliance work is structured as claim → source → verification → register → annexure → sign-off → retained audit trail, with evidence required before a positive compliance claim is made. | University portal pre-fill/compliance guide + structured A–K record workbook | Legal-compliance guarantees, inspection success rates, time savings or completeness percentages unless independently measured |
 
 ---
 
@@ -57,6 +67,10 @@ Prefer:
 - degraded-network resilience by design
 - fewer architectural conversion stages
 - public evidence is inspectable
+- staged evaluation rather than single-point judgement
+- assessment evidence feeding remedial / enrichment response
+- verified records before compliance claims
+- indexed, traceable documentation packages
 
 Avoid unless measured:
 
@@ -67,6 +81,9 @@ Avoid unless measured:
 - "served N users"
 - exact protected operational counts
 - "production-ready" for prototypes or active-development systems
+- improved teacher quality percentages without a defined measurement method
+- improved learning outcomes without baseline/comparison evidence
+- "fully compliant" where the portfolio only proves a documentation workflow
 
 ## Next measurement opportunities
 
@@ -80,5 +97,8 @@ When projects mature, collect evidence for:
 6. publishing turnaround time
 7. fault resolution timeline where safe
 8. application workflow completion / error rates where appropriate
+9. recruitment-stage completion and calibration consistency
+10. assessment-to-remedial follow-through using anonymised aggregate evidence
+11. compliance-package completeness / rework counts where safe
 
 Measurements should be captured prospectively rather than reconstructed later from memory.
