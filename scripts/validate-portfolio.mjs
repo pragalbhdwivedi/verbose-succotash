@@ -17,6 +17,7 @@ const mustExist = [
   'PORTFOLIO_ARCHITECTURE.md',
   'PORTFOLIO_MAINTENANCE.md',
   'RELEASE_CHECKLIST.md',
+  'CASE_REVIEW_REGISTER.md',
   'SKILLS.md',
   'EVIDENCE_REGISTER.md',
   'OUTCOME_REGISTER.md',
@@ -30,7 +31,9 @@ const mustExist = [
   'assets/hiring-conversion.js',
   'assets/accessibility.js',
   'assets/network-navigation.js',
-  'assets/network-navigation.css'
+  'assets/network-navigation.css',
+  'assets/case-review.js',
+  'assets/case-review.css'
 ];
 
 function fail(message) { failures.push(message); }
@@ -165,8 +168,19 @@ const requiredCaseIds = [
   'admissions-communication'
 ];
 const nav = exists('assets/case-navigation.js') ? read('assets/case-navigation.js') : '';
+const reviewLayer = exists('assets/case-review.js') ? read('assets/case-review.js') : '';
+const reviewRegister = exists('CASE_REVIEW_REGISTER.md') ? read('CASE_REVIEW_REGISTER.md') : '';
 for (const id of requiredCaseIds) {
   if (!nav.includes(id)) fail(`Case navigation registry is missing: ${id}`);
+  if (!reviewLayer.includes(`'${id}'`)) fail(`Case review layer is missing: ${id}`);
+}
+const expectedReviewNames = [
+  'AquaPulse','BDSPS Digital Operations','Private Infrastructure','HA Kubernetes','Smart Classroom','Solar CCTV Edge',
+  'Teacher Recruitment & Evaluation','Curriculum & Assessment','Compliance & Documentation','Institutional Operations',
+  'Academic Scheduling & Execution','Admissions & Institutional Communication'
+];
+for (const name of expectedReviewNames) {
+  if (!reviewRegister.includes(name)) fail(`CASE_REVIEW_REGISTER.md missing case: ${name}`);
 }
 
 const attributionTerms = ['Graphic Design', 'UI/UX Design', 'Art Direction', 'Brand Visual Design', 'Campaign Visual Design', 'Portfolio Visual Storytelling'];
@@ -187,4 +201,4 @@ console.log('Portfolio validation passed.');
 for (const item of notes) console.log(`- ${item}`);
 console.log(`- Checked ${jsFiles.length} JavaScript files for syntax`);
 console.log(`- Checked ${liveFiles.length} live-surface files for privacy/contact regressions`);
-console.log(`- Verified ${requiredCaseIds.length} case-study navigation IDs`);
+console.log(`- Verified ${requiredCaseIds.length} case-study navigation and review IDs`);
