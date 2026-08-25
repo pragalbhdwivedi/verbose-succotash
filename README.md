@@ -1,52 +1,144 @@
-# Pragalbh Dwivedi Portfolio
+# Pragalbh Dwivedi — Portfolio
 
-Personal portfolio for **Pragalbh Dwivedi**, focused on the intersection of education leadership, institutional systems, infrastructure, automation and applied technology.
+Personal portfolio for **Pragalbh Dwivedi**.
 
-## Positioning
+**Education Leader · Institutional Systems Architect · Infrastructure & Automation Builder**
 
-**Education Leadership · Systems Engineering · Infrastructure · Automation · Applied Technology**
+Live domain: **https://pragalbh.in**
 
-The portfolio deliberately excludes Graphic Design, UI/UX and Art Direction work associated with Kritica Dwivedi.
+## Portfolio thesis
 
-## Selected GitHub-backed work
+I build systems that make institutions work better.
 
-- AquaPulse — operational software platform
-- Kubernetes HA Cluster Installer
-- MAAS Configurations
-- BDSPS Digital Web Platform
-- BDS Timetable Publishing
-- BDSPS AR Experience
-- Signage VM Auto-Install
-- Proxmox Cloud-init Scripts
+The portfolio is intentionally broader than a conventional developer portfolio. The recurring work crosses academic administration, institutional operations, software, private infrastructure, networks, physical systems, automation, surveillance, identity/access and energy systems.
 
-## Recent project layer
+The operating stack is organised into five pillars:
 
-The portfolio also documents current 2026 work that is not fully represented by public repositories:
+1. **Education & Operations**
+2. **Systems Architecture**
+3. **Infrastructure & Networking**
+4. **Automation & Software Platforms**
+5. **Applied Technology & Energy Systems**
 
-- Smart classroom systems architecture
-- 24×7 direct-DC solar CCTV edge nodes
-- Hikvision-compatible self-hosted NVR architecture
-- Konica Minolta 205i → TrueNAS scan integration
-- Hikvision access-control / electromagnetic-lock troubleshooting
-- React/Vite wedding microsite engineering and deployment
-- Three-phase solar / inverter / stabiliser troubleshooting
-- Campus RFID, identity and transport-system specification
+## Established capability base
 
-Each recent project is described according to its actual status, such as production delivery, system design, prototype architecture, integration or field troubleshooting.
+The portfolio retains all thirteen established capability families:
+
+1. Education Leadership & Academic Administration
+2. Curriculum, Assessment & Examination Work
+3. School Communication & Campaign Planning
+4. Educational Technology & Digital Systems
+5. IT Infrastructure & Systems Engineering
+6. Proxmox / Virtualization / Storage
+7. Networking
+8. Kubernetes / Self-Hosted Platform Engineering
+9. Automation & DevOps-Style Work
+10. Communication Systems / Signage / Telephony
+11. Documentation, Policy & Formal Writing
+12. Research, Academic Writing & Higher Education Work
+13. Strategy & Operations
+
+See **[SKILLS.md](./SKILLS.md)** for the complete detailed inventory.
+
+## New or materially deepened skills — 2025–26
+
+The portfolio now explicitly records 35 areas acquired or substantially deepened during roughly August 2025–August 2026:
+
+1. Systems Architecture
+2. Solution Architecture
+3. Requirements Engineering
+4. IT/OT Integration
+5. Proxmox & Private Cloud
+6. TrueNAS & Network Storage
+7. Kubernetes & Platform Engineering
+8. MAAS & Bare-Metal Automation
+9. Linux Systems Administration
+10. Infrastructure-as-Code / Provisioning Automation
+11. GitHub Actions & CI/CD
+12. Campus Network Engineering
+13. Outdoor Wireless Networking
+14. CCTV & NVR Architecture
+15. Smart Classroom Systems Engineering
+16. RFID & Identity Systems
+17. Physical Access-Control Systems
+18. Hybrid Solar Systems
+19. Battery-System Planning
+20. Three-Phase Power Diagnostics
+21. Solar-Powered Edge Infrastructure
+22. Digital Signage Systems
+23. Media Streaming & Recording Architecture
+24. Observability & Infrastructure Monitoring
+25. AI-Assisted System Architecture
+26. Education Technology Architecture
+27. Offline / Resilient System Design
+28. Capacity & Retention Planning
+29. Technical Solution Procurement
+30. Root-Cause Technical Troubleshooting
+31. Security & RBAC Architecture
+32. Education Compliance Systems
+33. Machine-Readable Timetable Automation
+34. Full-Stack Application Architecture
+35. Cross-Domain Institutional Systems Engineering
+
+These are not presented as equal-expertise claims. The live portfolio distinguishes core strengths, applied experience, prototype architecture and developing knowledge where appropriate.
+
+## Selected public GitHub evidence
+
+- **AquaPulse** — self-hosted operational software platform
+- **k8s-ha-installer** — HA Kubernetes deployment automation
+- **maas-configurations** — repeatable bare-metal provisioning
+- **bds-web** — institutional digital web platform and automation
+- **tt-bds** — FET timetable publishing
+- **signage-vm-autoinstall** — unattended signage deployment groundwork
+- **proxmox-cloud-init-scripts** — repeatable Proxmox VM provisioning
+- **bdsps-ar** — web-based AR experiment
+
+## Recent applied project evidence
+
+The live portfolio also records recent 2026 work that may not exist as standalone public repositories:
+
+- Smart Classroom Systems Architecture
+- 24×7 Solar-Powered CCTV Edge Nodes
+- Hikvision-Compatible Self-Hosted NVR Architecture
+- Konica Minolta 205i → TrueNAS FTP Integration
+- Hikvision Access Control / EM-Lock Troubleshooting
+- Three-Phase Solar & Backup Power Diagnostics
+- Campus RFID / Identity / Transport Systems
+- GitHub-Hosted Web Delivery and Deployment Troubleshooting
+
+## Attribution boundary
+
+This portfolio is for **Pragalbh Dwivedi**.
+
+The following disciplines belong to **Kritica Dwivedi** and are intentionally **not claimed** here:
+
+- Graphic Design
+- UI/UX Design
+- Art Direction
+- Brand Visual Design
+- Campaign Visual Design
+- Portfolio Visual Storytelling
+
+Where a project involved visual/design work by Kritica and engineering/deployment work by Pragalbh, this portfolio only claims Pragalbh's system, implementation, infrastructure or delivery contribution.
 
 ## Deployment
 
-The live site uses the repository's existing **GitHub Pages branch deployment**. The root `index.html` is intentionally directly deployable, so publishing does not depend on a separate build action.
+The repository currently uses GitHub Pages with the custom domain defined by `CNAME`:
 
-Custom domain: **pragalbh.in**
-
-`CNAME` is retained at the repository root, with a matching `public/CNAME` for compatibility with the Vite source structure.
-
-## Development source
-
-React/Vite source files are retained under `src/` for future expansion into richer case-study interactions.
-
-```bash
-npm install
-npm run dev
+```text
+pragalbh.in
 ```
+
+The live portfolio is a dependency-free static `index.html`, intentionally compatible with direct branch-based GitHub Pages deployment. The older Vite/React source files remain in the repository as prior implementation history but are not required by the live page.
+
+## Repository structure
+
+- `index.html` — live portfolio source
+- `SKILLS.md` — comprehensive skills and capability inventory
+- `CNAME` — custom domain
+- `README.md` — portfolio documentation
+- `src/`, `package.json`, `vite.config.js` — earlier Vite/React implementation retained for history/reference
+
+---
+
+Last major capability update: **26 August 2026**
