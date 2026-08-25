@@ -14,11 +14,13 @@
     'admissions-communication':['communication','leadership','requirements','digitalops']
   };
   const LABELS={apps:'Operational Software',requirements:'Requirements Engineering',github:'GitHub / CI-CD',proxmox:'Proxmox / Virtualisation',communication:'Institutional Communication',edtech:'Education Technology',leadership:'Education Leadership',curriculum:'Curriculum & Assessment',storage:'Storage / TrueNAS',networking:'Campus Networking',maas:'MAAS / Bare Metal',resilience:'Resilient Systems',kubernetes:'Kubernetes',cctv:'CCTV / NVR',identity:'Identity & Access',signage:'Digital Signage',solar:'Solar / Battery Systems',access:'Physical Access Control',smartclass:'Smart Classroom',digitalops:'Digital Operations'};
+  let returnHash='';
 
   function loadStyles(){if(document.querySelector('link[data-case-navigation-style]'))return;const l=document.createElement('link');l.rel='stylesheet';l.href='./assets/case-navigation.css';l.dataset.caseNavigationStyle='true';document.head.appendChild(l)}
   function caseHash(id){return `#case=${encodeURIComponent(id)}`}
-  function setCaseHash(id){if(id)history.replaceState(null,'',`${location.pathname}${location.search}${caseHash(id)}`)}
-  function clearCaseHash(){if(location.hash.startsWith('#case='))history.replaceState(null,'',`${location.pathname}${location.search}`)}
+  function rememberOrigin(){const current=location.hash;if(current.startsWith('#node='))returnHash=current;else if(!current.startsWith('#case='))returnHash=''}
+  function setCaseHash(id){if(!id)return;rememberOrigin();history.replaceState(null,'',`${location.pathname}${location.search}${caseHash(id)}`)}
+  function clearCaseHash(){if(!location.hash.startsWith('#case='))return;const target=returnHash&&returnHash.startsWith('#node=')?returnHash:'';history.replaceState(null,'',`${location.pathname}${location.search}${target}`);returnHash=''}
 
   function addNavigation(id){
     const modal=document.getElementById('caseModal'),deep=modal?.querySelector('[data-deep-case]');if(!modal||!deep||deep.querySelector('.case-relations'))return;
@@ -30,14 +32,14 @@
   }
 
   const baseOpen=window.openCase;
-  if(typeof baseOpen==='function')window.openCase=function(id){baseOpen(id);if(document.getElementById('caseOverlay')?.classList.contains('show')){setCaseHash(id);setTimeout(()=>addNavigation(id),0)}};
+  if(typeof baseOpen==='function')window.openCase=function(id){rememberOrigin();baseOpen(id);if(document.getElementById('caseOverlay')?.classList.contains('show')){history.replaceState(null,'',`${location.pathname}${location.search}${caseHash(id)}`);setTimeout(()=>addNavigation(id),0)}};
   const baseClose=window.closeCase;
   if(typeof baseClose==='function')window.closeCase=function(){baseClose();clearCaseHash()};
 
   function wireK8sCard(){const btn=document.querySelector('[data-k8s-flagship] button');if(btn&&!btn.dataset.caseNavWired){btn.dataset.caseNavWired='true';btn.addEventListener('click',()=>{setCaseHash('kubernetes-ha');setTimeout(()=>addNavigation('kubernetes-ha'),0)})}}
   function wireK8sEvidence(){const cards=[...document.querySelectorAll('#evidenceRail .evidence-card')],card=cards.find(c=>c.querySelector('h3')?.textContent==='HA Kubernetes Installer');if(!card||card.dataset.deepCaseWired)return;card.dataset.deepCaseWired='true';const old=card.querySelector('.evidence-node-action');if(!old)return;const btn=old.cloneNode(true);btn.classList.remove('evidence-node-action');btn.textContent='Open flagship case →';old.replaceWith(btn);btn.addEventListener('click',()=>{if(typeof window.openCase==='function')window.openCase('kubernetes-ha')})}
 
-  function openFromHash(){if(!location.hash.startsWith('#case='))return;const id=decodeURIComponent(location.hash.slice(6));if(!RELATED[id])return;if(typeof setMode==='function')setMode('recruiter');setTimeout(()=>{if(typeof window.openCase==='function')window.openCase(id)},20)}
+  function openFromHash(){if(!location.hash.startsWith('#case='))return;const id=decodeURIComponent(location.hash.slice(6));if(!RELATED[id])return;returnHash='';if(typeof setMode==='function')setMode('recruiter');setTimeout(()=>{if(typeof window.openCase==='function')window.openCase(id)},20)}
   function openNodeFromHash(){if(!location.hash.startsWith('#node='))return;const node=decodeURIComponent(location.hash.slice(6));if(typeof setMode==='function')setMode('explore');if(typeof expandPath==='function')expandPath(node)}
   function loadHiringConversion(){if(document.querySelector('script[data-hiring-conversion-layer]'))return;const s=document.createElement('script');s.src='./assets/hiring-conversion.js';s.dataset.hiringConversionLayer='true';document.body.appendChild(s)}
   function init(){loadStyles();wireK8sCard();wireK8sEvidence();openFromHash();openNodeFromHash();loadHiringConversion()}
