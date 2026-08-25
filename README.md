@@ -23,6 +23,7 @@ The operating stack is organised into five pillars:
 ## Planning documents
 
 - **[MASTER_ROADMAP.md](./MASTER_ROADMAP.md)** — complete portfolio strategy, execution phases, flagship case-study backlog, evidence programme, hiring conversion, QA and definition of done.
+- **[EVIDENCE_REGISTER.md](./EVIDENCE_REGISTER.md)** — Sprint 1 control sheet mapping each project to proof type, supporting evidence, publication readiness, privacy requirements and the next capture task.
 - **[PORTFOLIO_ARCHITECTURE.md](./PORTFOLIO_ARCHITECTURE.md)** — interaction model, evidence taxonomy, privacy rules, media rules and content attribution boundaries.
 - **[SKILLS.md](./SKILLS.md)** — detailed capability inventory and evidence base.
 
@@ -140,8 +141,10 @@ The live portfolio is a dependency-free static `index.html`, intentionally compa
 ## Repository structure
 
 - `index.html` — live portfolio source
-- `assets/` — live portfolio interaction, evidence, proof and audience-routing layers
+- `assets/` — live portfolio interaction, evidence, proof, audience-routing and media layers
+- `assets/media/` — privacy-safe case-study evidence assets and publication contract
 - `MASTER_ROADMAP.md` — complete execution roadmap
+- `EVIDENCE_REGISTER.md` — evidence acquisition and publication-control register
 - `PORTFOLIO_ARCHITECTURE.md` — architecture, evidence and privacy rules
 - `SKILLS.md` — comprehensive skills and capability inventory
 - `CNAME` — custom domain
@@ -150,4 +153,4 @@ The live portfolio is a dependency-free static `index.html`, intentionally compa
 
 ---
 
-Last major roadmap update: **26 August 2026**
+Last major evidence/roadmap update: **26 August 2026**
