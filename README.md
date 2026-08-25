@@ -24,15 +24,17 @@ The operating stack is organised into five pillars:
 
 - **Sprint 1 — Real Evidence:** foundation complete; privacy-safe media enrichment continues as an ongoing backlog.
 - **Sprint 2 — Six Flagship Deep Case Studies:** framework/navigation complete; real screenshots and measured outcomes are added only when source evidence exists.
-- **Sprint 3 — Leadership & Institutional Systems Proof:** foundation complete; all six leadership tracks now have public evidence/case modules.
-- **Sprint 4 — Hiring Conversion:** active; recruiter view now exposes engagement modes, end-to-end ownership and opportunity-specific proof shortcuts.
+- **Sprint 3 — Leadership & Institutional Systems Proof:** foundation complete; all six leadership tracks have public evidence/case modules.
+- **Sprint 4 — Hiring Conversion:** structural work complete; engagement modes, end-to-end ownership, opportunity-fit routing and flagship-first recruiter compaction are implemented.
+- **Sprint 5 — Mobile, Accessibility & Quality QA:** active; keyboard graph semantics, accessible modal behavior, focus management, reduced-motion support and mobile touch-target improvements are implemented at source level; device/browser validation remains.
 
 ## Planning documents
 
 - **[MASTER_ROADMAP.md](./MASTER_ROADMAP.md)** — complete portfolio strategy, execution phases, flagship backlog, hiring conversion, QA and definition of done.
 - **[SPRINT_2_CASE_STUDIES.md](./SPRINT_2_CASE_STUDIES.md)** — flagship decision narratives, verified evidence, visual proof, deep links and remaining enrichment backlog.
 - **[SPRINT_3_LEADERSHIP.md](./SPRINT_3_LEADERSHIP.md)** — completed leadership/institutional-systems evidence programme.
-- **[SPRINT_4_HIRING_CONVERSION.md](./SPRINT_4_HIRING_CONVERSION.md)** — active recruiter/client/partner conversion layer.
+- **[SPRINT_4_HIRING_CONVERSION.md](./SPRINT_4_HIRING_CONVERSION.md)** — completed hiring/conversion structure.
+- **[SPRINT_5_QUALITY_QA.md](./SPRINT_5_QUALITY_QA.md)** — active mobile/accessibility/quality verification stage.
 - **[EVIDENCE_REGISTER.md](./EVIDENCE_REGISTER.md)** — evidence control sheet mapping projects to proof type, publication readiness, privacy requirements and media backlog.
 - **[OUTCOME_REGISTER.md](./OUTCOME_REGISTER.md)** — controls what outcome language is safe, verified, source-backed or not yet measurable.
 - **[PORTFOLIO_ARCHITECTURE.md](./PORTFOLIO_ARCHITECTURE.md)** — interaction model, proof taxonomy, privacy rules, media rules and attribution boundaries.
@@ -40,29 +42,9 @@ The operating stack is organised into five pillars:
 
 ## Established capability base
 
-The portfolio retains all thirteen established capability families:
-
-1. Education Leadership & Academic Administration
-2. Curriculum, Assessment & Examination Work
-3. School Communication & Campaign Planning
-4. Educational Technology & Digital Systems
-5. IT Infrastructure & Systems Engineering
-6. Proxmox / Virtualization / Storage
-7. Networking
-8. Kubernetes / Self-Hosted Platform Engineering
-9. Automation & DevOps-Style Work
-10. Communication Systems / Signage / Telephony
-11. Documentation, Policy & Formal Writing
-12. Research, Academic Writing & Higher Education Work
-13. Strategy & Operations
+The portfolio retains all thirteen established capability families and the 35 skills acquired or materially deepened during 2025–26. These are not presented as equal-expertise claims: the live portfolio distinguishes core strengths, applied experience, prototype architecture and developing knowledge.
 
 See **[SKILLS.md](./SKILLS.md)** for the complete detailed inventory.
-
-## New or materially deepened skills — 2025–26
-
-The portfolio records 35 areas acquired or substantially deepened during roughly August 2025–August 2026, including systems architecture, requirements engineering, private cloud, storage, Kubernetes, MAAS, Linux, infrastructure automation, campus networking, CCTV/NVR, smart classrooms, identity/access, solar/battery systems, field diagnostics, observability, resilient-system design and cross-domain institutional systems engineering.
-
-These are not presented as equal-expertise claims. The live portfolio distinguishes core strengths, applied experience, prototype architecture and developing knowledge where appropriate.
 
 ## Six flagship technical / systems cases
 
@@ -88,17 +70,37 @@ These cases are source-backed or hybrid public/source-backed. They demonstrate p
 
 ## Hiring conversion
 
-Recruiter View now makes three engagement modes explicit:
+Recruiter View supports:
 
 - **Full-time / leadership**
 - **Consulting / advisory**
 - **Partnership / pilot**
 
-It also states the recurring end-to-end ownership model:
+End-to-end ownership is expressed as:
 
 `frame the problem → architect the system → coordinate/build → operate, diagnose and improve`
 
-Opportunity-specific shortcuts surface the most relevant cases for Education/EdTech, systems architecture, infrastructure/platform, institutional transformation, technical operations and automation/product work.
+Opportunity-specific shortcuts surface the most relevant evidence for Education/EdTech, systems architecture, infrastructure/platform, institutional transformation, technical operations and automation/product work.
+
+Recruiter case cards are flagship-first; supporting/leadership cases are collapsed by default rather than making the page unnecessarily long.
+
+## Accessibility / quality layer
+
+The progressive enhancement layer now adds:
+
+- keyboard-focusable SVG capability nodes
+- Enter/Space activation for graph nodes
+- search input accessible naming
+- ARIA state for Explore/Recruiter mode
+- case-study modal `dialog` semantics
+- focus-on-open and focus restoration on close
+- Escape-to-close
+- modal Tab focus containment
+- visible keyboard focus treatment
+- `prefers-reduced-motion` support
+- larger mobile interaction targets
+
+Manual browser/device verification remains part of Sprint 5.
 
 ## Selected public GitHub evidence
 
@@ -110,19 +112,6 @@ Opportunity-specific shortcuts surface the most relevant cases for Education/EdT
 - **signage-vm-autoinstall** — unattended signage deployment groundwork
 - **proxmox-cloud-init-scripts** — repeatable Proxmox VM provisioning
 - **bdsps-ar** — web-based AR experiment
-
-## Recent applied project evidence
-
-The live portfolio also records recent work that may not exist as standalone public repositories:
-
-- Smart Classroom Systems Architecture
-- Solar-Powered CCTV Edge Infrastructure
-- Hikvision-Compatible Self-Hosted NVR Architecture
-- Konica Minolta → TrueNAS FTP Integration
-- Hikvision Access Control / EM-Lock Troubleshooting
-- Three-Phase Solar & Backup Power Diagnostics
-- Campus RFID / Identity / Transport Systems
-- GitHub-Hosted Web Delivery and Deployment Troubleshooting
 
 ## Attribution boundary
 
@@ -172,12 +161,14 @@ The live portfolio is a dependency-light static `index.html` with progressively 
 - `assets/leadership-systems.js` — Curriculum/Assessment, Compliance and Institutional Operations cases
 - `assets/academic-scheduling-case.js` — public/source-backed scheduling case
 - `assets/admissions-communication-case.js` — admissions/communication operations case
-- `assets/hiring-conversion.*` — recruiter engagement/ownership/opportunity-fit layer
+- `assets/hiring-conversion.*` — recruiter engagement/ownership/opportunity-fit and flagship-first layer
+- `assets/accessibility.*` — keyboard/modal/reduced-motion/mobile quality enhancements
 - `assets/media/` — privacy-safe case-study evidence assets
 - `MASTER_ROADMAP.md` — complete execution roadmap
 - `SPRINT_2_CASE_STUDIES.md` — flagship case-study execution plan
 - `SPRINT_3_LEADERSHIP.md` — completed leadership proof programme
-- `SPRINT_4_HIRING_CONVERSION.md` — active hiring conversion plan
+- `SPRINT_4_HIRING_CONVERSION.md` — completed hiring conversion stage
+- `SPRINT_5_QUALITY_QA.md` — active quality QA stage
 - `EVIDENCE_REGISTER.md` — evidence register / media backlog
 - `OUTCOME_REGISTER.md` — outcome claim control
 - `PORTFOLIO_ARCHITECTURE.md` — architecture, evidence and privacy rules
