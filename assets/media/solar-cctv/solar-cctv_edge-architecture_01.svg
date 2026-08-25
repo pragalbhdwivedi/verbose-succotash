@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Solar-powered CCTV edge architecture</title>
+  <desc id="desc">Privacy-safe field-system architecture showing solar generation, charge regulation, battery storage, protected direct-DC distribution, PoE switching, camera and outdoor wireless equipment, backhaul and central NVR recording.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07090c"/><stop offset="1" stop-color="#151108"/></linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#372d1c" stroke-width="1" opacity=".35"/></pattern>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#83745c"/></marker>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/><rect width="1200" height="675" fill="url(#grid)"/>
+  <text x="64" y="72" fill="#ffbd66" font-family="ui-monospace, monospace" font-size="15" letter-spacing="3">FIELD SYSTEM DESIGN · CONTINUOUS-DUTY EDGE</text>
+  <text x="64" y="116" fill="#f2f5f7" font-family="Arial" font-size="34" font-weight="700">Solar CCTV Edge Infrastructure</text>
+  <text x="64" y="149" fill="#9f998f" font-family="Arial" font-size="16">Power autonomy and wireless backhaul treated as one system, with unnecessary AC conversion removed where practical</text>
+
+  <g transform="translate(60 235)">
+    <rect width="170" height="150" rx="14" fill="#17130c" stroke="#ffbd66"/>
+    <text x="85" y="34" text-anchor="middle" fill="#ffbd66" font-family="ui-monospace, monospace" font-size="12">PV GENERATION</text>
+    <g transform="translate(37 56)" stroke="#c28a38" fill="#211b10"><rect width="96" height="58" rx="4"/><path d="M24 0V58M48 0V58M72 0V58M0 29H96"/></g>
+    <text x="85" y="135" text-anchor="middle" fill="#9b815e" font-family="Arial" font-size="10">daytime energy source</text>
+  </g>
+  <path d="M230 310H285" stroke="#83745c" stroke-width="2" marker-end="url(#arr)"/>
+
+  <g transform="translate(295 235)">
+    <rect width="170" height="150" rx="14" fill="#17130c" stroke="#d99d4f"/>
+    <text x="85" y="34" text-anchor="middle" fill="#e5aa5a" font-family="ui-monospace, monospace" font-size="12">CHARGE CONTROL</text>
+    <rect x="38" y="58" width="94" height="50" rx="8" fill="#241b0f" stroke="#8b622f"/>
+    <text x="85" y="80" text-anchor="middle" fill="#efd6ae" font-family="Arial" font-size="12" font-weight="700">regulation</text>
+    <text x="85" y="98" text-anchor="middle" fill="#b99d75" font-family="Arial" font-size="10">PV → storage</text>
+    <text x="85" y="135" text-anchor="middle" fill="#8d795b" font-family="Arial" font-size="10">protect charge limits</text>
+  </g>
+  <path d="M465 310H520" stroke="#83745c" stroke-width="2" marker-end="url(#arr)"/>
+
+  <g transform="translate(530 235)">
+    <rect width="170" height="150" rx="14" fill="#17130c" stroke="#baff67"/>
+    <text x="85" y="34" text-anchor="middle" fill="#baff67" font-family="ui-monospace, monospace" font-size="12">BATTERY</text>
+    <rect x="42" y="60" width="86" height="48" rx="6" fill="#172016" stroke="#668d42"/>
+    <rect x="63" y="52" width="12" height="8" fill="#668d42"/><rect x="95" y="52" width="12" height="8" fill="#668d42"/>
+    <text x="85" y="88" text-anchor="middle" fill="#e5f0dd" font-family="Arial" font-size="12" font-weight="700">energy buffer</text>
+    <text x="85" y="135" text-anchor="middle" fill="#829474" font-family="Arial" font-size="10">night + low-sun autonomy</text>
+  </g>
+  <path d="M700 310H755" stroke="#83745c" stroke-width="2" marker-end="url(#arr)"/>
+
+  <g transform="translate(765 218)">
+    <rect width="188" height="184" rx="14" fill="#17130c" stroke="#ffbd66"/>
+    <text x="94" y="34" text-anchor="middle" fill="#ffbd66" font-family="ui-monospace, monospace" font-size="12">PROTECTED DC BUS</text>
+    <rect x="26" y="57" width="136" height="38" rx="7" fill="#231b10" stroke="#80602e"/>
+    <text x="94" y="81" text-anchor="middle" fill="#ead8ba" font-family="Arial" font-size="11">fuse / breaker / isolation</text>
+    <rect x="26" y="108" width="136" height="38" rx="7" fill="#231b10" stroke="#80602e"/>
+    <text x="94" y="132" text-anchor="middle" fill="#ead8ba" font-family="Arial" font-size="11">DC conversion only if needed</text>
+    <text x="94" y="166" text-anchor="middle" fill="#8e795a" font-family="Arial" font-size="10">avoid DC → AC → DC loop</text>
+  </g>
+  <path d="M953 310H1004" stroke="#83745c" stroke-width="2" marker-end="url(#arr)"/>
+
+  <g transform="translate(1014 218)">
+    <rect width="126" height="184" rx="14" fill="#10171b" stroke="#68dfd0"/>
+    <text x="63" y="34" text-anchor="middle" fill="#68dfd0" font-family="ui-monospace, monospace" font-size="11">EDGE LOAD</text>
+    <text x="63" y="70" text-anchor="middle" fill="#d7e8e5" font-family="Arial" font-size="11" font-weight="700">PoE switch</text>
+    <text x="63" y="101" text-anchor="middle" fill="#a4bbb7" font-family="Arial" font-size="10">camera</text>
+    <text x="63" y="124" text-anchor="middle" fill="#a4bbb7" font-family="Arial" font-size="10">outdoor AP</text>
+    <text x="63" y="147" text-anchor="middle" fill="#a4bbb7" font-family="Arial" font-size="10">network link</text>
+    <text x="63" y="169" text-anchor="middle" fill="#718985" font-family="Arial" font-size="9">continuous load</text>
+  </g>
+
+  <!-- network plane -->
+  <path d="M1077 402V465H836" fill="none" stroke="#68dfd0" stroke-width="2" marker-end="url(#arr)"/>
+  <g transform="translate(635 452)">
+    <rect width="190" height="108" rx="14" fill="#0d171a" stroke="#68dfd0"/>
+    <text x="95" y="31" text-anchor="middle" fill="#68dfd0" font-family="ui-monospace, monospace" font-size="11">WIRELESS BACKHAUL</text>
+    <text x="95" y="59" text-anchor="middle" fill="#d8eae7" font-family="Arial" font-size="12" font-weight="700">outdoor link</text>
+    <text x="95" y="82" text-anchor="middle" fill="#8eaaa5" font-family="Arial" font-size="10">edge → campus network</text>
+  </g>
+  <path d="M635 506H565" stroke="#657b84" stroke-width="2" marker-end="url(#arr)"/>
+  <g transform="translate(350 452)">
+    <rect width="205" height="108" rx="14" fill="#10151c" stroke="#93a5b7"/>
+    <text x="102" y="31" text-anchor="middle" fill="#bcc6cd" font-family="ui-monospace, monospace" font-size="11">CENTRAL RECORDING</text>
+    <text x="102" y="59" text-anchor="middle" fill="#e0e5e8" font-family="Arial" font-size="12" font-weight="700">NVR / storage</text>
+    <text x="102" y="82" text-anchor="middle" fill="#8f9ca5" font-family="Arial" font-size="10">monitoring + retention</text>
+  </g>
+
+  <g transform="translate(60 452)">
+    <rect width="255" height="108" rx="14" fill="#15120d" stroke="#4d4130"/>
+    <text x="20" y="31" fill="#ffbd66" font-family="ui-monospace, monospace" font-size="11">DESIGN PRINCIPLE</text>
+    <text x="20" y="58" fill="#c7bca9" font-family="Arial" font-size="11">Power budget and network backhaul</text>
+    <text x="20" y="77" fill="#c7bca9" font-family="Arial" font-size="11">are one reliability problem, not two.</text>
+    <text x="20" y="96" fill="#817564" font-family="Arial" font-size="9">size from measured continuous load</text>
+  </g>
+
+  <text x="64" y="623" fill="#7f776b" font-family="ui-monospace, monospace" font-size="10">Privacy-safe architecture · exact capacity, locations and protected asset counts intentionally omitted</text>
+  <text x="1136" y="623" text-anchor="end" fill="#ffbd66" font-family="ui-monospace, monospace" font-size="10">PRAGALBH.IN / FIELD SYSTEM EVIDENCE</text>
+</svg>
