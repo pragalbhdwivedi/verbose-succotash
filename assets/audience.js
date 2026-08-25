@@ -21,7 +21,7 @@
       return;
     }
     if(typeof setMode==='function') setMode('explore');
-    if(r.node&&typeof focusNode==='function') focusNode(r.node);
+    if(r.node&&typeof expandPath==='function') expandPath(r.node);
   }
 
   function build(){
