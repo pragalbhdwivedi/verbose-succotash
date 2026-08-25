@@ -5,9 +5,10 @@
     infra:['proxmox','storage','networking','maas','resilience'],
     'kubernetes-ha':['kubernetes','maas','resilience','networking'],
     smartclass:['edtech','resilience','cctv','identity','signage'],
-    solarcctv:['solar','networking','cctv','access']
+    solarcctv:['solar','networking','cctv','access'],
+    'leadership-recruitment':['leadership','curriculum','communication','requirements']
   };
-  const LABELS={apps:'Operational Software',requirements:'Requirements Engineering',github:'GitHub / CI-CD',proxmox:'Proxmox / Virtualisation',communication:'Institutional Communication',edtech:'Education Technology',leadership:'Education Leadership',storage:'Storage / TrueNAS',networking:'Campus Networking',maas:'MAAS / Bare Metal',resilience:'Resilient Systems',kubernetes:'Kubernetes',cctv:'CCTV / NVR',identity:'Identity & Access',signage:'Digital Signage',solar:'Solar / Battery Systems',access:'Physical Access Control'};
+  const LABELS={apps:'Operational Software',requirements:'Requirements Engineering',github:'GitHub / CI-CD',proxmox:'Proxmox / Virtualisation',communication:'Institutional Communication',edtech:'Education Technology',leadership:'Education Leadership',curriculum:'Curriculum & Assessment',storage:'Storage / TrueNAS',networking:'Campus Networking',maas:'MAAS / Bare Metal',resilience:'Resilient Systems',kubernetes:'Kubernetes',cctv:'CCTV / NVR',identity:'Identity & Access',signage:'Digital Signage',solar:'Solar / Battery Systems',access:'Physical Access Control'};
 
   function loadStyles(){if(document.querySelector('link[data-case-navigation-style]'))return;const l=document.createElement('link');l.rel='stylesheet';l.href='./assets/case-navigation.css';l.dataset.caseNavigationStyle='true';document.head.appendChild(l)}
   function caseHash(id){return `#case=${encodeURIComponent(id)}`}
