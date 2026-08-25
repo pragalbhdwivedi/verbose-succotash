@@ -2,7 +2,7 @@
 
 Updated: 26 August 2026
 
-**Status: ACTIVE**
+**Status: ACTIVE — framework complete, evidence enrichment in progress**
 
 Sprint 1 established proof. Sprint 2 turns that proof into hiring-grade decision narratives.
 
@@ -19,7 +19,7 @@ Identity & Access remains a strong supporting case study rather than a Tier-A fl
 
 ## Standard deep-case structure
 
-Each flagship should answer:
+Each flagship now answers:
 
 1. Context
 2. Problem
@@ -34,104 +34,150 @@ Each flagship should answer:
 11. Outcome / operational value
 12. Next iteration
 
-## Current implementation
+## Live implementation
 
-`assets/case-depth.js` enhances the existing case-study modal system without rewriting the capability graph engine.
+- `assets/case-depth.js` — decision narratives and flagship hierarchy
+- `assets/case-depth.css` — deep-case layout
+- `assets/case-evidence.js` — verified public/source-backed evidence enrichment
+- `assets/case-navigation.js` — deep links and case-to-capability navigation
+- `assets/case-navigation.css` — relationship/navigation presentation
+- `OUTCOME_REGISTER.md` — controlled outcome language and future measurement plan
 
-`assets/case-depth.css` provides the deep-case layout and flagship/supporting hierarchy.
+## Visual evidence now available for all six flagships
 
-Current deep narratives are implemented for:
+- AquaPulse — `assets/media/aquapulse/aquapulse_operational-architecture_01.svg`
+- Digital Operations — `assets/media/digital-operations/digital-operations_publish-flow_01.svg`
+- Private Infrastructure — `assets/media/private-infrastructure/private-infrastructure_provisioning-loop_01.svg`
+- Kubernetes — `assets/media/kubernetes-ha/kubernetes-ha_architecture_01.svg`
+- Smart Classroom — `assets/media/smart-classroom/smart-classroom_architecture_01.svg`
+- Solar CCTV — `assets/media/solar-cctv/solar-cctv_edge-architecture_01.svg`
 
-- AquaPulse
-- Institutional Digital Operations
-- Private Infrastructure
-- HA Kubernetes
-- Smart Classroom
-- Solar CCTV Edge
-
-## Evidence connection
-
-Where a portfolio-owned evidence asset exists, the deep case should show it directly:
-
-- Kubernetes: `assets/media/kubernetes-ha/kubernetes-ha_architecture_01.svg`
-- Smart Classroom: `assets/media/smart-classroom/smart-classroom_architecture_01.svg`
-- Solar CCTV: `assets/media/solar-cctv/solar-cctv_edge-architecture_01.svg`
-
-Other cases currently link to live/public repositories or await privacy-safe screenshot capture.
-
-## Current claim boundaries
+## Publicly verified enrichment
 
 ### AquaPulse
 
-Keep **active prototype / internal-beta foundation** status explicit. Do not call it production-ready.
+The public repository supports:
 
-### Digital Operations
+- active prototype / internal-beta foundation status
+- Next.js + NestJS + PostgreSQL architecture
+- staged Postgres / HTTP cutover
+- self-hosted Linux / Proxmox deployment direction
+- RBAC / audit / AppSec planning
+- assistive, human-in-the-loop AI rather than autonomous control
 
-Public website and repositories are live/verifiable. Describe the work as institutional information architecture, timetable publishing and repeatable digital operations, not merely web design.
+### BDSPS Digital Operations
+
+Public evidence supports:
+
+- live institutional web delivery
+- version-controlled public information structure
+- scheduled GitHub Actions content generation
+- calendar-driven festival data workflow
+- FET XML as machine-readable timetable source
+- generated activity/class/teacher/room timetable views
 
 ### Private Infrastructure
 
-Use qualitative applied-infrastructure claims until redacted dashboards and physical evidence are added. Do not expose private topology.
+Public evidence supports:
 
-### Kubernetes
+- version-controlled MAAS provisioning
+- cloud-init / Netplan / bonding / bridging / Open vSwitch / storage configuration
+- separate Proxmox cloud-init bootstrap evidence
 
-The public installer/repository is the proof. Do not imply that private cluster topology is public evidence.
+Private dashboards, host identifiers, IP ranges, paths and protected topology remain intentionally unpublished.
 
-### Smart Classroom
+### HA Kubernetes
 
-Keep **source-backed prototype architecture** status until implementation evidence supports a stronger claim.
+The public installer supports:
 
-### Solar CCTV
+- SSH-orchestrated multi-node bootstrap
+- external etcd with TLS
+- HAProxy + Keepalived virtual endpoint
+- Calico + WireGuard networking
+- audit logging and log rotation
+- time-synchronisation hardening
+- metrics / Helm / optional Rancher path
 
-Keep **field system design / engineering** status clear. Do not turn autonomy assumptions into measured production performance until actual operating data exists.
+## Completed Sprint 2 interaction work
+
+- deep-case decision narratives for all six flagships
+- proof/status boundary visible in each case
+- Tier-A vs supporting hierarchy
+- visual architecture evidence for all six flagships
+- public/source-backed `Verified now` evidence blocks
+- case-to-capability navigation
+- shareable deep links, e.g. `#case=aquapulse`
+- capability deep links, e.g. `#node=kubernetes`
+- evidence cards route into the appropriate case or network node
+- Kubernetes promoted from a skill-only node into a flagship case study
+
+## Outcome layer
+
+`OUTCOME_REGISTER.md` is now the source of truth for result language.
+
+Safe outcome classes:
+
+- PUBLICLY VERIFIABLE
+- SOURCE-BACKED
+- APPLIED QUALITATIVE
+- NOT YET MEASURABLE
+
+Do not invent:
+
+- percentage improvements
+- time savings
+- cost savings
+- uptime figures
+- adoption counts
+- production-readiness claims
 
 ## Remaining Sprint 2 work
 
-### P0 — deepen evidence inside modals
+### P0 — real media enrichment
 
 - AquaPulse: stable UI screenshots when suitable
 - Digital Operations: static live-site + workflow + timetable screenshots
-- Private Infrastructure: redacted Proxmox / TrueNAS evidence
-- Kubernetes: concise failure/recovery notes and optional repo-file links
-- Smart Classroom: pilot media when implementation progresses
-- Solar CCTV: field photos and measured power observations
+- Private Infrastructure: redacted Proxmox / TrueNAS / hardware evidence
+- Smart Classroom: pilot hardware and dashboard media as implementation progresses
+- Solar CCTV: privacy-safe field photographs and measured power observations
 
-### P0 — outcome layer
+### P0 — measured outcomes where feasible
 
-Replace generic outcome language with verified operating outcomes where safe:
+Prospective measurements to capture:
 
-- reduced manual steps
-- repeatable deployment
-- centralised information
-- improved fault isolation
-- standardised data/identity
-- lower conversion complexity
-- improved recoverability
+- deployment / rebuild time
+- restore / recovery test results
+- manual steps before vs after automation
+- classroom pilot workflow friction
+- real edge-node power consumption and autonomy
+- publishing turnaround time
+- fault-resolution timeline where safe
 
-Never invent percentage improvements.
+### P1 — recruiter hierarchy refinement
 
-### P1 — case-to-network relationships
+Make Recruiter View even clearer about:
 
-Deep cases should eventually surface related capability nodes so a visitor can move:
+- flagship case studies
+- supporting applied cases
+- evidence-only items
+- role fit by audience
 
-`case study → decision → skill → another project`
+### P1 — static/social case sharing
 
-### P1 — deep links
+Future enhancement:
 
-Add URL/hash support for specific cases, for example:
-
-- `/#case=aquapulse`
-- `/#case=kubernetes-ha`
-- `/#case=smartclass`
-
-### P1 — recruiter hierarchy
-
-Recruiter View should clearly distinguish:
-
-- Tier-A flagship
-- supporting case study
-- evidence-only item
+- case-specific Open Graph title/description/image handling
+- optional printable case-study summary
 
 ## Sprint 2 exit criterion
 
-Sprint 2 is complete when all six Tier-A flagships contain a coherent decision narrative, proof/status is explicit, at least three have visual evidence inside the deep case, outcomes are factual, and a recruiter can understand each project without having to infer Pragalbh's role from the technology list.
+Sprint 2 is complete when:
+
+- all six Tier-A flagships contain coherent decision narratives
+- proof/status is explicit
+- all six have visual evidence
+- public cases expose verifiable evidence without reproducing raw repositories
+- outcome language follows `OUTCOME_REGISTER.md`
+- recruiters can deep-link directly to a case
+- visitors can move from case study back into related capability nodes
+- remaining gaps are limited to richer real-world media or measurements that genuinely require future project evidence
