@@ -2,7 +2,7 @@
 
 Updated: 26 August 2026
 
-**Status: ACTIVE — 3 SOURCE-BACKED CASES IMPLEMENTED**
+**Status: ACTIVE — 4 SOURCE-BACKED CASES IMPLEMENTED**
 
 Sprint 3 prevents the portfolio from becoming technically impressive but professionally incomplete.
 
@@ -13,9 +13,9 @@ The goal is to prove that Pragalbh's work also includes institutional leadership
 1. Teacher Recruitment & Evaluation System — **IMPLEMENTED**
 2. Curriculum & Assessment Framework — **IMPLEMENTED**
 3. Compliance & Documentation Workflow — **IMPLEMENTED**
-4. Institutional Operations System — NEXT
-5. Academic Calendar & School-Wide Execution — NEXT
-6. Admissions & Communication Operations — NEXT
+4. Institutional Operations System — **IMPLEMENTED**
+5. Academic Scheduling & School-Wide Execution — **NEXT**
+6. Admissions & Communication Operations — **NEXT**
 
 ---
 
@@ -30,7 +30,7 @@ Source basis includes:
 - staged selection including application screening, written/leadership evaluation where appropriate, demo/practical interaction and final interview
 - subject-teacher recruitment assessments combining pedagogy, subject knowledge and classroom application
 
-The public case shows:
+Public framework:
 
 `role definition → screening → evaluation → demo → interview → selection → performance expectations → review loop`
 
@@ -42,45 +42,13 @@ Raw candidate records, compensation details and private evaluation data are not 
 
 **Proof type:** SOURCE-BACKED ACADEMIC SYSTEM
 
-## Source basis
+Teacher role standards require lesson planning aligned with curriculum outcomes, annual/unit/lesson plans, worksheets, question papers, remedial/enrichment planning, meaningful feedback and academic documentation. Recruitment assessments independently test pedagogy, formative/diagnostic assessment, inclusion, critical thinking, subject knowledge and classroom application.
 
-Teacher role standards require:
+Public framework:
 
-- lesson planning aligned with curriculum outcomes, term plans and age-appropriate pedagogy
-- annual plans, unit plans and lesson plans
-- worksheets and classroom resources
-- question papers and assessment tools
-- remedial and enrichment planning
-- notebook / assignment / project checking with meaningful feedback
-- marks, anecdotal records and academic documentation
-- competency-oriented / board-style assessment preparation where applicable
+`curriculum outcomes → planning → classroom delivery → assessment → feedback → remedial/enrichment response → academic records → review loop`
 
-The Science Teacher Recruitment Test independently tests whether a candidate can reason through these expectations. The paper includes:
-
-- 100 questions
-- 80 MCQs + 20 descriptive questions
-- a dedicated Child Development & Pedagogy component
-- formative and diagnostic assessment concepts
-- inclusion and learner diversity
-- experiential / activity-based learning
-- critical thinking
-- subject knowledge across the target classes
-- classroom explanation, demonstration and lesson-planning tasks
-
-## Public framework
-
-`curriculum outcomes → annual/unit/lesson planning → classroom delivery → formative/summative assessment → feedback → remedial/enrichment response → academic records → review loop`
-
-## Claim boundary
-
-This proves a source-backed academic standard and assessment philosophy. It does **not** claim that every classroom has been independently audited against every element of the framework.
-
-## Next iteration
-
-- moderated question-paper blueprints
-- stage-specific assessment rubrics
-- anonymised feedback/remedial examples
-- assessment-to-intervention review protocol
+Claim boundary: this proves a source-backed academic standard and assessment philosophy. It does not claim that every classroom has been independently audited against every element.
 
 ---
 
@@ -88,56 +56,40 @@ This proves a source-backed academic standard and assessment philosophy. It does
 
 **Proof type:** SOURCE-BACKED COMPLIANCE SYSTEM
 
-## Source basis A — University / college portal analysis
+The university/college portal guide separates stable, confirmation-required and regularly changing data and requires proof before positive compliance claims. The A-to-K record workbook structures institutional, fee, salary, concession, publication, account and correspondence evidence into auditable registers with annexure references and verification.
 
-The internal pre-fill/compliance guide separates:
-
-- fields that can be pre-filled
-- fields requiring official confirmation
-- fields that change by month/session
-
-It also establishes evidence gates:
-
-- do not mark support/services as available unless the arrangement and proof exist
-- committee-function claims require supporting orders, membership and meeting records
-- aggregate reporting should avoid unnecessary personal identities
-- a record checklist should exist before submission
-
-## Source basis B — A-to-K fee-regulation record workbook
-
-The structured workbook creates auditable registers for:
-
-- institution / recognition records
-- fee structures across sessions
-- comparative fee changes
-- staff salary records
-- fee concessions
-- books
-- uniforms
-- publication/display proof
-- fee accounts
-- other correspondence and records
-
-The instructions require:
-
-- attachment / annexure references
-- verification / certification
-- explicit status for unavailable, not-maintained or not-applicable records
-- no unexplained blank evidence fields
-
-## Public framework
+Public framework:
 
 `requirement → source verification → fixed/changing-data classification → proof gate → structured register → annexure/index → sign-off/submission → retained audit trail`
 
-## Claim boundary
+Claim boundary: this demonstrates evidence-led documentation architecture, not legal counsel or a guarantee of regulatory compliance.
 
-This case demonstrates evidence-led documentation architecture and compliance workflow design. It does **not** present Pragalbh as legal counsel or publish raw student, employee, financial or regulatory records.
+---
 
-## Next iteration
+# Case 4 — Institutional Operations System
 
-- reusable compliance control register with owner / source / due date / evidence status
-- redacted example showing an unstructured request converted into an indexed response package
-- clearer submission-proof and re-verification workflow
+**Proof type:** SOURCE-BACKED OPERATIONS SYSTEM
+
+Leadership standards explicitly cover:
+
+- academic planning
+- staff deployment and timetable oversight
+- examinations, discipline and daily operations
+- teaching-quality review and syllabus monitoring
+- records and student-performance tracking
+- staff meetings, PTMs and observation cycles
+- training and improvement reviews
+- assemblies, events and admissions support
+- institutional communication
+- policy implementation and performance accountability
+
+A consolidated staff timetable provides a concrete execution artifact by publishing subject/class allocations and requiring staff to verify allocations and report discrepancies.
+
+Public framework:
+
+`plan → deploy → execute → monitor → review → coordinate → govern → adjust`
+
+Claim boundary: this proves an operating model and responsibility system. It does not claim unmeasured gains in parent confidence, discipline, academic results or staff productivity.
 
 ---
 
@@ -145,17 +97,19 @@ This case demonstrates evidence-led documentation architecture and compliance wo
 
 Sprint 3 currently uses:
 
-- `assets/leadership-case.js` — Teacher Recruitment & Evaluation case
-- `assets/leadership-systems.js` — Curriculum/Assessment + Compliance/Documentation cases
+- `assets/leadership-case.js` — Teacher Recruitment & Evaluation
+- `assets/leadership-systems.js` — Curriculum/Assessment, Compliance/Documentation and Institutional Operations
 - `assets/media/leadership/teacher-recruitment_framework_01.svg`
 - `assets/media/leadership/curriculum-assessment_framework_01.svg`
 - `assets/media/leadership/compliance-documentation_workflow_01.svg`
+- `assets/media/leadership/institutional-operations_system_01.svg`
 
 Deep links:
 
 - `/#case=leadership-recruitment`
 - `/#case=curriculum-assessment`
 - `/#case=compliance-documentation`
+- `/#case=institutional-operations`
 
 Each case links back into the capability network.
 
@@ -163,31 +117,19 @@ Each case links back into the capability network.
 
 # Remaining Sprint 3 work
 
-## P0 — Institutional Operations System
+## P0 — Academic Scheduling & School-Wide Execution
 
 Evidence target:
 
-- academic planning
-- staff deployment / responsibility flow
-- meetings / PTMs / observation cycles
-- discipline / operational coordination
-- policy/SOP implementation
-- execution tracking
+- FET / machine-readable timetable source
+- teacher/class/room/activity views
+- staff allocation publication
+- verification / discrepancy loop
+- relationship to academic calendar and downstream classroom automation
 
-Public form: privacy-safe operating-system diagram + representative redacted workflow.
+Preferred proof type: **PUBLIC REPOSITORY + SOURCE-BACKED OPERATIONS**.
 
-## P0 — Academic Calendar & School-Wide Execution
-
-Evidence target:
-
-- timetable / session structure
-- assessment cycles
-- events
-- staff responsibilities
-- publication / communication
-- timetable as machine-readable operational input where appropriate
-
-Public form: calendar-to-execution diagram backed by timetable evidence.
+Public form: scheduling-source-to-execution diagram backed by public timetable evidence and the staff circular.
 
 ## P1 — Admissions & Communication Operations
 
@@ -196,10 +138,11 @@ Evidence target:
 - campaign planning
 - parent-facing communication
 - admissions workflow
+- bilingual institutional communication
 - follow-up / information delivery
 - QR / web handoff where applicable
 
-Public form: process case study without private lead/student data.
+Public form: process case study without private lead, student or parent data.
 
 ---
 
