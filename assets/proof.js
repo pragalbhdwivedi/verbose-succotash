@@ -1,11 +1,36 @@
 (function(){
   const PROOF={
-    smartclass:{type:'SOURCE-BACKED ARCHITECTURE',note:'Supported by a formal technical proposal and implementation planning. Presented as prototype architecture, not as a completed campus-wide deployment.'},
-    infra:{type:'APPLIED INFRASTRUCTURE',note:'Supported by public automation repositories plus operational administration, storage, recovery and troubleshooting work.'},
-    aquapulse:{type:'PUBLIC REPOSITORY',note:'Public project architecture and documentation are available. The platform is presented as active development rather than a finished commercial product.'},
-    solarcctv:{type:'FIELD SYSTEM DESIGN',note:'Based on real CCTV, outdoor wireless and continuous-power requirements. Field engineering and design status is stated explicitly.'},
-    digitalops:{type:'LIVE + PUBLIC REPOSITORY',note:'A live institutional web system and its GitHub-managed publishing workflow are publicly verifiable.',live:'https://bdsps.in/'},
-    identity:{type:'APPLIED SYSTEM DESIGN',note:'Derived from active identity, RFID, transport credential and physical access-control work. The system architecture is presented separately from visual card design.'}
+    smartclass:{
+      type:'SOURCE-BACKED ARCHITECTURE',
+      note:'Supported by a formal technical proposal and implementation planning. Presented as prototype architecture, not as a completed campus-wide deployment.',
+      state:'The pilot architecture is defined around timetable automation, classroom edge compute, presentation, recording, attendance context and central services. Implementation remains staged rather than claimed as a finished rollout.'
+    },
+    infra:{
+      type:'APPLIED INFRASTRUCTURE',
+      note:'Supported by public automation repositories plus operational administration, storage, recovery and troubleshooting work.',
+      state:'Self-hosted compute, storage and provisioning are an active operating practice. The environment continues to evolve through automation, recovery work and capacity planning rather than being treated as a one-time lab build.'
+    },
+    aquapulse:{
+      type:'PUBLIC REPOSITORY',
+      note:'Public project architecture and documentation are available. The platform is presented as active development rather than a finished commercial product.',
+      state:'The product architecture and migration path are established and development is active. The portfolio credits the system design, workflow model, RBAC/audit approach and self-hosted direction without presenting unfinished functionality as complete.'
+    },
+    solarcctv:{
+      type:'FIELD SYSTEM DESIGN',
+      note:'Based on real CCTV, outdoor wireless and continuous-power requirements. Field engineering and design status is stated explicitly.',
+      state:'The design has moved from a generic solar idea to a direct-DC edge architecture that treats power autonomy, PoE load and wireless backhaul as one system. It remains field engineering/design work rather than a packaged production product.'
+    },
+    digitalops:{
+      type:'LIVE + PUBLIC REPOSITORY',
+      note:'A live institutional web system and its GitHub-managed publishing workflow are publicly verifiable.',
+      state:'Public institutional information is delivered through a live web platform backed by structured publishing and GitHub-managed workflows. Timetable and other operational publishing remain part of an ongoing digital-operations programme.',
+      live:'https://bdsps.in/'
+    },
+    identity:{
+      type:'APPLIED SYSTEM DESIGN',
+      note:'Derived from active identity, RFID, transport credential and physical access-control work. The system architecture is presented separately from visual card design.',
+      state:'Identity work is being standardised around durable IDs, RFID/QR interfaces, access levels and service relationships so future school services can attach to the same identity model instead of creating another isolated card database.'
+    }
   };
 
   function addCardBadges(){
@@ -29,11 +54,19 @@
       const p=PROOF[id],modal=document.getElementById('caseModal');
       if(!p||!modal) return;
       const lead=modal.querySelector('.lead');
-      if(lead&&!modal.querySelector('.proof-panel')){
-        const panel=document.createElement('div');
-        panel.className='proof-panel';
-        panel.innerHTML=`<span class="proof-type">${p.type}</span><p>${p.note}</p>`;
-        lead.insertAdjacentElement('afterend',panel);
+      let proofPanel=modal.querySelector('.proof-panel');
+      if(lead&&!proofPanel){
+        proofPanel=document.createElement('div');
+        proofPanel.className='proof-panel';
+        proofPanel.innerHTML=`<span class="proof-type">${p.type}</span><p>${p.note}</p>`;
+        lead.insertAdjacentElement('afterend',proofPanel);
+      }
+      if(p.state&&!modal.querySelector('[data-current-state]')){
+        const state=document.createElement('div');
+        state.className='proof-panel';
+        state.dataset.currentState='true';
+        state.innerHTML=`<span class="proof-type">CURRENT STATE</span><p>${p.state}</p>`;
+        (proofPanel||lead).insertAdjacentElement('afterend',state);
       }
       if(p.live){
         const actions=modal.querySelector('.actions');
