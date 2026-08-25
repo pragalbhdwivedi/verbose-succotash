@@ -11,6 +11,7 @@ permissions:
 jobs:
   audit:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,50 +21,5 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Check JavaScript syntax
-        shell: bash
-        run: |
-          set -euo pipefail
-          while IFS= read -r -d '' file; do
-            echo "Checking $file"
-            node --check "$file"
-          done < <(find assets -type f -name '*.js' -print0)
-
-      - name: Verify canonical portfolio files
-        shell: bash
-        run: |
-          set -euo pipefail
-          test -f index.html
-          test -f CNAME
-          test -f robots.txt
-          test -f sitemap.xml
-          test "$(tr -d '\r\n' < CNAME)" = "pragalbh.in"
-          grep -Fq '<link rel="canonical" href="https://pragalbh.in/"' index.html
-          grep -Fq 'https://pragalbh.in/sitemap.xml' robots.txt
-
-      - name: Reject iframe regressions on live surface
-        shell: bash
-        run: |
-          set -euo pipefail
-          if grep -RIn --include='*.html' --include='*.js' '<iframe' index.html assets; then
-            echo 'Unexpected iframe found on live portfolio surface.' >&2
-            exit 1
-          fi
-
-      - name: Reject public email addresses on live surface
-        shell: bash
-        run: |
-          set -euo pipefail
-          if grep -REIn --include='*.html' --include='*.js' '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}' index.html assets; then
-            echo 'Public email address found on live portfolio surface.' >&2
-            exit 1
-          fi
-
-      - name: Reject private IPv4 addresses on live surface
-        shell: bash
-        run: |
-          set -euo pipefail
-          if grep -REIn --include='*.html' --include='*.js' '(^|[^0-9])(10\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}|192\.168\.[0-9]{1,3}\.[0-9]{1,3}|172\.(1[6-9]|2[0-9]|3[01])\.[0-9]{1,3}\.[0-9]{1,3})([^0-9]|$)' index.html assets; then
-            echo 'Private IPv4 address found on live portfolio surface.' >&2
-            exit 1
-          fi
+      - name: Run portfolio validation gate
+        run: node scripts/validate-portfolio.mjs
