@@ -13,7 +13,10 @@ const mustExist = [
   'sitemap.xml',
   'README.md',
   'MASTER_ROADMAP.md',
+  'PORTFOLIO_STATUS.md',
   'PORTFOLIO_ARCHITECTURE.md',
+  'PORTFOLIO_MAINTENANCE.md',
+  'RELEASE_CHECKLIST.md',
   'SKILLS.md',
   'EVIDENCE_REGISTER.md',
   'OUTCOME_REGISTER.md',
@@ -25,7 +28,9 @@ const mustExist = [
   'assets/proof.js',
   'assets/case-navigation.js',
   'assets/hiring-conversion.js',
-  'assets/accessibility.js'
+  'assets/accessibility.js',
+  'assets/network-navigation.js',
+  'assets/network-navigation.css'
 ];
 
 function fail(message) { failures.push(message); }
