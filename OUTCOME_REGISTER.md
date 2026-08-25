@@ -38,6 +38,8 @@ No percentage improvement, cost saving, uptime figure, adoption figure or protec
 | **Curriculum & Assessment Framework** | SOURCE-BACKED | Academic expectations are expressed as a plan → teach → assess → respond → document → review loop, with explicit roles for formative/diagnostic evidence, feedback, remedial work and enrichment. | Teacher role standards + recruitment assessments testing pedagogy, assessment and classroom application | School-wide implementation percentage, learning-gain figures, exam improvement or teacher compliance rates unless audited/measured |
 | **Compliance & Documentation Workflow** | SOURCE-BACKED | Compliance work is structured as claim → source → verification → register → annexure → sign-off → retained audit trail, with evidence required before a positive compliance claim is made. | University portal pre-fill/compliance guide + structured A–K record workbook | Legal-compliance guarantees, inspection success rates, time savings or completeness percentages unless independently measured |
 | **Institutional Operations System** | SOURCE-BACKED | Leadership responsibilities are structured as a plan → deploy → execute → monitor → review → coordinate → govern → adjust operating loop, with a concrete staff-allocation verification artifact. | Principal role standards + consolidated staff timetable circular | Improved discipline, academic-result gains, parent-confidence scores, staff-productivity gains or execution-speed percentages unless measured |
+| **Academic Scheduling & School-Wide Execution** | PUBLICLY VERIFIABLE + SOURCE-BACKED | Academic scheduling exists as a machine-readable and publishable operational source with generated audience-specific views and a staff verification/discrepancy loop. | Public `tt-bds` FET/XML/HTML outputs + staff timetable circular | Time saved, scheduling error reduction, staff productivity or automated-room reliability unless measured |
+| **Admissions & Institutional Communication Operations** | SOURCE-BACKED | Verified requirements are turned into audience-specific information, a clear response path, necessary record capture and eligibility/record validation rather than disconnected notices or promotional messages. | Admission campaign requirements + bilingual parent communication/consent workflow | Enrolment growth, lead conversion, campaign ROI, response rate or parent satisfaction unless measured |
 
 ---
 
@@ -74,6 +76,7 @@ Prefer:
 - indexed, traceable documentation packages
 - visible staff allocation and discrepancy handling
 - leadership expressed as an operating loop rather than title alone
+- audience-specific communication with a defined response path
 
 Avoid unless measured:
 
@@ -88,6 +91,7 @@ Avoid unless measured:
 - improved learning outcomes without baseline/comparison evidence
 - "fully compliant" where the portfolio only proves a documentation workflow
 - improved discipline or parent confidence without evidence
+- enrolment growth / campaign ROI / conversion-rate claims without prospective tracking
 
 ## Next measurement opportunities
 
@@ -105,5 +109,7 @@ When projects mature, collect evidence for:
 10. assessment-to-remedial follow-through using anonymised aggregate evidence
 11. compliance-package completeness / rework counts where safe
 12. staff-allocation discrepancy rate and resolution cycle where safe
+13. timetable release/change-control turnaround
+14. admissions enquiry/status progression using privacy-safe aggregate measurement
 
 Measurements should be captured prospectively rather than reconstructed later from memory.
