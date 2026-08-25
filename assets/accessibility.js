@@ -15,6 +15,6 @@
   document.addEventListener('keydown',e=>{const overlay=document.getElementById('caseOverlay'),modal=document.getElementById('caseModal');if(!overlay?.classList.contains('show')||!modal)return;if(e.key==='Escape'){e.preventDefault();if(typeof window.closeCase==='function')window.closeCase();return}if(e.key!=='Tab')return;const list=focusables(modal);if(!list.length){e.preventDefault();modal.focus();return}const first=list[0],last=list[list.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}});
   function observeGraph(){const svg=document.getElementById('network');if(!svg)return;decorateNodes();new MutationObserver(()=>decorateNodes()).observe(svg,{childList:true,subtree:true})}
   function loadNetworkNavigation(){if(document.querySelector('script[data-network-navigation-layer]'))return;const s=document.createElement('script');s.src='./assets/network-navigation.js';s.dataset.networkNavigationLayer='true';document.body.appendChild(s)}
-  function init(){loadStyle();enhanceStatic();enhanceSearch();observeGraph();loadNetworkNavigation()}
+  function init(){loadStyle();enhanceStatic();enhanceSearch();observeGraph();if(document.getElementById('caseOverlay')?.classList.contains('show'))setTimeout(prepareModal,0);loadNetworkNavigation()}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
