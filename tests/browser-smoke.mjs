@@ -11,14 +11,14 @@ async function waitForEnhancements(page) {
   });
 }
 
-async function assertNoPageErrors(page, label) {
+function capturePageErrors(page, label) {
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   return () => assert.deepEqual(errors, [], `${label} emitted browser page errors: ${errors.join(' | ')}`);
 }
 
 const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
-const finishMainErrors = await assertNoPageErrors(page, 'main smoke path');
+const finishMainErrors = capturePageErrors(page, 'main smoke path');
 
 await page.goto(base, { waitUntil: 'domcontentloaded' });
 await waitForEnhancements(page);
@@ -65,7 +65,8 @@ await search.fill('Kubernetes');
 await page.waitForSelector('#searchResults.show [role="option"]');
 assert.equal(await search.getAttribute('aria-expanded'), 'true');
 await search.press('ArrowDown');
-await search.press('Enter');
+assert.equal(await page.locator(':focus').getAttribute('role'), 'option', 'ArrowDown should move focus into search results');
+await page.keyboard.press('Enter');
 await page.waitForFunction(() => location.hash === '#node=kubernetes');
 assert.equal(new URL(page.url()).hash, '#node=kubernetes');
 
@@ -82,7 +83,7 @@ await noJsPage.goto(base, { waitUntil: 'domcontentloaded' });
 assert.equal(await noJsPage.locator('.noscript-profile').isVisible(), true, 'No-JS profile must remain visible');
 assert.equal(await noJsPage.locator('.app').isVisible(), false, 'Interactive shell must be hidden without JavaScript');
 assert.ok((await noJsPage.locator('.noscript-profile').textContent()).includes('AquaPulse'));
-assert.equal(await noJsPage.locator('a[href="tel:+919555877000"]').count(), 1);
+assert.equal(await noJsPage.locator('.noscript-profile a[href="tel:+919555877000"]').count(), 1);
 await noJsContext.close();
 
 await browser.close();
