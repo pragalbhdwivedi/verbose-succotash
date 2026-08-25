@@ -23,13 +23,16 @@ The operating stack is organised into five pillars:
 ## Current execution status
 
 - **Sprint 1 — Real Evidence:** foundation complete; privacy-safe media enrichment continues as an ongoing backlog.
-- **Sprint 2 — Six Flagship Deep Case Studies:** active.
+- **Sprint 2 — Six Flagship Deep Case Studies:** framework and navigation complete; richer screenshots/measurements continue where real evidence becomes available.
+- **Sprint 3 — Leadership & Institutional Systems Proof:** active; first source-backed leadership case is live.
 
 ## Planning documents
 
 - **[MASTER_ROADMAP.md](./MASTER_ROADMAP.md)** — complete portfolio strategy, execution phases, flagship backlog, hiring conversion, QA and definition of done.
-- **[SPRINT_2_CASE_STUDIES.md](./SPRINT_2_CASE_STUDIES.md)** — active sprint for deep decision narratives across the six flagship case studies.
+- **[SPRINT_2_CASE_STUDIES.md](./SPRINT_2_CASE_STUDIES.md)** — flagship decision narratives, verified evidence, visual proof, deep links and remaining enrichment backlog.
+- **[SPRINT_3_LEADERSHIP.md](./SPRINT_3_LEADERSHIP.md)** — leadership and institutional-systems proof track.
 - **[EVIDENCE_REGISTER.md](./EVIDENCE_REGISTER.md)** — evidence control sheet mapping projects to proof type, publication readiness, privacy requirements and media backlog.
+- **[OUTCOME_REGISTER.md](./OUTCOME_REGISTER.md)** — controls what outcome language is safe, verified, source-backed or not yet measurable.
 - **[PORTFOLIO_ARCHITECTURE.md](./PORTFOLIO_ARCHITECTURE.md)** — interaction model, proof taxonomy, privacy rules, media rules and attribution boundaries.
 - **[SKILLS.md](./SKILLS.md)** — detailed capability inventory and evidence base.
 
@@ -58,6 +61,25 @@ See **[SKILLS.md](./SKILLS.md)** for the complete detailed inventory.
 The portfolio records 35 areas acquired or substantially deepened during roughly August 2025–August 2026, including systems architecture, requirements engineering, private cloud, storage, Kubernetes, MAAS, Linux, infrastructure automation, campus networking, CCTV/NVR, smart classrooms, identity/access, solar/battery systems, field diagnostics, observability, resilient-system design and cross-domain institutional systems engineering.
 
 These are not presented as equal-expertise claims. The live portfolio distinguishes core strengths, applied experience, prototype architecture and developing knowledge where appropriate.
+
+## Flagship technical / systems cases
+
+- **AquaPulse** — active self-hosted operational-platform prototype
+- **BDSPS Digital Ecosystem** — live institutional publishing + public repositories
+- **Private Infrastructure Stack** — applied self-hosted compute/storage/provisioning practice
+- **HA Kubernetes Architecture** — public repeatable HA bootstrap
+- **Smart Classroom Architecture** — source-backed prototype architecture
+- **Solar CCTV Edge Infrastructure** — field-system design connecting power, PoE and wireless backhaul
+
+All six now include decision narratives, proof/status boundaries, visual architecture evidence and case-to-capability navigation.
+
+## Leadership proof
+
+The first source-backed leadership case is now live:
+
+- **Teacher Recruitment & Evaluation System** — role definition, competencies, responsibilities, staged selection, written/leadership evaluation, demo interaction, final interview and explicit performance expectations.
+
+The supporting assessment evidence includes pedagogy, inclusion, formative/diagnostic assessment, critical thinking, activity-based learning, subject knowledge and lesson-planning tasks.
 
 ## Selected public GitHub evidence
 
@@ -113,13 +135,18 @@ The live portfolio is a dependency-light static `index.html` with progressively 
 - `index.html` — live portfolio shell
 - `assets/portfolio.*` — capability graph, recruiter view and core case system
 - `assets/evidence.*` — proof rail
-- `assets/proof.js` — case proof/status layer
+- `assets/proof.js` — case proof/status and enhancement loading chain
 - `assets/audience.*` — audience routing
-- `assets/case-depth.*` — Sprint 2 flagship decision narratives
-- `assets/media/` — privacy-safe case-study evidence assets and publication contract
+- `assets/case-depth.*` — flagship decision narratives
+- `assets/case-evidence.js` — verified public/source-backed evidence inside cases
+- `assets/case-navigation.*` — case deep links and capability relationships
+- `assets/leadership-case.js` — source-backed leadership case layer
+- `assets/media/` — privacy-safe case-study evidence assets
 - `MASTER_ROADMAP.md` — complete execution roadmap
-- `SPRINT_2_CASE_STUDIES.md` — active sprint plan
+- `SPRINT_2_CASE_STUDIES.md` — flagship case-study execution plan
+- `SPRINT_3_LEADERSHIP.md` — leadership proof execution plan
 - `EVIDENCE_REGISTER.md` — evidence register / media backlog
+- `OUTCOME_REGISTER.md` — outcome claim control
 - `PORTFOLIO_ARCHITECTURE.md` — architecture, evidence and privacy rules
 - `SKILLS.md` — comprehensive skills and capability inventory
 - `CNAME` — custom domain
