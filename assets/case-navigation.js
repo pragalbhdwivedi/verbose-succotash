@@ -9,9 +9,10 @@
     'leadership-recruitment':['leadership','curriculum','communication','requirements'],
     'curriculum-assessment':['curriculum','leadership','communication','requirements'],
     'compliance-documentation':['leadership','communication','requirements'],
-    'institutional-operations':['leadership','curriculum','communication','requirements']
+    'institutional-operations':['leadership','curriculum','communication','requirements'],
+    'academic-scheduling':['leadership','curriculum','edtech','requirements','smartclass']
   };
-  const LABELS={apps:'Operational Software',requirements:'Requirements Engineering',github:'GitHub / CI-CD',proxmox:'Proxmox / Virtualisation',communication:'Institutional Communication',edtech:'Education Technology',leadership:'Education Leadership',curriculum:'Curriculum & Assessment',storage:'Storage / TrueNAS',networking:'Campus Networking',maas:'MAAS / Bare Metal',resilience:'Resilient Systems',kubernetes:'Kubernetes',cctv:'CCTV / NVR',identity:'Identity & Access',signage:'Digital Signage',solar:'Solar / Battery Systems',access:'Physical Access Control'};
+  const LABELS={apps:'Operational Software',requirements:'Requirements Engineering',github:'GitHub / CI-CD',proxmox:'Proxmox / Virtualisation',communication:'Institutional Communication',edtech:'Education Technology',leadership:'Education Leadership',curriculum:'Curriculum & Assessment',storage:'Storage / TrueNAS',networking:'Campus Networking',maas:'MAAS / Bare Metal',resilience:'Resilient Systems',kubernetes:'Kubernetes',cctv:'CCTV / NVR',identity:'Identity & Access',signage:'Digital Signage',solar:'Solar / Battery Systems',access:'Physical Access Control',smartclass:'Smart Classroom'};
 
   function loadStyles(){if(document.querySelector('link[data-case-navigation-style]'))return;const l=document.createElement('link');l.rel='stylesheet';l.href='./assets/case-navigation.css';l.dataset.caseNavigationStyle='true';document.head.appendChild(l)}
   function caseHash(id){return `#case=${encodeURIComponent(id)}`}
