@@ -20,6 +20,12 @@ The operating stack is organised into five pillars:
 4. **Automation & Software Platforms**
 5. **Applied Technology & Energy Systems**
 
+## Planning documents
+
+- **[MASTER_ROADMAP.md](./MASTER_ROADMAP.md)** — complete portfolio strategy, execution phases, flagship case-study backlog, evidence programme, hiring conversion, QA and definition of done.
+- **[PORTFOLIO_ARCHITECTURE.md](./PORTFOLIO_ARCHITECTURE.md)** — interaction model, evidence taxonomy, privacy rules, media rules and content attribution boundaries.
+- **[SKILLS.md](./SKILLS.md)** — detailed capability inventory and evidence base.
+
 ## Established capability base
 
 The portfolio retains all thirteen established capability families:
@@ -134,6 +140,9 @@ The live portfolio is a dependency-free static `index.html`, intentionally compa
 ## Repository structure
 
 - `index.html` — live portfolio source
+- `assets/` — live portfolio interaction, evidence, proof and audience-routing layers
+- `MASTER_ROADMAP.md` — complete execution roadmap
+- `PORTFOLIO_ARCHITECTURE.md` — architecture, evidence and privacy rules
 - `SKILLS.md` — comprehensive skills and capability inventory
 - `CNAME` — custom domain
 - `README.md` — portfolio documentation
@@ -141,4 +150,4 @@ The live portfolio is a dependency-free static `index.html`, intentionally compa
 
 ---
 
-Last major capability update: **26 August 2026**
+Last major roadmap update: **26 August 2026**
