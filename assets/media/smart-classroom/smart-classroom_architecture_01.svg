@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Smart Classroom source-backed architecture</title>
+  <desc id="desc">Privacy-safe architecture diagram showing timetable and attendance context feeding a classroom edge appliance, presentation and camera systems, local resilient storage, and central self-hosted services.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07090c"/>
+      <stop offset="1" stop-color="#0b1219"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#1a2630" stroke-width="1" opacity=".42"/>
+    </pattern>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#70808e"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+
+  <text x="64" y="72" fill="#baff67" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="3">SOURCE-BACKED ARCHITECTURE · PROTOTYPE</text>
+  <text x="64" y="116" fill="#f2f5f7" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Smart Classroom System</text>
+  <text x="64" y="148" fill="#91a0ab" font-family="Arial, Helvetica, sans-serif" font-size="16">Timetable-driven teaching, capture, attendance context and resilient self-hosted operations</text>
+
+  <!-- input -->
+  <g transform="translate(66 235)">
+    <rect width="178" height="174" rx="14" fill="#0d151d" stroke="#315778"/>
+    <text x="20" y="34" fill="#72b8ff" font-family="ui-monospace, monospace" font-size="12" letter-spacing="2">INSTITUTION DATA</text>
+    <rect x="18" y="54" width="142" height="38" rx="7" fill="#101d28" stroke="#29485f"/>
+    <text x="89" y="78" text-anchor="middle" fill="#d8e5ef" font-family="Arial" font-size="13">FET timetable</text>
+    <rect x="18" y="104" width="142" height="38" rx="7" fill="#101d28" stroke="#29485f"/>
+    <text x="89" y="128" text-anchor="middle" fill="#d8e5ef" font-family="Arial" font-size="13">Attendance totals</text>
+    <text x="20" y="161" fill="#71808b" font-family="Arial" font-size="11">No public student identity</text>
+  </g>
+
+  <path d="M244 322H318" stroke="#70808e" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- edge -->
+  <g transform="translate(326 208)" filter="url(#glow)">
+    <rect width="214" height="228" rx="16" fill="#10181d" stroke="#baff67" stroke-width="1.5"/>
+    <text x="107" y="36" text-anchor="middle" fill="#baff67" font-family="ui-monospace, monospace" font-size="12" letter-spacing="2">CLASSROOM EDGE</text>
+    <circle cx="107" cy="86" r="31" fill="#15231b" stroke="#7ab946"/>
+    <text x="107" y="82" text-anchor="middle" fill="#f3f7ef" font-family="Arial" font-size="14" font-weight="700">Pi / thin</text>
+    <text x="107" y="99" text-anchor="middle" fill="#f3f7ef" font-family="Arial" font-size="14" font-weight="700">client</text>
+    <text x="25" y="143" fill="#aab6be" font-family="Arial" font-size="12">• timetable state machine</text>
+    <text x="25" y="166" fill="#aab6be" font-family="Arial" font-size="12">• presentation/session control</text>
+    <text x="25" y="189" fill="#aab6be" font-family="Arial" font-size="12">• local composition &amp; cache</text>
+    <text x="25" y="212" fill="#aab6be" font-family="Arial" font-size="12">• automatic mode switching</text>
+  </g>
+
+  <path d="M540 322H612" stroke="#70808e" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- room IO -->
+  <g transform="translate(620 213)">
+    <rect width="198" height="218" rx="14" fill="#0d151d" stroke="#3f5668"/>
+    <text x="99" y="34" text-anchor="middle" fill="#d2dae0" font-family="ui-monospace, monospace" font-size="12" letter-spacing="2">ROOM I/O</text>
+    <rect x="18" y="54" width="162" height="34" rx="7" fill="#111b24" stroke="#354a5b"/>
+    <text x="99" y="76" text-anchor="middle" fill="#d7dfe4" font-family="Arial" font-size="12">HDMI display / projector</text>
+    <rect x="18" y="100" width="162" height="34" rx="7" fill="#111b24" stroke="#354a5b"/>
+    <text x="99" y="122" text-anchor="middle" fill="#d7dfe4" font-family="Arial" font-size="12">Teacher / board camera</text>
+    <rect x="18" y="146" width="162" height="34" rx="7" fill="#111b24" stroke="#354a5b"/>
+    <text x="99" y="168" text-anchor="middle" fill="#d7dfe4" font-family="Arial" font-size="12">Existing RTSP camera</text>
+    <text x="99" y="204" text-anchor="middle" fill="#71808b" font-family="Arial" font-size="11">presentation + lesson capture</text>
+  </g>
+
+  <path d="M818 322H882" stroke="#70808e" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- buffer -->
+  <g transform="translate(890 233)">
+    <rect width="154" height="178" rx="14" fill="#0d151d" stroke="#b896ff"/>
+    <text x="77" y="36" text-anchor="middle" fill="#b896ff" font-family="ui-monospace, monospace" font-size="12" letter-spacing="2">LOCAL BUFFER</text>
+    <rect x="28" y="60" width="98" height="60" rx="10" fill="#171526" stroke="#735ba2"/>
+    <text x="77" y="87" text-anchor="middle" fill="#eee8ff" font-family="Arial" font-size="14" font-weight="700">NVMe</text>
+    <text x="77" y="106" text-anchor="middle" fill="#c7b8e8" font-family="Arial" font-size="11">cache / recording</text>
+    <text x="77" y="147" text-anchor="middle" fill="#8e839e" font-family="Arial" font-size="11">keeps useful local</text>
+    <text x="77" y="163" text-anchor="middle" fill="#8e839e" font-family="Arial" font-size="11">operation during outage</text>
+  </g>
+
+  <!-- central services bottom -->
+  <path d="M967 411V486" stroke="#70808e" stroke-width="2" marker-end="url(#arrow)"/>
+  <g transform="translate(700 492)">
+    <rect width="420" height="118" rx="14" fill="#0d151d" stroke="#68dfd0"/>
+    <text x="24" y="34" fill="#68dfd0" font-family="ui-monospace, monospace" font-size="12" letter-spacing="2">CENTRAL SELF-HOSTED SERVICES</text>
+    <text x="24" y="66" fill="#d2e6e3" font-family="Arial" font-size="12">Dashboard / API · media gateway · database · monitoring</text>
+    <text x="24" y="89" fill="#a2b6b4" font-family="Arial" font-size="12">central storage + backup · admin controls · health telemetry</text>
+    <text x="24" y="108" fill="#71808b" font-family="Arial" font-size="10">Architecture deliberately avoids making classroom teaching dependent on continuous internet access.</text>
+  </g>
+
+  <!-- teaching path -->
+  <path d="M433 208V175H718V213" stroke="#72b8ff" stroke-width="1.5" stroke-dasharray="6 6" marker-end="url(#arrow)"/>
+  <text x="575" y="191" text-anchor="middle" fill="#72b8ff" font-family="ui-monospace, monospace" font-size="10">BROWSER SHARE / AIRPLAY CONVENIENCE</text>
+
+  <text x="64" y="626" fill="#71808b" font-family="ui-monospace, monospace" font-size="11">Evidence status: formal prototype proposal + implementation planning · not presented as completed campus-wide deployment</text>
+  <text x="1136" y="626" text-anchor="end" fill="#baff67" font-family="ui-monospace, monospace" font-size="11">PRAGALBH.IN / SYSTEM EVIDENCE</text>
+</svg>
