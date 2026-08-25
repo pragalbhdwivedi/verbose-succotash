@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">High-availability Kubernetes installer architecture</title>
+  <desc id="desc">Architecture derived from the public k8s-ha-installer repository showing SSH orchestration, external etcd with TLS, HAProxy and Keepalived virtual IP, Kubernetes control plane, workers, Calico and WireGuard.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07090c"/><stop offset="1" stop-color="#08151a"/></linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#163039" stroke-width="1" opacity=".34"/></pattern>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#657b84"/></marker>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/><rect width="1200" height="675" fill="url(#grid)"/>
+  <text x="64" y="72" fill="#68dfd0" font-family="ui-monospace, monospace" font-size="15" letter-spacing="3">PUBLIC REPOSITORY · INFRASTRUCTURE AUTOMATION</text>
+  <text x="64" y="116" fill="#f2f5f7" font-family="Arial" font-size="34" font-weight="700">HA Kubernetes Bootstrap Architecture</text>
+  <text x="64" y="149" fill="#91a0ab" font-family="Arial" font-size="16">Repeatable Debian-based deployment with external etcd, control-plane VIP, encrypted CNI and SSH orchestration</text>
+
+  <g transform="translate(70 248)">
+    <rect width="190" height="148" rx="14" fill="#0c171b" stroke="#68dfd0"/>
+    <text x="95" y="34" text-anchor="middle" fill="#68dfd0" font-family="ui-monospace, monospace" font-size="12">CONTROL MACHINE</text>
+    <rect x="27" y="57" width="136" height="48" rx="8" fill="#102025" stroke="#417c78"/>
+    <text x="95" y="78" text-anchor="middle" fill="#d7eeeb" font-family="Arial" font-size="13" font-weight="700">controller script</text>
+    <text x="95" y="96" text-anchor="middle" fill="#9ebeba" font-family="Arial" font-size="10">reachability + orchestration</text>
+    <text x="95" y="130" text-anchor="middle" fill="#71898a" font-family="Arial" font-size="10">SSH-driven multi-node flow</text>
+  </g>
+
+  <path d="M260 322H340" stroke="#657b84" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="300" y="306" text-anchor="middle" fill="#7f939b" font-family="ui-monospace, monospace" font-size="10">SSH</text>
+
+  <g transform="translate(350 198)">
+    <rect width="214" height="108" rx="14" fill="#11151e" stroke="#b896ff"/>
+    <text x="107" y="31" text-anchor="middle" fill="#b896ff" font-family="ui-monospace, monospace" font-size="12">EXTERNAL ETCD</text>
+    <text x="107" y="62" text-anchor="middle" fill="#e4ddf2" font-family="Arial" font-size="13" font-weight="700">TLS-protected state</text>
+    <text x="107" y="85" text-anchor="middle" fill="#9d93af" font-family="Arial" font-size="10">separate from API VIP layer</text>
+  </g>
+
+  <g transform="translate(350 342)">
+    <rect width="214" height="108" rx="14" fill="#10191d" stroke="#baff67"/>
+    <text x="107" y="31" text-anchor="middle" fill="#baff67" font-family="ui-monospace, monospace" font-size="12">CONTROL-PLANE VIP</text>
+    <text x="107" y="62" text-anchor="middle" fill="#e9f4df" font-family="Arial" font-size="13" font-weight="700">HAProxy + Keepalived</text>
+    <text x="107" y="85" text-anchor="middle" fill="#9cb18c" font-family="Arial" font-size="10">stable Kubernetes API endpoint</text>
+  </g>
+
+  <path d="M564 396H646" stroke="#657b84" stroke-width="2" marker-end="url(#arr)"/>
+  <path d="M457 306V342" stroke="#657b84" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <g transform="translate(656 190)">
+    <rect width="222" height="270" rx="16" fill="#0e181e" stroke="#68dfd0"/>
+    <text x="111" y="36" text-anchor="middle" fill="#68dfd0" font-family="ui-monospace, monospace" font-size="12">KUBERNETES CLUSTER</text>
+    <rect x="24" y="60" width="174" height="52" rx="8" fill="#102129" stroke="#3f6c7a"/>
+    <text x="111" y="83" text-anchor="middle" fill="#d7e8ee" font-family="Arial" font-size="13" font-weight="700">Control plane</text>
+    <text x="111" y="101" text-anchor="middle" fill="#8fa8b1" font-family="Arial" font-size="10">bootstrap + join workflow</text>
+    <rect x="24" y="128" width="174" height="52" rx="8" fill="#102129" stroke="#3f6c7a"/>
+    <text x="111" y="151" text-anchor="middle" fill="#d7e8ee" font-family="Arial" font-size="13" font-weight="700">Worker nodes</text>
+    <text x="111" y="169" text-anchor="middle" fill="#8fa8b1" font-family="Arial" font-size="10">orchestrated over SSH</text>
+    <rect x="24" y="196" width="80" height="48" rx="8" fill="#111b21" stroke="#68dfd0"/>
+    <text x="64" y="218" text-anchor="middle" fill="#aeece4" font-family="Arial" font-size="11" font-weight="700">Calico</text>
+    <text x="64" y="234" text-anchor="middle" fill="#7ea8a3" font-family="Arial" font-size="9">CNI</text>
+    <rect x="118" y="196" width="80" height="48" rx="8" fill="#111b21" stroke="#68dfd0"/>
+    <text x="158" y="218" text-anchor="middle" fill="#aeece4" font-family="Arial" font-size="11" font-weight="700">WireGuard</text>
+    <text x="158" y="234" text-anchor="middle" fill="#7ea8a3" font-family="Arial" font-size="9">encryption</text>
+  </g>
+
+  <path d="M878 325H954" stroke="#657b84" stroke-width="2" marker-end="url(#arr)"/>
+  <g transform="translate(964 216)">
+    <rect width="170" height="218" rx="14" fill="#0e171c" stroke="#93a5b7"/>
+    <text x="85" y="34" text-anchor="middle" fill="#c0cbd3" font-family="ui-monospace, monospace" font-size="12">OPERATIONS</text>
+    <text x="24" y="69" fill="#adb9c1" font-family="Arial" font-size="11">• audit logging</text>
+    <text x="24" y="94" fill="#adb9c1" font-family="Arial" font-size="11">• log rotation</text>
+    <text x="24" y="119" fill="#adb9c1" font-family="Arial" font-size="11">• Chrony / NTP</text>
+    <text x="24" y="144" fill="#adb9c1" font-family="Arial" font-size="11">• metrics server</text>
+    <text x="24" y="169" fill="#adb9c1" font-family="Arial" font-size="11">• Helm tooling</text>
+    <text x="24" y="194" fill="#7e8b94" font-family="Arial" font-size="10">optional Rancher path</text>
+  </g>
+
+  <g transform="translate(350 500)">
+    <rect width="528" height="90" rx="13" fill="#0c1419" stroke="#2d424b"/>
+    <text x="20" y="28" fill="#68dfd0" font-family="ui-monospace, monospace" font-size="11">REPEATABILITY IS THE PROJECT</text>
+    <text x="20" y="53" fill="#b4c2c8" font-family="Arial" font-size="12">The portfolio claim is not merely “I used Kubernetes.” The public repository documents a reusable bootstrap and orchestration path.</text>
+    <text x="20" y="73" fill="#71828a" font-family="Arial" font-size="10">Architecture derived from the public k8s-ha-installer README and scripts; no private cluster topology shown.</text>
+  </g>
+
+  <text x="64" y="634" fill="#71808b" font-family="ui-monospace, monospace" font-size="10">Evidence: github.com/pragalbhdwivedi/k8s-ha-installer</text>
+  <text x="1136" y="634" text-anchor="end" fill="#68dfd0" font-family="ui-monospace, monospace" font-size="10">PRAGALBH.IN / PUBLIC REPO EVIDENCE</text>
+</svg>
