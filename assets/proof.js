@@ -79,5 +79,14 @@
     };
   }
 
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',addCardBadges); else addCardBadges();
+  function loadAudienceLayer(){
+    if(document.querySelector('script[data-audience-layer]')) return;
+    const script=document.createElement('script');
+    script.src='./assets/audience.js';
+    script.dataset.audienceLayer='true';
+    document.body.appendChild(script);
+  }
+
+  function init(){addCardBadges();loadAudienceLayer();}
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
 })();
