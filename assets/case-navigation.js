@@ -10,9 +10,10 @@
     'curriculum-assessment':['curriculum','leadership','communication','requirements'],
     'compliance-documentation':['leadership','communication','requirements'],
     'institutional-operations':['leadership','curriculum','communication','requirements'],
-    'academic-scheduling':['leadership','curriculum','edtech','requirements','smartclass']
+    'academic-scheduling':['leadership','curriculum','edtech','requirements','smartclass'],
+    'admissions-communication':['communication','leadership','requirements','digitalops']
   };
-  const LABELS={apps:'Operational Software',requirements:'Requirements Engineering',github:'GitHub / CI-CD',proxmox:'Proxmox / Virtualisation',communication:'Institutional Communication',edtech:'Education Technology',leadership:'Education Leadership',curriculum:'Curriculum & Assessment',storage:'Storage / TrueNAS',networking:'Campus Networking',maas:'MAAS / Bare Metal',resilience:'Resilient Systems',kubernetes:'Kubernetes',cctv:'CCTV / NVR',identity:'Identity & Access',signage:'Digital Signage',solar:'Solar / Battery Systems',access:'Physical Access Control',smartclass:'Smart Classroom'};
+  const LABELS={apps:'Operational Software',requirements:'Requirements Engineering',github:'GitHub / CI-CD',proxmox:'Proxmox / Virtualisation',communication:'Institutional Communication',edtech:'Education Technology',leadership:'Education Leadership',curriculum:'Curriculum & Assessment',storage:'Storage / TrueNAS',networking:'Campus Networking',maas:'MAAS / Bare Metal',resilience:'Resilient Systems',kubernetes:'Kubernetes',cctv:'CCTV / NVR',identity:'Identity & Access',signage:'Digital Signage',solar:'Solar / Battery Systems',access:'Physical Access Control',smartclass:'Smart Classroom',digitalops:'Digital Operations'};
 
   function loadStyles(){if(document.querySelector('link[data-case-navigation-style]'))return;const l=document.createElement('link');l.rel='stylesheet';l.href='./assets/case-navigation.css';l.dataset.caseNavigationStyle='true';document.head.appendChild(l)}
   function caseHash(id){return `#case=${encodeURIComponent(id)}`}
@@ -34,11 +35,7 @@
   if(typeof baseClose==='function')window.closeCase=function(){baseClose();clearCaseHash()};
 
   function wireK8sCard(){const btn=document.querySelector('[data-k8s-flagship] button');if(btn&&!btn.dataset.caseNavWired){btn.dataset.caseNavWired='true';btn.addEventListener('click',()=>{setCaseHash('kubernetes-ha');setTimeout(()=>addNavigation('kubernetes-ha'),0)})}}
-
-  function wireK8sEvidence(){
-    const cards=[...document.querySelectorAll('#evidenceRail .evidence-card')],card=cards.find(c=>c.querySelector('h3')?.textContent==='HA Kubernetes Installer');if(!card||card.dataset.deepCaseWired)return;
-    card.dataset.deepCaseWired='true';const old=card.querySelector('.evidence-node-action');if(!old)return;const btn=old.cloneNode(true);btn.classList.remove('evidence-node-action');btn.textContent='Open flagship case →';old.replaceWith(btn);btn.addEventListener('click',()=>{if(typeof window.openCase==='function')window.openCase('kubernetes-ha')});
-  }
+  function wireK8sEvidence(){const cards=[...document.querySelectorAll('#evidenceRail .evidence-card')],card=cards.find(c=>c.querySelector('h3')?.textContent==='HA Kubernetes Installer');if(!card||card.dataset.deepCaseWired)return;card.dataset.deepCaseWired='true';const old=card.querySelector('.evidence-node-action');if(!old)return;const btn=old.cloneNode(true);btn.classList.remove('evidence-node-action');btn.textContent='Open flagship case →';old.replaceWith(btn);btn.addEventListener('click',()=>{if(typeof window.openCase==='function')window.openCase('kubernetes-ha')})}
 
   function openFromHash(){if(!location.hash.startsWith('#case='))return;const id=decodeURIComponent(location.hash.slice(6));if(!RELATED[id])return;if(typeof setMode==='function')setMode('recruiter');setTimeout(()=>{if(typeof window.openCase==='function')window.openCase(id)},20)}
   function openNodeFromHash(){if(!location.hash.startsWith('#node='))return;const node=decodeURIComponent(location.hash.slice(6));if(typeof setMode==='function')setMode('explore');if(typeof expandPath==='function')expandPath(node)}
