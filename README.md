@@ -77,7 +77,11 @@ See **[PORTFOLIO_STATUS.md](./PORTFOLIO_STATUS.md)** for the concise authoritati
 
 ## Production verification
 
-The repository uses three automated verification systems plus GitHub Pages deployment.
+Verified live-surface baseline commit: `606e943c91bbaf67974ced6c74414d64ab6ad95c`.
+
+For that exact source commit, `Portfolio audit`, `Browser smoke` and GitHub Pages deployment all completed successfully. The browser run covered desktop Chromium, a synthetic 390×844 touch/mobile viewport, the no-JavaScript fallback, modal semantics and safe new-tab links.
+
+The repository uses three automated verification systems plus GitHub Pages deployment. Portfolio-owned Actions workflows use current v7 checkout/setup-node actions with Node 24.
 
 ### Source / governance audit
 
@@ -93,6 +97,7 @@ Protects:
 - CNAME/canonical consistency
 - robots/sitemap configuration
 - JSON-LD validity
+- referrer policy and initial dialog state
 - case-navigation and evidence-review registries
 - deterministic progressive-enhancement ownership
 - no iframe/public-email/private-IP regressions
@@ -101,6 +106,7 @@ Protects:
 - attribution boundary
 - no-JavaScript/font-loading contracts
 - browser-smoke/proof-health workflow contracts
+- Node 24 workflow runtime contract
 - static payload budgets
 
 ### Rendered Browser smoke
@@ -118,7 +124,8 @@ Covers:
 - case + node deep links
 - graph-origin URL restoration
 - keyboard search and exact-label ranking
-- accessible dialog semantics
+- accessible dialog and close-control semantics
+- safe `target="_blank"` link policy
 - mobile overflow/modal-fit checks
 - browser page-error capture
 
@@ -137,13 +144,15 @@ Monitors the public portfolio, BDSPS system, GitHub profile and selected public 
 
 See **[PERFORMANCE_BUDGET.md](./PERFORMANCE_BUDGET.md)**.
 
-Measured 26 August 2026 raw baseline:
+Measured 26 August 2026 raw baseline for the verified live-surface commit:
 
-- `index.html`: 13,404 B
-- live JS: 128,852 B
+- `index.html`: 13,492 B
+- live JS: 129,005 B
 - live CSS: 28,497 B
 - evidence SVGs: 79,257 B
-- controlled raw live surface: approximately **250.4 KB**
+- controlled raw live surface: **250,651 B**
+
+The same audit validated 38 local asset references, 38 reachable live assets, 19 JavaScript files, 39 live-surface files and all 12 case-study navigation/review IDs.
 
 These are repository/source byte measurements, not Lighthouse/Core Web Vitals claims.
 
