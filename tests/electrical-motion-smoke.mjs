@@ -13,9 +13,14 @@ try{
   assert.equal(await page.locator('.energy-status').count(),1,'Live-circuit status should render');
   assert.ok(await page.locator('#network .edge.charged-edge').count()>=5,'Visible graph edges should carry current styling');
   assert.ok(await page.locator('#network .node-halo').count()>=6,'Visible nodes should receive charge halos');
+  const arrivalsBefore=await page.evaluate(()=>window.__electricalMotion.arrivals);
+  const nodesBefore=await page.locator('#network .node').count();
   const node=page.locator('#network .node[data-id="edu"]');
   await node.click();
   await page.waitForSelector('#network .zap-layer',{state:'attached',timeout:1500});
+  await page.waitForFunction(expected=>document.querySelectorAll('#network .node').length>expected,nodesBefore);
+  await page.waitForFunction(expected=>window.__electricalMotion.arrivals>expected,arrivalsBefore);
+  assert.ok(await page.locator('#network .node.energizing').count()>0,'Newly revealed nodes should receive transient energizing state');
 
   mobile=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
   const mobilePage=await mobile.newPage();
@@ -32,7 +37,7 @@ try{
   assert.ok(heroSpacing,'Mobile hero and search should both be measurable');
   assert.ok(heroSpacing.gap>=8,`Mobile search must clear the headline by at least 8px; measured ${heroSpacing.gap.toFixed(1)}px`);
 
-  console.log('Electrical motion smoke passed: particles, charged links, click zap, mobile graph framing and hero spacing.');
+  console.log('Electrical motion smoke passed: particles, charged links, click zap, branch energization, mobile graph framing and hero spacing.');
 }finally{
   await mobile?.close().catch(()=>{});
   await desktop?.close().catch(()=>{});
