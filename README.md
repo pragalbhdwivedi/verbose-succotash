@@ -16,7 +16,7 @@ It is intentionally built as a **professional evidence system**, not a long rés
 
 ## Experience model
 
-### Explore Network
+### Explore Network — Systems Observatory
 
 A progressively expanding capability web organised around five pillars:
 
@@ -26,7 +26,9 @@ A progressively expanding capability web organised around five pillars:
 4. Automation & Software
 5. Applied Technology & Energy
 
-The network supports search, project evidence hubs, cross-links, current-path breadcrumbs, mobile Back behavior and shareable `#node=` links.
+The network behaves as a living systems observatory rather than a static sitemap. It supports search, evidence hubs, cross-links, breadcrumbs, mobile Back, shareable `#node=` state, electrically hot selected ancestry, project maturity states, subtle spatial depth, branch energisation and restrained click/tap discharge.
+
+The motion language is governed by **[DESIGN_DIRECTION.md](./DESIGN_DIRECTION.md)** and implemented without a heavyweight particle/WebGL framework.
 
 ### Recruiter View
 
@@ -72,14 +74,22 @@ These are source-backed or hybrid public/source-backed and intentionally avoid p
 - **Sprint 5 — Mobile / Accessibility / Quality:** source + automated rendered QA complete; physical/cross-browser QA continues.
 - **Sprint 6 — Discoverability / Performance:** source-level discoverability complete; real measured Web Vitals/Lighthouse data remains intentionally unclaimed.
 - **Sprint 7 — Production Audit:** automated source, rendered-browser, proof-health, payload-budget and Pages baseline established.
+- **Sprint 8 — Systems Observatory / Motion & Interaction:** verified browser baseline complete; physical-device tuning remains.
 
 See **[PORTFOLIO_STATUS.md](./PORTFOLIO_STATUS.md)** for the concise authoritative state.
 
 ## Production verification
 
-Verified live-surface baseline commit: `606e943c91bbaf67974ced6c74414d64ab6ad95c`.
+Verified Systems Observatory live-surface commit: `78e1187f2329284bae79df25382a96bfc0f65973`.
 
-For that exact source commit, `Portfolio audit`, `Browser smoke` and GitHub Pages deployment all completed successfully. The browser run covered desktop Chromium, a synthetic 390×844 touch/mobile viewport, the no-JavaScript fallback, modal semantics and safe new-tab links.
+For that exact source commit:
+
+- `Portfolio audit`: **SUCCESS**
+- `Browser smoke`: **SUCCESS**
+- dedicated electrical/observatory rendered test: **SUCCESS**
+- GitHub Pages deployment: **SUCCESS**
+
+The rendered tests cover desktop Chromium, a synthetic 390×844 touch/mobile viewport, no-JavaScript fallback, modal semantics, safe new-tab links and the systems-observatory behavior itself.
 
 The repository uses three automated verification systems plus GitHub Pages deployment. Portfolio-owned Actions workflows use current v7 checkout/setup-node actions with Node 24.
 
@@ -113,9 +123,10 @@ Protects:
 
 - `.github/workflows/browser-smoke.yml`
 - `tests/browser-smoke.mjs`
+- `tests/electrical-motion-smoke.mjs`
 - `npm run smoke:browser`
 
-Covers:
+General coverage includes:
 
 - desktop Chromium
 - synthetic 390×844 touch/mobile Chromium
@@ -128,6 +139,21 @@ Covers:
 - safe `target="_blank"` link policy
 - mobile overflow/modal-fit checks
 - browser page-error capture
+
+Systems-observatory coverage includes:
+
+- ambient electrical field
+- observatory guide/ring layer
+- charged graph links
+- node halos
+- click zap
+- first-reveal branch energisation
+- persistent hot selected ancestry
+- project maturity badge
+- selected-project lock-on
+- live system-status label
+- tighter mobile graph framing
+- mobile hero/search clearance
 
 Failures upload temporary screenshot/URL/error artifacts for diagnosis.
 
@@ -144,15 +170,15 @@ Monitors the public portfolio, BDSPS system, GitHub profile and selected public 
 
 See **[PERFORMANCE_BUDGET.md](./PERFORMANCE_BUDGET.md)**.
 
-Measured 26 August 2026 raw baseline for the verified live-surface commit:
+Measured 26 August 2026 raw baseline for the verified Systems Observatory live-surface commit:
 
 - `index.html`: 13,492 B
-- live JS: 129,005 B
-- live CSS: 28,497 B
+- live JS: 146,659 B
+- live CSS: 35,026 B
 - evidence SVGs: 79,257 B
-- controlled raw live surface: **250,651 B**
+- controlled raw live surface: **274,834 B**
 
-The same audit validated 38 local asset references, 38 reachable live assets, 19 JavaScript files, 39 live-surface files and all 12 case-study navigation/review IDs.
+The same audit validated 40 local asset references, 40 reachable live assets, 21 JavaScript files, 41 live-surface files and all 12 case-study navigation/review IDs.
 
 These are repository/source byte measurements, not Lighthouse/Core Web Vitals claims.
 
@@ -171,6 +197,8 @@ The portfolio distinguishes evidence types such as:
 - FIELD TROUBLESHOOTING
 
 `OUTCOME_REGISTER.md` prevents architecture/prototype intent from becoming invented ROI, adoption, uptime, savings or percentage claims.
+
+The graph-level maturity labels (`LIVE`, `FIELD`, `PROTO`, `BUILD`, `APPLIED`, `CASE`) communicate implementation state only; they do not replace the deeper proof taxonomy.
 
 ## Attribution boundary
 
@@ -228,6 +256,7 @@ Selected repositories include:
 - **[MASTER_ROADMAP.md](./MASTER_ROADMAP.md)** — current roadmap and programme architecture
 - **[PORTFOLIO_STATUS.md](./PORTFOLIO_STATUS.md)** — authoritative concise state
 - **[PORTFOLIO_ARCHITECTURE.md](./PORTFOLIO_ARCHITECTURE.md)** — UX/proof/privacy architecture
+- **[DESIGN_DIRECTION.md](./DESIGN_DIRECTION.md)** — Systems Observatory visual/motion rationale
 - **[PORTFOLIO_MAINTENANCE.md](./PORTFOLIO_MAINTENANCE.md)** — long-term update rules
 - **[RELEASE_CHECKLIST.md](./RELEASE_CHECKLIST.md)** — production release checks
 - **[PERFORMANCE_BUDGET.md](./PERFORMANCE_BUDGET.md)** — measured source-size guardrails
