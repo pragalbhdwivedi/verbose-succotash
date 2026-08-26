@@ -3,7 +3,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 
 const root=process.cwd(),failures=[],notes=[];
-const mustExist=['index.html','CNAME','robots.txt','sitemap.xml','package.json','README.md','MASTER_ROADMAP.md','PORTFOLIO_STATUS.md','PORTFOLIO_ARCHITECTURE.md','PORTFOLIO_MAINTENANCE.md','RELEASE_CHECKLIST.md','PERFORMANCE_BUDGET.md','CASE_REVIEW_REGISTER.md','CHANGELOG.md','ENHANCEMENT_CHAIN.md','SKILLS.md','EVIDENCE_REGISTER.md','OUTCOME_REGISTER.md','SPRINT_5_QUALITY_QA.md','SPRINT_6_DISCOVERABILITY_PERFORMANCE.md','.github/workflows/portfolio-audit.yml','.github/workflows/browser-smoke.yml','.github/workflows/link-health.yml','tests/browser-smoke.mjs','scripts/check-external-links.mjs','assets/favicon.svg','assets/portfolio.js','assets/evidence.js','assets/proof.js','assets/case-navigation.js','assets/hiring-conversion.js','assets/accessibility.js','assets/network-navigation.js','assets/network-navigation.css','assets/case-review.js','assets/case-review.css'];
+const mustExist=['index.html','CNAME','robots.txt','sitemap.xml','package.json','README.md','MASTER_ROADMAP.md','PORTFOLIO_STATUS.md','PORTFOLIO_ARCHITECTURE.md','PORTFOLIO_MAINTENANCE.md','RELEASE_CHECKLIST.md','PERFORMANCE_BUDGET.md','CASE_REVIEW_REGISTER.md','CHANGELOG.md','ENHANCEMENT_CHAIN.md','SKILLS.md','EVIDENCE_REGISTER.md','OUTCOME_REGISTER.md','SPRINT_5_QUALITY_QA.md','SPRINT_6_DISCOVERABILITY_PERFORMANCE.md','SPRINT_7_PRODUCTION_AUDIT.md','.github/workflows/portfolio-audit.yml','.github/workflows/browser-smoke.yml','.github/workflows/link-health.yml','tests/browser-smoke.mjs','scripts/check-external-links.mjs','assets/favicon.svg','assets/portfolio.js','assets/evidence.js','assets/proof.js','assets/case-navigation.js','assets/hiring-conversion.js','assets/accessibility.js','assets/network-navigation.js','assets/network-navigation.css','assets/case-review.js','assets/case-review.css'];
 const fail=m=>failures.push(m),note=m=>notes.push(m),read=rel=>fs.readFileSync(path.join(root,rel),'utf8'),exists=rel=>fs.existsSync(path.join(root,rel)),bytes=file=>fs.statSync(file).size,rel=file=>path.relative(root,file).replaceAll('\\','/');
 for(const f of mustExist)if(!exists(f))fail(`Missing required file: ${f}`);
 if(exists('CNAME')&&read('CNAME').trim()!=='pragalbh.in')fail('CNAME must contain exactly pragalbh.in');
@@ -53,8 +53,14 @@ for(const f of assetCss)if(bytes(f)>budget.singleCss)fail(`Performance budget ex
 for(const f of mediaSvg)if(bytes(f)>budget.singleMediaSvg)fail(`Performance budget exceeded: ${rel(f)} ${bytes(f)} B > ${budget.singleMediaSvg} B`);
 note(`Static payload: HTML ${indexBytes} B · JS ${totalJs} B · CSS ${totalCss} B · evidence SVG ${totalMediaSvg} B · controlled live total ${totalLive} B`);
 
-const refs=new Set();for(const file of all.filter(f=>/\.(html|js|css)$/i.test(f)))for(const m of read(rel(file)).matchAll(/\.\/assets\/[A-Za-z0-9._\/-]+/g))refs.add(m[0]);
-for(const ref of refs)if(!exists(ref.replace(/^\.\//,'')))fail(`Broken local asset reference: ${ref}`);note(`Validated ${refs.size} local asset references`);
+// Resolve local references from the live surface only and reject unreferenced live JS/CSS/SVG assets.
+const refSources=all.filter(f=>{const r=rel(f);return(r==='index.html'||r.startsWith('assets/'))&&/\.(html|js|css)$/i.test(f)});
+const refs=new Set();
+for(const file of refSources)for(const m of read(rel(file)).matchAll(/\.\/assets\/[A-Za-z0-9._\/-]+/g))refs.add(m[0]);
+for(const ref of refs)if(!exists(ref.replace(/^\.\//,'')))fail(`Broken local asset reference: ${ref}`);
+const assetCandidates=all.filter(f=>{const r=rel(f);return r.startsWith('assets/')&&/\.(js|css|svg)$/i.test(r)});
+for(const file of assetCandidates){const r=rel(file),token=`./${r}`;if(!refs.has(token))fail(`Orphaned live asset is not referenced by the live surface: ${r}`)}
+note(`Validated ${refs.size} local asset references and ${assetCandidates.length} live asset reachability entries`);
 
 const caseIds=['aquapulse','digitalops','infra','kubernetes-ha','smartclass','solarcctv','leadership-recruitment','curriculum-assessment','compliance-documentation','institutional-operations','academic-scheduling','admissions-communication'],nav=exists('assets/case-navigation.js')?read('assets/case-navigation.js'):'',review=exists('assets/case-review.js')?read('assets/case-review.js'):'',reviewRegister=exists('CASE_REVIEW_REGISTER.md')?read('CASE_REVIEW_REGISTER.md'):'';
 for(const id of caseIds){if(!nav.includes(id))fail(`Case navigation registry is missing: ${id}`);if(!review.includes(`'${id}'`))fail(`Case review layer is missing: ${id}`)}
