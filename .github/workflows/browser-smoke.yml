@@ -24,7 +24,7 @@ permissions:
 jobs:
   chromium-smoke:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 18
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -39,6 +39,9 @@ jobs:
 
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
+
+      - name: Install WebKit
+        run: npx playwright install --with-deps webkit
 
       - name: Start static portfolio server
         shell: bash
@@ -92,6 +95,16 @@ jobs:
 
       - name: Run Simple View and About Me smoke test
         run: node tests/simple-view-smoke.mjs
+        env:
+          PORTFOLIO_TEST_URL: http://127.0.0.1:4173/
+
+      - name: Run physical-device tuning smoke test
+        run: node tests/device-tuning-smoke.mjs
+        env:
+          PORTFOLIO_TEST_URL: http://127.0.0.1:4173/
+
+      - name: Run iPhone-class WebKit smoke test
+        run: node tests/ios-webkit-smoke.mjs
         env:
           PORTFOLIO_TEST_URL: http://127.0.0.1:4173/
 
