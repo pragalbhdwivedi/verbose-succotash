@@ -44,7 +44,7 @@ try {
 
   await page.goto(base, { waitUntil: 'domcontentloaded' });
   await waitForEnhancements(page);
-  assert.equal(await page.title(), 'Pragalbh Dwivedi | Institutional Systems Architect');
+  assert.equal(await page.title(), 'Pragalbh Dwivedi | Owner, Executive Director & Systems Builder');
   assert.equal(await page.locator('#exploreMode').getAttribute('aria-pressed'), 'true');
   assert.equal(await page.locator('#recruiterMode').getAttribute('aria-pressed'), 'false');
   assert.equal(await page.locator('#searchInput').getAttribute('aria-controls'), 'searchResults');
