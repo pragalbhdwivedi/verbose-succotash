@@ -90,6 +90,11 @@ jobs:
         env:
           PORTFOLIO_TEST_URL: http://127.0.0.1:4173/
 
+      - name: Run Simple View and About Me smoke test
+        run: node tests/simple-view-smoke.mjs
+        env:
+          PORTFOLIO_TEST_URL: http://127.0.0.1:4173/
+
       - name: Upload failure screenshots
         if: failure()
         uses: actions/upload-artifact@v4
