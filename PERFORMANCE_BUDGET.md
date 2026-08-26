@@ -10,16 +10,18 @@ The current live site is served directly from the repository root through GitHub
 
 ## Measured baseline
 
-Measured from the repository tree on 26 August 2026:
+Measured by the production `Portfolio audit` for verified live-surface commit `606e943c91bbaf67974ced6c74414d64ab6ad95c` on 26 August 2026:
 
 | Category | Current raw size |
 | --- | ---: |
-| `index.html` | 13,404 B |
-| live JavaScript under `assets/` | 128,852 B |
+| `index.html` | 13,492 B |
+| live JavaScript under `assets/` | 129,005 B |
 | live CSS under `assets/` | 28,497 B |
 | current evidence/media SVGs | 79,257 B |
 | favicon SVG | 400 B |
-| current raw live surface total | **250,410 B** |
+| current raw live surface total | **250,651 B** |
+
+The same audit validated 38 local asset references, 38 reachable live assets, 19 JavaScript files, 39 live-surface files and all 12 case-study navigation/review IDs.
 
 The evidence/media figure excludes `assets/media/README.md` because that file is repository documentation rather than a browser asset.
 
@@ -29,7 +31,7 @@ The evidence/media figure excludes `assets/media/README.md` because that file is
 
 - `index.html`: **20 KiB maximum** (`20,480 B`)
 
-Current headroom: approximately 7.1 KiB.
+Current headroom: **6,988 B** (approximately 6.8 KiB).
 
 Reason: metadata/no-JS fallback can grow modestly, but substantial case content should remain in progressive case layers rather than turning the root document into a long static résumé.
 
@@ -38,7 +40,7 @@ Reason: metadata/no-JS fallback can grow modestly, but substantial case content 
 - all `assets/*.js` combined: **160 KiB maximum** (`163,840 B`)
 - any single live JS file: **32 KiB maximum** (`32,768 B`)
 
-Current combined headroom: approximately 34.2 KiB.
+Current combined headroom: **34,835 B** (approximately 34.0 KiB).
 
 Reason: the portfolio intentionally uses dependency-light progressive enhancement. A new feature should normally deepen an existing layer rather than introduce a framework/runtime bundle to the live static surface.
 
@@ -47,7 +49,7 @@ Reason: the portfolio intentionally uses dependency-light progressive enhancemen
 - all `assets/*.css` combined: **40 KiB maximum** (`40,960 B`)
 - any single live CSS file: **16 KiB maximum** (`16,384 B`)
 
-Current combined headroom: approximately 12.2 KiB.
+Current combined headroom: **12,463 B** (approximately 12.2 KiB).
 
 ### Evidence diagrams
 
@@ -56,7 +58,7 @@ For SVGs under `assets/media/`:
 - combined diagram SVG inventory: **120 KiB maximum** (`122,880 B`)
 - any single evidence SVG: **12 KiB maximum** (`12,288 B`)
 
-Current combined headroom: approximately 42.6 KiB.
+Current combined headroom: **43,623 B** (approximately 42.6 KiB).
 
 These limits apply to privacy-safe derivative diagrams. Real photographic evidence has different compression characteristics and must be budgeted separately when introduced.
 
@@ -71,7 +73,7 @@ The current controlled live source set is:
 
 Combined raw maximum: **340 KiB** (`348,160 B`).
 
-Current headroom: approximately 97.8 KiB.
+Current headroom: **97,509 B** (approximately 95.2 KiB).
 
 This envelope intentionally leaves room for evidence refinement without making large additions invisible.
 
