@@ -23,7 +23,9 @@ try{
   assert(await page.locator('#recruiterContact a[href^="https://wa.me/"]').count()===1,'Direct WhatsApp contact must remain available inside Contact Me.');
   assert((await page.locator('#recruiterContact').textContent()).includes('no charge'),'Contact Me must retain the help-first no-charge note.');
 
-  assert(await page.locator('#simpleView [data-simple-case]').count()===6,'Simple View must translate six real system stories.');
+  const simpleDiag=await page.evaluate(()=>({shells:document.querySelectorAll('#simpleView').length,cases:document.querySelectorAll('#simpleView [data-simple-case]').length,ids:[...document.querySelectorAll('[id]')].filter(x=>x.id.toLowerCase().includes('simple')).map(x=>x.id),html:document.querySelector('#simpleView')?.outerHTML.slice(0,500)||'MISSING'}));
+  console.log('SIMPLE_VIEW_DIAGNOSTIC',JSON.stringify(simpleDiag));
+  assert(simpleDiag.cases===6,'Simple View must translate six real system stories.');
   assert((await page.locator('#simpleView').textContent()).includes('Systems begin with the operating problem')===false,'Simple View should use its own plain-language hierarchy rather than duplicate the recruiter heading verbatim.');
   assert((await page.locator('#simpleView').textContent()).includes('I turn difficult institutional problems into'),'Simple View must explain the professional value in plain language.');
 
