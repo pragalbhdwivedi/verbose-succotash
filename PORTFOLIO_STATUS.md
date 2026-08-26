@@ -2,13 +2,13 @@
 
 Updated: 26 August 2026
 
-This file is the concise source of truth for current execution status. The longer `MASTER_ROADMAP.md` retains the programme architecture and future direction.
+This file is the concise source of truth for current execution status. `MASTER_ROADMAP.md` retains the longer programme architecture.
 
 ## Overall state
 
-**Portfolio architecture: verified production baseline established**
+**Portfolio architecture: verified production baseline established; motion/interaction language now implemented.**
 
-The current site is an interactive professional evidence system with two primary modes:
+The live site is an interactive professional evidence system with two primary modes:
 
 - **Explore Network** — progressive capability graph / expanding web
 - **Recruiter View** — compact hiring, consulting and partnership path
@@ -21,43 +21,63 @@ Core statement:
 
 > **I design and build the systems behind modern institutions.**
 
-Verified live-surface source baseline:
+## Current experience baseline
 
-`606e943c91bbaf67974ced6c74414d64ab6ad95c`
+The Explore Network is now intentionally presented as a powered system rather than a static diagram.
 
-For that exact source commit:
+Implemented electrical interaction language:
 
-- `Portfolio audit` completed successfully
-- `Browser smoke` completed successfully
-- GitHub Pages build/deployment completed successfully
-- Browser smoke covered desktop Chromium, synthetic 390×844 mobile/touch, no-JavaScript fallback, modal semantics and safe new-tab links
-- raw controlled live surface measured **250,651 B**
+- low-count ambient particle field behind the graph
+- continuously moving current along visible connections
+- breathing charge halos around nodes
+- initial root-to-pillars power-up discharge
+- click/tap electrical zap into currently connected branches
+- node impact flash + discharge ring
+- first-reveal branch/node energization
+- active graph route remains visually hotter through the existing active-edge state
+- pointer influence on ambient particles where supported
+- tighter mobile graph viewBox for substantially larger/readable pillar nodes
+- corrected mobile hero/search spacing based on real iPhone screenshot feedback
+- `prefers-reduced-motion` fallback without particle/lightning animation
 
-## Completed programme stages
+The motion implementation remains isolated from graph data, routing and case logic in `assets/electrical-motion.js` / `assets/electrical-motion.css`.
+
+## Verified post-motion raw source baseline
+
+Latest measured audit after the first electrical interaction pass:
+
+- `index.html`: **13,492 B**
+- live JavaScript: **138,806 B**
+- live CSS: **31,668 B**
+- evidence SVGs: **79,257 B**
+- controlled raw live surface: **263,623 B**
+
+This remains within all existing performance budgets.
+
+The motion pass added **12,972 B** to the previous 250,651 B controlled baseline without importing Three.js or a particle framework.
+
+## Programme stages
 
 ### Sprint 1 — Real Evidence
 
 **Status: FOUNDATION COMPLETE**
 
 Implemented:
-
 - evidence register
 - proof taxonomy
 - public repository/live-system proof
 - privacy-safe architecture diagrams
 - evidence rail
 - media publication rules
-- case evidence-review register
-- live evidence-review stamps that explicitly distinguish review date from deployment date
+- evidence-review register and freshness stamps
 
-Remaining real screenshots/field photography are enrichment backlog, not structural blockers.
+Real screenshots/field photography remain enrichment work.
 
 ### Sprint 2 — Flagship Deep Case Studies
 
 **Status: FRAMEWORK COMPLETE / EVIDENCE ENRICHMENT CONTINUOUS**
 
 Six flagship cases:
-
 1. AquaPulse
 2. BDSPS Digital Operations
 3. Private Infrastructure Stack
@@ -65,28 +85,13 @@ Six flagship cases:
 5. Smart Classroom Architecture
 6. Solar CCTV Edge Infrastructure
 
-Implemented across flagships:
-
-- problem/context
-- role
-- constraints
-- decisions/trade-offs
-- architecture
-- failure modes
-- verified/source-backed evidence
-- current state
-- next iteration
-- proof links
-- shareable case hashes
-- related capability navigation
-- evidence-review freshness label
+Each supports context/problem, role, constraints, decisions/trade-offs, architecture, failure modes, evidence, current state, next iteration, proof links and capability relationships.
 
 ### Sprint 3 — Leadership & Institutional Systems Proof
 
 **Status: COMPLETE**
 
 Six leadership/institutional cases:
-
 1. Teacher Recruitment & Evaluation
 2. Curriculum & Assessment Framework
 3. Compliance & Documentation Workflow
@@ -94,21 +99,17 @@ Six leadership/institutional cases:
 5. Academic Scheduling & School-Wide Execution
 6. Admissions & Institutional Communication Operations
 
-All are explicitly source-backed or hybrid public/source-backed and preserve privacy/attribution boundaries.
-
 ### Sprint 4 — Hiring Conversion
 
 **Status: STRUCTURAL WORK COMPLETE**
 
 Implemented:
-
-- full-time/leadership engagement route
+- full-time/leadership route
 - consulting/advisory route
 - partnership/pilot route
 - end-to-end ownership model
-- opportunity-specific evidence shortcuts
-- flagship-first recruiter case hierarchy
-- collapsed supporting/leadership case control
+- opportunity-specific proof shortcuts
+- flagship-first recruiter hierarchy
 - phone + WhatsApp conversion only
 
 ### Sprint 5 — Mobile / Accessibility / Quality
@@ -116,139 +117,96 @@ Implemented:
 **Status: SOURCE + AUTOMATED RENDERED QA COMPLETE; PHYSICAL QA REMAINS**
 
 Implemented:
-
 - keyboard-accessible graph nodes
-- Enter/Space activation
-- accessible mode state
-- modal dialog semantics
-- labelled close controls
-- Escape close
-- focus containment/restoration
+- accessible search and mode semantics
+- modal dialog/focus behavior
 - visible focus states
 - reduced-motion support
-- mobile interaction-target improvements
-- compact supporting-case disclosure
-- current capability breadcrumb/path navigation
-- shareable node hashes
-- no-JavaScript professional fallback
+- mobile interaction targets
+- breadcrumbs / mobile Back
+- shareable node and case hashes
+- no-JavaScript fallback
 - graph-origin case URL restoration
-- safe new-tab link contract
-- explicit initial `aria-hidden` case-overlay state
+- safe new-tab contract
 
-Automated Browser smoke now covers desktop Chromium plus a synthetic 390×844 mobile/touch viewport and no-JavaScript fallback.
+Automated Browser smoke covers desktop Chromium, synthetic 390×844 mobile/touch and no-JavaScript behavior.
 
-Real device/browser work is tracked in **GitHub Issue #1: Production QA: real devices, browsers and assistive technology**.
+Physical-device/browser work remains in GitHub Issue #1.
 
 ### Sprint 6 — Discoverability / Performance
 
 **Status: SOURCE-LEVEL WORK COMPLETE; REAL PERFORMANCE MEASUREMENT REMAINS**
 
 Implemented:
-
 - canonical `https://pragalbh.in/`
-- robots metadata
-- strict-origin-when-cross-origin referrer policy
-- Open Graph metadata
-- Twitter summary metadata
+- robots / sitemap
+- Open Graph / Twitter metadata
 - Person + WebSite JSON-LD
 - favicon
-- `robots.txt`
-- `sitemap.xml`
-- external evidence iframe removed
-- dependency-light static delivery preserved
-- weekly public proof-link health workflow
+- referrer policy
+- dependency-light static delivery
+- public proof-link monitoring
 - measured/enforced static payload budgets
-
-Verified raw-source baseline:
-
-- `index.html`: 13,492 B
-- live JavaScript: 129,005 B
-- live CSS: 28,497 B
-- evidence SVGs: 79,257 B
-- controlled raw live surface: 250,651 B
-
-Deferred until evidence/branding warrants it:
-
-- dedicated 1200×630 social preview image
-- standalone SEO routes for individual case studies
-- claimed Lighthouse/Core Web Vitals scores without real-browser measurement
 
 ### Sprint 7 — Production Audit
 
 **Status: AUTOMATED BASELINE VERIFIED**
 
-Code-controlled production verification now includes:
-
+Verification includes:
 1. source/governance audit
-2. rendered desktop/mobile/no-JS Chromium smoke testing
-3. public evidence link health monitoring
-4. GitHub Pages deployment visibility
-5. static payload budgets
-6. orphaned live-asset detection
-7. deterministic progressive-enhancement ownership
-8. privacy/contact/attribution regression checks
-9. Node 24 + current v7 checkout/setup-node workflow contract
+2. rendered Chromium smoke testing
+3. synthetic mobile/no-JS testing
+4. public evidence-link monitoring
+5. GitHub Pages deployment visibility
+6. payload budgets
+7. orphaned live-asset detection
+8. deterministic enhancement-chain checks
+9. privacy/contact/attribution regression checks
+10. Node 24 / current Actions runtime contract
 
-`main` is currently not protected. Repository-protection policy is tracked separately in GitHub Issue #3 and is not a live-site code blocker.
+`main` is currently unprotected; repository-protection policy remains GitHub Issue #3.
 
-## Automated quality gate
+### Sprint 8 — Motion & Interaction Language
 
-The repository includes:
+**Status: ELECTRICAL NETWORK BASELINE IMPLEMENTED / ITERATIVE POLISH ACTIVE**
 
-- `.github/workflows/portfolio-audit.yml`
-- `.github/workflows/browser-smoke.yml`
-- `.github/workflows/link-health.yml`
-- `scripts/validate-portfolio.mjs`
-- `scripts/check-external-links.mjs`
-- `tests/browser-smoke.mjs`
-- `npm run audit`
-- `npm run smoke:browser`
+Reference direction reviewed:
+- CasberryIndia `Physics-Notebook`
+- `particles.casberry.in`
+- lightweight JavaScript lightning implementations
 
-Portfolio-owned Actions workflows use Node 24 and current v7 `actions/checkout` / `actions/setup-node` majors.
+Principles adopted rather than copied:
+- persistent but restrained ambient motion
+- real-time canvas animation
+- visibility-aware rendering
+- HiDPI-aware canvas sizing
+- interaction-driven electrical propagation
+- luminous visual hierarchy
 
-The audit verifies:
+Deliberately not adopted:
+- heavyweight Three.js particle runtime
+- tens of thousands of particles
+- decorative 3D scene
+- audio effects
+- motion that obscures evidence/navigation
 
-- JavaScript syntax
-- required architecture/governance files
-- CNAME/canonical consistency
-- robots/sitemap references
-- JSON-LD validity
-- referrer policy
-- initial case-overlay accessibility state
-- local asset references and orphan detection
-- static payload budgets
-- case navigation registry
-- case evidence-review registry
-- no live iframe
-- no public email / mailto
-- no private IPv4 addresses on live surface
-- approved phone/WhatsApp boundary
-- protected precise-scale phrase regressions
-- attribution-boundary presence
-- deterministic enhancement chain
-- rendered-browser/link-health workflow contracts
-- Node 24 workflow runtime contract
-
-The validation gate is required to remain green.
-
-## Public proof-link monitoring
-
-The repository also includes:
-
-- `scripts/check-external-links.mjs`
-- `.github/workflows/link-health.yml`
-
-The workflow is scheduled weekly and can also be run manually. It monitors the public portfolio, live institutional system and selected public evidence repositories with bounded retry/backoff for transient failures.
+Dedicated Browser smoke now verifies:
+- particle canvas presence
+- charged links
+- node halos
+- click zap
+- first-reveal branch energization
+- tighter mobile graph framing
+- no horizontal overflow
+- mobile headline/search clearance
 
 ## Current privacy boundary
 
 Public contact:
-
 - Phone: +91 95558 77000
 - WhatsApp: +91 95558 77000
 
 Do not publish by default:
-
 - public email
 - internal IPs/topology
 - credentials
@@ -259,7 +217,6 @@ Do not publish by default:
 ## Current attribution boundary
 
 Do not claim as Pragalbh's professional disciplines:
-
 - Graphic Design
 - UI/UX Design
 - Art Direction
@@ -267,80 +224,48 @@ Do not claim as Pragalbh's professional disciplines:
 - Campaign Visual Design
 - Portfolio Visual Storytelling
 
-For collaborative projects, claim only Pragalbh's actual systems/requirements/engineering/deployment contribution.
+For collaborative work, claim only Pragalbh's actual systems/requirements/engineering/deployment contribution.
 
-## Active evidence / measurement backlog
+## Active backlog
 
-Tracked in **GitHub Issue #2: Evidence enrichment: real media and prospective outcome measurement**.
+### GitHub Issue #1 — real-device QA
 
-Primary remaining evidence targets:
+Remaining:
+- iPhone Safari portrait/landscape
+- Android Chrome
+- desktop Safari / Edge
+- VoiceOver/screen-reader smoke test
+- real pinch/pan behavior
+- real Call / WhatsApp handoff
+- physical reduced-motion behavior
+- electrical interaction feel/performance on actual mobile hardware
 
-### AquaPulse
+### GitHub Issue #2 — evidence enrichment
 
-- stable UI screenshots
-- role/RBAC workflow screenshot
-- audit/workflow evidence
-- self-hosted deployment evidence
+Remaining high-value evidence:
+- AquaPulse UI/RBAC/audit screenshots
+- BDSPS live/publishing evidence
+- privacy-safe Proxmox/TrueNAS/rack evidence
+- Kubernetes failure/recovery evidence
+- Smart Classroom pilot media
+- Solar CCTV field media + measured load/autonomy
 
-### BDSPS Digital Operations
+### GitHub Issue #3 — repository hardening
 
-- privacy-safe live-site screenshots
-- Actions/deployment evidence
-- timetable publishing screenshot
-- before/after workflow example
+Decision remains around `main` protection, force-push/deletion protection and required checks.
 
-### Private Infrastructure
+## Next visual priorities
 
-- redacted Proxmox screenshot
-- redacted TrueNAS screenshot
-- rack/server photographs
-- recovery-test evidence
-
-### HA Kubernetes
-
-- documented failure/recovery test
-- bootstrap timing if safely measured
-
-### Smart Classroom
-
-- pilot hardware photography
-- timetable automation capture
-- endpoint/dashboard screenshots when built
-
-### Solar CCTV Edge
-
-- field installation photos
-- measured load
-- real autonomy data
-- wireless-link evidence
-
-## Current governance files
-
-- `MASTER_ROADMAP.md` — programme architecture and priorities
-- `PORTFOLIO_STATUS.md` — concise current state
-- `PORTFOLIO_MAINTENANCE.md` — ongoing update contract
-- `RELEASE_CHECKLIST.md` — production release procedure
-- `PERFORMANCE_BUDGET.md` — measured static payload guardrails
-- `CHANGELOG.md` — meaningful architecture/history changes
-- `CASE_REVIEW_REGISTER.md` — evidence-review freshness and triggers
-- `EVIDENCE_REGISTER.md` — proof/media control
-- `OUTCOME_REGISTER.md` — public impact/claim control
-
-## Next operational priorities
-
-1. complete GitHub Issue #1 real-device/browser/assistive-technology QA
-2. add privacy-safe evidence through GitHub Issue #2 as it becomes available
-3. review `main` protection through GitHub Issue #3
-4. measure outcomes prospectively rather than reconstructing metrics later
-5. keep the six-flagship hierarchy disciplined
-6. monitor public proof links weekly
-7. keep skills connected to evidence rather than increasing skill volume
-8. keep `npm run audit` / Portfolio audit green
-9. use `RELEASE_CHECKLIST.md` for meaningful releases
-10. use `PORTFOLIO_MAINTENANCE.md` for monthly/quarterly governance
+1. verify the electrical interaction on the user's actual iPhone
+2. tune zap intensity/timing based on real-device feel rather than adding more effects blindly
+3. preserve active-path electrical emphasis while navigating deeper branches
+4. improve project-node hierarchy as deeper branches appear
+5. add real evidence media as the next major visual richness layer
+6. keep the default network sparse
+7. do not introduce heavyweight 3D unless a future requirement genuinely needs it
 
 ## Production rule
 
-Future work should normally deepen an existing node or case before creating a new homepage section.
+Future work should deepen the graph, evidence or case system before adding a new homepage section.
 
-The default experience stays sparse; evidence expands on demand.
+The default experience stays sparse; the system becomes richer through interaction.
