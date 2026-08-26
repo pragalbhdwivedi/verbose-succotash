@@ -72,9 +72,11 @@ Implemented six source-backed/hybrid cases:
 - Added Enter/Space activation.
 - Upgraded search to combobox/listbox semantics with keyboard result navigation and Escape behavior.
 - Added modal dialog semantics, Escape close, Tab containment and focus restoration.
+- Added labelled generated case-close controls and explicit initial `aria-hidden` overlay state.
 - Added reduced-motion support and larger mobile targets.
 - Added no-JavaScript professional fallback.
 - Added explicit current-path navigation rather than relying solely on graph spatial memory.
+- Added `strict-origin-when-cross-origin` referrer policy and rendered safe-new-tab validation.
 
 ### Rendered browser verification
 
@@ -85,6 +87,7 @@ Implemented six source-backed/hybrid cases:
 - Added browser page-error capture.
 - Added short-lived screenshots/URL/error artifacts on browser-smoke failure.
 - Browser testing exposed and drove fixes for search focus handling and exact-label search ranking rather than relying only on source inspection.
+- Verified live-surface commit `606e943c91bbaf67974ced6c74414d64ab6ad95c` with successful Portfolio audit, Browser smoke and GitHub Pages deployment on the same source.
 
 ### Discoverability / delivery
 
@@ -103,18 +106,35 @@ Implemented six source-backed/hybrid cases:
   - hiring conversion → accessibility
   - accessibility → network navigation
   - network navigation → case review
+- Added orphaned live JS/CSS/SVG rejection so obsolete enhancement layers cannot silently accumulate.
 
 ### Static payload guardrail
 
 - Added `PERFORMANCE_BUDGET.md` from measured repository-tree sizes.
-- Baseline raw controlled live source: approximately **250.4 KB** before transfer compression/network effects.
-- Added enforced limits for:
-  - root HTML
-  - combined/single JavaScript files
-  - combined/single CSS files
-  - combined/single evidence SVG files
-  - overall controlled raw live-source envelope
+- Final verified raw controlled live source: **250,651 B** before transfer compression/network effects.
+- Verified components:
+  - `index.html`: 13,492 B
+  - live JavaScript: 129,005 B
+  - live CSS: 28,497 B
+  - evidence SVGs: 79,257 B
+- Added enforced limits for root HTML, combined/single JavaScript, combined/single CSS, combined/single evidence SVG and total controlled live source.
 - Explicitly kept Lighthouse/Core Web Vitals outside this source-budget claim until actual measurements are performed.
+
+### Workflow/runtime hardening
+
+- Upgraded all portfolio-owned workflows from the deprecated Node 20 generation to **Node 24**.
+- Upgraded `actions/checkout` and `actions/setup-node` to their current **v7** majors.
+- Verified the production audit on Node **v24.19.0** with all source/governance contracts passing.
+- Verified Browser smoke successfully after the Node 24/v7 migration.
+- Verified Public evidence link health successfully after the Node 24/v7 migration.
+- The link-health run returned HTTP 200 for all **11 monitored public endpoints**, including `https://pragalbh.in/` and `https://bdsps.in/`.
+
+### Repository protection state
+
+- Confirmed `main` currently reports `protected: false` with required-status enforcement off.
+- Confirmed no repository rulesets are currently configured.
+- Kept protection changes outside automatic maintenance because enabling PR-only or required-check policies changes the current direct-maintenance workflow.
+- GitHub Issue #3 records the explicit decision required for force-push/deletion protection, required checks, pull-request policy and administrator recovery/bypass.
 
 ### Governance / quality
 
@@ -126,12 +146,13 @@ Implemented six source-backed/hybrid cases:
 - Added `ENHANCEMENT_CHAIN.md`.
 - Added zero-dependency `scripts/validate-portfolio.mjs`.
 - Added `npm run audit`.
-- Strengthened GitHub `Portfolio audit` workflow to protect source, privacy, routing, enhancement-chain, browser-smoke, proof-health and payload-budget contracts.
+- Strengthened GitHub `Portfolio audit` workflow to protect source, privacy, routing, enhancement-chain, browser-smoke, proof-health, workflow-runtime and payload-budget contracts.
 - Added separate `Browser smoke` GitHub Actions gate.
 - Added separate `Public evidence link health` workflow.
 - Recorded a green automated baseline across source audit, rendered browser smoke, proof-link health and Pages deployment.
 - Opened GitHub Issue #1 for real-device/browser/accessibility QA and recorded automated progress without closing the physical-device backlog.
 - Opened GitHub Issue #2 for real media and prospective outcome enrichment.
+- Opened GitHub Issue #3 for the repository-protection decision.
 
 ## Earlier baseline
 
