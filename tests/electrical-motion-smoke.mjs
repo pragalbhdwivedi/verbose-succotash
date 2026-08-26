@@ -32,7 +32,7 @@ try{
   assert.equal(await page.locator('#network .node[data-id="smartclass"] .project-status-badge').getAttribute('data-state'),'PROTO','Prototype projects should expose explicit maturity state');
   assert.equal(await page.locator('#network .node[data-id="smartclass"] .case-lock').count(),1,'Selected project should receive lock-on treatment');
   assert.ok(await page.locator('#network .edge.path-hot').count()>=3,'Deep selected project should retain its complete hot ancestry path');
-  assert.match(await page.locator('.energy-status span').textContent(),/PROTO · Smart Classroom/i,'System status should track the selected project');
+  assert.match(await page.locator('.energy-status span:not([data-system-telemetry])').textContent(),/PROTO · Smart Classroom/i,'System status should track the selected project');
 
   mobile=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
   const mobilePage=await mobile.newPage();
