@@ -10,17 +10,17 @@ The current live site is served directly from the repository root through GitHub
 
 ## Measured baseline
 
-Measured by the production `Portfolio audit` after the electrical-network interaction pass on 26 August 2026:
+Measured by the production `Portfolio audit` for verified systems-observatory live-surface commit `78e1187f2329284bae79df25382a96bfc0f65973` on 26 August 2026:
 
 | Category | Current raw size |
 | --- | ---: |
 | `index.html` | 13,492 B |
-| live JavaScript under `assets/` | 138,806 B |
-| live CSS under `assets/` | 31,668 B |
+| live JavaScript under `assets/` | 146,659 B |
+| live CSS under `assets/` | 35,026 B |
 | current evidence/media SVGs | 79,257 B |
-| current controlled raw live surface total | **263,623 B** |
+| current controlled raw live surface total | **274,834 B** |
 
-The electrical-motion feature increased the controlled raw live surface by **12,972 B** from the previous 250,651 B baseline while remaining inside every existing code/style/overall budget.
+Compared with the pre-motion production baseline of 250,651 B, the complete electrical + systems-observatory layer adds **24,183 B raw** while staying inside every existing budget.
 
 The same audit validated 40 local asset references, 40 reachable live assets, 21 JavaScript files, 41 live-surface files and all 12 case-study navigation/review IDs.
 
@@ -41,16 +41,18 @@ Reason: metadata/no-JS fallback can grow modestly, but substantial case content 
 - all `assets/*.js` combined: **160 KiB maximum** (`163,840 B`)
 - any single live JS file: **32 KiB maximum** (`32,768 B`)
 
-Current combined headroom: **25,034 B**.
+Current combined headroom: **17,181 B** (approximately 16.8 KiB).
 
-Reason: the portfolio intentionally uses dependency-light progressive enhancement. The new electrical layer uses a small custom canvas/SVG implementation instead of importing a large particle or Three.js runtime.
+Reason: the portfolio intentionally uses dependency-light progressive enhancement. The systems-observatory layer uses native Canvas, SVG, CSS and Web Animations instead of importing a particle, Three.js or animation framework runtime.
 
 ### CSS
 
 - all `assets/*.css` combined: **40 KiB maximum** (`40,960 B`)
 - any single live CSS file: **16 KiB maximum** (`16,384 B`)
 
-Current combined headroom: **9,292 B**.
+Current combined headroom: **5,934 B** (approximately 5.8 KiB).
+
+CSS headroom is intentionally tighter now. Future visual work should first simplify or reuse existing rules before increasing this budget.
 
 ### Evidence diagrams
 
@@ -74,27 +76,31 @@ The controlled live source set is:
 
 Combined raw maximum: **340 KiB** (`348,160 B`).
 
-Current headroom: **84,537 B**.
+Current headroom: **73,326 B** (approximately 71.6 KiB).
 
 This envelope intentionally leaves room for evidence refinement without making large additions invisible.
 
-## Electrical-motion performance rules
+## Systems-observatory performance rules
 
 The motion layer must remain subordinate to the portfolio content and interaction model.
 
-Current rules:
+Current implementation/rules:
 
-- low-count custom particle field rather than a large particle engine,
+- low-count custom Canvas 2D particle field rather than a large particle engine,
 - device pixel ratio capped for the canvas,
 - rendering paced to roughly 30 fps rather than attempting maximum frame rate,
 - drawing pauses when the document or network experience is not visible,
 - mobile uses fewer particles than desktop,
 - electrical bolts reuse existing SVG graph geometry,
+- observatory rings/axes/status layers are native SVG,
+- selected ancestry uses existing graph geometry rather than a duplicate routing model,
+- subtle pointer parallax affects only atmospheric/guide layers, not information-node coordinates,
+- mobile disables pointer parallax,
 - transient zap DOM is removed after animation,
-- `prefers-reduced-motion` disables the ambient particle and discharge animation,
-- the dedicated electrical Browser smoke test must remain green.
+- `prefers-reduced-motion` disables particles, electrical discharge, rotating guides and decorative current movement while preserving information state,
+- the dedicated electrical/observatory Browser smoke test must remain green.
 
-A future visual effect must not justify weakening the existing JavaScript or CSS budgets merely because it is decorative.
+Do not add Three.js, a particle runtime, GSAP or another heavy animation dependency merely to imitate a reference site. A heavier runtime requires an explicit architecture/performance decision and a new measured baseline.
 
 ## Future raster evidence
 
@@ -124,8 +130,9 @@ It does **not** claim or infer:
 - cache-hit behavior
 - third-party font transfer size
 - real mobile radio/network performance
+- sustained GPU/battery cost on physical iPhone/Android hardware
 
-Those require actual browser/network measurement.
+Those require actual browser/network/device measurement.
 
 ## Change policy
 
