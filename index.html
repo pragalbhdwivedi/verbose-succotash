@@ -38,29 +38,10 @@
         "telephone": "+919555877000",
         "jobTitle": "Owner & Executive Director",
         "description": "Owner and Executive Director of family-owned educational institutions in Uttar Pradesh, combining institutional operations and strategy with self-directed technical practice and hands-on systems building.",
-        "homeLocation": {
-          "@type": "Place",
-          "name": "Prayagraj, Uttar Pradesh, India"
-        },
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Badridhar Dwivedi Group of Institutions"
-        },
-        "sameAs": [
-          "https://github.com/pragalbhdwivedi"
-        ],
-        "knowsAbout": [
-          "Institutional leadership",
-          "Institutional operations",
-          "Systems architecture",
-          "Infrastructure",
-          "Automation",
-          "Education technology",
-          "Networking",
-          "Virtualisation",
-          "Self-hosted systems",
-          "Applied technology"
-        ]
+        "homeLocation": {"@type":"Place","name":"Prayagraj, Uttar Pradesh, India"},
+        "worksFor": {"@type":"Organization","name":"Badridhar Dwivedi Group of Institutions"},
+        "sameAs": ["https://github.com/pragalbhdwivedi"],
+        "knowsAbout": ["Institutional leadership","Institutional operations","Systems architecture","Infrastructure","Automation","Education technology","Networking","Virtualisation","Self-hosted systems","Applied technology"]
       },
       {
         "@type": "WebSite",
@@ -68,9 +49,7 @@
         "url": "https://pragalbh.in/",
         "name": "Pragalbh Dwivedi — Portfolio",
         "description": "A professional evidence portfolio covering institutional leadership, operations, systems, infrastructure, automation and applied technology.",
-        "publisher": {
-          "@id": "https://pragalbh.in/#person"
-        },
+        "publisher": {"@id":"https://pragalbh.in/#person"},
         "inLanguage": "en"
       }
     ]
@@ -87,130 +66,59 @@
     <h1>Owner. Executive Director. <span>Systems builder.</span></h1>
     <p>I operate family-owned educational institutions in Uttar Pradesh and build systems across IT, operations, infrastructure, networking, automation and applied technology. My institutional practice began in 2016; my independent technical practice began in 2010 and expanded through networking, systems, security and virtualisation. I believe in the ethical and appropriate use of technology—not technology for its own sake.</p>
     <p>Some deployment scale, infrastructure topology, equipment quantities, network architecture and operational details are intentionally generalized or redacted for institutional safety and security.</p>
-    <div class="noscript-grid">
-      <div><b>AquaPulse</b><span>Operational software · public repository</span></div>
-      <div><b>HA Kubernetes</b><span>Infrastructure automation · public repository</span></div>
-      <div><b>BDSPS Digital Operations</b><span>Live institutional system + public repositories</span></div>
-      <div><b>Smart Classroom</b><span>Source-backed prototype architecture</span></div>
-      <div><b>Private Infrastructure</b><span>Applied self-hosted infrastructure</span></div>
-      <div><b>Solar CCTV Edge</b><span>Field system design</span></div>
-    </div>
+    <div class="noscript-grid"><div><b>AquaPulse</b><span>Operational software · public repository</span></div><div><b>HA Kubernetes</b><span>Infrastructure automation · public repository</span></div><div><b>BDSPS Digital Operations</b><span>Live institutional system + public repositories</span></div><div><b>Smart Classroom</b><span>Source-backed prototype architecture</span></div><div><b>Private Infrastructure</b><span>Applied self-hosted infrastructure</span></div><div><b>Solar CCTV Edge</b><span>Field system design</span></div></div>
     <p><strong>Stuck on a problem?</strong> If I can point you in the right direction, I’ll be happy to help—no charge, just helping a friend in need.</p>
-    <div class="noscript-links">
-      <a href="tel:+919555877000">Call +91 95558 77000</a>
-      <a href="https://wa.me/919555877000">WhatsApp</a>
-      <a href="https://github.com/pragalbhdwivedi">GitHub</a>
-      <a href="https://bdsps.in/">Live institutional system</a>
-    </div>
+    <div class="noscript-links"><a href="tel:+919555877000">Call +91 95558 77000</a><a href="https://wa.me/919555877000">WhatsApp</a><a href="https://github.com/pragalbhdwivedi">GitHub</a><a href="https://bdsps.in/">Live institutional system</a></div>
   </section>
 </noscript>
 <div class="app">
   <header class="topbar">
-    <div class="brand">
-      <div class="monogram">PD</div>
-      <div class="brand-copy"><strong>Pragalbh Dwivedi</strong><span>Owner · Executive Director · Systems Builder</span></div>
-    </div>
-    <div class="top-actions">
-      <button class="ghost" id="resetBtn">Reset map</button>
-      <div class="mode" aria-label="Portfolio view mode">
-        <button id="exploreMode" class="active">Explore network</button>
-        <button id="recruiterMode">Recruiter view</button>
-      </div>
-    </div>
+    <div class="brand"><div class="monogram">PD</div><div class="brand-copy"><strong>Pragalbh Dwivedi</strong><span>Owner · Executive Director · Systems Builder</span></div></div>
+    <div class="top-actions"><button class="ghost" id="resetBtn">Reset map</button><div class="mode" aria-label="Portfolio view mode"><button id="exploreMode" class="active">Explore network</button><button id="recruiterMode">Recruiter view</button></div></div>
   </header>
 
   <section class="network-view" id="networkView">
     <div class="graph-shell">
-      <div class="graph-title">
-        <span class="eyebrow">Education · systems · infrastructure · automation · applied technology</span>
-        <h1>I design and build the systems behind <em>modern institutions.</em></h1>
-      </div>
-      <div class="search">
-        <input id="searchInput" placeholder="Find Kubernetes, RFID, curriculum, solar…" autocomplete="off" />
-        <div class="search-results" id="searchResults"></div>
-      </div>
+      <div class="graph-title"><span class="eyebrow">Education · systems · infrastructure · automation · applied technology</span><h1>I design and build the systems behind <em>modern institutions.</em></h1></div>
+      <div class="search"><input id="searchInput" placeholder="Find Kubernetes, RFID, curriculum, solar…" autocomplete="off" /><div class="search-results" id="searchResults"></div></div>
       <svg id="network" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid meet" aria-label="Interactive portfolio capability network"></svg>
       <div class="legend"><span>Click to expand</span><span>Search jumps to a branch</span><span>Drag to pan</span><span>Wheel / pinch to zoom</span></div>
     </div>
-    <aside class="drawer empty" id="drawer">
-      <div class="drawer-empty">
-        <span class="eyebrow">Start anywhere</span>
-        <h2>Explore how the work connects.</h2>
-        <p>Open a branch, follow the relationships and inspect projects as evidence hubs. The map remains sparse until you ask for more.</p>
-        <div class="mini">Blue = education · violet = systems · grey = infrastructure · cyan = automation · amber = applied / energy</div>
-      </div>
-    </aside>
+    <aside class="drawer empty" id="drawer"><div class="drawer-empty"><span class="eyebrow">Start anywhere</span><h2>Explore how the work connects.</h2><p>Open a branch, follow the relationships and inspect projects as evidence hubs. The map remains sparse until you ask for more.</p><div class="mini">Blue = education · violet = systems · grey = infrastructure · cyan = automation · amber = applied / energy</div></div></aside>
   </section>
 
   <section class="recruiter-view" id="recruiterView">
     <div class="rwrap">
       <div class="rhero">
-        <div>
-          <span class="eyebrow">Pragalbh Dwivedi / Prayagraj, Uttar Pradesh / 2026</span>
-          <h1>Owner. Executive leader. <em>Systems builder.</em></h1>
-          <p>I operate family-owned educational institutions and work across IT, operations, institutional strategy and administration. My differentiator is hands-on systems thinking: I move from question analysis and context to possibilities, architecture and practical implementation.</p>
-          <div class="actions">
-            <a class="cta primary" href="#recruiterContact">Let’s connect →</a>
-          </div>
-        </div>
-        <aside class="rside">
-          <span class="eyebrow">Current operating context</span>
-          <strong>Owner & Executive Director</strong>
-          <span>Family-owned educational institutions</span>
-          <div style="height:1px;background:var(--line);margin:22px 0"></div>
-          <span class="eyebrow">Best fit</span>
-          <strong style="font-size:16px">Leadership · consulting · architecture</strong>
-          <span>Education, EdTech, institutional transformation, infrastructure, automation and technical operations.</span>
-        </aside>
+        <div><span class="eyebrow">Pragalbh Dwivedi / Prayagraj, Uttar Pradesh / 2026</span><h1>Owner. Executive leader. <em>Systems builder.</em></h1><p>I operate family-owned educational institutions and work across IT, operations, institutional strategy and administration. My differentiator is hands-on systems thinking: I move from question analysis and context to possibilities, architecture and practical implementation.</p><div class="actions"><a class="cta primary" href="#recruiterContact">Let’s connect →</a></div></div>
+        <aside class="rside"><span class="eyebrow">Current operating context</span><strong>Owner & Executive Director</strong><span>Family-owned educational institutions</span><div style="height:1px;background:var(--line);margin:22px 0"></div><span class="eyebrow">Best fit</span><strong style="font-size:16px">Leadership · consulting · architecture</strong><span>Education, EdTech, institutional transformation, infrastructure, automation and technical operations.</span></aside>
       </div>
 
-      <div class="impact" aria-label="Scale and operating context">
-        <div class="stat"><strong>Multi-institution</strong><span>education and operational leadership context</span></div>
-        <div class="stat"><strong>Multi-classroom</strong><span>smart-classroom architecture and rollout thinking</span></div>
-        <div class="stat"><strong>Fleet-wide</strong><span>transport identity and credential architecture</span></div>
-        <div class="stat"><strong>Self-hosted</strong><span>compute, storage and platform infrastructure</span></div>
-        <div class="stat"><strong>Continuous</strong><span>remote CCTV and edge-infrastructure design target</span></div>
-        <div class="stat"><strong>Cross-domain</strong><span>power + network + hardware + software integration</span></div>
-      </div>
+      <section data-about-me>
+        <div class="section-head"><div><span class="eyebrow">About Me</span><h2>I operate institutions—and build the systems that help them operate better.</h2></div><p>I am an Owner and Executive Director of family-owned educational institutions and farms in Prayagraj, Uttar Pradesh, India. Since 2016 I have worked across IT, operations, institutional strategy and administration. My technical path began independently in 2010, broadened through networking, systems and security by 2012, and expanded into virtualisation from 2014. I approach difficult work through question analysis: background, foreground, prediction, timeline and possibilities before choosing a solution. My principle is simple: use technology where it is ethically right and operationally useful—not merely because it is possible.</p></div>
+        <div class="impact" data-profile-timeline><div class="stat"><strong>2010</strong><span>independent technical learning begins</span></div><div class="stat"><strong>2012</strong><span>networking · systems · security</span></div><div class="stat"><strong>2014</strong><span>virtualisation practice begins</span></div><div class="stat"><strong>2016</strong><span>institutional leadership begins</span></div><div class="stat"><strong>Today</strong><span>education · operations · technology converge</span></div></div>
+        <div class="section-head"><div><span class="eyebrow">Education</span><h2>Formal education meets self-directed systems practice.</h2></div><p>Bachelor of Science · Master of Science in Mathematics · Master of Arts in English · Bachelor of Education · Master of Arts in Education</p></div>
+        <div class="competencies" data-profile-foundations><span>CCNA</span><span>CCNP</span><span>MCSA</span><span>RHCSA</span><span>Certified Ethical Hacker</span><span>UISP WISP Designer</span></div>
+        <div class="section-head" data-operational-disclosure><div><span class="eyebrow">Operational disclosure</span><h2>Real work. Sensitive detail selectively withheld.</h2></div><p>Some deployment scale, infrastructure topology, equipment quantities, network architecture and operational details are intentionally generalized or redacted for institutional safety and security. The underlying work is real; sensitive implementation detail is selectively withheld.</p></div>
+      </section>
 
-      <div class="section-head">
-        <div><span class="eyebrow">What I solve</span><h2>Problems worth hiring for.</h2></div>
-        <p>The value is not the number of technologies listed. It is being able to turn a messy institutional requirement into an operable system.</p>
-      </div>
-      <div class="solves">
-        <article class="solve"><b>01</b><h3>Modernise institutions</h3><p>Turn manual academic and administrative processes into structured, measurable workflows.</p></article>
-        <article class="solve"><b>02</b><h3>Connect fragmented systems</h3><p>Design across power, networks, hardware, software, storage, identity and people instead of treating each layer in isolation.</p></article>
-        <article class="solve"><b>03</b><h3>Build self-hosted capability</h3><p>Use private infrastructure, automation and open tooling where ownership, resilience and control matter.</p></article>
-        <article class="solve"><b>04</b><h3>Engineer EdTech operations</h3><p>Connect timetables, classrooms, recording, attendance, signage, access systems and administrative oversight.</p></article>
-        <article class="solve"><b>05</b><h3>Diagnose hard failures</h3><p>Work from measurements and evidence across software permissions, networks, relays, solar power and infrastructure.</p></article>
-        <article class="solve"><b>06</b><h3>Turn requirements into systems</h3><p>Define constraints, architecture, deployment, documentation, procurement and scaling paths.</p></article>
-      </div>
+      <div class="impact" aria-label="Scale and operating context"><div class="stat"><strong>Multi-institution</strong><span>education and operational leadership context</span></div><div class="stat"><strong>Multi-classroom</strong><span>smart-classroom architecture and rollout thinking</span></div><div class="stat"><strong>Fleet-wide</strong><span>transport identity and credential architecture</span></div><div class="stat"><strong>Self-hosted</strong><span>compute, storage and platform infrastructure</span></div><div class="stat"><strong>Continuous</strong><span>remote CCTV and edge-infrastructure design target</span></div><div class="stat"><strong>Cross-domain</strong><span>power + network + hardware + software integration</span></div></div>
 
-      <div class="section-head">
-        <div><span class="eyebrow">Selected case studies</span><h2>Evidence over adjectives.</h2></div>
-        <p>Each case states the problem, Pragalbh’s role, constraints, architectural decisions, supporting evidence and current maturity.</p>
-      </div>
-      <div class="case-grid" id="caseGrid"></div>
+      <div class="section-head"><div><span class="eyebrow">What I solve</span><h2>Problems worth hiring for.</h2></div><p>The value is not the number of technologies listed. It is being able to turn a messy institutional requirement into an operable system.</p></div>
+      <div class="solves"><article class="solve"><b>01</b><h3>Modernise institutions</h3><p>Turn manual academic and administrative processes into structured, measurable workflows.</p></article><article class="solve"><b>02</b><h3>Connect fragmented systems</h3><p>Design across power, networks, hardware, software, storage, identity and people instead of treating each layer in isolation.</p></article><article class="solve"><b>03</b><h3>Build self-hosted capability</h3><p>Use private infrastructure, automation and open tooling where ownership, resilience and control matter.</p></article><article class="solve"><b>04</b><h3>Engineer EdTech operations</h3><p>Connect timetables, classrooms, recording, attendance, signage, access systems and administrative oversight.</p></article><article class="solve"><b>05</b><h3>Diagnose hard failures</h3><p>Work from measurements and evidence across software permissions, networks, relays, solar power and infrastructure.</p></article><article class="solve"><b>06</b><h3>Turn requirements into systems</h3><p>Define constraints, architecture, deployment, documentation, procurement and scaling paths.</p></article></div>
 
-      <div class="section-head">
-        <div><span class="eyebrow">Core capability stack</span><h2>A connected operating practice.</h2></div>
-        <p>These are the recurring domains behind the project work, not a claim that every adjacent tool is an expert-level skill.</p>
-      </div>
-      <div class="competencies">
-        <span>Education leadership</span><span>Academic operations</span><span>Requirements engineering</span><span>Solution architecture</span><span>Institutional systems</span><span>Proxmox</span><span>TrueNAS</span><span>Linux</span><span>Kubernetes</span><span>MAAS</span><span>Campus networking</span><span>Omada</span><span>PoE</span><span>CCTV / NVR</span><span>GitHub Actions</span><span>Automation</span><span>RFID / access control</span><span>Digital signage</span><span>Solar / battery systems</span><span>Root-cause analysis</span>
-      </div>
+      <div class="section-head"><div><span class="eyebrow">Selected case studies</span><h2>Evidence over adjectives.</h2></div><p>Each case states the problem, role, constraints, architectural decisions, supporting evidence and current maturity.</p></div><div class="case-grid" id="caseGrid"></div>
+      <div class="section-head"><div><span class="eyebrow">Core capability stack</span><h2>A connected operating practice.</h2></div><p>These are recurring domains behind the project work, not a claim that every adjacent tool is an expert-level skill.</p></div>
+      <div class="competencies"><span>Education leadership</span><span>Academic operations</span><span>Requirements engineering</span><span>Solution architecture</span><span>Institutional systems</span><span>Proxmox</span><span>TrueNAS</span><span>Linux</span><span>Kubernetes</span><span>MAAS</span><span>Campus networking</span><span>Omada</span><span>PoE</span><span>CCTV / NVR</span><span>GitHub Actions</span><span>Automation</span><span>RFID / access control</span><span>Digital signage</span><span>Solar / battery systems</span><span>Root-cause analysis</span></div>
 
-      <div class="contact" id="recruiterContact">
-        <div><span class="eyebrow">Contact Me · Let’s connect</span><h2>Stuck on a problem?</h2><p>If you’re stuck and think I may be able to help, connect with me. If I can point you in the right direction, I’ll be happy to help—no charge, just helping a friend in need.</p></div>
-        <div class="actions"><a class="cta primary" href="tel:+919555877000">Phone</a><a class="cta" href="https://wa.me/919555877000" target="_blank" rel="noreferrer">WhatsApp ↗</a></div>
+      <div class="contact" id="recruiterContact" data-contact-me>
+        <div><span class="eyebrow">Contact Me · Let’s connect</span><h2>Stuck on a problem? Tell me what’s going on.</h2><p>If you’re stuck and think I may be able to help, connect with me. If I can point you in the right direction, I’ll be happy to help—no charge, just helping a friend in need.</p><div class="actions"><a class="cta" href="tel:+919555877000">+91 95558 77000</a><a class="cta" href="https://wa.me/919555877000" target="_blank" rel="noreferrer">WhatsApp ↗</a></div></div>
+        <form data-connect-form style="display:grid;gap:9px;width:min(420px,100%)"><label><span class="eyebrow">Your name</span><input name="name" required autocomplete="name" style="width:100%;border:1px solid var(--line);background:var(--panel);color:var(--text);padding:12px;outline:none;font:inherit;margin-top:5px"></label><label><span class="eyebrow">What are you stuck on?</span><input name="problem" required style="width:100%;border:1px solid var(--line);background:var(--panel);color:var(--text);padding:12px;outline:none;font:inherit;margin-top:5px" placeholder="A system, operation, technical problem…"></label><label><span class="eyebrow">Tell me a little more</span><textarea name="context" required rows="4" style="width:100%;border:1px solid var(--line);background:var(--panel);color:var(--text);padding:12px;outline:none;font:inherit;margin-top:5px;resize:vertical" placeholder="Context, what you tried, what is failing, or what you are trying to achieve."></textarea></label><button class="cta primary" type="submit">Send via WhatsApp →</button><span class="eyebrow" style="line-height:1.55">Nothing is stored here. Submitting opens WhatsApp with your message pre-filled.</span></form>
       </div>
     </div>
   </section>
 </div>
-
 <div class="case-overlay" id="caseOverlay" aria-hidden="true"><article class="case-modal" id="caseModal"></article></div>
-<script src="./assets/portfolio.js"></script>
-<script src="./assets/evidence.js"></script>
-<script>reset();</script>
+<script src="./assets/portfolio.js"></script><script src="./assets/evidence.js"></script><script>reset();</script>
 </body>
 </html>
