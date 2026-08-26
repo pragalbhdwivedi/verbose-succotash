@@ -6,11 +6,11 @@ This file is the concise source of truth for current execution status. `MASTER_R
 
 ## Overall state
 
-**Portfolio architecture: verified production baseline established; motion/interaction language now implemented.**
+**Portfolio architecture: verified production baseline established; Systems Observatory interaction language implemented and browser-verified.**
 
 The live site is an interactive professional evidence system with two primary modes:
 
-- **Explore Network** — progressive capability graph / expanding web
+- **Explore Network** — living systems observatory / progressive capability graph
 - **Recruiter View** — compact hiring, consulting and partnership path
 
 Core positioning:
@@ -23,38 +23,54 @@ Core statement:
 
 ## Current experience baseline
 
-The Explore Network is now intentionally presented as a powered system rather than a static diagram.
+The Explore Network is intentionally presented as a powered operating map rather than a static diagram.
 
-Implemented electrical interaction language:
+Implemented Systems Observatory language:
 
-- low-count ambient particle field behind the graph
+- low-count ambient Canvas particle field behind the graph
 - continuously moving current along visible connections
 - breathing charge halos around nodes
 - initial root-to-pillars power-up discharge
-- click/tap electrical zap into currently connected branches
+- click/tap electrical zap into currently connected visible branches
 - node impact flash + discharge ring
-- first-reveal branch/node energization
-- active graph route remains visually hotter through the existing active-edge state
-- pointer influence on ambient particles where supported
-- tighter mobile graph viewBox for substantially larger/readable pillar nodes
+- coordinate-safe staggered energisation for newly revealed branches/nodes
+- three observatory guide rings around the core with axes/ticks
+- subtle desktop parallax limited to atmospheric/guide layers
+- selected ancestry remains electrically hot from the Pragalbh core to the active node
+- selected node remains visibly charged
+- project nodes expose maturity badges: `LIVE`, `FIELD`, `PROTO`, `BUILD`, `APPLIED`, `CASE`
+- selected project receives a persistent lock-on treatment
+- live system-status label follows the selected node/project
+- tighter mobile graph framing for larger/readable pillar nodes
 - corrected mobile hero/search spacing based on real iPhone screenshot feedback
-- `prefers-reduced-motion` fallback without particle/lightning animation
+- `prefers-reduced-motion` retains hierarchy/state while removing decorative motion
 
 The motion implementation remains isolated from graph data, routing and case logic in `assets/electrical-motion.js` / `assets/electrical-motion.css`.
 
-## Verified post-motion raw source baseline
+The design rationale is governed by `DESIGN_DIRECTION.md`.
 
-Latest measured audit after the first electrical interaction pass:
+## Verified Systems Observatory raw source baseline
+
+Verified live-surface commit: `78e1187f2329284bae79df25382a96bfc0f65973`.
+
+For that exact source state:
+
+- Portfolio audit: **SUCCESS**
+- Browser smoke: **SUCCESS**
+- dedicated electrical/observatory smoke: **SUCCESS**
+- GitHub Pages deployment: **SUCCESS**
+
+Measured source:
 
 - `index.html`: **13,492 B**
-- live JavaScript: **138,806 B**
-- live CSS: **31,668 B**
+- live JavaScript: **146,659 B**
+- live CSS: **35,026 B**
 - evidence SVGs: **79,257 B**
-- controlled raw live surface: **263,623 B**
+- controlled raw live surface: **274,834 B**
 
-This remains within all existing performance budgets.
+This remains inside all existing performance budgets and is **24,183 B** above the pre-motion 250,651 B production baseline.
 
-The motion pass added **12,972 B** to the previous 250,651 B controlled baseline without importing Three.js or a particle framework.
+The audit validated 40 local asset references, 40 reachable live assets, 21 JavaScript files, 41 live-surface files and all 12 case-study navigation/review IDs.
 
 ## Programme stages
 
@@ -120,6 +136,7 @@ Implemented:
 - keyboard-accessible graph nodes
 - accessible search and mode semantics
 - modal dialog/focus behavior
+- synchronous generated-modal accessibility preparation
 - visible focus states
 - reduced-motion support
 - mobile interaction targets
@@ -166,36 +183,47 @@ Verification includes:
 
 `main` is currently unprotected; repository-protection policy remains GitHub Issue #3.
 
-### Sprint 8 — Motion & Interaction Language
+### Sprint 8 — Systems Observatory / Motion & Interaction
 
-**Status: ELECTRICAL NETWORK BASELINE IMPLEMENTED / ITERATIVE POLISH ACTIVE**
+**Status: VERIFIED BASELINE COMPLETE / REAL-DEVICE TUNING REMAINS**
 
-Reference direction reviewed:
-- CasberryIndia `Physics-Notebook`
-- `particles.casberry.in`
-- lightweight JavaScript lightning implementations
+Reference direction:
+- Casberry particle/physics work
+- Stella Nova system-world thinking
+- HorizonX selective cinematic/spatial interaction
+- Emil Kowalski motion discipline
+- Impeccable anti-pattern/design discipline
+- Taste Skill decision-rationale approach
 
 Principles adopted rather than copied:
+- one memorable system canvas rather than animation throughout the site
 - persistent but restrained ambient motion
-- real-time canvas animation
-- visibility-aware rendering
-- HiDPI-aware canvas sizing
-- interaction-driven electrical propagation
-- luminous visual hierarchy
+- explicit system state and project maturity
+- spatial depth that does not move actual information targets
+- short interaction-driven electrical propagation
+- selected-path persistence
+- calm default state between expressive events
 
 Deliberately not adopted:
 - heavyweight Three.js particle runtime
 - tens of thousands of particles
+- paid HorizonX source/assets
 - decorative 3D scene
 - audio effects
-- motion that obscures evidence/navigation
+- scroll-jacking
+- animation that obscures evidence/navigation
 
-Dedicated Browser smoke now verifies:
-- particle canvas presence
+Dedicated Browser smoke verifies:
+- particle canvas
+- observatory depth/rings
 - charged links
 - node halos
 - click zap
-- first-reveal branch energization
+- branch energisation
+- persistent hot ancestry path
+- project maturity badge
+- selected-project lock-on
+- selected system-status text
 - tighter mobile graph framing
 - no horizontal overflow
 - mobile headline/search clearance
@@ -238,7 +266,7 @@ Remaining:
 - real pinch/pan behavior
 - real Call / WhatsApp handoff
 - physical reduced-motion behavior
-- electrical interaction feel/performance on actual mobile hardware
+- electrical/observatory interaction feel and battery/GPU behavior on actual mobile hardware
 
 ### GitHub Issue #2 — evidence enrichment
 
@@ -256,13 +284,13 @@ Decision remains around `main` protection, force-push/deletion protection and re
 
 ## Next visual priorities
 
-1. verify the electrical interaction on the user's actual iPhone
-2. tune zap intensity/timing based on real-device feel rather than adding more effects blindly
-3. preserve active-path electrical emphasis while navigating deeper branches
-4. improve project-node hierarchy as deeper branches appear
-5. add real evidence media as the next major visual richness layer
+1. validate/tune observatory intensity on the user's actual iPhone
+2. tune zap/current/halo intensity from real-device feel instead of adding more effects
+3. add real project media into the existing case/evidence structure
+4. consider motion-lab tooling only if parameter iteration becomes cumbersome
+5. keep project maturity/state vocabulary consistent
 6. keep the default network sparse
-7. do not introduce heavyweight 3D unless a future requirement genuinely needs it
+7. do not introduce heavyweight WebGL unless comprehension genuinely requires it
 
 ## Production rule
 
