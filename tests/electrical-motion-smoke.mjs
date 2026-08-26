@@ -24,8 +24,15 @@ try{
   assert.equal(await mobilePage.locator('#network').getAttribute('viewBox'),'250 40 900 820','Mobile graph should use the tighter readable viewBox');
   assert.equal(await mobilePage.locator('.energy-field').count(),1,'Mobile electrical field canvas should render');
   assert.equal(await mobilePage.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1),true,'Electrical layer must not introduce mobile overflow');
+  const heroSpacing=await mobilePage.evaluate(()=>{
+    const title=document.querySelector('.graph-title h1')?.getBoundingClientRect();
+    const search=document.querySelector('.search')?.getBoundingClientRect();
+    return title&&search?{titleBottom:title.bottom,searchTop:search.top,gap:search.top-title.bottom}:null;
+  });
+  assert.ok(heroSpacing,'Mobile hero and search should both be measurable');
+  assert.ok(heroSpacing.gap>=8,`Mobile search must clear the headline by at least 8px; measured ${heroSpacing.gap.toFixed(1)}px`);
 
-  console.log('Electrical motion smoke passed: particles, charged links, click zap and mobile graph framing.');
+  console.log('Electrical motion smoke passed: particles, charged links, click zap, mobile graph framing and hero spacing.');
 }finally{
   await mobile?.close().catch(()=>{});
   await desktop?.close().catch(()=>{});
