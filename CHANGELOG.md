@@ -2,6 +2,80 @@
 
 This changelog records meaningful portfolio-system changes, not every file edit or commit.
 
+## 2026-08-26 — Stage 9 Premium Design / Taste baseline
+
+### Design system and visual hierarchy
+
+- Added `DESIGN_DNA.md` with Trigger → Decision → Reason → Evidence → Trade-off rules.
+- Added semantic state/domain/proof/motion tokens through `assets/design-tokens.css`.
+- Added `IMPECCABLE_AUDIT.md` and reduced generic bordered-card/SaaS-style chrome.
+- Reworked hierarchy around typography, spacing, alignment and ruled information flows.
+- Reserved stronger containment for proof/evidence objects.
+- Added dedicated rendered Impeccable visual-hierarchy regression testing.
+
+### Typography
+
+- Standardised editorial/readable and telemetry voices.
+- Improved microtype minimums, case-study reading scale and heading weight consistency.
+- Added tabular numeral treatment for operational/status data.
+- Preserved the larger mobile headline and moved the search/status composition rather than shrinking type when the rendered spacing gate exposed a collision.
+- Added dedicated typography regression testing.
+
+### Motion choreography
+
+- Added semantic motion timing levels and documented them in `MOTION_SYSTEM.md`.
+- Added latest-action-wins interruption so rapid graph exploration cancels stale electrical effects.
+- Preserved reduced-motion equivalents instead of merely slowing decorative animation.
+- Added dedicated motion-choreography regression testing.
+
+### Systems telemetry
+
+- Added meaningful Systems Observatory telemetry: selected depth, visible relationships, visible-system count, project maturity and evidence count where available.
+- Added compact mobile readouts and drawer system readouts.
+- Explicitly rejected fake CPU, uptime, traffic or throughput telemetry.
+- Added `TELEMETRY_SYSTEM.md` and rendered telemetry regression testing.
+
+### Spatial polish
+
+- Added restrained case-modal and drawer reveal choreography using the native Web Animations API.
+- Kept actual graph information-node coordinates fixed.
+- Added reduced-motion suppression and a dedicated spatial-polish regression test.
+- Did not add Three.js, WebGL, GSAP or paid HorizonX source/assets.
+
+### Three audience modes
+
+- Added **Simple View** beside **Explore Network** and **Recruiter View**.
+- Added mobile-safe labels: Explore / Recruiter / Simple.
+- Added About Me narrative to the professional presentation.
+- Simple View translates major systems into non-technical problem/outcome language while reusing the same case IDs and evidence modals.
+- No separate factual claims database was created.
+- Added dedicated Simple View/About Me desktop/mobile regression testing.
+
+### Enhancement-chain governance
+
+- Final governed sequence is:
+  - case navigation → hiring conversion → accessibility → network navigation → case review
+  - electrical observatory → telemetry → spatial polish → Simple View
+- Updated `ENHANCEMENT_CHAIN.md` to document responsibilities and future-change rules.
+- Hardened `scripts/validate-portfolio.mjs` so Stage 9 governance files, live layers and all Stage 9 rendered gates are mandatory production contracts.
+
+### Performance
+
+- Kept every original category ceiling unchanged.
+- Compacted new Stage 9 JavaScript rather than raising the JS budget.
+- Stage 9 compacted raw-source baseline:
+  - HTML: **13,555 B**
+  - JavaScript: **160,399 B**
+  - CSS: **40,860 B**
+  - evidence SVGs: **79,257 B**
+  - controlled total: **294,471 B**
+- CSS is intentionally near its ceiling; future visual work should consolidate existing rules before adding more.
+
+### Release boundary
+
+- Code-controlled Stage 9 work is complete once the final governance HEAD passes audit, rendered Chromium and Pages deployment.
+- Remaining high-value work requires physical-device/browser QA, real project evidence or prospective measurements rather than more decorative interface layers.
+
 ## 2026-08-26 — Electrical network interaction redesign
 
 ### Reference research
@@ -186,7 +260,7 @@ Implemented six source-backed/hybrid cases:
 - Verified the production audit on Node **v24.19.0** with all source/governance contracts passing.
 - Verified Browser smoke successfully after the Node 24/v7 migration.
 - Verified Public evidence link health successfully after the Node 24/v7 migration.
-- The link-health run returned HTTP 200 for all **11 monitored public endpoints**, including `https://pragalbh.in/` and `https://bdsps.in/`.
+- The link-health run returned HTTP 200 for all monitored public endpoints, including `https://pragalbh.in/` and `https://bdsps.in/`.
 
 ### Repository protection state
 
@@ -197,7 +271,7 @@ Implemented six source-backed/hybrid cases:
 
 ### Governance / quality
 
-- Rewrote `MASTER_ROADMAP.md` as current v2 roadmap.
+- Rewrote `MASTER_ROADMAP.md` as current roadmap.
 - Added `PORTFOLIO_STATUS.md`.
 - Added `PORTFOLIO_MAINTENANCE.md`.
 - Added `RELEASE_CHECKLIST.md`.
