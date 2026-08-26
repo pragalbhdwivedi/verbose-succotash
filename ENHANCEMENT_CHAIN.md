@@ -63,6 +63,8 @@ After every case definition exists, `case-navigation.js` becomes the owner of po
 
 → `case-review.js`
 
+→ `electrical-motion.js`
+
 Responsibilities:
 
 ### `case-navigation.js`
@@ -102,10 +104,31 @@ Responsibilities:
 
 - quiet `Evidence reviewed · Aug 2026` stamps
 - keeps review date separate from deployment/completion date
+- loads the visual electrical-motion layer after the functional interaction stack is ready
+
+### `electrical-motion.js`
+
+This is an isolated visual enhancement, not a graph-data owner.
+
+It provides:
+
+- low-count ambient particle field behind the capability graph
+- Retina-aware canvas rendering with capped DPR
+- approximately 30 fps animation pacing
+- visibility-aware rendering
+- continuously moving current along visible SVG links
+- subtle node charge halos
+- an initial root-to-pillars power-up discharge
+- electrical zap propagation from a clicked node into its currently connected visible branches
+- node impact flash and discharge ring
+- tighter mobile graph framing for readability
+- reduced-motion behavior that removes particle/zap animation while retaining a usable graph
+
+The implementation deliberately borrows interaction principles from physics/particle visualisation references without importing a heavyweight particle or Three.js runtime.
 
 ## Why the order matters
 
-Each wrapper should receive the fully constructed function from the previous layer.
+Each functional wrapper should receive the fully constructed function from the previous layer. The electrical-motion layer loads only after case review because it observes and decorates the already-working graph rather than owning routing, data or accessibility semantics.
 
 The target conceptual stack is:
 
@@ -123,6 +146,8 @@ The target conceptual stack is:
 
 → `evidence freshness`
 
+→ `visual electrical motion`
+
 A future refactor may consolidate files, but it must preserve behavior rather than merely reduce file count.
 
 ## Rules for future changes
@@ -133,11 +158,15 @@ A future refactor may consolidate files, but it must preserve behavior rather th
 4. Do not create multiple competing owners for the same downstream loader.
 5. If a new layer wraps `window.openCase`, document whether it must run before or after accessibility/case-review behavior.
 6. Direct `#case=` opening must remain accessible even if it occurs before `accessibility.js` arrives; accessibility initialization therefore prepares an already-open modal.
-7. Run `npm run audit` after any chain change.
-8. Add a deep-link regression check to GitHub Issue #1 for any newly introduced case route.
+7. Electrical motion must never become responsible for graph data, routing or case behavior.
+8. `prefers-reduced-motion` must remain respected when motion effects change.
+9. Keep the electrical layer within the existing JS/CSS/static payload budgets unless an explicit budget review justifies a change.
+10. Run `npm run audit` after any chain change.
+11. Keep the dedicated electrical-motion browser smoke test green after animation changes.
+12. Add a deep-link regression check to GitHub Issue #1 for any newly introduced case route.
 
 ## Future consolidation
 
 Consolidation into fewer bundles may be considered only after real-device QA and if request overhead becomes measurable.
 
-Do not merge layers solely to make the directory look tidier. The current separation also preserves clear responsibility boundaries during ongoing case/evidence development.
+Do not merge layers solely to make the directory look tidier. The current separation preserves clear responsibility boundaries and makes the motion layer removable or replaceable without destabilising the evidence/case system.
