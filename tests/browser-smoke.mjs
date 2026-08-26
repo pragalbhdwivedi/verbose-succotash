@@ -20,6 +20,11 @@ function capturePageErrors(target, label) {
   return () => assert.deepEqual(errors, [], `${label} emitted browser page errors: ${errors.join(' | ')}`);
 }
 
+async function assertSafeBlankLinks(target, label) {
+  const unsafe = await target.locator('a[target="_blank"]').evaluateAll(links => links.filter(a => !(a.getAttribute('rel') || '').split(/\s+/).includes('noreferrer')).map(a => a.href));
+  assert.deepEqual(unsafe, [], `${label} contains target=_blank links without rel=noreferrer: ${unsafe.join(', ')}`);
+}
+
 async function saveFailureArtifacts(error) {
   await fs.mkdir('test-artifacts', { recursive: true });
   await fs.writeFile('test-artifacts/failure.txt', `${error?.stack || error}\n`, 'utf8');
@@ -51,6 +56,7 @@ try {
   assert.ok(await page.locator('.case-visibility').count(), 'Flagship/supporting case disclosure should render');
   assert.equal(await page.locator('a[href="tel:+919555877000"]').first().count(), 1);
   assert.equal(await page.locator('a[href="https://wa.me/919555877000"]').first().count(), 1);
+  await assertSafeBlankLinks(page, 'Recruiter View');
 
   await page.goto(`${base}#case=aquapulse`, { waitUntil: 'domcontentloaded' });
   await waitForEnhancements(page);
@@ -58,7 +64,10 @@ try {
   assert.equal(new URL(page.url()).hash, '#case=aquapulse');
   assert.equal(await page.locator('#caseModal').getAttribute('role'), 'dialog');
   assert.equal(await page.locator('#caseModal').getAttribute('aria-modal'), 'true');
+  assert.equal(await page.locator('.case-close').getAttribute('type'), 'button');
+  assert.equal(await page.locator('.case-close').getAttribute('aria-label'), 'Close case study');
   assert.ok((await page.locator('.case-review-stamp').textContent()).includes('Evidence reviewed'));
+  await assertSafeBlankLinks(page, 'AquaPulse case');
   await page.click('.case-close');
   await page.waitForFunction(() => !document.getElementById('caseOverlay')?.classList.contains('show'));
   assert.equal(new URL(page.url()).hash, '', 'Direct case link should close to the canonical page URL');
@@ -116,12 +125,14 @@ try {
   await disclosure.click();
   assert.equal(await disclosure.getAttribute('aria-expanded'), 'true');
   assert.equal(await mobilePage.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), true, 'Recruiter View must not create horizontal overflow');
+  await assertSafeBlankLinks(mobilePage, 'Mobile Recruiter View');
 
   await mobilePage.evaluate(() => window.openCase('aquapulse'));
   await mobilePage.waitForSelector('#caseOverlay.show');
   const modalBox = await mobilePage.locator('#caseModal').boundingBox();
   assert.ok(modalBox && modalBox.x >= 0 && modalBox.x + modalBox.width <= 391, 'Mobile case modal must fit within viewport width');
   assert.equal(await mobilePage.locator('.case-close').isVisible(), true, 'Mobile case close control must remain visible');
+  assert.equal(await mobilePage.locator('.case-close').getAttribute('aria-label'), 'Close case study');
   await mobilePage.click('.case-close');
   await mobilePage.waitForFunction(() => !document.getElementById('caseOverlay')?.classList.contains('show'));
   finishMobileErrors();
@@ -134,7 +145,7 @@ try {
   assert.ok((await noJsPage.locator('.noscript-profile').textContent()).includes('AquaPulse'));
   assert.equal(await noJsPage.locator('.noscript-profile a[href="tel:+919555877000"]').count(), 1);
 
-  console.log('Browser smoke test passed: desktop Chromium, synthetic mobile viewport, and no-JavaScript fallback.');
+  console.log('Browser smoke test passed: desktop Chromium, synthetic mobile viewport, no-JavaScript fallback, modal semantics and safe new-tab links.');
 } catch (error) {
   await saveFailureArtifacts(error);
   throw error;
