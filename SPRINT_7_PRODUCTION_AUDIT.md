@@ -2,77 +2,237 @@
 
 Updated: 26 August 2026
 
-**Status: AUTOMATED SOURCE AUDIT PASSING — MANUAL DEVICE/BROWSER QA REMAINS**
+**Status: AUTOMATED PRODUCTION BASELINE GREEN · PHYSICAL/CROSS-BROWSER QA REMAINS**
 
-This stage records what is actually verified before treating the portfolio as a stable professional baseline.
+Sprint 7 records what is actually verified before treating the portfolio as a stable professional baseline.
 
-## Automated checks implemented
+The production model now uses four distinct verification layers rather than one catch-all audit.
 
-Workflow: `.github/workflows/portfolio-audit.yml`
+## 1. Source / governance audit
 
-The audit runs on `main` pushes and pull requests.
+Workflow:
 
-### JavaScript syntax
+- `.github/workflows/portfolio-audit.yml`
 
-Every `assets/**/*.js` file is checked with Node syntax validation.
+Canonical checker:
 
-### Canonical files
+- `scripts/validate-portfolio.mjs`
+- `npm run audit`
 
-The audit requires:
+The audit protects:
+
+### Syntax and required architecture
+
+- JavaScript syntax
+- required portfolio/governance files
+- required QA workflows/tests
+- deterministic progressive-enhancement ownership
+- case navigation/review registries
+
+### Canonical/discoverability contract
+
+- `CNAME` exactly `pragalbh.in`
+- canonical URL `https://pragalbh.in/`
+- robots metadata
+- sitemap reference
+- valid Person/WebSite JSON-LD
+- favicon/font-loading contract
+
+### Privacy / attribution contract
+
+The live-surface audit rejects:
+
+- iframe regressions
+- public email / `mailto:`
+- private IPv4 addresses
+- unapproved public phone-like values
+- protected precise-scale phrases
+
+It also requires the documented attribution boundary for visual-design disciplines that are not Pragalbh's work.
+
+### Resilience contract
+
+- no-JavaScript fallback remains present
+- interactive shell is hidden when JavaScript is unavailable
+- local asset references must resolve
+- browser-smoke and proof-health workflows must retain their expected contracts
+
+### Static payload contract
+
+`PERFORMANCE_BUDGET.md` is enforced from repository byte sizes.
+
+Current limits include:
+
+- root HTML
+- combined / single live JS
+- combined / single live CSS
+- combined / single evidence SVGs
+- combined controlled live-source envelope
+
+This is a raw static-source budget, not a Lighthouse/Core Web Vitals claim.
+
+## 2. Rendered browser smoke
+
+Workflow:
+
+- `.github/workflows/browser-smoke.yml`
+
+Test:
+
+- `tests/browser-smoke.mjs`
+- `npm run smoke:browser`
+
+Automated rendered coverage includes:
+
+### Desktop Chromium
+
+- Explore Network and Recruiter View
+- hiring-conversion layer
+- supporting-case disclosure
+- phone/WhatsApp route presence
+- direct case deep links
+- node deep links
+- accessible dialog semantics
+- evidence-review state
+- graph-origin case URL restoration
+- direct-case clean URL close behavior
+- keyboard search
+- exact-label search routing
+- browser page-error capture
+
+### Synthetic mobile Chromium
+
+Viewport: **390 × 844**, mobile/touch emulation enabled.
+
+Checks include:
+
+- horizontal document overflow
+- search viewport fit
+- breadcrumb/Back visibility
+- Recruiter View
+- supporting-case disclosure
+- case-modal viewport fit
+- close-control visibility
+
+### No-JavaScript path
+
+- fallback profile visible
+- interactive shell hidden
+- flagship proof retained
+- approved phone route retained
+
+### Failure diagnostics
+
+Browser-smoke failures save error text, current URLs and screenshots. GitHub Actions uploads those files temporarily for diagnosis.
+
+## 3. Public evidence link health
+
+Workflow:
+
+- `.github/workflows/link-health.yml`
+
+Checker:
+
+- `scripts/check-external-links.mjs`
+
+Monitored evidence includes:
+
+- `pragalbh.in`
+- public GitHub profile
+- AquaPulse
+- HA Kubernetes installer
+- MAAS configurations
+- BDSPS web platform
+- FET timetable repository
+- signage auto-install
+- Proxmox cloud-init scripts
+- BDSPS AR
+- live `bdsps.in`
+
+The checker uses bounded retries/backoff for transient failures while still failing on persistently broken proof links.
+
+It runs weekly, manually and whenever its own monitor configuration changes.
+
+## 4. GitHub Pages delivery
+
+The production delivery path remains the repository's existing branch-based GitHub Pages system.
+
+The live root is intentionally directly deployable:
 
 - `index.html`
+- `assets/`
 - `CNAME`
-- `robots.txt`
-- `sitemap.xml`
-- `CNAME` exactly equal to `pragalbh.in`
-- canonical link to `https://pragalbh.in/`
-- sitemap reference in `robots.txt`
 
-### Privacy / security guardrails on the live surface
+No duplicate custom Pages deployment workflow is used.
 
-The audit rejects:
+## Confirmed automated baseline — 26 August 2026
 
-- iframe regressions in live HTML/JavaScript
-- public email addresses in live HTML/JavaScript
-- private IPv4 addresses in live HTML/JavaScript
+The documented baseline has completed successfully across:
 
-These checks do not replace human privacy review, but they prevent several high-risk regressions from quietly returning later.
+- Portfolio audit
+- rendered Browser smoke
+- synthetic mobile/no-JavaScript Browser smoke coverage
+- Public evidence link health
+- GitHub Pages deployment
 
-## Current automated result
+This establishes a verified automated baseline for the code-controlled surface.
 
-The first `Portfolio audit` run completed successfully for commit:
+It does **not** establish universal browser/device/accessibility conformance.
 
-`3cd067174c422c6f878517afd654106bbe6d228a`
+## Physical / cross-browser QA still required
 
-The matching GitHub Pages deployment also completed successfully.
+Tracked in **GitHub Issue #1**.
 
-## Source-level quality already implemented
+Remaining checks include:
 
-- spider-web capability navigation
-- Recruiter View
-- audience routing
-- flagship-first recruiter hierarchy
-- six flagship technical/system cases
-- six leadership/institutional cases
-- evidence taxonomy
-- outcome claim controls
-- case deep links
-- capability deep links
-- public-repository/live/source-backed distinction
-- privacy-safe evidence diagrams
-- keyboard-accessible SVG nodes
-- accessible modal dialog semantics
-- Escape-to-close
-- modal focus trapping
-- focus restoration
-- reduced-motion support
-- mobile touch-target improvements
-- canonical metadata
-- Person/WebSite structured data
-- robots policy
-- sitemap
-- favicon
-- no embedded third-party evidence iframe
+### Browser/device
+
+- iPhone Safari portrait + landscape
+- Android Chrome
+- desktop Safari
+- manual desktop Chrome
+- Edge
+
+### Interaction/accessibility
+
+- real touch pan / pinch behavior
+- case modal scroll on physical small screens
+- keyboard-only real-browser end-to-end pass
+- VoiceOver / screen-reader smoke test
+- OS/browser reduced-motion behavior
+- native phone link handoff
+- native WhatsApp handoff
+
+Synthetic Chromium coverage must not be described as proof of Safari, Android or VoiceOver behavior.
+
+## Performance still requiring real measurement
+
+The repository now controls raw source size through `PERFORMANCE_BUDGET.md`, but still does not claim:
+
+- Lighthouse Performance score
+- LCP
+- INP
+- CLS
+- TTFB
+- real mobile-network timing
+- mobile CPU interaction smoothness
+
+Those require an actual measured browser/network environment.
+
+## Evidence enrichment, not structural blockers
+
+Tracked in **GitHub Issue #2**.
+
+Examples:
+
+- real privacy-safe field photographs
+- AquaPulse stable UI screenshots
+- redacted Proxmox/TrueNAS screenshots
+- measured edge-node power/autonomy data
+- Smart Classroom pilot evidence
+- anonymised leadership/assessment/compliance examples
+- admissions enquiry/status aggregate evidence
+- future social-preview artwork if warranted
 
 ## Privacy / attribution baseline
 
@@ -87,16 +247,17 @@ No public email.
 
 Do not publish:
 
-- exact protected institution/classroom/transport inventory counts
-- internal IP ranges or private network topology
-- student, parent, candidate or employee personal records
+- protected exact operating inventory counts
+- internal IP ranges/private topology
+- student, parent, candidate or employee records
+- credentials/secrets/private identifiers
+- unnecessary serial numbers
+- sensitive physical-security layouts
 - raw financial/compliance records
-- credentials, secrets or private identifiers
-- location-specific security layouts
 
 ### Attribution boundary
 
-Do not attribute Kritica Dwivedi's graphic design, UI/UX, art direction, brand visual design, campaign visual design or portfolio visual storytelling work to Pragalbh.
+Do not attribute Kritica Dwivedi's Graphic Design, UI/UX Design, Art Direction, Brand Visual Design, Campaign Visual Design or Portfolio Visual Storytelling work to Pragalbh.
 
 ## Claims baseline
 
@@ -112,57 +273,12 @@ The portfolio distinguishes:
 
 Unmeasured percentages, ROI, uptime, adoption, learning gains, hiring improvement or enrollment-growth claims remain prohibited by `OUTCOME_REGISTER.md`.
 
-## Manual QA still required
-
-The following cannot be honestly marked complete from repository inspection alone:
-
-### Browser/device
-
-- iPhone Safari
-- Android Chrome
-- desktop Safari
-- desktop Chrome
-- Edge
-
-### Interaction
-
-- touch pan / pinch behaviour on the graph
-- case modal scrolling on small screens
-- keyboard-only end-to-end navigation
-- VoiceOver / screen-reader smoke test
-- reduced-motion behavior on an actual device/browser
-- phone link
-- WhatsApp link
-
-### Performance
-
-- Lighthouse / Core Web Vitals measurement
-- image/network waterfall
-- mobile CPU interaction smoothness
-
-### Discoverability
-
-- search-engine crawl/index confirmation
-- optional search-console verification
-- future social-preview image validation
-
-## Enrichment backlog, not blockers
-
-- real privacy-safe field photographs
-- AquaPulse stable UI screenshots
-- redacted Proxmox/TrueNAS screenshots
-- measured edge-node power data
-- Smart Classroom pilot media
-- anonymised recruitment scorecard
-- assessment/remedial-response examples
-- compliance control-register example
-- admissions enquiry/status aggregate evidence
-- dedicated 1200×630 social preview image
-
 ## Production baseline conclusion
 
-The portfolio now has a stable source architecture, explicit proof/claim boundaries, automated syntax/privacy/canonical checks and a successful Pages deployment.
+The portfolio now has a verified automated production baseline across source integrity, rendered interaction, public proof health, payload guardrails and GitHub Pages delivery.
 
-It should be treated as **production baseline with manual QA outstanding**, not as a frozen finished artifact. Future substantial project work should continue the established loop:
+It should be treated as **production baseline with physical/cross-browser QA and evidence enrichment continuing**, not as a frozen finished artifact.
 
-`project → evidence → outcome classification → case study → capability relationships → audit → deploy`
+Future substantial project work should continue the established loop:
+
+`project → evidence → outcome classification → case study → capability relationships → source audit → rendered smoke → deploy → proof monitoring`
