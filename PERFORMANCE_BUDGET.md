@@ -6,23 +6,32 @@ This budget protects the portfolio from gradual source-weight growth.
 
 It is deliberately a **raw static-source budget**, not a Lighthouse score, compressed-transfer claim or Core Web Vitals claim.
 
-The current live site is served directly from the repository root through GitHub Pages. These limits therefore cover the files under our direct control before compression/caching/network effects.
+The live site is served directly from the repository root through GitHub Pages. These limits therefore cover the files under our direct control before compression, caching, browser execution and network effects.
 
-## Measured baseline
+## Current Stage 9 baseline
 
-Measured by the production `Portfolio audit` for verified systems-observatory live-surface commit `78e1187f2329284bae79df25382a96bfc0f65973` on 26 August 2026:
+Measured by the production `Portfolio audit` for Stage 9 compacted source commit `e3d7087291ad92c2e44c92373bb839a7e872af95` on 26 August 2026:
 
 | Category | Current raw size |
 | --- | ---: |
-| `index.html` | 13,492 B |
-| live JavaScript under `assets/` | 146,659 B |
-| live CSS under `assets/` | 35,026 B |
+| `index.html` | 13,555 B |
+| live JavaScript under `assets/` | 160,399 B |
+| live CSS under `assets/` | 40,860 B |
 | current evidence/media SVGs | 79,257 B |
-| current controlled raw live surface total | **274,834 B** |
+| current controlled raw live surface total | **294,471 B** |
 
-Compared with the pre-motion production baseline of 250,651 B, the complete electrical + systems-observatory layer adds **24,183 B raw** while staying inside every existing budget.
+The Stage 9 baseline includes:
 
-The same audit validated 40 local asset references, 40 reachable live assets, 21 JavaScript files, 41 live-surface files and all 12 case-study navigation/review IDs.
+- Systems Observatory electrical interaction
+- Taste/design semantic tokens
+- Impeccable hierarchy cleanup
+- typography refinement
+- motion choreography/interruption discipline
+- meaningful observatory telemetry
+- selective spatial polish
+- About Me + Simple / Non-Technical View
+
+Compared with the verified pre-Stage-9 Systems Observatory baseline of **274,834 B**, the complete premium-design/audience pass adds **19,637 B raw** while staying inside the original HTML, JavaScript, CSS, evidence-SVG and total-source ceilings.
 
 The evidence/media figure excludes repository documentation because those files are not browser assets.
 
@@ -32,7 +41,7 @@ The evidence/media figure excludes repository documentation because those files 
 
 - `index.html`: **20 KiB maximum** (`20,480 B`)
 
-Current headroom: **6,988 B**.
+Current headroom: **6,925 B**.
 
 Reason: metadata/no-JS fallback can grow modestly, but substantial case content should remain in progressive case layers rather than turning the root document into a long static résumé.
 
@@ -41,18 +50,20 @@ Reason: metadata/no-JS fallback can grow modestly, but substantial case content 
 - all `assets/*.js` combined: **160 KiB maximum** (`163,840 B`)
 - any single live JS file: **32 KiB maximum** (`32,768 B`)
 
-Current combined headroom: **17,181 B** (approximately 16.8 KiB).
+Current combined headroom: **3,441 B**.
 
-Reason: the portfolio intentionally uses dependency-light progressive enhancement. The systems-observatory layer uses native Canvas, SVG, CSS and Web Animations instead of importing a particle, Three.js or animation framework runtime.
+Reason: the portfolio intentionally uses dependency-light progressive enhancement. Stage 9 uses native Canvas, SVG, DOM APIs and Web Animations rather than importing particle, Three.js or animation-framework runtimes.
+
+**Policy:** future JavaScript features should normally replace, consolidate or defer existing work before this budget is increased.
 
 ### CSS
 
 - all `assets/*.css` combined: **40 KiB maximum** (`40,960 B`)
 - any single live CSS file: **16 KiB maximum** (`16,384 B`)
 
-Current combined headroom: **5,934 B** (approximately 5.8 KiB).
+Current combined headroom: **100 B**.
 
-CSS headroom is intentionally tighter now. Future visual work should first simplify or reuse existing rules before increasing this budget.
+The CSS budget is intentionally saturated after the premium-design pass. New visual work must first simplify, remove or consolidate existing rules. Do not raise this ceiling merely to make CI green.
 
 ### Evidence diagrams
 
@@ -76,29 +87,33 @@ The controlled live source set is:
 
 Combined raw maximum: **340 KiB** (`348,160 B`).
 
-Current headroom: **73,326 B** (approximately 71.6 KiB).
+Current headroom: **53,689 B**.
 
-This envelope intentionally leaves room for evidence refinement without making large additions invisible.
+This envelope intentionally leaves room for evidence refinement while keeping code/style growth visible through their tighter category limits.
 
-## Systems-observatory performance rules
+## Stage 9 performance rules
 
-The motion layer must remain subordinate to the portfolio content and interaction model.
+The premium interaction layer must remain subordinate to the portfolio content and evidence model.
 
 Current implementation/rules:
 
-- low-count custom Canvas 2D particle field rather than a large particle engine,
-- device pixel ratio capped for the canvas,
-- rendering paced to roughly 30 fps rather than attempting maximum frame rate,
-- drawing pauses when the document or network experience is not visible,
-- mobile uses fewer particles than desktop,
-- electrical bolts reuse existing SVG graph geometry,
-- observatory rings/axes/status layers are native SVG,
-- selected ancestry uses existing graph geometry rather than a duplicate routing model,
-- subtle pointer parallax affects only atmospheric/guide layers, not information-node coordinates,
-- mobile disables pointer parallax,
-- transient zap DOM is removed after animation,
-- `prefers-reduced-motion` disables particles, electrical discharge, rotating guides and decorative current movement while preserving information state,
-- the dedicated electrical/observatory Browser smoke test must remain green.
+- low-count custom Canvas 2D particle field rather than a large particle engine
+- device pixel ratio capped for the canvas
+- rendering paced to roughly 30 fps rather than attempting maximum frame rate
+- drawing pauses when the document or network experience is not visible
+- mobile uses fewer particles than desktop
+- electrical bolts reuse existing SVG graph geometry
+- observatory rings/axes/status layers are native SVG
+- selected ancestry uses existing graph geometry rather than a duplicate routing model
+- subtle pointer parallax affects only atmospheric/guide layers, not information-node coordinates
+- mobile disables pointer parallax
+- transient zap DOM is removed after animation
+- motion uses semantic timing levels and latest-action-wins interruption
+- telemetry reports interface/system-map facts rather than simulated operational metrics
+- spatial polish uses the native Web Animations API
+- Simple View reuses the existing evidence/case system instead of duplicating case content
+- `prefers-reduced-motion` disables decorative movement while preserving information state
+- the complete Stage 9 rendered Chromium test suite must remain green
 
 Do not add Three.js, a particle runtime, GSAP or another heavy animation dependency merely to imitate a reference site. A heavier runtime requires an explicit architecture/performance decision and a new measured baseline.
 
