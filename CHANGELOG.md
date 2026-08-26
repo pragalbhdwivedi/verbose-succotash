@@ -2,6 +2,65 @@
 
 This changelog records meaningful portfolio-system changes, not every file edit or commit.
 
+## 2026-08-26 — Electrical network interaction redesign
+
+### Reference research
+
+- Reviewed `CasberryIndia/Physics-Notebook` for real-time physics visualisation patterns including canvas animation, `requestAnimationFrame`, visibility-aware rendering and HiDPI handling.
+- Reviewed `particles.casberry.in` for the desired persistent particle/glow/interactive atmosphere.
+- Reviewed a lightweight JavaScript lightning example for pointer/touch and frame-pacing ideas.
+- Adopted interaction principles only; no external particle/Three.js runtime or lightning implementation was copied into the portfolio.
+
+### Electrical motion language
+
+- Added isolated `assets/electrical-motion.js` and `assets/electrical-motion.css` enhancement layer.
+- Added low-count ambient motes behind the capability graph.
+- Added faint dynamic relationships between nearby ambient particles.
+- Added pointer influence where supported.
+- Added continuously moving current along visible graph connections.
+- Added breathing charge halos around graph nodes.
+- Added initial root-to-pillars power-up discharge.
+- Added jagged SVG electrical discharge on node click/tap.
+- Added node impact flash and transient discharge ring.
+- Added first-reveal energization for newly exposed branch edges/nodes while avoiding repeated arrival animation for already-seen nodes.
+- Preserved the existing active-path state as the visually hotter route through the network.
+
+### Mobile composition
+
+- Tightened the mobile graph viewBox to make the five primary capability pillars materially larger and more readable.
+- Increased mobile graph-label readability.
+- Corrected the real iPhone screenshot issue where the search field intruded into the final line of the hero statement.
+- Moved the live-circuit status below the corrected mobile search position.
+
+### Motion accessibility and performance
+
+- `prefers-reduced-motion` disables ambient particle/lightning animation while preserving graph usability.
+- Canvas DPR is capped and particle count is lower on mobile.
+- Ambient drawing is paced to roughly 30 fps and pauses when the document/network experience is hidden.
+- Lightning reuses existing SVG graph geometry instead of maintaining a parallel graph engine.
+- Temporary zap elements remove themselves after the discharge.
+- The electrical layer remains visual-only and does not own graph data, routing, cases or accessibility semantics.
+
+### Verification
+
+- Added `tests/electrical-motion-smoke.mjs`.
+- Added the electrical test to the existing Browser smoke workflow.
+- Browser verification covers ambient field, current-carrying links, node halos, click zap, first-reveal branch energization and the tighter mobile graph framing.
+- Added a synthetic 390×844 regression assertion requiring the search field to clear the hero headline by at least 8px.
+- Portfolio audit, Browser smoke and GitHub Pages deployment passed for the first full electrical build.
+
+### Payload effect
+
+Post-motion measured raw controlled live source after the first visual pass:
+
+- HTML: 13,492 B
+- JavaScript: 138,806 B
+- CSS: 31,668 B
+- evidence SVGs: 79,257 B
+- controlled total: **263,623 B**
+
+The interaction redesign added **12,972 B** over the previous 250,651 B baseline and remained inside all existing HTML/JS/CSS/total budgets.
+
 ## 2026-08-26 — Production evidence-system baseline
 
 ### Positioning
