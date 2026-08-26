@@ -1,4 +1,4 @@
-# Pragalbh Dwivedi Portfolio — Master Roadmap v2
+# Pragalbh Dwivedi Portfolio — Master Roadmap v3
 
 Updated: 26 August 2026
 
@@ -6,7 +6,7 @@ Updated: 26 August 2026
 
 Build **pragalbh.in** as a living professional evidence system, not a long résumé page.
 
-The portfolio must answer three questions quickly:
+The portfolio must answer quickly:
 
 1. **What problems does Pragalbh solve?**
 2. **What has he actually built, operated, designed or troubleshot?**
@@ -20,15 +20,15 @@ Core statement:
 
 > **I design and build the systems behind modern institutions.**
 
-Public contact remains limited to **Phone + WhatsApp** unless explicitly changed later.
+Public contact remains **Phone + WhatsApp only** unless explicitly changed later.
 
 ---
 
-# 1. Portfolio Product Strategy
+# 1. Product Strategy
 
 ## Primary audiences
 
-The same evidence system must work for:
+The same evidence system serves:
 
 - employers / recruiters
 - education and EdTech organisations
@@ -37,37 +37,37 @@ The same evidence system must work for:
 - automation / platform / product teams
 - institutional partners
 - startups needing cross-domain systems capability
+- non-technical owners / trustees / decision-makers
 
-Do not split the portfolio into six disconnected websites. Route each audience into the evidence most relevant to them.
+Do not split this into disconnected portfolios. Route each audience into the same evidence at an appropriate level of technical density.
 
-## Primary experience modes
+## Three primary experience modes
 
 ### A. Explore Network
 
-A progressively expanding capability web.
+A progressively expanding capability web presented as a living Systems Observatory.
 
 The visitor starts with five pillars and reveals deeper capability/project nodes only when interested.
 
 ### B. Recruiter View
 
-A compact conventional path for visitors who need role fit, evidence, project maturity and contact quickly.
+A compact conventional path for visitors who need role fit, About Me, evidence, project maturity, engagement options and contact quickly.
 
-### C. Audience Router
+### C. Simple View
 
-Entry paths:
+A plain-language route for non-technical decision-makers.
 
-- Hiring me
-- Education / EdTech
-- Consulting / architecture
-- Infrastructure / IT
-- Automation / product
-- Field systems
+Rules:
+- explain outcomes/problems before infrastructure vocabulary
+- reuse the same underlying cases and evidence
+- do not maintain a separate factual claims database
+- preserve project maturity/proof boundaries
+
+Audience shortcuts may continue to route visitors toward the most relevant evidence, but they do not create separate content silos.
 
 ---
 
 # 2. Permanent Positioning and Attribution Rules
-
-## Pragalbh's portfolio identity
 
 The portfolio should continue to emphasise the overlap between:
 
@@ -83,8 +83,6 @@ The portfolio should continue to emphasise the overlap between:
 
 The differentiator is **cross-domain system ownership**, not maximum technology count.
 
-## Attribution boundary
-
 Do **not** position the following as Pragalbh's professional disciplines:
 
 - Graphic Design
@@ -94,15 +92,11 @@ Do **not** position the following as Pragalbh's professional disciplines:
 - Campaign Visual Design
 - Portfolio Visual Storytelling
 
-These belong to Kritica Dwivedi.
-
-For mixed-contribution work, Pragalbh may be credited only for work he actually performed, including requirements, systems architecture, implementation, automation, deployment, integration, troubleshooting and operational delivery.
+For mixed-contribution work, credit only work actually performed: requirements, systems architecture, implementation, automation, deployment, integration, troubleshooting and operational delivery.
 
 ---
 
 # 3. Credibility and Proof Model
-
-Every substantial project must state what kind of evidence supports it.
 
 Approved proof vocabulary includes:
 
@@ -123,15 +117,15 @@ Never quietly convert:
 - architecture → deployment
 - applied work → measured impact
 
-Project state and proof type remain separate concepts.
+Project maturity and proof type remain separate concepts.
+
+Outcome language is controlled through `OUTCOME_REGISTER.md`.
 
 ---
 
 # 4. Privacy and Security Model
 
-Do not expose operational detail merely to make the portfolio look technical.
-
-Prefer broad scale language such as:
+Prefer broad public scale language such as:
 
 - multi-institution
 - multi-classroom
@@ -150,7 +144,7 @@ Default exclusions:
 - exact protected operational inventory
 - unredacted financial/compliance records
 
-Public contact boundary:
+Public contact:
 
 - Phone: **+91 95558 77000**
 - WhatsApp: **+91 95558 77000**
@@ -160,37 +154,9 @@ Automated CI checks common regressions, but human privacy review remains mandato
 
 ---
 
-# 5. Current Site Architecture
+# 5. Capability Architecture
 
-**Status: PRODUCTION BASELINE ESTABLISHED**
-
-Implemented:
-
-- Explore Network
-- Recruiter View
-- five-pillar capability architecture
-- progressive node expansion
-- search-to-node navigation
-- current-path breadcrumb
-- shareable `#node=` links
-- shareable `#case=` links
-- case-to-capability navigation
-- project/detail drawer
-- case-study modal system
-- evidence rail
-- proof/status layer
-- audience routing
-- hiring-conversion layer
-- accessibility layer
-- phone / WhatsApp conversion
-
-The homepage should remain structurally stable unless a future requirement cannot reasonably fit these existing systems.
-
----
-
-# 6. Capability Architecture
-
-Current top-level pillars:
+Five top-level pillars remain:
 
 1. **Education & Operations**
 2. **Systems Architecture**
@@ -198,157 +164,80 @@ Current top-level pillars:
 4. **Automation & Software**
 5. **Applied Technology & Energy**
 
-## Capability-network rules
+Rules:
+- root remains sparse
+- new skills normally belong under an existing pillar/domain
+- skills should connect to project evidence where possible
+- a new technology is not automatically a new node
+- prominence should reflect repeated applied evidence
+- search can expose depth without permanent clutter
 
-- Root remains sparse.
-- New skills should normally appear below an existing pillar/domain.
-- Skills should connect to project evidence where possible.
-- A new technology is not automatically a new node.
-- Capability prominence should reflect repeated applied evidence.
-- Search can expose depth without forcing permanent visual clutter.
-
-Skill maturity vocabulary remains explicit:
-
-- Core strength
-- Strong
-- Applied
-- Developing / growing
-- Prototype architecture
-- Field troubleshooting
-- Exploring
-
-See `SKILLS.md` for the detailed inventory.
+Skill maturity remains explicit through `SKILLS.md`.
 
 ---
 
-# 7. Tier-A Flagship Technical / Systems Cases
+# 6. Flagship Technical / Systems Cases
 
-The portfolio intentionally keeps a disciplined six-case flagship set.
+Maintain a disciplined six-case flagship set.
 
 ## A1. AquaPulse
 
 **Proof:** PUBLIC REPOSITORY / ACTIVE PROTOTYPE
 
-Story:
+Story: self-hosted operational platform designed around real aquaculture workflows, durable records, RBAC, auditability, staged migration and human-in-the-loop AI.
 
-A self-hosted operational platform designed around real-world aquaculture workflows, durable records, RBAC, auditability, staged migration and human-in-the-loop AI.
-
-Current public evidence:
-
-- repository
-- operational architecture diagram
-- documented stack / migration direction
-- role and audit model
-- explicit AI safety boundary
-
-Enrichment backlog:
-
+Evidence backlog:
 - stable UI screenshots
 - RBAC/workflow screenshot
 - audit evidence
 - privacy-safe self-hosted deployment evidence
 
-Claim boundary:
-
-Do not present unfinished functionality as a production system.
+Do not present unfinished functionality as production.
 
 ## A2. BDSPS Digital Operations
 
 **Proof:** LIVE + PUBLIC REPOSITORY
 
-Story:
+Story: institutional information, timetable data, GitHub-managed publishing and public communication treated as an operational digital system.
 
-Institutional information, timetable data, GitHub-managed publishing and public communication treated as an operational digital system rather than isolated pages/files.
-
-Current public evidence:
-
-- live institutional system
-- public repository
-- scheduled GitHub automation
-- FET timetable repository
-- publishing architecture diagram
-
-Enrichment backlog:
-
-- privacy-safe live-site screenshots
+Evidence backlog:
+- privacy-safe live screenshots
 - Actions/deployment capture
 - before/after workflow example
-
-Strong angle:
-
-Not "I made a school website." Show information architecture and operational publishing.
 
 ## A3. Private Infrastructure Stack
 
 **Proof:** APPLIED INFRASTRUCTURE
 
-Story:
+Story: self-hosted institutional compute/storage spanning virtualisation, storage, Linux, provisioning, recovery and platform services.
 
-Self-hosted institutional compute/storage practice spanning virtualisation, storage, Linux, provisioning, recovery and platform services.
-
-Current evidence:
-
-- public MAAS automation
-- public Proxmox cloud-init work
-- privacy-safe provisioning/recovery architecture
-- operational troubleshooting history
-
-Enrichment backlog:
-
+Evidence backlog:
 - redacted Proxmox screenshot
 - redacted TrueNAS screenshot
 - rack/server photography
 - recovery-test evidence
 
-Do not publish private topology or protected capacity figures.
-
 ## A4. HA Kubernetes Architecture
 
 **Proof:** PUBLIC REPOSITORY
 
-Story:
+Story: repeatable high-availability Kubernetes bootstrap using external etcd/TLS, HAProxy/Keepalived, Calico, WireGuard and orchestrated multi-node setup.
 
-Repeatable high-availability Kubernetes bootstrap rather than a one-off manually assembled cluster.
-
-Evidence includes:
-
-- external etcd with TLS
-- HAProxy + Keepalived VIP
-- Calico
-- WireGuard
-- audit/logging baseline
-- multi-node orchestration
-- public architecture diagram
-
-Enrichment backlog:
-
+Evidence backlog:
 - controlled failure/recovery test
 - bootstrap timing if safely measured
-
-Do not claim private production-cluster SLA without measured evidence.
 
 ## A5. Smart Classroom Architecture
 
 **Proof:** SOURCE-BACKED ARCHITECTURE / PROTOTYPE
 
-Story:
+Story: timetable, presentation, cameras, lesson capture, attendance context, local resilience and central services treated as one classroom system.
 
-Treat classroom technology as one system connecting timetable, presentation, cameras, lesson capture, attendance context, local resilience and central services.
-
-Current evidence:
-
-- formal proposal/source basis
-- privacy-safe architecture diagram
-- timetable / HikCentral / edge-service design rationale
-
-Enrichment backlog:
-
+Evidence backlog:
 - pilot hardware photography
 - timetable automation capture
 - endpoint/dashboard screenshots
 - pilot workflow measurements
-
-Claim boundary:
 
 Keep the case labelled prototype architecture until implementation evidence justifies a new state.
 
@@ -356,125 +245,34 @@ Keep the case labelled prototype architecture until implementation evidence just
 
 **Proof:** FIELD SYSTEM DESIGN / APPLIED ENGINEERING
 
-Story:
+Story: continuous-duty remote CCTV where power autonomy, direct-DC choices, PoE load and wireless backhaul form one engineering problem.
 
-Continuous-duty remote CCTV infrastructure where power autonomy, PoE load and wireless backhaul are one engineering problem.
-
-Current evidence:
-
-- privacy-safe direct-DC architecture
-- field power/network requirements
-- outdoor wireless troubleshooting
-- CCTV / PoE integration logic
-
-Enrichment backlog:
-
+Evidence backlog:
 - field installation photos
 - measured continuous load
 - real autonomy data
 - privacy-safe wireless-link evidence
 
-Strong angle:
+---
 
-Explain why avoiding unnecessary DC → AC → DC conversion reduces loss and failure points where direct DC is practical.
+# 7. Leadership & Institutional Systems Track
+
+Six source-backed/hybrid leadership cases remain implemented:
+
+1. Teacher Recruitment & Evaluation
+2. Curriculum & Assessment Framework
+3. Compliance & Documentation Workflow
+4. Institutional Operations System
+5. Academic Scheduling & School-Wide Execution
+6. Admissions & Institutional Communication Operations
+
+These cases demonstrate systems thinking in institutional leadership without claiming visual-design disciplines or legal-counsel status.
 
 ---
 
-# 8. Leadership & Institutional Systems Track
+# 8. Supporting Case Library
 
-**Status: SIX SOURCE-BACKED/HYBRID CASES IMPLEMENTED**
-
-## L1. Teacher Recruitment & Evaluation
-
-Shows:
-
-- role definition
-- competencies
-- screening
-- written/leadership evaluation
-- teaching/demo stage
-- interview
-- selection
-- performance expectations
-- review loop
-
-## L2. Curriculum & Assessment Framework
-
-Shows:
-
-- curriculum outcomes
-- annual/unit/lesson planning
-- classroom resources
-- formative/diagnostic assessment
-- feedback
-- remedial/enrichment response
-- records
-- review loop
-
-## L3. Compliance & Documentation Workflow
-
-Shows:
-
-- requirement interpretation
-- source verification
-- fixed/changing-data distinction
-- evidence gates
-- structured registers
-- annexure/index control
-- sign-off
-- retained audit trail
-
-This proves documentation-system design, not legal-counsel status.
-
-## L4. Institutional Operations System
-
-Shows:
-
-- academic planning
-- staff deployment
-- daily operations
-- teaching-quality review
-- syllabus monitoring
-- examinations
-- PTM/meeting/observation cycles
-- admissions and policy accountability
-- verification/feedback loops
-
-## L5. Academic Scheduling & School-Wide Execution
-
-**Proof:** PUBLIC REPOSITORY + SOURCE-BACKED OPERATIONS
-
-Shows:
-
-- FET data source
-- machine-readable timetable outputs
-- teacher/class/room/activity views
-- staff circulation
-- allocation verification
-- discrepancy feedback
-- future timetable-driven automation potential
-
-## L6. Admissions & Institutional Communication Operations
-
-Shows:
-
-- verified programme/instruction facts
-- audience definition
-- bilingual communication where required
-- response path
-- necessary record capture
-- eligibility/record validation
-- follow-up
-
-This case claims communication operations/information architecture, not graphic design.
-
----
-
-# 9. Supporting Case Library
-
-Supporting cases remain shorter and should not compete visually with the six flagships.
-
-Current / candidate supporting evidence includes:
+Supporting evidence may include:
 
 - Identity / RFID / Access Architecture
 - Hikvision-Compatible NVR Architecture
@@ -486,15 +284,124 @@ Current / candidate supporting evidence includes:
 - Proxmox cloud-init automation
 - BDS timetable publishing
 - BDSPS AR
-- Wedding microsite engineering
+- Wedding microsite engineering contribution
 
-Promotion rule:
-
-A supporting case becomes flagship only when it demonstrates unusually strong problem framing, architecture, evidence, operational relevance and cross-domain value. Maintain a small flagship set; promotion normally requires merging/demoting another case.
+A supporting case becomes flagship only if it demonstrates unusually strong framing, architecture, evidence, operational relevance and cross-domain value. Maintain a small flagship set.
 
 ---
 
-# 10. Evidence Acquisition Programme
+# 9. Stage 9 — Premium Design / Taste Programme
+
+**Status: CODE-CONTROLLED BASELINE COMPLETE / PHYSICAL QA REMAINS**
+
+## 9A — Taste DNA — COMPLETE
+
+- semantic state/domain/proof system
+- Trigger → Decision → Reason → Evidence → Trade-off rationale
+- project/skill hierarchy
+- container restraint
+- three-audience consistency
+- non-technical translation rules
+
+## 9B — Impeccable visual audit — COMPLETE
+
+- reduced generic card chrome
+- editorial hierarchy through type/spacing/rules rather than boxes
+- stronger proof containment
+- flagship asymmetry
+- quieter controls/search/metadata
+
+## 9C — Typography — COMPLETE
+
+- editorial, reading and telemetry voices standardised
+- microtype corrected
+- case-reading hierarchy improved
+- mobile composition regression protected
+
+## 9D — Motion choreography — COMPLETE
+
+- semantic timing vocabulary
+- interruption discipline
+- latest-action-wins electrical behavior
+- reduced-motion equivalents
+
+## 9E — Systems telemetry — COMPLETE
+
+- path depth
+- relationship count
+- visible-system count
+- project maturity/evidence readouts
+- no simulated operational metrics
+
+## 9F — Selective spatial polish — COMPLETE
+
+- restrained case/drawer reveals
+- native Web Animations API
+- no movement of information targets
+- no heavyweight animation runtime
+
+## 9G — About Me + Simple View — COMPLETE
+
+- About Me narrative
+- third Simple View
+- three-mode mobile-safe navigation
+- same cases/evidence across technical and non-technical routes
+
+Governing files:
+- `DESIGN_DIRECTION.md`
+- `DESIGN_DNA.md`
+- `IMPECCABLE_AUDIT.md`
+- `MOTION_SYSTEM.md`
+- `TELEMETRY_SYSTEM.md`
+- `ENHANCEMENT_CHAIN.md`
+
+---
+
+# 10. Systems Observatory Interaction Model
+
+The network is intentionally an operating map rather than a static diagram.
+
+Implemented:
+- ambient low-count particles
+- live current on visible links
+- node charge halos
+- root power-up discharge
+- electrical zap on click/tap
+- staggered branch ignition
+- persistent hot ancestry path
+- observatory guide rings/axes/ticks
+- project maturity badges
+- selected-project lock-on
+- meaningful telemetry
+- subtle atmospheric parallax
+- tighter mobile framing
+- reduced-motion fallback
+
+Do not add 3D, audio or additional particle frameworks merely for spectacle.
+
+---
+
+# 11. Deterministic Enhancement Architecture
+
+Current post-case chain:
+
+`case-navigation`
+→ `hiring-conversion`
+→ `accessibility`
+→ `network-navigation`
+→ `case-review`
+→ `electrical-motion`
+→ `telemetry`
+→ `spatial-polish`
+→ `simple-view`
+
+Load order is application architecture because several layers wrap shared interaction behavior.
+
+`ENHANCEMENT_CHAIN.md` is authoritative for ownership and change rules.
+
+---
+
+# 12. Evidence Acquisition Programme
 
 **Status: FOUNDATION COMPLETE / ENRICHMENT CONTINUOUS**
 
@@ -509,356 +416,175 @@ Evidence hierarchy:
 
 For every media asset:
 
-1. assign case study
+1. assign case
 2. state what claim it proves
-3. classify source/proof type
+3. classify proof type
 4. remove sensitive data
 5. optimise for web
 6. write factual caption
 7. add meaningful alt text
 8. record in evidence register
 
-Do not use generic stock photography as evidence.
-
-Suggested naming:
-
-`case-project_evidence-type_sequence.ext`
+Do not use generic stock photography as project evidence.
 
 ---
 
-# 11. Outcome & Impact Programme
+# 13. Outcome & Impact Programme
 
 **Status: CONTROL SYSTEM IMPLEMENTED / MEASUREMENT CONTINUOUS**
 
-`OUTCOME_REGISTER.md` controls public outcome language.
-
-Outcome classes:
-
-- PUBLICLY VERIFIABLE
-- SOURCE-BACKED
-- APPLIED QUALITATIVE
-- NOT YET MEASURABLE
-
-Good measurement opportunities:
-
+Useful future measurements include:
 - deployment/rebuild time
-- restore/recovery test result
-- manual steps before vs after automation
+- restore/recovery result
+- manual steps before/after automation
 - publishing turnaround
 - fault-resolution timeline
-- real edge-node power consumption/autonomy
+- edge-node power consumption/autonomy
 - pilot workflow friction
 - workflow completion/error rates where appropriate
 
-Do not invent:
-
-- percentage improvements
-- ROI
-- uptime
-- adoption numbers
-- savings
-- protected operational counts
-
-Measurements should be captured prospectively.
+Do not invent percentages, ROI, uptime, adoption, savings or protected operational counts.
 
 ---
 
-# 12. Hiring Conversion Layer
+# 14. Hiring / Opportunity Conversion
 
-**Status: STRUCTURAL WORK COMPLETE**
-
-Recruiter View now communicates:
-
-- positioning
+Recruiter View communicates:
+- positioning and About Me
 - operating context
 - problems worth hiring for
 - engagement modes
 - end-to-end ownership
 - opportunity-specific proof shortcuts
-- six flagship cases first
+- flagship cases first
 - collapsed supporting/leadership cases
-- evidence layer
-- capability stack
 - phone / WhatsApp
 
 Engagement modes:
+- Full-time / leadership
+- Consulting / advisory
+- Partnership / pilot
 
-### Full-time / leadership
-
-Strong fit for:
-
-- Education / EdTech leadership
-- institutional systems / transformation
-- technical operations leadership
-- systems/solution architecture in mission-driven organisations
-
-### Consulting / advisory
-
-Strong fit for:
-
-- requirements engineering
-- institutional process redesign
-- self-hosted infrastructure
-- EdTech architecture
-- network/CCTV/identity/edge systems
-- documentation/compliance-system design
-
-### Partnership / pilot
-
-Strong fit for:
-
-- education-technology pilots
-- operational software
-- infrastructure automation
-- institution + technology collaborations
-- field-system pilots
-
-End-to-end ownership model:
+Ownership model:
 
 `frame problem → architect → coordinate/build → operate, diagnose and improve`
 
 ---
 
-# 13. Audience-Specific Evidence Paths
+# 15. Audience-Specific Evidence Paths
 
 ## Education / EdTech
-
-Prioritise:
-
-- Institutional Operations
-- Curriculum & Assessment
-- Academic Scheduling
-- Smart Classroom
-- Digital Operations
+Prioritise Institutional Operations, Curriculum & Assessment, Academic Scheduling, Smart Classroom and Digital Operations.
 
 ## Systems / Solutions Architecture
-
-Prioritise:
-
-- Smart Classroom
-- Solar CCTV Edge
-- AquaPulse
-- Private Infrastructure
+Prioritise Smart Classroom, Solar CCTV Edge, AquaPulse and Private Infrastructure.
 
 ## Infrastructure / Platform
-
-Prioritise:
-
-- Private Infrastructure
-- HA Kubernetes
-- MAAS
-- AquaPulse self-hosted direction
+Prioritise Private Infrastructure, HA Kubernetes, MAAS and AquaPulse self-hosted direction.
 
 ## Institutional Transformation / Consulting
-
-Prioritise:
-
-- Institutional Operations
-- Compliance & Documentation
-- Digital Operations
-- Admissions & Communication
+Prioritise Institutional Operations, Compliance & Documentation, Digital Operations and Admissions & Communication.
 
 ## Technical Operations / Field Systems
-
-Prioritise:
-
-- Solar CCTV Edge
-- Private Infrastructure
-- Identity & Access
-- root-cause troubleshooting work
+Prioritise Solar CCTV Edge, Private Infrastructure, Identity & Access and root-cause troubleshooting.
 
 ## Automation / Product
+Prioritise AquaPulse, HA Kubernetes, MAAS, GitHub automation and Digital Operations.
 
-Prioritise:
-
-- AquaPulse
-- HA Kubernetes
-- MAAS
-- GitHub automation
-- Digital Operations
+Simple View translates these paths into problem/outcome language instead of requiring technical vocabulary.
 
 ---
 
-# 14. Interaction and Visual Roadmap
+# 16. Accessibility, Mobile and Quality
 
-## Established visual language
-
-Keep:
-
-- dark technical / blueprint language
-- restrained domain colours
-- organic expanding network
-- high information density only after interaction
-- architecture diagrams as evidence
-
-## Network status
+**Status: AUTOMATED FOUNDATION COMPLETE / PHYSICAL QA REQUIRED**
 
 Implemented:
-
-- progressive expansion/retraction
-- relationship/cross-link lines
-- search-to-node
-- node deep links
-- current-path breadcrumb
-- keyboard focus/activation
-- reduced-motion handling
-- mobile bottom-sheet drawer
-
-Future refinement only if evidence/usage justifies it:
-
-- richer relationship filtering
-- smarter branch auto-layout if node count grows substantially
-- analytics-informed path refinement if privacy-safe analytics are ever added
-
-Do not add 3D merely for spectacle.
-
-## Recruiter View status
-
-Implemented:
-
-- shorter hierarchy
-- flagship-first cases
-- engagement modes
-- opportunity paths
-- proof/status chips
-- supporting-case disclosure
-
-Future optional:
-
-- one-page executive résumé export
-- role-specific printable profiles
-
-## Case-study status
-
-Implemented:
-
-- context/problem
-- role
-- constraints
-- decisions/trade-offs
-- architecture
-- failure modes
-- evidence/current state
-- next iteration
-- proof links
-- related capabilities
-
-Future enrichment:
-
-- real media heroes
-- richer evidence galleries
-- measured timelines/outcomes
-
----
-
-# 15. Accessibility, Mobile and Quality
-
-**Status: SOURCE-LEVEL FOUNDATION COMPLETE / REAL-DEVICE QA CONTINUES**
-
-Implemented:
-
 - keyboard-focusable SVG nodes
 - Enter/Space activation
-- accessible search label
-- mode state via ARIA
+- accessible search/mode semantics
 - dialog semantics
 - Escape close
-- Tab containment
-- focus restoration
+- focus containment/restoration
 - visible focus treatment
 - reduced-motion support
-- larger mobile controls
-- breadcrumb navigation
+- mobile interaction targets
+- breadcrumbs/mobile Back
+- shareable node/case state
+- no-JS fallback
+- dedicated rendered regression tests for every Stage 9 interaction layer
 
-Manual device/browser checks remain required for meaningful interaction changes:
-
+Still requires actual hardware/browser validation:
 - iPhone Safari portrait/landscape
 - Android Chrome
-- tablet
-- desktop Chrome
 - desktop Safari
 - Edge
-- keyboard-only
-- VoiceOver/screen-reader smoke test
-
-Use `RELEASE_CHECKLIST.md`.
+- VoiceOver/screen reader
+- real pinch/pan
+- native Call / WhatsApp handoff
+- actual OS reduced-motion behavior
 
 ---
 
-# 16. Discoverability and Performance
+# 17. Discoverability and Performance
 
-**Status: SOURCE-LEVEL FOUNDATION COMPLETE**
+**Status: SOURCE-LEVEL COMPLETE / REAL METRICS PENDING**
 
 Implemented:
-
 - canonical `https://pragalbh.in/`
-- title/description
-- robots metadata
-- Open Graph metadata
-- Twitter summary metadata
+- robots/sitemap
+- Open Graph / Twitter metadata
 - Person + WebSite JSON-LD
 - favicon
-- `robots.txt`
-- `sitemap.xml`
-- no embedded live-site iframe
-- lazy-loaded evidence diagrams
-- dependency-light static production page
+- referrer policy
+- dependency-light static delivery
+- public proof-link monitoring
+- enforced raw-source performance budgets
 
-Deferred intentionally:
+Current Stage 9 raw baseline:
+- HTML: **13,555 B**
+- JS: **160,399 B**
+- CSS: **40,860 B**
+- evidence SVG: **79,257 B**
+- total controlled live source: **294,471 B**
 
-- dedicated 1200×630 social preview image until visual identity / real evidence media warrants it
-- standalone case-study SEO routes until cases need independent crawlable pages
-- search-console setup/account verification
-- claimed Lighthouse/Core Web Vitals scores without real-browser measurement
+Do not claim Lighthouse/LCP/INP/CLS without actual measurement.
 
 ---
 
-# 17. Automated Quality Gate
+# 18. Automated Quality Gate
 
-**Status: IMPLEMENTED AND REQUIRED**
-
-Files:
-
-- `.github/workflows/portfolio-audit.yml`
-- `scripts/validate-portfolio.mjs`
-
-Run locally / in Codex:
-
-```bash
-npm run audit
-```
-
-The gate verifies:
-
+The production gate verifies:
 - JavaScript syntax
 - required governance/source files
-- canonical/CNAME consistency
-- robots/sitemap configuration
-- JSON-LD validity
-- local asset references
-- case navigation registry
-- no iframe on live surface
-- no public email / mailto
-- no private IPv4 address on live surface
-- approved public phone boundary
-- protected exact-count phrase regressions
-- attribution-boundary presence
+- Stage 9 design/motion/telemetry/audience contracts
+- deterministic enhancement chain
+- full Stage 9 rendered Chromium suite
+- canonical/CNAME/robots/sitemap/JSON-LD
+- privacy/contact boundaries
+- protected count phrases
+- attribution boundary
+- local references / orphan assets
+- case IDs/review IDs
+- static payload ceilings
+- Node 24/current Actions contracts
+- public evidence-link monitoring
 
-A green deployment without a green audit is not a release.
+A green Pages deployment without a green audit is not a release.
 
 ---
 
-# 18. Release and Maintenance Model
+# 19. Release and Maintenance Model
 
 Use:
-
-- `PORTFOLIO_STATUS.md` — concise current source of truth
-- `RELEASE_CHECKLIST.md` — pre/post-release checks
-- `PORTFOLIO_MAINTENANCE.md` — ongoing evidence/maturity governance
+- `PORTFOLIO_STATUS.md` — concise current truth
+- `RELEASE_CHECKLIST.md` — release checks
+- `PORTFOLIO_MAINTENANCE.md` — ongoing governance
 - `EVIDENCE_REGISTER.md` — evidence control
 - `OUTCOME_REGISTER.md` — impact/claim control
+- `PERFORMANCE_BUDGET.md` — byte ceilings
 
-New work should follow:
+New work follows:
 
 `work → evidence → proof classification → outcome classification → case update → capability link → audit → deployment`
 
@@ -866,78 +592,38 @@ Do not write the impressive claim first and search for evidence afterward.
 
 ---
 
-# 19. GitHub Development Workflow
-
-Preferred workflow for larger future changes:
-
-1. scoped GitHub task/issue
-2. Codex implementation
-3. branch / pull request where appropriate
-4. automated Portfolio audit
-5. Gemini/code audit where required
-6. merge to `main`
-7. GitHub Pages deployment
-8. production verification
-9. evidence/status/roadmap update
-
-Small factual/content corrections may continue directly on `main` when the audit protects the change and the risk is low.
-
-Do not introduce another Pages deployment workflow unless the repository's Pages source strategy is deliberately changed.
-
----
-
 # 20. Current Programme Status
 
-| Programme area | Current state | Remaining work |
+| Programme area | State | Remaining work |
 |---|---|---|
 | Positioning / attribution | Complete | Review when professional direction changes |
 | Core site architecture | Complete baseline | Avoid structural creep |
-| Capability web | Strong / active | Evidence-driven node refinement |
-| Recruiter View | Complete baseline | Real-user/device refinement |
-| Audience routing | Implemented | Tune only if opportunity needs change |
+| Explore Network | Complete baseline | Physical-device refinement |
+| Recruiter View | Complete baseline | Real-user refinement |
+| Simple View | Complete baseline | Real non-technical user feedback |
+| About Me | Implemented | Update only with real professional changes |
 | Case-study engine | Complete baseline | Evidence/media enrichment |
-| Proof taxonomy | Complete | Maintain claim discipline |
-| Evidence rail | Complete baseline | Add real media as safe evidence appears |
-| Six technical flagships | Deep-case framework complete | Real screenshots/measurements |
+| Six technical flagships | Deep framework complete | Real screenshots/measurements |
 | Six leadership cases | Complete baseline | Anonymised examples where useful |
-| Outcome control | Implemented | Prospective measurement |
-| Hiring conversion | Complete baseline | Optional résumé exports later |
-| Accessibility / mobile | Source-level complete | Real-device/browser QA |
-| SEO/discoverability | Source-level complete | Social image / standalone routes later if warranted |
-| Performance | Dependency-light baseline | Real-browser measurement + media optimisation |
-| CI audit | Implemented | Keep green / extend with real needs |
-| Maintenance governance | Implemented | Monthly/quarterly review |
+| Systems Observatory | Complete automated baseline | Physical GPU/touch feel |
+| Stage 9 Premium Design | Complete code-controlled baseline | Physical QA |
+| Accessibility/mobile | Automated complete | Real-device/browser QA |
+| SEO/discoverability | Source-level complete | Real search-console/social needs later |
+| Performance | Enforced static baseline | Lighthouse/CWV/device measurement |
+| CI audit | Hardened | Keep green |
+| Maintenance governance | Implemented | Periodic review |
 
 ---
 
-# 21. Definition of Done for the Current Baseline
+# 21. Active Backlog Priority
 
-The current portfolio baseline is considered structurally complete when:
+## P0 — Physical-device QA
 
-- identity is understandable in roughly ten seconds
-- Recruiter View works without using the graph
-- network exploration remains progressive rather than long-form
-- major skills connect to evidence
-- six flagship technical/system cases have deep narratives
-- leadership is visible as a source-backed evidence track
-- prototype/deployed status is explicit
-- privacy/attribution rules are enforced
-- phone/WhatsApp conversion works
-- source-level accessibility/discoverability is implemented
-- automated audit remains green
-
-These conditions are now substantially met.
-
-The portfolio is **not finished** in the sense of frozen content. Future value comes from stronger real evidence and measured outcomes, not more sections.
-
----
-
-# 22. Active Backlog Priority
+Record actual iPhone Safari, Android Chrome, desktop Safari/Edge and VoiceOver behavior.
 
 ## P0 — Evidence enrichment
 
-Add only when available and privacy-safe:
-
+Add only when real and privacy-safe:
 - AquaPulse interface/workflow screenshots
 - BDSPS live/deployment/timetable screenshots
 - Proxmox/TrueNAS/rack evidence
@@ -945,18 +631,17 @@ Add only when available and privacy-safe:
 - Smart Classroom pilot evidence
 - Solar CCTV field photos and measured load/autonomy
 
-## P1 — Real device / browser QA
-
-Perform and record checks after meaningful interaction/layout changes.
-
 ## P1 — Prospective outcome measurement
 
 Capture measurements while work happens rather than reconstructing them later.
 
+## P1 — Repository protection decision
+
+`main` remains unprotected. Decide deliberately whether to require PRs/checks and protect deletion/force-push. Do not enable silently.
+
 ## P2 — Optional professional exports
 
-Only when useful for a real opportunity:
-
+Only for a real opportunity:
 - executive one-page résumé
 - technical/infrastructure résumé
 - Education/EdTech résumé
@@ -965,24 +650,45 @@ Only when useful for a real opportunity:
 ## P2 — Future discoverability upgrades
 
 Only when warranted:
-
 - social preview image
-- standalone flagship case routes
+- standalone flagship routes
 - search-console verification
+
+---
+
+# 22. Definition of Done for the Current Code-Controlled Baseline
+
+The code-controlled portfolio baseline is done when:
+- identity is understandable quickly
+- all three audience modes work
+- Recruiter/Simple Views work without graph expertise
+- network exploration remains progressive
+- major skills connect to evidence
+- flagship cases have deep narratives
+- leadership is visible as evidence
+- maturity/proof states are explicit
+- privacy/attribution rules are enforced
+- phone/WhatsApp conversion exists
+- accessibility/discoverability source work is implemented
+- Stage 9 rendered tests remain green
+- automated audit remains green
+
+These conditions are met in the current baseline.
+
+The portfolio is not frozen. Future value comes primarily from stronger real evidence, physical QA and measured outcomes.
 
 ---
 
 # 23. Final Architecture Principle
 
-The default portfolio should remain **small on screen and deep underneath**.
+The default portfolio remains **small on screen and deep underneath**.
 
 When new information arrives, prefer:
-
 - deeper graph nodes
 - stronger evidence inside existing cases
 - related-capability links
 - collapsed supporting content
 
-rather than adding another permanent homepage section.
+rather than another permanent homepage section.
 
 **The interface should expand because the visitor asks for depth, not because the portfolio is unable to edit itself.**
