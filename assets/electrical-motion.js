@@ -114,9 +114,9 @@
     if(reduced.matches)return;
     node.classList.add('energizing');arrivalCount++;
     node.animate([
-      {opacity:0,transform:'scale(.72)',transformOrigin:'center',filter:'drop-shadow(0 0 0 rgba(186,255,103,0))'},
-      {opacity:1,transform:'scale(1.06)',filter:'drop-shadow(0 0 14px rgba(186,255,103,.8))',offset:.62},
-      {opacity:1,transform:'scale(1)',filter:'drop-shadow(0 0 0 rgba(186,255,103,0))'}
+      {opacity:0,filter:'drop-shadow(0 0 0 rgba(186,255,103,0))'},
+      {opacity:1,filter:'drop-shadow(0 0 14px rgba(186,255,103,.8))',offset:.62},
+      {opacity:1,filter:'drop-shadow(0 0 0 rgba(186,255,103,0))'}
     ],{duration:560,delay,easing:'cubic-bezier(.16,.84,.28,1)'});
     setTimeout(()=>node.classList.remove('energizing'),delay+620);
   }
