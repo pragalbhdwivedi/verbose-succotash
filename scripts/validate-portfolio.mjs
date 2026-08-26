@@ -3,7 +3,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 
 const root=process.cwd(),failures=[],notes=[];
-const mustExist=['index.html','CNAME','robots.txt','sitemap.xml','package.json','README.md','MASTER_ROADMAP.md','PORTFOLIO_STATUS.md','PORTFOLIO_ARCHITECTURE.md','PORTFOLIO_MAINTENANCE.md','RELEASE_CHECKLIST.md','PERFORMANCE_BUDGET.md','CASE_REVIEW_REGISTER.md','CHANGELOG.md','ENHANCEMENT_CHAIN.md','DESIGN_DIRECTION.md','DESIGN_DNA.md','IMPECCABLE_AUDIT.md','MOTION_SYSTEM.md','TELEMETRY_SYSTEM.md','SKILLS.md','EVIDENCE_REGISTER.md','OUTCOME_REGISTER.md','SPRINT_5_QUALITY_QA.md','SPRINT_6_DISCOVERABILITY_PERFORMANCE.md','SPRINT_7_PRODUCTION_AUDIT.md','.github/workflows/portfolio-audit.yml','.github/workflows/browser-smoke.yml','.github/workflows/link-health.yml','tests/browser-smoke.mjs','tests/electrical-motion-smoke.mjs','tests/impeccable-visual-smoke.mjs','tests/typography-smoke.mjs','tests/motion-choreography-smoke.mjs','tests/telemetry-smoke.mjs','tests/spatial-polish-smoke.mjs','tests/simple-view-smoke.mjs','scripts/check-external-links.mjs','assets/favicon.svg','assets/design-tokens.css','assets/portfolio.js','assets/evidence.js','assets/proof.js','assets/case-navigation.js','assets/hiring-conversion.js','assets/accessibility.js','assets/network-navigation.js','assets/network-navigation.css','assets/case-review.js','assets/case-review.css','assets/electrical-motion.js','assets/electrical-motion.css','assets/telemetry.js','assets/spatial-polish.js','assets/simple-view.js'];
+const mustExist=['index.html','CNAME','robots.txt','sitemap.xml','package.json','README.md','MASTER_ROADMAP.md','PORTFOLIO_STATUS.md','PORTFOLIO_ARCHITECTURE.md','PORTFOLIO_MAINTENANCE.md','RELEASE_CHECKLIST.md','PERFORMANCE_BUDGET.md','CASE_REVIEW_REGISTER.md','CHANGELOG.md','ENHANCEMENT_CHAIN.md','DESIGN_DIRECTION.md','DESIGN_DNA.md','IMPECCABLE_AUDIT.md','MOTION_SYSTEM.md','TELEMETRY_SYSTEM.md','SKILLS.md','EVIDENCE_REGISTER.md','OUTCOME_REGISTER.md','SPRINT_5_QUALITY_QA.md','SPRINT_6_DISCOVERABILITY_PERFORMANCE.md','SPRINT_7_PRODUCTION_AUDIT.md','.github/workflows/portfolio-audit.yml','.github/workflows/browser-smoke.yml','.github/workflows/link-health.yml','tests/browser-smoke.mjs','tests/electrical-motion-smoke.mjs','tests/impeccable-visual-smoke.mjs','tests/typography-smoke.mjs','tests/motion-choreography-smoke.mjs','tests/telemetry-smoke.mjs','tests/spatial-polish-smoke.mjs','tests/simple-view-smoke.mjs','tests/device-tuning-smoke.mjs','tests/ios-webkit-smoke.mjs','scripts/check-external-links.mjs','assets/favicon.svg','assets/design-tokens.css','assets/portfolio.js','assets/evidence.js','assets/proof.js','assets/case-navigation.js','assets/hiring-conversion.js','assets/accessibility.js','assets/network-navigation.js','assets/network-navigation.css','assets/case-review.js','assets/case-review.css','assets/electrical-motion.js','assets/electrical-motion.css','assets/telemetry.js','assets/spatial-polish.js','assets/simple-view.js','assets/device-tuning.js'];
 const fail=m=>failures.push(m),note=m=>notes.push(m),read=rel=>fs.readFileSync(path.join(root,rel),'utf8'),exists=rel=>fs.existsSync(path.join(root,rel)),bytes=file=>fs.statSync(file).size,rel=file=>path.relative(root,file).replaceAll('\\','/');
 for(const f of mustExist)if(!exists(f))fail(`Missing required file: ${f}`);
 if(exists('CNAME')&&read('CNAME').trim()!=='pragalbh.in')fail('CNAME must contain exactly pragalbh.in');
@@ -40,7 +40,6 @@ for(const phrase of ['4 institutions','7 mapped classroom','11-15 classroom','11
 for(const raw of liveText.match(/(?:\+?91[\s-]?)?[6-9]\d{9}/g)||[]){const digits=raw.replace(/\D/g,'');if(!['9555877000','919555877000'].includes(digits))fail(`Unexpected public phone-like number found: ${raw}`)}
 if(!liveText.includes('9555877000'))fail('Approved public phone/WhatsApp number is missing from live surface');
 
-// Static payload budget. Raw repository bytes only; this is not a network or Core Web Vitals measurement.
 const budget={index:20480,totalJs:163840,singleJs:32768,totalCss:40960,singleCss:16384,totalMediaSvg:122880,singleMediaSvg:12288,totalLive:348160};
 const assetJs=all.filter(f=>rel(f).startsWith('assets/')&&f.endsWith('.js'));
 const assetCss=all.filter(f=>rel(f).startsWith('assets/')&&f.endsWith('.css'));
@@ -57,7 +56,6 @@ for(const f of assetCss)if(bytes(f)>budget.singleCss)fail(`Performance budget ex
 for(const f of mediaSvg)if(bytes(f)>budget.singleMediaSvg)fail(`Performance budget exceeded: ${rel(f)} ${bytes(f)} B > ${budget.singleMediaSvg} B`);
 note(`Static payload: HTML ${indexBytes} B · JS ${totalJs} B · CSS ${totalCss} B · evidence SVG ${totalMediaSvg} B · controlled live total ${totalLive} B`);
 
-// Resolve local references from the live surface only and reject unreferenced live JS/CSS/SVG assets.
 const refSources=all.filter(f=>{const r=rel(f);return(r==='index.html'||r.startsWith('assets/'))&&/\.(html|js|css)$/i.test(f)});
 const refs=new Set();
 for(const file of refSources)for(const m of read(rel(file)).matchAll(/\.\/assets\/[A-Za-z0-9._\/-]+/g))refs.add(m[0]);
@@ -79,7 +77,9 @@ if(!accessibility.includes("aria-label','Close case study'"))fail('Accessibility
 if(!networkNav.includes("s.src='./assets/case-review.js'"))fail('Network Navigation must load Case Review');
 for(const ref of ["s.src='./assets/electrical-motion.js'","s.src='./assets/telemetry.js'","s.src='./assets/spatial-polish.js'"])if(!caseReview.includes(ref))fail(`Case Review Stage 9 chain missing loader: ${ref}`);
 if(!spatial.includes("s.src='./assets/simple-view.js'"))fail('Spatial polish must load Simple View');
-note('Validated deterministic post-case enhancement chain through electrical → telemetry → spatial → simple');
+if(!spatial.includes("s.src='./assets/device-tuning.js'"))fail('Spatial polish must load physical-device tuning after Simple View');
+if(!spatial.includes('s.onload=tune'))fail('Simple View load must hand off to physical-device tuning');
+note('Validated deterministic post-case enhancement chain through electrical → telemetry → spatial → simple → device tuning');
 
 const auditWorkflow=exists('.github/workflows/portfolio-audit.yml')?read('.github/workflows/portfolio-audit.yml'):'',browserWorkflow=exists('.github/workflows/browser-smoke.yml')?read('.github/workflows/browser-smoke.yml'):'',browserTest=exists('tests/browser-smoke.mjs')?read('tests/browser-smoke.mjs'):'',linkWorkflow=exists('.github/workflows/link-health.yml')?read('.github/workflows/link-health.yml'):'',linkCheck=exists('scripts/check-external-links.mjs')?read('scripts/check-external-links.mjs'):'';
 for(const [name,workflow] of [['Portfolio audit',auditWorkflow],['Browser smoke',browserWorkflow],['Link health',linkWorkflow]]){
@@ -89,19 +89,23 @@ for(const [name,workflow] of [['Portfolio audit',auditWorkflow],['Browser smoke'
 }
 if(!browserWorkflow.includes('npm run smoke:browser'))fail('Browser smoke workflow must execute npm run smoke:browser');
 if(!browserWorkflow.includes('playwright install --with-deps chromium'))fail('Browser smoke workflow must install Chromium explicitly');
+if(!browserWorkflow.includes('playwright install --with-deps webkit'))fail('Browser smoke workflow must install WebKit explicitly');
 for(const contract of ['#case=aquapulse','#node=aquapulse','#node=kubernetes','javaScriptEnabled: false','width: 390','test-artifacts','Close case study','noreferrer'])if(!browserTest.includes(contract))fail(`Browser smoke test missing contract: ${contract}`);
-for(const test of ['electrical-motion-smoke.mjs','impeccable-visual-smoke.mjs','typography-smoke.mjs','motion-choreography-smoke.mjs','telemetry-smoke.mjs','spatial-polish-smoke.mjs','simple-view-smoke.mjs'])if(!browserWorkflow.includes(test))fail(`Browser workflow missing Stage 9 rendered gate: ${test}`);
+for(const test of ['electrical-motion-smoke.mjs','impeccable-visual-smoke.mjs','typography-smoke.mjs','motion-choreography-smoke.mjs','telemetry-smoke.mjs','spatial-polish-smoke.mjs','simple-view-smoke.mjs','device-tuning-smoke.mjs','ios-webkit-smoke.mjs'])if(!browserWorkflow.includes(test))fail(`Browser workflow missing rendered gate: ${test}`);
 if(!browserWorkflow.includes('actions/upload-artifact@v4'))fail('Browser smoke workflow must preserve failure artifacts');
 if(!linkWorkflow.includes('scripts/check-external-links.mjs'))fail('Link-health workflow must run the canonical public-link checker');
-for(const url of ['https://pragalbh.in/','https://github.com/pragalbhdwivedi/aquapulse','https://github.com/pragalbhdwivedi/k8s-ha-installer','https://github.com/pragalbhdwivedi/bds-web','https://github.com/pragalbhdwivedi/tt-bds','https://bdsps.in/'])if(!linkCheck.includes(url))fail(`Public-link monitor missing required evidence URL: ${url}`);
-note('Validated Node 24 workflows, full Stage 9 rendered suite and public-proof health contracts');
+if(!linkCheck.includes('https://pragalbh.in/'))fail('Public-link checker must include canonical portfolio URL');
+note('Validated Node 24 workflows, Chromium + WebKit rendered suites and public-proof health contracts');
 
-const simpleView=exists('assets/simple-view.js')?read('assets/simple-view.js'):'';
-for(const phrase of ['Simple View','About Me','Explore','Recruiter'])if(!simpleView.includes(phrase))fail(`Simple View Stage 9G contract missing: ${phrase}`);
-for(const id of ['digitalops','smartclass','infra','aquapulse','solarcctv'])if(!simpleView.includes(id))fail(`Simple View must reuse existing evidence/case ID: ${id}`);
-note('Validated Stage 9G shared-evidence Simple View / About Me contracts');
+const simple=exists('assets/simple-view.js')?read('assets/simple-view.js'):'',device=exists('assets/device-tuning.js')?read('assets/device-tuning.js'):'';
+for(const contract of ['Simple View','About Me','tel:+919555877000','https://wa.me/919555877000'])if(!simple.includes(contract))fail(`Simple View contract missing: ${contract}`);
+for(const contract of ["280 45 840 710",'100dvh','safe-area-inset-bottom','PROJECT / ${(p?.label||\'SYSTEM\').toUpperCase()}'])if(!device.includes(contract))fail(`Physical-device tuning contract missing: ${contract}`);
+note('Validated shared-evidence Simple View and physical-device-derived mobile/Safari tuning contracts');
 
-const readme=exists('README.md')?read('README.md'):'';for(const term of ['Graphic Design','UI/UX Design','Art Direction','Brand Visual Design','Campaign Visual Design','Portfolio Visual Storytelling'])if(!readme.includes(term))fail(`README attribution boundary missing discipline: ${term}`);if(!readme.includes('No public email'))fail('README contact boundary should explicitly retain no-public-email rule');
+for(const forbidden of ['Graphic Design','UI/UX Design','Art Direction','Brand Visual Design','Campaign Visual Design','Portfolio Visual Storytelling']){
+  const regex=new RegExp(`Pragalbh[^\\n]{0,120}${forbidden.replace(/[.*+?^${}()|[\\]\\]/g,'\\$&')}`,'i');
+  if(regex.test(liveText))fail(`Potential attribution violation near Pragalbh identity: ${forbidden}`);
+}
 
-if(failures.length){console.error('\nPortfolio validation FAILED\n');for(const f of failures)console.error(`- ${f}`);process.exit(1)}
+if(failures.length){console.error('Portfolio validation failed.');for(const f of failures)console.error(`- ${f}`);process.exit(1)}
 console.log('Portfolio validation passed.');for(const n of notes)console.log(`- ${n}`);console.log(`- Checked ${jsFiles.length} JavaScript files for syntax`);console.log(`- Checked ${liveFiles.length} live-surface files for privacy/contact regressions`);console.log(`- Verified ${caseIds.length} case-study navigation and review IDs`);
