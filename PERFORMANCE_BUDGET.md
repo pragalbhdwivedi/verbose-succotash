@@ -10,20 +10,21 @@ The current live site is served directly from the repository root through GitHub
 
 ## Measured baseline
 
-Measured by the production `Portfolio audit` for verified live-surface commit `606e943c91bbaf67974ced6c74414d64ab6ad95c` on 26 August 2026:
+Measured by the production `Portfolio audit` after the electrical-network interaction pass on 26 August 2026:
 
 | Category | Current raw size |
 | --- | ---: |
 | `index.html` | 13,492 B |
-| live JavaScript under `assets/` | 129,005 B |
-| live CSS under `assets/` | 28,497 B |
+| live JavaScript under `assets/` | 138,806 B |
+| live CSS under `assets/` | 31,668 B |
 | current evidence/media SVGs | 79,257 B |
-| favicon SVG | 400 B |
-| current raw live surface total | **250,651 B** |
+| current controlled raw live surface total | **263,623 B** |
 
-The same audit validated 38 local asset references, 38 reachable live assets, 19 JavaScript files, 39 live-surface files and all 12 case-study navigation/review IDs.
+The electrical-motion feature increased the controlled raw live surface by **12,972 B** from the previous 250,651 B baseline while remaining inside every existing code/style/overall budget.
 
-The evidence/media figure excludes `assets/media/README.md` because that file is repository documentation rather than a browser asset.
+The same audit validated 40 local asset references, 40 reachable live assets, 21 JavaScript files, 41 live-surface files and all 12 case-study navigation/review IDs.
+
+The evidence/media figure excludes repository documentation because those files are not browser assets.
 
 ## Enforced budgets
 
@@ -31,7 +32,7 @@ The evidence/media figure excludes `assets/media/README.md` because that file is
 
 - `index.html`: **20 KiB maximum** (`20,480 B`)
 
-Current headroom: **6,988 B** (approximately 6.8 KiB).
+Current headroom: **6,988 B**.
 
 Reason: metadata/no-JS fallback can grow modestly, but substantial case content should remain in progressive case layers rather than turning the root document into a long static résumé.
 
@@ -40,16 +41,16 @@ Reason: metadata/no-JS fallback can grow modestly, but substantial case content 
 - all `assets/*.js` combined: **160 KiB maximum** (`163,840 B`)
 - any single live JS file: **32 KiB maximum** (`32,768 B`)
 
-Current combined headroom: **34,835 B** (approximately 34.0 KiB).
+Current combined headroom: **25,034 B**.
 
-Reason: the portfolio intentionally uses dependency-light progressive enhancement. A new feature should normally deepen an existing layer rather than introduce a framework/runtime bundle to the live static surface.
+Reason: the portfolio intentionally uses dependency-light progressive enhancement. The new electrical layer uses a small custom canvas/SVG implementation instead of importing a large particle or Three.js runtime.
 
 ### CSS
 
 - all `assets/*.css` combined: **40 KiB maximum** (`40,960 B`)
 - any single live CSS file: **16 KiB maximum** (`16,384 B`)
 
-Current combined headroom: **12,463 B** (approximately 12.2 KiB).
+Current combined headroom: **9,292 B**.
 
 ### Evidence diagrams
 
@@ -58,13 +59,13 @@ For SVGs under `assets/media/`:
 - combined diagram SVG inventory: **120 KiB maximum** (`122,880 B`)
 - any single evidence SVG: **12 KiB maximum** (`12,288 B`)
 
-Current combined headroom: **43,623 B** (approximately 42.6 KiB).
+Current combined headroom: **43,623 B**.
 
 These limits apply to privacy-safe derivative diagrams. Real photographic evidence has different compression characteristics and must be budgeted separately when introduced.
 
 ### Total current live source envelope
 
-The current controlled live source set is:
+The controlled live source set is:
 
 - `index.html`
 - `assets/**/*.js`
@@ -73,9 +74,27 @@ The current controlled live source set is:
 
 Combined raw maximum: **340 KiB** (`348,160 B`).
 
-Current headroom: **97,509 B** (approximately 95.2 KiB).
+Current headroom: **84,537 B**.
 
 This envelope intentionally leaves room for evidence refinement without making large additions invisible.
+
+## Electrical-motion performance rules
+
+The motion layer must remain subordinate to the portfolio content and interaction model.
+
+Current rules:
+
+- low-count custom particle field rather than a large particle engine,
+- device pixel ratio capped for the canvas,
+- rendering paced to roughly 30 fps rather than attempting maximum frame rate,
+- drawing pauses when the document or network experience is not visible,
+- mobile uses fewer particles than desktop,
+- electrical bolts reuse existing SVG graph geometry,
+- transient zap DOM is removed after animation,
+- `prefers-reduced-motion` disables the ambient particle and discharge animation,
+- the dedicated electrical Browser smoke test must remain green.
+
+A future visual effect must not justify weakening the existing JavaScript or CSS budgets merely because it is decorative.
 
 ## Future raster evidence
 
