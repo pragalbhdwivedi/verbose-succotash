@@ -6,7 +6,7 @@ This file is the concise source of truth for current execution status. `MASTER_R
 
 ## Overall state
 
-**Portfolio architecture: verified production baseline established; Systems Observatory interaction language implemented and browser-verified. Stage 9 Premium Design/Taste Pass is now active.**
+**Portfolio architecture: verified production baseline established; Systems Observatory interaction language implemented and browser-verified. Stage 9 Premium Design/Taste Pass is active.**
 
 The live site is an interactive professional evidence system with two current primary modes:
 
@@ -49,13 +49,13 @@ Implemented Systems Observatory language:
 
 The motion implementation remains isolated from graph data, routing and case logic in `assets/electrical-motion.js` / `assets/electrical-motion.css`.
 
-The observatory direction is governed by `DESIGN_DIRECTION.md`. Stage 9 visual decisions are now additionally governed by `DESIGN_DNA.md` and semantic tokens in `assets/design-tokens.css`.
+The observatory direction is governed by `DESIGN_DIRECTION.md`. Stage 9 visual decisions are additionally governed by `DESIGN_DNA.md`, `IMPECCABLE_AUDIT.md` and semantic tokens in `assets/design-tokens.css`.
 
 ## Stage 9 — Premium Design / Taste Pass
 
 ### 9A — Taste DNA
 
-**Status: BASELINE DEFINED / IMPLEMENTED**
+**Status: COMPLETE**
 
 Implemented:
 - explicit Trigger → Decision → Reason → Evidence → Trade-off design framework
@@ -75,23 +75,51 @@ Implemented:
 - ten-question visual acceptance test
 - machine-readable semantic CSS tokens for state, domain, proof, motion and interaction meaning
 
-Stage 9A is intentionally low-visual-change. It fixes the grammar that later stages must use.
-
 ### 9B — Impeccable visual audit
+
+**Status: IMPLEMENTED / SOURCE + DEPLOY VERIFIED / RENDERED CHROMIUM VERIFICATION PENDING RUNNER COMPLETION**
+
+Implemented:
+- removed a large share of generic bordered-card chrome
+- changed view-mode controls from a boxed segmented control to a quieter underline state
+- reduced search chrome to a functional underline treatment
+- simplified legend, hierarchy labels and capability chips
+- converted architecture steps and project facts from cards into ruled information flows
+- changed Recruiter View metrics into a restrained operating-context band
+- converted “What I solve” into an editorial ruled grid rather than repeated SaaS cards
+- introduced asymmetric flagship-case hierarchy, with the lead case receiving greater visual weight
+- reduced case-study modal nesting and dashboard-like block framing
+- kept strong containment only where it communicates evidence/proof or interaction
+- simplified hiring-conversion and supporting metadata surfaces
+- added explicit mobile collapse rules so desktop asymmetry does not damage reading order
+- documented the visual audit and acceptance rules in `IMPECCABLE_AUDIT.md`
+
+Verification state for live Stage 9B commit `10be416d11d7fea71d78ff9d8b32be9309025f1f`:
+- Portfolio audit: **SUCCESS**
+- GitHub Pages deployment: **SUCCESS**
+- Browser smoke: **IN PROGRESS at last status check; runner was still installing Chromium, with no rendered-page failure recorded**
+
+Measured source at that commit:
+- `index.html`: **13,555 B**
+- live JavaScript: **146,659 B**
+- live CSS: **40,804 B**
+- evidence SVGs: **79,257 B**
+- controlled raw live surface: **280,675 B**
+
+Stage 9B deliberately stayed inside the original **40,960 B CSS ceiling** rather than increasing the budget. The first two visual passes exceeded the CSS limit; lower-value overrides were removed/compressed until the final audit passed with 156 B of CSS headroom.
+
+### 9C — Typography system
 
 **Status: NEXT**
 
 Planned focus:
-- remove generic generated-interface patterns
-- reduce unnecessary bordered containers
-- spacing-rhythm audit
-- hierarchy audit
-- mobile density audit
-- evidence/recruiter consistency audit
-
-### 9C — Typography system
-
-**Status: PENDING**
+- editorial display hierarchy
+- telemetry hierarchy
+- case-study reading scale
+- body measure and line-height
+- graph-label hierarchy
+- mobile type tuning
+- consistent numeral/status treatment
 
 ### 9D — Motion choreography audit
 
@@ -109,26 +137,22 @@ Planned focus:
 
 **Status: PENDING**
 
-## Verified Systems Observatory raw source baseline
+## Verified Systems Observatory baseline before Stage 9
 
-Verified live-surface commit before Stage 9A token addition: `78e1187f2329284bae79df25382a96bfc0f65973`.
+Verified live-surface commit before Stage 9: `78e1187f2329284bae79df25382a96bfc0f65973`.
 
 For that exact source state:
-
 - Portfolio audit: **SUCCESS**
 - Browser smoke: **SUCCESS**
 - dedicated electrical/observatory smoke: **SUCCESS**
 - GitHub Pages deployment: **SUCCESS**
 
 Measured source:
-
 - `index.html`: **13,492 B**
 - live JavaScript: **146,659 B**
 - live CSS: **35,026 B**
 - evidence SVGs: **79,257 B**
 - controlled raw live surface: **274,834 B**
-
-The Stage 9A token sheet is intentionally small and remains inside the existing CSS/total-source budgets. A fresh measured baseline will be recorded after 9B–9G materially change the live surface.
 
 ## Programme stages
 
@@ -271,21 +295,6 @@ Deliberately not adopted:
 - scroll-jacking
 - animation that obscures evidence/navigation
 
-Dedicated Browser smoke verifies:
-- particle canvas
-- observatory depth/rings
-- charged links
-- node halos
-- click zap
-- branch energisation
-- persistent hot ancestry path
-- project maturity badge
-- selected-project lock-on
-- selected system-status text
-- tighter mobile graph framing
-- no horizontal overflow
-- mobile headline/search clearance
-
 ## Current privacy boundary
 
 Public contact:
@@ -342,14 +351,13 @@ Decision remains around `main` protection, force-push/deletion protection and re
 
 ## Next visual priorities
 
-1. Stage 9B Impeccable-style visual audit
-2. Stage 9C typography system
-3. Stage 9D motion choreography audit
-4. Stage 9E telemetry/information hierarchy
-5. Stage 9F selective spatial polish
-6. Stage 9G mobile refinement + Simple / Non-Technical View
-7. real-device tuning after the code-controlled Stage 9 pass
-8. real project media into the existing evidence structure
+1. Stage 9C typography system
+2. Stage 9D motion choreography audit
+3. Stage 9E telemetry/information hierarchy
+4. Stage 9F selective spatial polish
+5. Stage 9G mobile refinement + Simple / Non-Technical View
+6. real-device tuning after the code-controlled Stage 9 pass
+7. real project media into the existing evidence structure
 
 ## Production rule
 
