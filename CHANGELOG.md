@@ -21,6 +21,9 @@ This changelog records meaningful portfolio-system changes, not every file edit 
 - Added graph search, pan/zoom, progressive expansion, cross-links and evidence drawers.
 - Added shareable `#node=` and `#case=` state.
 - Added current-path breadcrumbs and mobile Back behavior.
+- Added node-origin URL restoration: opening a case from a graph node temporarily uses `#case=...`, then closing restores the originating `#node=...` state.
+- Kept direct shared case links independent: closing a direct `#case=...` link returns to the clean canonical page URL.
+- Improved search ranking so exact/prefix capability-label matches outrank incidental summary/skill matches.
 
 ### Hiring conversion
 
@@ -40,7 +43,7 @@ Implemented six flagship deep cases:
 5. Smart Classroom Architecture
 6. Solar CCTV Edge Infrastructure
 
-Each now supports evidence/status boundaries, architecture, decisions/trade-offs, failure modes, current state, next iteration and capability relationships.
+Each supports evidence/status boundaries, architecture, decisions/trade-offs, failure modes, current state, next iteration and capability relationships.
 
 ### Leadership / institutional proof
 
@@ -60,22 +63,58 @@ Implemented six source-backed/hybrid cases:
 - Added `EVIDENCE_REGISTER.md`.
 - Added `OUTCOME_REGISTER.md` to prevent invented impact metrics.
 - Added `CASE_REVIEW_REGISTER.md` and live `Evidence reviewed · Aug 2026` stamps.
-- Added weekly public evidence link-health workflow.
+- Added public evidence link-health monitoring covering the portfolio, BDSPS and selected public GitHub evidence.
+- Added bounded retry/backoff for transient external network/server failures while preserving failure on persistently broken proof links.
 
 ### Accessibility / resilience
 
 - Added keyboard semantics to graph nodes.
 - Added Enter/Space activation.
+- Upgraded search to combobox/listbox semantics with keyboard result navigation and Escape behavior.
 - Added modal dialog semantics, Escape close, Tab containment and focus restoration.
 - Added reduced-motion support and larger mobile targets.
 - Added no-JavaScript professional fallback.
+- Added explicit current-path navigation rather than relying solely on graph spatial memory.
+
+### Rendered browser verification
+
+- Added Playwright/Chromium browser smoke testing.
+- Added desktop rendered checks for Recruiter View, case routing, deep links, dialog semantics, keyboard search and URL-state restoration.
+- Added synthetic **390×844** touch/mobile Chromium coverage for overflow, breadcrumbs, supporting-case disclosure and case-modal fit.
+- Added no-JavaScript rendered validation.
+- Added browser page-error capture.
+- Added short-lived screenshots/URL/error artifacts on browser-smoke failure.
+- Browser testing exposed and drove fixes for search focus handling and exact-label search ranking rather than relying only on source inspection.
 
 ### Discoverability / delivery
 
 - Added canonical metadata, robots, Open Graph, Twitter summary metadata and Person/WebSite JSON-LD.
 - Added favicon, `robots.txt` and `sitemap.xml`.
 - Removed embedded external live-site iframe from evidence layer.
+- Moved Google Fonts out of CSS `@import` into the document head with connection hints.
 - Preserved dependency-light branch-based GitHub Pages delivery.
+
+### Progressive enhancement architecture
+
+- Documented deterministic load ownership in `ENHANCEMENT_CHAIN.md`.
+- Removed a dynamic-script load-order race between case navigation and hiring-conversion layers.
+- Enforced the post-case chain through the source audit:
+  - case navigation → hiring conversion
+  - hiring conversion → accessibility
+  - accessibility → network navigation
+  - network navigation → case review
+
+### Static payload guardrail
+
+- Added `PERFORMANCE_BUDGET.md` from measured repository-tree sizes.
+- Baseline raw controlled live source: approximately **250.4 KB** before transfer compression/network effects.
+- Added enforced limits for:
+  - root HTML
+  - combined/single JavaScript files
+  - combined/single CSS files
+  - combined/single evidence SVG files
+  - overall controlled raw live-source envelope
+- Explicitly kept Lighthouse/Core Web Vitals outside this source-budget claim until actual measurements are performed.
 
 ### Governance / quality
 
@@ -83,10 +122,15 @@ Implemented six source-backed/hybrid cases:
 - Added `PORTFOLIO_STATUS.md`.
 - Added `PORTFOLIO_MAINTENANCE.md`.
 - Added `RELEASE_CHECKLIST.md`.
+- Added `PERFORMANCE_BUDGET.md`.
+- Added `ENHANCEMENT_CHAIN.md`.
 - Added zero-dependency `scripts/validate-portfolio.mjs`.
 - Added `npm run audit`.
-- Strengthened GitHub `Portfolio audit` workflow.
-- Opened GitHub Issue #1 for real-device/browser/accessibility QA.
+- Strengthened GitHub `Portfolio audit` workflow to protect source, privacy, routing, enhancement-chain, browser-smoke, proof-health and payload-budget contracts.
+- Added separate `Browser smoke` GitHub Actions gate.
+- Added separate `Public evidence link health` workflow.
+- Recorded a green automated baseline across source audit, rendered browser smoke, proof-link health and Pages deployment.
+- Opened GitHub Issue #1 for real-device/browser/accessibility QA and recorded automated progress without closing the physical-device backlog.
 - Opened GitHub Issue #2 for real media and prospective outcome enrichment.
 
 ## Earlier baseline
