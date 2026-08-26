@@ -26,7 +26,7 @@ A progressively expanding capability web organised around five pillars:
 4. Automation & Software
 5. Applied Technology & Energy
 
-The network supports search, project evidence hubs, cross-links, current-path breadcrumbs and shareable `#node=` links.
+The network supports search, project evidence hubs, cross-links, current-path breadcrumbs, mobile Back behavior and shareable `#node=` links.
 
 ### Recruiter View
 
@@ -68,40 +68,84 @@ These are source-backed or hybrid public/source-backed and intentionally avoid p
 - **Sprint 1 — Real Evidence:** foundation complete; media enrichment continuous.
 - **Sprint 2 — Flagship Deep Cases:** framework complete; screenshots/measurements added only when real evidence exists.
 - **Sprint 3 — Leadership & Institutional Systems:** complete baseline across all six tracks.
-- **Sprint 4 — Hiring Conversion:** complete structural baseline.
-- **Sprint 5 — Mobile / Accessibility / Quality:** source-level work complete; real-device/browser QA continues.
-- **Sprint 6 — Discoverability / Performance:** source-level work complete; real-browser performance measurement remains.
+- **Sprint 4 — Hiring Conversion:** structural baseline complete.
+- **Sprint 5 — Mobile / Accessibility / Quality:** source + automated rendered QA complete; physical/cross-browser QA continues.
+- **Sprint 6 — Discoverability / Performance:** source-level discoverability complete; real measured Web Vitals/Lighthouse data remains intentionally unclaimed.
+- **Sprint 7 — Production Audit:** automated source, rendered-browser, proof-health, payload-budget and Pages baseline established.
 
 See **[PORTFOLIO_STATUS.md](./PORTFOLIO_STATUS.md)** for the concise authoritative state.
 
-## Automated quality gate
+## Production verification
 
-The repository includes:
+The repository uses three automated verification systems plus GitHub Pages deployment.
+
+### Source / governance audit
 
 - `.github/workflows/portfolio-audit.yml`
 - `scripts/validate-portfolio.mjs`
+- `npm run audit`
 
-Run:
-
-```bash
-npm run audit
-```
-
-The validation gate checks:
+Protects:
 
 - JavaScript syntax
 - required architecture/governance files
-- local asset references
+- local asset integrity and orphaned live-asset detection
 - CNAME/canonical consistency
 - robots/sitemap configuration
 - JSON-LD validity
-- case-navigation registry
-- iframe regressions
-- public email / `mailto:` regressions
-- private IPv4 exposure on the live surface
-- approved public phone boundary
-- protected precise-scale phrase regressions
-- attribution-boundary presence
+- case-navigation and evidence-review registries
+- deterministic progressive-enhancement ownership
+- no iframe/public-email/private-IP regressions
+- approved phone boundary
+- protected precise-scale phrases
+- attribution boundary
+- no-JavaScript/font-loading contracts
+- browser-smoke/proof-health workflow contracts
+- static payload budgets
+
+### Rendered Browser smoke
+
+- `.github/workflows/browser-smoke.yml`
+- `tests/browser-smoke.mjs`
+- `npm run smoke:browser`
+
+Covers:
+
+- desktop Chromium
+- synthetic 390×844 touch/mobile Chromium
+- no-JavaScript fallback
+- Recruiter View / supporting-case disclosure
+- case + node deep links
+- graph-origin URL restoration
+- keyboard search and exact-label ranking
+- accessible dialog semantics
+- mobile overflow/modal-fit checks
+- browser page-error capture
+
+Failures upload temporary screenshot/URL/error artifacts for diagnosis.
+
+Synthetic Chromium coverage does **not** replace real iPhone Safari, Android Chrome, Safari/Edge or VoiceOver testing. That remains tracked in GitHub Issue #1.
+
+### Public evidence link health
+
+- `.github/workflows/link-health.yml`
+- `scripts/check-external-links.mjs`
+
+Monitors the public portfolio, BDSPS system, GitHub profile and selected public evidence repositories. It runs weekly, manually and whenever its own configuration changes, with bounded retries for transient failures.
+
+### Static payload budget
+
+See **[PERFORMANCE_BUDGET.md](./PERFORMANCE_BUDGET.md)**.
+
+Measured 26 August 2026 raw baseline:
+
+- `index.html`: 13,404 B
+- live JS: 128,852 B
+- live CSS: 28,497 B
+- evidence SVGs: 79,257 B
+- controlled raw live surface: approximately **250.4 KB**
+
+These are repository/source byte measurements, not Lighthouse/Core Web Vitals claims.
 
 ## Evidence and outcome discipline
 
@@ -172,19 +216,21 @@ Selected repositories include:
 
 ## Repository governance
 
-- **[MASTER_ROADMAP.md](./MASTER_ROADMAP.md)** — complete current roadmap and programme architecture
-- **[PORTFOLIO_STATUS.md](./PORTFOLIO_STATUS.md)** — authoritative concise current status
+- **[MASTER_ROADMAP.md](./MASTER_ROADMAP.md)** — current roadmap and programme architecture
+- **[PORTFOLIO_STATUS.md](./PORTFOLIO_STATUS.md)** — authoritative concise state
 - **[PORTFOLIO_ARCHITECTURE.md](./PORTFOLIO_ARCHITECTURE.md)** — UX/proof/privacy architecture
 - **[PORTFOLIO_MAINTENANCE.md](./PORTFOLIO_MAINTENANCE.md)** — long-term update rules
 - **[RELEASE_CHECKLIST.md](./RELEASE_CHECKLIST.md)** — production release checks
+- **[PERFORMANCE_BUDGET.md](./PERFORMANCE_BUDGET.md)** — measured source-size guardrails
+- **[ENHANCEMENT_CHAIN.md](./ENHANCEMENT_CHAIN.md)** — deterministic progressive-enhancement contract
+- **[CASE_REVIEW_REGISTER.md](./CASE_REVIEW_REGISTER.md)** — case evidence freshness
 - **[EVIDENCE_REGISTER.md](./EVIDENCE_REGISTER.md)** — evidence control / media backlog
 - **[OUTCOME_REGISTER.md](./OUTCOME_REGISTER.md)** — safe impact/claim control
+- **[CHANGELOG.md](./CHANGELOG.md)** — meaningful architecture/history changes
 - **[SKILLS.md](./SKILLS.md)** — detailed capability inventory
-- **[SPRINT_2_CASE_STUDIES.md](./SPRINT_2_CASE_STUDIES.md)** — flagship-case implementation history
-- **[SPRINT_3_LEADERSHIP.md](./SPRINT_3_LEADERSHIP.md)** — leadership proof programme
-- **[SPRINT_4_HIRING_CONVERSION.md](./SPRINT_4_HIRING_CONVERSION.md)** — hiring-conversion structure
-- **[SPRINT_5_QUALITY_QA.md](./SPRINT_5_QUALITY_QA.md)** — accessibility/mobile QA
+- **[SPRINT_5_QUALITY_QA.md](./SPRINT_5_QUALITY_QA.md)** — accessibility/mobile QA state
 - **[SPRINT_6_DISCOVERABILITY_PERFORMANCE.md](./SPRINT_6_DISCOVERABILITY_PERFORMANCE.md)** — discoverability/performance baseline
+- **[SPRINT_7_PRODUCTION_AUDIT.md](./SPRINT_7_PRODUCTION_AUDIT.md)** — verified production baseline
 
 ## Deployment
 
