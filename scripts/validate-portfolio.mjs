@@ -9,7 +9,7 @@ for(const f of mustExist)if(!exists(f))fail(`Missing required file: ${f}`);
 if(exists('CNAME')&&read('CNAME').trim()!=='pragalbh.in')fail('CNAME must contain exactly pragalbh.in');
 
 const index=exists('index.html')?read('index.html'):'',robots=exists('robots.txt')?read('robots.txt'):'',sitemap=exists('sitemap.xml')?read('sitemap.xml'):'',portfolioCss=exists('assets/portfolio.css')?read('assets/portfolio.css'):'';
-for(const s of ['<link rel="canonical" href="https://pragalbh.in/"','<meta name="robots" content="index,follow"','<meta property="og:url" content="https://pragalbh.in/"','<meta name="twitter:card"','application/ld+json','./assets/favicon.svg','<link rel="preconnect" href="https://fonts.googleapis.com"','<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin','https://fonts.googleapis.com/css2?family=DM+Mono'])if(!index.includes(s))fail(`index.html missing required metadata/reference: ${s}`);
+for(const s of ['<link rel="canonical" href="https://pragalbh.in/"','<meta name="robots" content="index,follow"','<meta name="referrer" content="strict-origin-when-cross-origin"','<meta property="og:url" content="https://pragalbh.in/"','<meta name="twitter:card"','application/ld+json','./assets/favicon.svg','<link rel="preconnect" href="https://fonts.googleapis.com"','<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin','https://fonts.googleapis.com/css2?family=DM+Mono','id="caseOverlay" aria-hidden="true"'])if(!index.includes(s))fail(`index.html missing required metadata/reference: ${s}`);
 if(/@import\s+url\([^)]*fonts\.googleapis\.com/i.test(portfolioCss))fail('portfolio.css must not reintroduce blocking Google Fonts @import');
 if(!index.includes('.app{display:none!important}'))fail('No-JavaScript fallback must hide the inert interactive shell');
 if(!robots.includes('Sitemap: https://pragalbh.in/sitemap.xml'))fail('robots.txt does not point to canonical sitemap');
@@ -71,17 +71,23 @@ if(admissions.includes('hiring-conversion.js'))fail('Admissions case layer must 
 if(!nav.includes("s.src='./assets/hiring-conversion.js'"))fail('Case Navigation must own Hiring Conversion loading');
 if(!hiring.includes("s.src='./assets/accessibility.js'"))fail('Hiring Conversion must load Accessibility');
 if(!accessibility.includes("s.src='./assets/network-navigation.js'"))fail('Accessibility must load Network Navigation');
+if(!accessibility.includes("aria-label','Close case study'"))fail('Accessibility layer must label generated case-close controls');
 if(!networkNav.includes("s.src='./assets/case-review.js'"))fail('Network Navigation must load Case Review');
 note('Validated deterministic post-case enhancement chain');
 
-const browserWorkflow=exists('.github/workflows/browser-smoke.yml')?read('.github/workflows/browser-smoke.yml'):'',browserTest=exists('tests/browser-smoke.mjs')?read('tests/browser-smoke.mjs'):'',linkWorkflow=exists('.github/workflows/link-health.yml')?read('.github/workflows/link-health.yml'):'',linkCheck=exists('scripts/check-external-links.mjs')?read('scripts/check-external-links.mjs'):'';
+const auditWorkflow=exists('.github/workflows/portfolio-audit.yml')?read('.github/workflows/portfolio-audit.yml'):'',browserWorkflow=exists('.github/workflows/browser-smoke.yml')?read('.github/workflows/browser-smoke.yml'):'',browserTest=exists('tests/browser-smoke.mjs')?read('tests/browser-smoke.mjs'):'',linkWorkflow=exists('.github/workflows/link-health.yml')?read('.github/workflows/link-health.yml'):'',linkCheck=exists('scripts/check-external-links.mjs')?read('scripts/check-external-links.mjs'):'';
+for(const [name,workflow] of [['Portfolio audit',auditWorkflow],['Browser smoke',browserWorkflow],['Link health',linkWorkflow]]){
+  if(!workflow.includes('actions/checkout@v7'))fail(`${name} workflow must use actions/checkout@v7`);
+  if(!workflow.includes('actions/setup-node@v7'))fail(`${name} workflow must use actions/setup-node@v7`);
+  if(!workflow.includes("node-version: '24'"))fail(`${name} workflow must use Node 24`);
+}
 if(!browserWorkflow.includes('npm run smoke:browser'))fail('Browser smoke workflow must execute npm run smoke:browser');
 if(!browserWorkflow.includes('playwright install --with-deps chromium'))fail('Browser smoke workflow must install Chromium explicitly');
-for(const contract of ['#case=aquapulse','#node=aquapulse','#node=kubernetes','javaScriptEnabled: false','width: 390','test-artifacts'])if(!browserTest.includes(contract))fail(`Browser smoke test missing contract: ${contract}`);
+for(const contract of ['#case=aquapulse','#node=aquapulse','#node=kubernetes','javaScriptEnabled: false','width: 390','test-artifacts','Close case study','noreferrer'])if(!browserTest.includes(contract))fail(`Browser smoke test missing contract: ${contract}`);
 if(!browserWorkflow.includes('actions/upload-artifact@v4'))fail('Browser smoke workflow must preserve failure artifacts');
 if(!linkWorkflow.includes('scripts/check-external-links.mjs'))fail('Link-health workflow must run the canonical public-link checker');
 for(const url of ['https://pragalbh.in/','https://github.com/pragalbhdwivedi/aquapulse','https://github.com/pragalbhdwivedi/k8s-ha-installer','https://github.com/pragalbhdwivedi/bds-web','https://github.com/pragalbhdwivedi/tt-bds','https://bdsps.in/'])if(!linkCheck.includes(url))fail(`Public-link monitor missing required evidence URL: ${url}`);
-note('Validated rendered browser and public-proof health contracts');
+note('Validated Node 24 workflows, rendered browser and public-proof health contracts');
 
 const readme=exists('README.md')?read('README.md'):'';for(const term of ['Graphic Design','UI/UX Design','Art Direction','Brand Visual Design','Campaign Visual Design','Portfolio Visual Storytelling'])if(!readme.includes(term))fail(`README attribution boundary missing discipline: ${term}`);if(!readme.includes('No public email'))fail('README contact boundary should explicitly retain no-public-email rule');
 
