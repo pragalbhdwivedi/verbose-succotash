@@ -8,10 +8,7 @@
     const modal=document.getElementById('caseModal');
     if(!modal||!document.getElementById('caseOverlay')?.classList.contains('show'))return;
     modal.getAnimations().forEach(a=>{if(a.id==='case-spatial-reveal')a.cancel()});
-    const a=modal.animate([
-      {opacity:.42,transform:'translateY(18px) scale(.992)',filter:'blur(2px)'},
-      {opacity:1,transform:'translateY(0) scale(1)',filter:'blur(0)'}
-    ],{duration:TRANSITION,easing:EASE,fill:'both'});
+    const a=modal.animate([{opacity:.42,transform:'translateY(18px) scale(.992)',filter:'blur(2px)'},{opacity:1,transform:'translateY(0) scale(1)',filter:'blur(0)'}],{duration:TRANSITION,easing:EASE,fill:'both'});
     a.id='case-spatial-reveal';a.finished.finally(()=>{if(a.playState!=='idle')a.cancel()}).catch(()=>{});
   }
 
@@ -26,11 +23,8 @@
     })
   }
 
-  const baseOpen=window.openCase;
-  if(typeof baseOpen==='function')window.openCase=function(id){const result=baseOpen(id);requestAnimationFrame(animateModal);return result};
-
-  const drawer=document.getElementById('drawer');
-  if(drawer){let queued=false;new MutationObserver(()=>{if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;animateDrawer()})}).observe(drawer,{childList:true,subtree:false})}
-
-  window.__spatialPolish={animateModal,animateDrawer,timings:{ui:UI,transition:TRANSITION}};
+  function loadSimpleView(){if(document.querySelector('script[data-simple-view-layer]'))return;const s=document.createElement('script');s.src='./assets/simple-view.js';s.dataset.simpleViewLayer='true';document.body.appendChild(s)}
+  const baseOpen=window.openCase;if(typeof baseOpen==='function')window.openCase=function(id){const result=baseOpen(id);requestAnimationFrame(animateModal);return result};
+  const drawer=document.getElementById('drawer');if(drawer){let queued=false;new MutationObserver(()=>{if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;animateDrawer()})}).observe(drawer,{childList:true,subtree:false})}
+  window.__spatialPolish={animateModal,animateDrawer,timings:{ui:UI,transition:TRANSITION}};loadSimpleView();
 })();
