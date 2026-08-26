@@ -1,0 +1,69 @@
+:root{
+  /* Stage 9A semantic design DNA. These aliases define meaning; later stages may refine values. */
+  --surface-canvas:#07090c;
+  --surface-panel:#0d1117;
+  --surface-raised:#121922;
+  --surface-evidence:#f5f7f8;
+
+  --text-primary:#f3f6f8;
+  --text-secondary:#98a4b0;
+  --text-tertiary:#66727e;
+
+  --signal-active:#baff67;
+  --signal-related:rgba(186,255,103,.52);
+  --signal-idle:#34404c;
+  --signal-dim:rgba(152,164,176,.18);
+
+  --domain-education:#72b8ff;
+  --domain-systems:#b896ff;
+  --domain-automation:#68dfd0;
+  --domain-field:#ffbd66;
+  --domain-evidence:#f5f7f8;
+
+  --state-live:#baff67;
+  --state-field:#ffbd66;
+  --state-prototype:#ffbd66;
+  --state-build:#68dfd0;
+  --state-applied:#72b8ff;
+  --state-case:#b896ff;
+
+  --proof-public:#baff67;
+  --proof-source:#b896ff;
+  --proof-field:#ffbd66;
+  --proof-applied:#72b8ff;
+
+  --line-quiet:#26313d;
+  --line-strong:#485767;
+  --line-active:#baff67;
+
+  --glow-active:0 0 12px rgba(186,255,103,.42);
+  --glow-project:0 0 18px rgba(245,247,248,.22);
+
+  --motion-fast:140ms;
+  --motion-ui:220ms;
+  --motion-transition:360ms;
+  --motion-expressive:620ms;
+
+  --ease-ui:cubic-bezier(.2,.7,.2,1);
+  --ease-settle:cubic-bezier(.16,1,.3,1);
+
+  --radius-control:0px;
+  --radius-panel:0px;
+
+  --density-telemetry:9px;
+  --density-label:12px;
+  --density-body:13px;
+}
+
+/* Semantic maturity helpers. These are deliberately low-specificity so later visual stages can refine them. */
+[data-maturity="LIVE"]{--maturity-color:var(--state-live)}
+[data-maturity="FIELD"]{--maturity-color:var(--state-field)}
+[data-maturity="PROTO"]{--maturity-color:var(--state-prototype)}
+[data-maturity="BUILD"]{--maturity-color:var(--state-build)}
+[data-maturity="APPLIED"]{--maturity-color:var(--state-applied)}
+[data-maturity="CASE"]{--maturity-color:var(--state-case)}
+
+/* Semantic interaction aliases. Meaning must remain available without motion. */
+.is-system-active{--system-signal:var(--signal-active)}
+.is-system-related{--system-signal:var(--signal-related)}
+.is-system-dim{--system-signal:var(--signal-dim)}
