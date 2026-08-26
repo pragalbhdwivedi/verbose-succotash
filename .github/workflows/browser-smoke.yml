@@ -98,6 +98,11 @@ jobs:
         env:
           PORTFOLIO_TEST_URL: http://127.0.0.1:4173/
 
+      - name: Run deep interconnected graph smoke test
+        run: node tests/deep-graph-smoke.mjs
+        env:
+          PORTFOLIO_TEST_URL: http://127.0.0.1:4173/
+
       - name: Run physical-device tuning smoke test
         run: node tests/device-tuning-smoke.mjs
         env:
