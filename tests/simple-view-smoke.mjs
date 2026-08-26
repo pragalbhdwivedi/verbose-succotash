@@ -23,19 +23,6 @@ try{
   assert(await page.locator('#recruiterContact a[href^="https://wa.me/"]').count()===1,'Direct WhatsApp contact must remain available inside Contact Me.');
   assert((await page.locator('#recruiterContact').textContent()).includes('no charge'),'Contact Me must retain the help-first no-charge note.');
 
-  await page.click('#recruiterMode');
-  const form=page.locator('#recruiterContact [data-connect-form]');
-  await form.locator('[name="name"]').fill('Test Visitor');
-  await form.locator('[name="problem"]').fill('A systems problem');
-  await form.locator('[name="context"]').fill('Testing the pre-filled contact handoff.');
-  const outgoing=page.waitForRequest(r=>r.url().startsWith('https://wa.me/919555877000?text='));
-  await page.route('https://wa.me/**',route=>route.abort());
-  await form.locator('button[type="submit"]').click();
-  const req=await outgoing;
-  const decoded=decodeURIComponent(req.url());
-  assert(decoded.includes('Test Visitor')&&decoded.includes('A systems problem'),'Contact form must produce a pre-filled WhatsApp message.');
-  await page.unroute('https://wa.me/**');
-
   assert(await page.locator('#simpleView [data-simple-case]').count()===6,'Simple View must translate six real system stories.');
   assert((await page.locator('#simpleView').textContent()).includes('Systems begin with the operating problem')===false,'Simple View should use its own plain-language hierarchy rather than duplicate the recruiter heading verbatim.');
   assert((await page.locator('#simpleView').textContent()).includes('I turn difficult institutional problems into'),'Simple View must explain the professional value in plain language.');
@@ -71,6 +58,22 @@ try{
   assert(await mobile.locator('#simpleContact [data-connect-form]').count()===1,'Contact form must remain available on mobile.');
   assert(await mobile.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1),'Contact form must not introduce mobile horizontal overflow.');
   await mobile.close();
+
+  const handoff=await browser.newPage({viewport:{width:1100,height:800}});
+  await handoff.goto(url,{waitUntil:'networkidle'});
+  await handoff.waitForFunction(()=>Boolean(window.__simpleView));
+  await handoff.click('#recruiterMode');
+  const form=handoff.locator('#recruiterContact [data-connect-form]');
+  await form.locator('[name="name"]').fill('Test Visitor');
+  await form.locator('[name="problem"]').fill('A systems problem');
+  await form.locator('[name="context"]').fill('Testing the pre-filled contact handoff.');
+  await handoff.route('https://wa.me/**',route=>route.abort());
+  const outgoing=handoff.waitForRequest(r=>r.url().startsWith('https://wa.me/919555877000?text='));
+  await form.locator('button[type="submit"]').click();
+  const req=await outgoing;
+  const decoded=decodeURIComponent(req.url());
+  assert(decoded.includes('Test Visitor')&&decoded.includes('A systems problem'),'Contact form must produce a pre-filled WhatsApp message.');
+  await handoff.close();
 
   console.log('Profile, Simple View and Let’s Connect smoke test passed.');
 }finally{await browser.close()}
