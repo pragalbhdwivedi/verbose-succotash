@@ -38,7 +38,7 @@ try{
   const mobilePage=await mobile.newPage();
   await mobilePage.goto(base,{waitUntil:'domcontentloaded'});
   await mobilePage.waitForFunction(()=>Boolean(window.__electricalMotion));
-  assert.equal(await mobilePage.locator('#network').getAttribute('viewBox'),'300 85 800 710','Mobile graph should use the tighter observatory viewBox');
+  assert.equal(await mobilePage.locator('#network').getAttribute('viewBox'),'280 45 840 710','Mobile graph should use the real-device tuned observatory viewBox');
   assert.equal(await mobilePage.locator('.energy-field').count(),1,'Mobile electrical field canvas should render');
   assert.equal(await mobilePage.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1),true,'Electrical layer must not introduce mobile overflow');
   const heroSpacing=await mobilePage.evaluate(()=>{
