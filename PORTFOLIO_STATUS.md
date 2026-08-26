@@ -6,12 +6,14 @@ This file is the concise source of truth for current execution status. `MASTER_R
 
 ## Overall state
 
-**Portfolio architecture: verified production baseline established; Systems Observatory interaction language implemented and browser-verified.**
+**Portfolio architecture: verified production baseline established; Systems Observatory interaction language implemented and browser-verified. Stage 9 Premium Design/Taste Pass is now active.**
 
-The live site is an interactive professional evidence system with two primary modes:
+The live site is an interactive professional evidence system with two current primary modes:
 
 - **Explore Network** — living systems observatory / progressive capability graph
 - **Recruiter View** — compact hiring, consulting and partnership path
+
+A third **Simple / Non-Technical View** is planned later in Stage 9 after the shared visual DNA, typography and motion system are fixed.
 
 Core positioning:
 
@@ -47,11 +49,69 @@ Implemented Systems Observatory language:
 
 The motion implementation remains isolated from graph data, routing and case logic in `assets/electrical-motion.js` / `assets/electrical-motion.css`.
 
-The design rationale is governed by `DESIGN_DIRECTION.md`.
+The observatory direction is governed by `DESIGN_DIRECTION.md`. Stage 9 visual decisions are now additionally governed by `DESIGN_DNA.md` and semantic tokens in `assets/design-tokens.css`.
+
+## Stage 9 — Premium Design / Taste Pass
+
+### 9A — Taste DNA
+
+**Status: BASELINE DEFINED / IMPLEMENTED**
+
+Implemented:
+- explicit Trigger → Decision → Reason → Evidence → Trade-off design framework
+- semantic color/domain rules
+- maturity-state rules
+- active-path/electrical-state rules
+- four-level motion hierarchy
+- typography intent split into editorial / telemetry / reading voices
+- container/card restraint rules
+- project = proof / skill = capability hierarchy
+- evidence-media purpose rule
+- three-audience consistency rule
+- non-technical translation rule
+- desktop/mobile/recruiter/simple-view density rules
+- interaction-state vocabulary
+- anti-pattern list
+- ten-question visual acceptance test
+- machine-readable semantic CSS tokens for state, domain, proof, motion and interaction meaning
+
+Stage 9A is intentionally low-visual-change. It fixes the grammar that later stages must use.
+
+### 9B — Impeccable visual audit
+
+**Status: NEXT**
+
+Planned focus:
+- remove generic generated-interface patterns
+- reduce unnecessary bordered containers
+- spacing-rhythm audit
+- hierarchy audit
+- mobile density audit
+- evidence/recruiter consistency audit
+
+### 9C — Typography system
+
+**Status: PENDING**
+
+### 9D — Motion choreography audit
+
+**Status: PENDING**
+
+### 9E — Stella Nova information hierarchy / telemetry
+
+**Status: PENDING**
+
+### 9F — HorizonX selective spatial polish
+
+**Status: PENDING**
+
+### 9G — Mobile-first refinement + third Simple / Non-Technical View
+
+**Status: PENDING**
 
 ## Verified Systems Observatory raw source baseline
 
-Verified live-surface commit: `78e1187f2329284bae79df25382a96bfc0f65973`.
+Verified live-surface commit before Stage 9A token addition: `78e1187f2329284bae79df25382a96bfc0f65973`.
 
 For that exact source state:
 
@@ -68,9 +128,7 @@ Measured source:
 - evidence SVGs: **79,257 B**
 - controlled raw live surface: **274,834 B**
 
-This remains inside all existing performance budgets and is **24,183 B** above the pre-motion 250,651 B production baseline.
-
-The audit validated 40 local asset references, 40 reachable live assets, 21 JavaScript files, 41 live-surface files and all 12 case-study navigation/review IDs.
+The Stage 9A token sheet is intentionally small and remains inside the existing CSS/total-source budgets. A fresh measured baseline will be recorded after 9B–9G materially change the live surface.
 
 ## Programme stages
 
@@ -284,13 +342,14 @@ Decision remains around `main` protection, force-push/deletion protection and re
 
 ## Next visual priorities
 
-1. validate/tune observatory intensity on the user's actual iPhone
-2. tune zap/current/halo intensity from real-device feel instead of adding more effects
-3. add real project media into the existing case/evidence structure
-4. consider motion-lab tooling only if parameter iteration becomes cumbersome
-5. keep project maturity/state vocabulary consistent
-6. keep the default network sparse
-7. do not introduce heavyweight WebGL unless comprehension genuinely requires it
+1. Stage 9B Impeccable-style visual audit
+2. Stage 9C typography system
+3. Stage 9D motion choreography audit
+4. Stage 9E telemetry/information hierarchy
+5. Stage 9F selective spatial polish
+6. Stage 9G mobile refinement + Simple / Non-Technical View
+7. real-device tuning after the code-controlled Stage 9 pass
+8. real project media into the existing evidence structure
 
 ## Production rule
 
