@@ -11,6 +11,7 @@
   const hideCommercial=()=>{
     commercialView.classList.remove('active');
     commercialMode.classList.remove('active');
+    commercialMode.setAttribute('aria-pressed','false');
   };
 
   commercialMode.addEventListener('click',()=>{
@@ -20,6 +21,9 @@
     exploreMode.classList.remove('active');
     recruiterMode.classList.remove('active');
     commercialMode.classList.add('active');
+    commercialMode.setAttribute('aria-pressed','true');
+    exploreMode.setAttribute('aria-pressed','false');
+    recruiterMode.setAttribute('aria-pressed','false');
     if(resetBtn)resetBtn.style.display='none';
     window.scrollTo({top:0,behavior:'smooth'});
   });
