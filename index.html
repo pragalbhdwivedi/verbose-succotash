@@ -28,46 +28,8 @@
   <link rel="stylesheet" href="./assets/design-tokens.css" />
   <link rel="stylesheet" href="./assets/portfolio.css" />
   <link rel="stylesheet" href="./assets/evidence.css" />
-  <link rel="stylesheet" href="./assets/commercial.css" />
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "@id": "https://pragalbh.in/#person",
-        "name": "Pragalbh Dwivedi",
-        "url": "https://pragalbh.in/",
-        "image": "https://pragalbh.in/src/PRAGALBH.webp",
-        "telephone": "+919555877000",
-        "jobTitle": "Owner, Executive Director & Independent Systems Consultant",
-        "description": "Owner and Executive Director of family-owned educational institutions in Uttar Pradesh, combining institutional operations and strategy with independent consulting and hands-on systems building.",
-        "homeLocation": {"@type":"Place","name":"Prayagraj, Uttar Pradesh, India"},
-        "worksFor": {"@type":"Organization","name":"Badridhar Dwivedi Group of Institutions"},
-        "sameAs": ["https://github.com/pragalbhdwivedi"],
-        "knowsAbout": ["Institutional leadership","Institutional operations","Systems architecture","Infrastructure","Automation","Education technology","Networking","Virtualisation","TrueNAS","Proxmox","Self-hosted systems","Applied technology"]
-      },
-      {
-        "@type": "ProfessionalService",
-        "@id": "https://pragalbh.in/#consulting",
-        "name": "Pragalbh Dwivedi — Independent Systems Consulting",
-        "url": "https://pragalbh.in/",
-        "telephone": "+919555877000",
-        "provider": {"@id":"https://pragalbh.in/#person"},
-        "areaServed": "Worldwide",
-        "serviceType": ["Infrastructure architecture","Proxmox and TrueNAS consulting","Network architecture","Self-hosted migration","Institutional technology consulting","Custom systems and automation"]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://pragalbh.in/#website",
-        "url": "https://pragalbh.in/",
-        "name": "Pragalbh Dwivedi — Portfolio",
-        "description": "A professional evidence portfolio and consulting practice covering institutional leadership, systems, infrastructure, automation and applied technology.",
-        "publisher": {"@id":"https://pragalbh.in/#person"},
-        "inLanguage": "en"
-      }
-    ]
-  }
+  {"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://pragalbh.in/#person","name":"Pragalbh Dwivedi","url":"https://pragalbh.in/","image":"https://pragalbh.in/src/PRAGALBH.webp","telephone":"+919555877000","jobTitle":"Owner, Executive Director & Independent Systems Consultant","homeLocation":{"@type":"Place","name":"Prayagraj, Uttar Pradesh, India"},"worksFor":{"@type":"Organization","name":"Badridhar Dwivedi Group of Institutions"},"sameAs":["https://github.com/pragalbhdwivedi"],"knowsAbout":["Institutional leadership","Systems architecture","Infrastructure","Automation","Education technology","Networking","Virtualisation","TrueNAS","Proxmox","Self-hosted systems"]},{"@type":"ProfessionalService","@id":"https://pragalbh.in/#consulting","name":"Pragalbh Dwivedi — Independent Systems Consulting","url":"https://pragalbh.in/","telephone":"+919555877000","provider":{"@id":"https://pragalbh.in/#person"},"areaServed":"Worldwide","serviceType":["Infrastructure architecture","Proxmox and TrueNAS consulting","Network architecture","Self-hosted migration","Institutional technology consulting","Custom systems and automation"]},{"@type":"WebSite","@id":"https://pragalbh.in/#website","url":"https://pragalbh.in/","name":"Pragalbh Dwivedi — Portfolio","publisher":{"@id":"https://pragalbh.in/#person"},"inLanguage":"en"}]}
   </script>
 </head>
 <body>
@@ -87,8 +49,8 @@
 </noscript>
 <div class="app">
   <header class="topbar">
-    <div class="brand"><div class="monogram">PD</div><div class="brand-copy"><strong>Pragalbh Dwivedi</strong><span>Owner · Executive Director · Systems Consultant</span></div><img src="https://hits.sh/pragalbh.in.svg?view=total&style=flat-square&label=visits&color=baff67&labelColor=161b22" alt="Total portfolio visits" title="Total portfolio visits" loading="eager" decoding="async" style="height:18px;width:auto;display:block;opacity:.82" /></div>
-    <div class="top-actions"><button class="ghost" id="resetBtn">Reset map</button><div class="mode" aria-label="Portfolio view mode"><button id="exploreMode" class="active">Explore network</button><button id="commercialMode" aria-pressed="false">Consulting</button><button id="recruiterMode">Recruiter view</button></div></div>
+    <div class="brand"><div class="monogram">PD</div><div class="brand-copy"><strong>Pragalbh Dwivedi</strong><span>Owner · Executive Director · Systems Consultant</span></div></div>
+    <div class="top-actions"><button class="ghost" id="resetBtn">Reset map</button><div class="mode" aria-label="Portfolio view mode"><button id="exploreMode" class="active">Explore</button><button id="commercialMode" aria-pressed="false">Consulting</button><button id="recruiterMode">Profile</button></div></div>
   </header>
 
   <section class="network-view" id="networkView">
@@ -101,39 +63,7 @@
     <aside class="drawer empty" id="drawer"><div class="drawer-empty"><span class="eyebrow">Start anywhere</span><h2>Explore how the work connects.</h2><p>Open a branch, follow the relationships and inspect projects as evidence hubs. The map remains sparse until you ask for more.</p><div class="mini">Blue = education · violet = systems · grey = infrastructure · cyan = automation · amber = applied / energy</div></div></aside>
   </section>
 
-  <section class="commercial-view" id="commercialView" aria-label="Consulting services">
-    <div class="cwrap">
-      <div class="chero">
-        <div><span class="eyebrow">Independent consulting · international-first · remote + travel</span><h1>Complex infrastructure. Clear architecture. <em>Practical delivery.</em></h1><p>I design, troubleshoot and build self-hosted infrastructure, networks, storage and custom technology systems for organisations and educational institutions. I work directly with clients from diagnosis and requirements through architecture, implementation, documentation and ongoing support.</p><div class="actions"><a class="cta primary" href="https://wa.me/919555877000?text=Hi%20Pragalbh%2C%20I%27d%20like%20to%20discuss%20a%20consulting%20project." target="_blank" rel="noreferrer">Discuss a project on WhatsApp ↗</a><a class="cta" href="tel:+919555877000">Call +91 95558 77000</a></div><div class="price-note">Brief initial scoping conversation: no charge · detailed diagnosis, architecture and implementation: paid engagement</div></div>
-        <aside class="cside"><span class="eyebrow">Best fit</span><strong>Systems that matter enough to design properly.</strong><span>Self-hosted infrastructure · Proxmox · TrueNAS · networks · migrations · institutional / EdTech systems · custom internal tools.</span><div style="height:1px;background:var(--line);margin:22px 0"></div><span class="eyebrow">Working model</span><strong style="font-size:17px">Direct consultant now. Brand and delivery team later.</strong><span>Remote worldwide, India included, with travel available where on-site work is genuinely useful.</span></aside>
-      </div>
-
-      <div class="commercial-signal" aria-label="Consulting model"><div><strong>Worldwide</strong><span>international-first remote engagements</span></div><div><strong>Architecture → build</strong><span>not advice detached from implementation reality</span></div><div><strong>Custom systems</strong><span>work shaped around actual operational constraints</span></div><div><strong>Evidence-led</strong><span>decisions, diagrams, documentation and case proof</span></div></div>
-
-      <div class="section-head"><div><span class="eyebrow">Commercial service web</span><h2>Start with the problem. Expand only as far as needed.</h2></div><p>Each engagement can stay small as a diagnosis or expand into architecture, implementation and recurring support. Starting prices are shown in USD for international work; final scope depends on risk, complexity and production impact.</p></div>
-      <div class="offer-grid">
-        <details class="offer"><summary><span class="offer-no">01 / Flagship</span><h3>Infrastructure Rescue</h3><p>For infrastructure that is broken, fragile, undocumented or difficult to understand.</p><div class="offer-price">Starting <span>$650</span></div></summary><div class="offer-body"><h4>Typical deliverables</h4><ul><li>current-state architecture and system inventory</li><li>risk register and root-cause findings</li><li>immediate stabilisation actions</li><li>backup / recovery assessment</li><li>target architecture and prioritised roadmap</li></ul><a class="cta primary" href="https://wa.me/919555877000?text=Hi%20Pragalbh%2C%20I%27d%20like%20to%20discuss%20an%20Infrastructure%20Rescue%20engagement." target="_blank" rel="noreferrer">Discuss Infrastructure Rescue ↗</a></div></details>
-        <details class="offer"><summary><span class="offer-no">02 / Private infrastructure</span><h3>Proxmox + TrueNAS Architecture</h3><p>Virtualisation, storage, backup and network design built as one recoverable system.</p><div class="offer-price">Starting <span>$1,500</span></div></summary><div class="offer-body"><h4>Typical deliverables</h4><ul><li>host / VM / container architecture</li><li>storage placement and ZFS / TrueNAS design</li><li>management, service and storage network boundaries</li><li>backup / restore model</li><li>deployment and handover documentation</li></ul><a class="cta primary" href="https://wa.me/919555877000?text=Hi%20Pragalbh%2C%20I%27d%20like%20to%20discuss%20a%20Proxmox%20and%20TrueNAS%20project." target="_blank" rel="noreferrer">Discuss the stack ↗</a></div></details>
-        <details class="offer"><summary><span class="offer-no">03 / Networking</span><h3>Network & VLAN Architecture</h3><p>Segmentation and topology for users, servers, storage, cameras, IoT, management and guests.</p><div class="offer-price">Starting <span>$750</span></div></summary><div class="offer-body"><h4>Typical deliverables</h4><ul><li>logical topology and IP / VLAN plan</li><li>management and service separation</li><li>PoE / switching considerations</li><li>routing and firewall boundary recommendations</li><li>implementation notes and network register</li></ul><a class="cta primary" href="https://wa.me/919555877000?text=Hi%20Pragalbh%2C%20I%27d%20like%20to%20discuss%20a%20network%20architecture%20project." target="_blank" rel="noreferrer">Discuss networking ↗</a></div></details>
-        <details class="offer"><summary><span class="offer-no">04 / Migration</span><h3>Self-Hosted Migration</h3><p>Move workloads into infrastructure you can understand, operate, back up and recover.</p><div class="offer-price">Starting <span>$1,500</span></div></summary><div class="offer-body"><h4>Typical deliverables</h4><ul><li>dependency and migration inventory</li><li>target architecture and cutover plan</li><li>staged implementation and validation</li><li>rollback / recovery planning</li><li>handover documentation</li></ul><a class="cta primary" href="https://wa.me/919555877000?text=Hi%20Pragalbh%2C%20I%27d%20like%20to%20discuss%20a%20self-hosted%20migration." target="_blank" rel="noreferrer">Discuss a migration ↗</a></div></details>
-        <details class="offer"><summary><span class="offer-no">05 / Institutions & EdTech</span><h3>Institutional Technology Blueprint</h3><p>A coherent technology master plan instead of a collection of unrelated purchases.</p><div class="offer-price">Starting <span>$2,500</span></div></summary><div class="offer-body"><h4>Typical coverage</h4><ul><li>internet, switching, Wi-Fi and VLANs</li><li>servers, storage, backup and resilience</li><li>CCTV, access control, RFID and attendance</li><li>smart classrooms, signage and AV</li><li>procurement specification and phased roadmap</li></ul><a class="cta primary" href="https://wa.me/919555877000?text=Hi%20Pragalbh%2C%20I%27d%20like%20to%20discuss%20an%20institutional%20technology%20blueprint." target="_blank" rel="noreferrer">Discuss an institution ↗</a></div></details>
-        <details class="offer"><summary><span class="offer-no">06 / Software & automation</span><h3>Custom Systems & Automation</h3><p>Internal web systems, operational dashboards and automation designed around the work people actually do.</p><div class="offer-price">Starting <span>$2,500</span></div></summary><div class="offer-body"><h4>Typical deliverables</h4><ul><li>requirements and workflow architecture</li><li>custom web / internal system implementation</li><li>integration with existing services and data</li><li>role, audit and operational design</li><li>deployment, documentation and maintenance path</li></ul><a class="cta primary" href="https://wa.me/919555877000?text=Hi%20Pragalbh%2C%20I%27d%20like%20to%20discuss%20a%20custom%20system%20or%20automation%20project." target="_blank" rel="noreferrer">Discuss a custom system ↗</a></div></details>
-      </div>
-
-      <div class="section-head"><div><span class="eyebrow">Engagement model</span><h2>Diagnosis can become implementation without losing the thread.</h2></div><p>The same consultant who learns the system can carry the reasoning through architecture and delivery, rather than handing you a diagram and vanishing into the fog.</p></div>
-      <div class="engagement-flow"><article class="engagement-step"><b>01</b><h3>Diagnose</h3><p>Understand the real problem, current environment, evidence, risks and constraints.</p></article><article class="engagement-step"><b>02</b><h3>Architect</h3><p>Define the target state, decisions, trade-offs, recovery model and implementation phases.</p></article><article class="engagement-step"><b>03</b><h3>Implement</h3><p>Build or migrate with checkpoints, validation, rollback awareness and documentation.</p></article><article class="engagement-step"><b>04</b><h3>Maintain</h3><p>Monitoring, backup verification, updates, troubleshooting and documentation maintenance.</p></article></div>
-
-      <div class="section-head"><div><span class="eyebrow">Where I am strongest</span><h2>Two commercial verticals, one systems mindset.</h2></div><p>The infrastructure work and the institutional work reinforce each other. Both require understanding how technology behaves when real users, budgets, buildings and failures are involved.</p></div>
-      <div class="vertical-grid"><article class="vertical-card"><span class="eyebrow">Infrastructure & self-hosting</span><h3>Private systems that remain understandable.</h3><p>Proxmox, TrueNAS / ZFS, Linux, networks, Docker, backup, migration, troubleshooting, documentation and resilient self-hosted operations.</p><div class="chips"><span class="chip">Proxmox</span><span class="chip">TrueNAS</span><span class="chip">ZFS</span><span class="chip">Linux</span><span class="chip">VLANs</span><span class="chip">Self-hosting</span></div></article><article class="vertical-card"><span class="eyebrow">Institutional / EdTech</span><h3>Technology that fits the institution.</h3><p>Campus networking, smart classrooms, CCTV, identity, RFID, access control, attendance, timetable automation, signage, storage and custom operational systems.</p><div class="chips"><span class="chip">EdTech</span><span class="chip">Smart classroom</span><span class="chip">CCTV</span><span class="chip">RFID</span><span class="chip">Access</span><span class="chip">Automation</span></div></article></div>
-
-      <div class="managed-panel"><div><span class="eyebrow">Recurring support</span><h3>Infrastructure Care</h3><p>After architecture or implementation, support can continue as a monthly engagement covering monitoring review, backup verification, updates, troubleshooting and documentation maintenance. Scope is deliberately tied to systems I can understand and responsibly support.</p></div><div class="managed-price"><strong>$250+</strong><span>per month · starting point</span><a class="cta" href="https://wa.me/919555877000?text=Hi%20Pragalbh%2C%20I%27d%20like%20to%20discuss%20ongoing%20infrastructure%20support." target="_blank" rel="noreferrer" style="margin-top:18px">Discuss managed support ↗</a></div></div>
-
-      <div class="section-head"><div><span class="eyebrow">Proof before pitch</span><h2>Inspect the work behind the offers.</h2></div><p>The portfolio cases remain the evidence layer. These three are especially relevant to consulting clients because they show infrastructure, institutional systems and cross-domain architecture.</p></div>
-      <div class="proof-links"><button class="proof-link" type="button" onclick="openCase('infra')"><b>Private Infrastructure Stack</b><span>Proxmox · storage · Linux · automation</span></button><button class="proof-link" type="button" onclick="openCase('smartclass')"><b>Smart Classroom System</b><span>EdTech · edge · timetable · recording</span></button><button class="proof-link" type="button" onclick="openCase('solarcctv')"><b>Solar CCTV Edge</b><span>Power · PoE · wireless · surveillance</span></button></div>
-
-      <div class="commercial-contact" id="commercialContact"><div><span class="eyebrow">Start with context, not a sales call</span><h2>Tell me what is broken, risky or worth building.</h2><p>A brief first conversation is for understanding scope and fit. If the problem needs detailed investigation, architecture or implementation, I will define the paid engagement before doing the substantive work.</p><div class="price-note">Remote worldwide · India included · travel available when useful · direct phone and WhatsApp contact</div></div><div class="actions"><a class="cta primary" href="https://wa.me/919555877000?text=Hi%20Pragalbh%2C%20here%27s%20the%20system%20or%20project%20I%27d%20like%20to%20discuss%3A%20" target="_blank" rel="noreferrer">WhatsApp project brief ↗</a><a class="cta" href="tel:+919555877000">Call +91 95558 77000</a></div></div>
-    </div>
-  </section>
+  <section id="commercialView" aria-label="Consulting services" style="display:none"></section>
 
   <section class="recruiter-view" id="recruiterView">
     <div class="rwrap">
@@ -167,6 +97,8 @@
   </section>
 </div>
 <div class="case-overlay" id="caseOverlay" aria-hidden="true"><article class="case-modal" id="caseModal"></article></div>
-<script src="./assets/portfolio.js"></script><script src="./assets/evidence.js"></script><script src="./assets/commercial.js"></script><script>reset();</script>
+<script src="./assets/portfolio.js"></script><script src="./assets/evidence.js"></script><script>
+(()=>{const c=document.getElementById('commercialMode'),v=document.getElementById('commercialView'),n=document.getElementById('networkView'),r=document.getElementById('recruiterView'),e=document.getElementById('exploreMode'),p=document.getElementById('recruiterMode'),z=document.getElementById('resetBtn');let q;const hide=()=>{v.style.display='none';v.classList.remove('active');c.classList.remove('active');c.setAttribute('aria-pressed','false')};async function show(){q||=(fetch('./assets/commercial.html').then(x=>{if(!x.ok)throw Error('consulting fragment');return x.text()}).then(h=>v.innerHTML=h));await q;r.classList.remove('active');n.classList.add('hidden');v.style.display='block';v.classList.add('active');[e,p].forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false')});c.classList.add('active');c.setAttribute('aria-pressed','true');z.style.display='none';scrollTo({top:0,behavior:'smooth'})}c.addEventListener('click',show);e.addEventListener('click',hide);p.addEventListener('click',hide);document.addEventListener('click',x=>{if(x.target.closest('[data-open-commercial]')){x.preventDefault();show()}})})();reset();
+</script>
 </body>
 </html>
