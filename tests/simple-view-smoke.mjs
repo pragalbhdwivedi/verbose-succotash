@@ -9,7 +9,8 @@ try{
   await page.goto(url,{waitUntil:'networkidle'});
   await page.waitForFunction(()=>Boolean(window.__simpleView));
 
-  assert(await page.locator('.mode button').count()===3,'Portfolio must expose exactly three audience modes.');
+  assert(await page.locator('.mode button').count()===4,'Portfolio must expose exactly four audience/action modes.');
+  assert(await page.locator('#commercialMode').count()===1,'Consulting mode control must exist.');
   assert(await page.locator('#simpleMode').count()===1,'Simple View mode control must exist.');
   assert(await page.locator('#recruiterView [data-about-me]').count()===1,'Recruiter View must include an About Me section.');
   assert((await page.locator('#recruiterView [data-about-me]').textContent()).includes('Owner and Executive Director'),'About Me must identify the owner/executive role.');
@@ -21,7 +22,7 @@ try{
   assert(await page.locator('#recruiterContact [data-connect-form]').count()===1,'Recruiter View must expose the contact form.');
   assert(await page.locator('#recruiterContact a[href^="tel:"]').count()===1,'Direct phone contact must remain available inside Contact Me.');
   assert(await page.locator('#recruiterContact a[href^="https://wa.me/"]').count()===1,'Direct WhatsApp contact must remain available inside Contact Me.');
-  assert((await page.locator('#recruiterContact').textContent()).includes('no charge'),'Contact Me must retain the help-first no-charge note.');
+  assert((await page.locator('#recruiterContact').textContent()).includes('paid consulting work'),'Contact Me must distinguish scoping from paid consulting work.');
   assert(await page.locator('#recruiterContact input[type="email"]').count()===0,'Contact Me must not collect email.');
   assert((await page.locator('#recruiterContact').textContent()).includes('Nothing is stored'),'Contact Me must disclose that the form stores nothing.');
 
@@ -31,9 +32,10 @@ try{
   assert((await page.locator('#simpleView').textContent()).includes('I turn difficult institutional problems into'),'Simple View must explain the professional value in plain language.');
 
   await page.click('#simpleMode');
-  assert(await page.locator('#simpleView').evaluate(el=>el.classList.contains('active')),'Simple View must become active from the third mode control.');
+  assert(await page.locator('#simpleView').evaluate(el=>el.classList.contains('active')),'Simple View must become active from its mode control.');
   assert(await page.locator('#networkView').evaluate(el=>el.classList.contains('hidden')),'Explore network must hide while Simple View is active.');
   assert(!(await page.locator('#recruiterView').evaluate(el=>el.classList.contains('active'))),'Recruiter View must not remain active beside Simple View.');
+  assert(!(await page.locator('#commercialView').evaluate(el=>el.classList.contains('active'))),'Consulting view must not remain active beside Simple View.');
   assert(await page.locator('#simpleMode').getAttribute('aria-pressed')==='true','Simple View must expose pressed state to assistive technology.');
   assert(await page.locator('#simpleContact [data-connect-form]').count()===1,'Simple View must expose the same Let’s Connect pathway.');
 
@@ -45,6 +47,11 @@ try{
   assert(/Smart Classroom/i.test(await page.locator('#caseModal h2').textContent()),'Simple View must open the same underlying evidence case, not a second truth source.');
   await page.evaluate(()=>window.closeCase());
 
+  await page.click('#commercialMode');
+  await page.waitForSelector('#commercialView.active [data-commercial-offer]');
+  assert(!(await page.locator('#simpleView').evaluate(el=>el.classList.contains('active'))),'Consulting mode must hide Simple View.');
+  await page.click('#simpleMode');
+  assert(!(await page.locator('#commercialView').evaluate(el=>el.classList.contains('active'))),'Simple View must hide Consulting mode.');
   await page.click('#recruiterMode');
   assert(await page.locator('#recruiterView').evaluate(el=>el.classList.contains('active')),'Recruiter mode must still work after visiting Simple View.');
   await page.click('#exploreMode');
@@ -54,8 +61,8 @@ try{
   await mobile.goto(url,{waitUntil:'networkidle'});
   await mobile.waitForFunction(()=>Boolean(window.__simpleView));
   const labels=await mobile.locator('.mode button').allTextContents();
-  assert(labels.join('|')==='Explore|Recruiter|Simple','Mobile mode labels must remain compact enough for the top bar.');
-  assert(await mobile.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1),'Three-mode navigation must not introduce mobile horizontal overflow.');
+  assert(labels.join('|')==='Explore|Consult|Recruiter|Simple','Mobile mode labels must remain compact enough for the top bar.');
+  assert(await mobile.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1),'Four-mode navigation must not introduce mobile horizontal overflow.');
   await mobile.click('#simpleMode');
   assert(await mobile.locator('#simpleView').evaluate(el=>el.classList.contains('active')),'Simple View must work on the mobile viewport.');
   assert(await mobile.locator('#simpleContact [data-connect-form]').count()===1,'Contact form must remain available on mobile.');
@@ -78,5 +85,5 @@ try{
   assert(decoded.includes('Test Visitor')&&decoded.includes('A systems problem'),'Contact form must produce a pre-filled WhatsApp message.');
   await handoff.close();
 
-  console.log('Profile, Simple View and Let’s Connect smoke test passed.');
+  console.log('Profile, Consulting, Simple View and Let’s Connect smoke test passed.');
 }finally{await browser.close()}
