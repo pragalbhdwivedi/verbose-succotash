@@ -37,7 +37,8 @@ try{
   mobile=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
   const mobilePage=await mobile.newPage();
   await mobilePage.goto(base,{waitUntil:'domcontentloaded'});
-  await mobilePage.waitForFunction(()=>Boolean(window.__electricalMotion));
+  await mobilePage.waitForFunction(()=>Boolean(window.__electricalMotion)&&Boolean(window.__deviceTuning));
+  await mobilePage.waitForFunction(()=>document.getElementById('network')?.getAttribute('viewBox')===window.__deviceTuning.viewport);
   assert.equal(await mobilePage.locator('#network').getAttribute('viewBox'),'280 45 840 710','Mobile graph should use the real-device tuned observatory viewBox');
   assert.equal(await mobilePage.locator('.energy-field').count(),1,'Mobile electrical field canvas should render');
   assert.equal(await mobilePage.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth+1),true,'Electrical layer must not introduce mobile overflow');

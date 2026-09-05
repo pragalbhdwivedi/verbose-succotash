@@ -63,6 +63,11 @@ jobs:
         env:
           PORTFOLIO_TEST_URL: http://127.0.0.1:4173/
 
+      - name: Run commercial consulting mode smoke test
+        run: node tests/commercial-smoke.mjs
+        env:
+          PORTFOLIO_TEST_URL: http://127.0.0.1:4173/
+
       - name: Run electrical motion smoke test
         run: node tests/electrical-motion-smoke.mjs
         env:
